@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="UuidIdentifier.xsd"/>
+    <include schemaLocation="DiagnosisClassificationIdentifier.xsd"/>
+    <include schemaLocation="DiagnosisIdentifier.xsd"/>
+    
+    <element name="Diagnosis" type="mc:DiagnosisType"/>
+    
+    <complexType name="DiagnosisType">
+        <sequence>
+            <element ref="mc:UuidIdentifier"/>
+            <element name="CreatedDateTime" type="dateTime"/>
+            <element ref="mc:DiagnosisClassificationIdentifier"/>
+            <element ref="mc:DiagnosisIdentifier"/>
+            <element name="DescriptionText" type="string" minOccurs="0"/>
+            <element name="CreatedByText" type="string"/>
+        </sequence>
+    </complexType>
+    
+</schema>

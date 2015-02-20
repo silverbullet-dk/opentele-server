@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:oio-med-com-kd="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+    xmlns:tns="urn:oio:medcom:patients-goal:1.0.0"
+    targetNamespace="urn:oio:medcom:patients-goal:1.0.0"
+    elementFormDefault="qualified">
+   
+    <xs:import namespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/" schemaLocation="MedComKD_V0.2.xsd"/>
+    
+    <xs:element name="SetPatientsGoalRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element name="PatientensMaal" type="tns:PatientensMaalType" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:complexType name="PatientensMaalType">
+        <xs:sequence>
+            <xs:element name="MaaleKategori" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element name="MaaleSubKategori" type="xs:string" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="oio-med-com-kd:ID" minOccurs="1" maxOccurs="1"/>
+            <xs:element ref="oio-med-com-kd:PatientensMaal" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="SetPatientsGoalResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeletePatientsGoalRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element name="MaaleKategori" type="xs:string"/>
+                <xs:element name="MaaleSubKategori" type="xs:string"/>
+                <xs:element ref="oio-med-com-kd:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeletePatientsGoalResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

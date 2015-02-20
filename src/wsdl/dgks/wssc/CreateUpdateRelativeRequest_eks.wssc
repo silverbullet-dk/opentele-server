@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">RelativeService</service>
+        <port xml:space="preserve">RelativePort</port>
+        <operation xml:space="preserve">CreateUpdateRelative</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/RelativeService.asmx</URL>
+        <action xml:space="preserve">CreateUpdateRelative</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:relative:1.0.0&quot;
+    xmlns:ns1=&quot;http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/&quot;&gt;
+    &lt;SOAP-ENV:Header/&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;ns0:CreateUpdateRelativeRequestMessage&gt;
+        	&lt;ns0:CivilRegistrationNumber&gt;2512484916&lt;/ns0:CivilRegistrationNumber&gt;
+        	&lt;ns0:Paaroerende&gt;
+        		&lt;Fornavn&gt;Mads&lt;/Fornavn&gt;
+        		&lt;Efternavn&gt;Berggren&lt;/Efternavn&gt;
+        		&lt;Vej&gt;Skovejen12&lt;/Vej&gt;
+        		&lt;Postnummer&gt;8210&lt;/Postnummer&gt;
+        		&lt;By&gt;Aarhus N&lt;/By&gt;
+        		&lt;Kontakttelefon&gt;22348647&lt;/Kontakttelefon&gt;
+        		&lt;eMail&gt;at@mail.dk&lt;/eMail&gt;
+        	&lt;/ns0:Paaroerende&gt;        &lt;/ns0:CreateUpdateRelativeRequestMessage&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

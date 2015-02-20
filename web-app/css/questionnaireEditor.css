@@ -1,0 +1,122 @@
+ .container {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#drawingArea {
+    height: 3000px;
+    width: 2000px;
+    position: relative;
+    overflow: scroll;
+}
+
+.node {
+    color: #0088cc;
+    min-width:80px;
+    max-width: 230px;
+    padding: 5px;
+    height:40px;
+    border-radius: 4px;
+    border: 1px solid;
+    position: absolute;
+    background-color: #ffffff;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;;
+}
+.node .deleteIcon {
+    color:#bd362f;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding:2px;
+}
+.node .deleteIcon:hover {
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+}
+
+.node .editIcon:hover {
+    transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+}
+
+.node .editIcon {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding:2px;
+}
+textarea {
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.twoCharacterInput {
+    width: 34px !important;
+}
+
+a.disabled-link,
+a.disabled-link:visited ,
+a.disabled-link:active {
+    color:#aaa !important;
+}
+
+a.disabled-link:hover {
+    background: inherit;
+}
+
+.ui-datepicker-opentele div.ui-datepicker-wrapper button.ui-datepicker-trigger {
+ right: 1px !important;
+ top: -9px !important;
+ }
+
+div#weekdayScheduleSetupContainer {
+
+}
+
+div#weekdayScheduleSetupContainer label {
+    display: inline-block;
+
+}
+
+div#weekdayScheduleSetupContainer input[type="checkbox"] {
+    float: left;
+    margin-right: 5px;
+
+}
+
+div#reminderStartContainer {
+    padding-bottom: 10px;
+}
+
+div.scheduling h1.nav-header {
+    font-size: 11px !important;
+    line-height: 20px !important;
+}
+
+div.scheduling .weekdays input {
+    margin-top: -2px;
+}
+
+div.scheduling .weekdays label {
+    display: inline
+}
+
+div.scheduleType div.fieldcontain > label {
+    font-weight: bold;
+}
+
+div.scheduleWindow div.inlined {
+    font-style: oblique;
+    padding-bottom: 10px;
+}

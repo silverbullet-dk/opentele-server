@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Henrik Rasmussen (private) -->
+<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="FormattedTextType" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Space"/>
+			<xs:element ref="Break"/>
+			<xs:element ref="Right"/>
+			<xs:element ref="Center"/>
+			<xs:element ref="Bold"/>
+			<xs:element ref="Italic"/>
+			<xs:element ref="Underline"/>
+			<xs:element ref="FixedFont"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="FixedFont" type="SimpleFormattedText"/>
+	<xs:complexType name="SimpleFormattedText" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Space"/>
+			<xs:element ref="Break"/>
+			<xs:element ref="Right"/>
+			<xs:element ref="Center"/>
+			<xs:element ref="Bold"/>
+			<xs:element ref="Italic"/>
+			<xs:element ref="Underline"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="Right" type="BreakableText"/>
+	<xs:element name="Center" type="BreakableText"/>
+	<xs:element name="Bold" type="BreakableText"/>
+	<xs:element name="Italic" type="BreakableText"/>
+	<xs:element name="Underline" type="BreakableText"/>
+	<xs:complexType name="BreakableText" mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="Space"/>
+			<xs:element ref="Break"/>
+		</xs:choice>
+	</xs:complexType>
+	<xs:element name="Break">
+		<xs:complexType/>
+	</xs:element>
+	<xs:element name="Space">
+		<xs:complexType/>
+	</xs:element>
+</xs:schema>

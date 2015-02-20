@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:fault="urn:oio:medcom:chronic-fault:1.0.0"
+	xmlns:tns="urn:oio:medcom:referrals:1.0.0" 
+	name="ReferralsService"
+	targetNamespace="urn:oio:medcom:referrals:1.0.0">
+	<wsdl:types>
+		<xs:schema targetNamespace="urn:oio:medcom:referrals:1.0.0" elementFormDefault="qualified">
+			<xs:include schemaLocation="ReferralsService.xsd"/>
+			<xs:import namespace="urn:oio:medcom:chronic-fault:1.0.0" schemaLocation="fault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="HardFaultMessage">
+		<wsdl:part name="fault" element="fault:HardFaultDetailMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SoftFaultMessage">
+		<wsdl:part name="fault" element="fault:SoftFaultDetailMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendReferralRequestMessage">
+		<wsdl:part name="parameter" element="tns:SendReferralRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendReferralResponseMessage">
+		<wsdl:part name="parameter" element="tns:SendReferralResponseMessage"/>
+	</wsdl:message>
+	<wsdl:portType name="ReferralPortType">
+		<wsdl:operation name="SendReferral">
+			<wsdl:input message="tns:SendReferralRequestMessage"/>
+			<wsdl:output message="tns:SendReferralResponseMessage"/>
+			<wsdl:fault name="SoftFault" message="tns:SoftFaultMessage"/>
+			<wsdl:fault name="HardFault" message="tns:HardFaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ReferralBinding" type="tns:ReferralPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="SendReferral">
+			<soap:operation soapAction="SendReferral"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="SoftFault">
+				<soap:fault name="SoftFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="HardFault">
+				<soap:fault name="HardFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ReferralService">
+		<wsdl:port name="ReferralPort" binding="tns:ReferralBinding">
+			<soap:address location="http://localhost/NoServiceHere"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

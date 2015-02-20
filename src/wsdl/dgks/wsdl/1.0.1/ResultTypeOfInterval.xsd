@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc101="urn:oio:medcom:chronicdataset:1.0.1" targetNamespace="urn:oio:medcom:chronicdataset:1.0.1" >
+    
+    
+    <xs:element name="ResultTypeOfInterval">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="physiological"/>
+                <xs:enumeration value="therapeutic"/>
+                <xs:enumeration value="unspecified"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    
+</xs:schema>

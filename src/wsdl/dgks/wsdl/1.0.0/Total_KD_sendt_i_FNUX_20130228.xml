@@ -1,0 +1,642 @@
+<?xml version="1.0"?>
+<PLOFormatStruktur  xmlns="urn:oio:medcom:plo:2009.12.31"
+ xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PakkeIdentifikator>8e4beaf9-3804-4fea-97ca-f44cca019049</PakkeIdentifikator>
+  <PLOUdtraekStruktur>
+    <PLOHeaderStruktur>
+      <DelvistUdtraekIndikator>false</DelvistUdtraekIndikator>
+      <SystemIdentifikator>FKD</SystemIdentifikator>
+      <AfsenderNavn>Systemnavn og version</AfsenderNavn>
+      <KlinikStruktur>
+        <CVRnummerIdentifikator>12345678</CVRnummerIdentifikator>
+        <KlinikNavn>Lægehuset</KlinikNavn>
+        <DanskAdresseStruktur>
+          <StreetName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/">Sundhedsgade</StreetName>
+          <StreetBuildingIdentifier xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/">12</StreetBuildingIdentifier>
+          <PostCodeIdentifier xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/">3400</PostCodeIdentifier>
+          <DistrictName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/">Hillerød</DistrictName>
+        </DanskAdresseStruktur>
+        <YderIdentifikator>44164</YderIdentifikator>
+      </KlinikStruktur>
+      <DatoTid>2012-11-21T11:53:25Z</DatoTid>
+    </PLOHeaderStruktur>
+    <PatientUdtraekStruktur>
+      <StamdataStruktur>
+        <CPRnummerIdentifikator>2512484916</CPRnummerIdentifikator>
+        <FoedselsDato>1948-12-25</FoedselsDato>
+        <PersonKoenKode>kvinde</PersonKoenKode>
+        <PersonNavnStruktur>
+          <PersonGivenName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/">Nancy</PersonGivenName>
+          <PersonSurnameName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/">Berggren</PersonSurnameName>
+        </PersonNavnStruktur>
+        <DanskAdresseStruktur>
+          <StreetName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/">Sundhedsgade</StreetName>
+          <StreetBuildingIdentifier xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/">12</StreetBuildingIdentifier>
+          <PostCodeIdentifier xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/">3400</PostCodeIdentifier>
+          <DistrictName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/">Hillerød</DistrictName>
+        </DanskAdresseStruktur>
+        <SygesikringsgruppeIdentifikator>1</SygesikringsgruppeIdentifikator>
+        <TelefonNummerStruktur>
+          <TelefonNummerIdentifikator>87679911</TelefonNummerIdentifikator>
+          <TelefonNummerAnvendelseKode>andet</TelefonNummerAnvendelseKode>
+        </TelefonNummerStruktur>
+        <PaaroerendeStruktur>
+          <PaaroerendeRelationKode>andet</PaaroerendeRelationKode>
+          <CPRnummerIdentifikator>0000000000</CPRnummerIdentifikator>
+          <PersonNavnStruktur>
+            <PersonGivenName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/">Mads</PersonGivenName>
+            <PersonSurnameName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/">Berggren</PersonSurnameName>
+          </PersonNavnStruktur>
+        </PaaroerendeStruktur>
+      </StamdataStruktur>
+      <BehandlerSamling>
+        <BehandlerStruktur>
+          <BehandlerIdentifikator>44164</BehandlerIdentifikator>
+          <YderIdentifikator>44164</YderIdentifikator>
+          <PersonNavnStruktur>
+            <PersonGivenName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/">Birte</PersonGivenName>
+            <PersonSurnameName xmlns="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/">Hvam</PersonSurnameName>
+          </PersonNavnStruktur>
+        </BehandlerStruktur>
+      </BehandlerSamling>
+      <NoteSamling>
+        <NoteStruktur>
+          <UUID>8e4dfa80-c113-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>KOMMUNEKONTAKT</MedcomKode>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Birte Jensen, Afd A Tlf 9876543</t>
+              </r>
+            </p>
+          </Tekst>
+          <BehandlerIdentifikator>Birte Jensen</BehandlerIdentifikator>
+        </NoteStruktur>
+        <NoteStruktur>
+          <UUID>8e4dfa81-c113-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>SYGEHUSKONTAKT</MedcomKode>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Lone Ejby, mail le@odense.dk</t>
+              </r>
+            </p>
+          </Tekst>
+          <BehandlerIdentifikator>Lene Liensen, områdesekretær</BehandlerIdentifikator>
+        </NoteStruktur>
+        <NoteStruktur>
+          <UUID>a0c96f30-3ed8-11e2-a25f-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>SAMTYKKE</MedcomKode>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>true</t>
+              </r>
+            </p>
+          </Tekst>
+        </NoteStruktur>
+
+        <NoteStruktur>
+          <!-- Medical Investigation -->
+          <UUID>8e4dfa87-c113-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>HENVISNING</MedcomKode>
+          <DatoTid>2006-05-04T18:13:54Z</DatoTid>
+          <DiagnoseStruktur>
+            <UUID>371ce6c0-3f0a-11e2-a25f-0800200c9a66</UUID>
+            <KodeStruktur>
+              <KlassifikationsIdentifikator>ICPC</KlassifikationsIdentifikator>
+              <Kode>T90</Kode>
+              <KodeTekst>Diabetes Type 2</KodeTekst>
+            </KodeStruktur>
+          </DiagnoseStruktur>
+          <DiagnoseStruktur>
+            <UUID>93169610-3f0a-11e2-a25f-0800200c9a66</UUID>
+            <KodeStruktur>
+              <KlassifikationsIdentifikator>ICPC</KlassifikationsIdentifikator>
+              <Kode>R95</Kode>
+              <KodeTekst>Kronisk obstruktiv lungesygdom</KodeTekst>
+            </KodeStruktur>
+          </DiagnoseStruktur>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>ONSKUS;RYGE-A, AMBUS-C</t>
+                <t>ANAMNESE;Pt.har gennem længere tid klaget over brystsmerter.</t>
+              </r>
+            </p>
+          </Tekst>
+          <BehandlerIdentifikator>Lægehuset, Birte Hvam</BehandlerIdentifikator>
+        </NoteStruktur>
+        <NoteStruktur>
+          <UUID>8e4dfa8a-c113-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>DAGBOG</MedcomKode>
+          <DatoTid>2011-10-26T21:32:00Z</DatoTid>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Jeg sover daarligt, men jeg tror</t>
+              </r>
+            </p>
+          </Tekst>
+        </NoteStruktur>
+        <NoteStruktur>
+          <UUID>8e4dfa8b-c113-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>DAGBOG</MedcomKode>
+          <DatoTid>2010-09-02T09:21:00Z</DatoTid>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Hovedpinen kommer igen når jeg lægger mig på sofaen.</t>
+                <cr/>
+                <t>Overvejer at lægge mig i sengen i stedet for</t>
+              </r>
+            </p>
+          </Tekst>
+        </NoteStruktur>
+        <!-- SOFT Tilbud -->
+        <NoteStruktur>
+          <UUID>82ec3de1-c1b4-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>SOFT</MedcomKode>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>PHYSICALREHABILITATION;OFFERED</t>
+                <t>PATIENTEDUCATION;FINISH</t>
+                <t>SMOKINGCESSATIONCOURSE;NOT_RELEVANT</t>
+                <t>NUTRITIONALCOUNSELING;FINISH</t>
+                <t>CURRENTSTATUTORYPROVIDEDSERVICE;ACCORDINGTOSOCIALLEGISLATION;FALSE</t>
+                <t>CURRENTSTATUTORYPROVIDEDSERVICE;ACCORDINGTOHEALTHLEGISLATION;TRUE</t>
+                <t>CURRENTSTATUTORYPROVIDEDSERVICE;PROVIDEDBYHEALTHCENTER;TRUE</t>
+                <t>RECENTYEARSTATUTORYPROVIDEDSERVICE;ACCORDINGTOSOCIALLEGISLATION;FALSE</t>
+                <t>RECENTYEARSTATUTORYPROVIDEDSERVICE;ACCORDINGTOHEALTHLEGISLATION;FALSE</t>
+                <t>RECENTYEARSTATUTORYPROVIDEDSERVICE;PROVIDEDBYHEALTHCENTER;FALSE</t>
+              </r>
+            </p>
+          </Tekst>
+          <BehandlerIdentifikator>Lægehuset, Helmer Petersen</BehandlerIdentifikator>
+        </NoteStruktur>
+        <!-- SKL Noter -->
+        <NoteStruktur>
+          <UUID>82ec3de1-c1b4-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>SKLNOTE</MedcomKode>
+          <DatoTid>2011-10-26T21:32:00Z</DatoTid>
+          <OverskriftTekst>Plan</OverskriftTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Der er udarbejdet plan for det foelger</t>
+              </r>
+            </p>
+          </Tekst>
+          <ObjectReference>gp</ObjectReference>
+          <BehandlerIdentifikator>Lægehuset, Helmer Petersen</BehandlerIdentifikator>
+        </NoteStruktur>
+        <NoteStruktur>
+          <UUID>82ec3de2-c1b4-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>SKLNOTE</MedcomKode>
+          <DatoTid>2010-08-12T10:00:10Z</DatoTid>
+          <OverskriftTekst>AmbUS</OverskriftTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Pt. dd gennemfoert spiometriUS. Result..</t>
+              </r>
+            </p>
+          </Tekst>
+          <ObjectReference>hospital</ObjectReference>
+          <BehandlerIdentifikator>Herlev Hospital, Medicinsk Afdelin M</BehandlerIdentifikator>
+        </NoteStruktur>
+
+        <NoteStruktur>
+          <UUID>82ec3de3-c1b4-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>SKLNOTE</MedcomKode>
+          <DatoTid>2010-08-14T10:15:10Z</DatoTid>
+          <OverskriftTekst>Kostplan</OverskriftTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Kostplan for Nancy: Morgen let diæt…</t>
+              </r>
+            </p>
+          </Tekst>
+          <ObjectReference>hospital</ObjectReference>
+          <BehandlerIdentifikator>Odense, Diætist Anne Ol.</BehandlerIdentifikator>
+        </NoteStruktur>
+        <!--  KALENDER -->
+        <NoteStruktur>
+          <UUID>82ec3de4-c1b4-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>KALENDER</MedcomKode>
+          <DatoTid>2010-07-08T14:00:00Z</DatoTid>
+          <OverskriftTekst>RYG567</OverskriftTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Rygestop - 3 ugers aftenunderv, Borgerskolen - Tilbudt</t>
+              </r>
+            </p>
+          </Tekst>
+          <BehandlerIdentifikator>Rudersdal Kommune, Forebyggelsen</BehandlerIdentifikator>
+        </NoteStruktur>
+        <NoteStruktur>
+          <UUID>82ec3de5-c1b4-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>KALENDER</MedcomKode>
+          <DatoTid>2010-08-11T00:00:00Z</DatoTid>
+          <OverskriftTekst>HVA654</OverskriftTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Amb beh - Kontrolbesoeg paa Hvidovre, afd. A - Ansoegt</t>
+              </r>
+            </p>
+          </Tekst>
+          <BehandlerIdentifikator>Hvidovre Hospital, Medicinsk Afd</BehandlerIdentifikator>
+        </NoteStruktur>
+        <NoteStruktur>
+          <UUID>82ec3de6-c1b4-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>KALENDER</MedcomKode>
+          <DatoTid>2010-08-11T00:00:00Z</DatoTid>
+          <OverskriftTekst>SPI5662</OverskriftTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Spirometer- Monitoreringsbox til hjemme - Ansoegt</t>
+              </r>
+            </p>
+          </Tekst>
+          <BehandlerIdentifikator>Rudersdal Kommune, Forebyggelsen</BehandlerIdentifikator>
+        </NoteStruktur>
+
+        <NoteStruktur>
+          <UUID>82ec3de7-c1b4-11e1-afa7-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>KALENDER</MedcomKode>
+          <DatoTid>2010-08-11T10:00:00Z</DatoTid>
+          <OverskriftTekst>YNR967</OverskriftTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>Lægebesøg - Opfoelgning hos egen læge - Udfoert</t>
+              </r>
+            </p>
+          </Tekst>
+          <BehandlerIdentifikator>Lægehuset, Sundhedsgade 12, Birte Hvam</BehandlerIdentifikator>
+        </NoteStruktur>
+        <!-- Medicin udleveringer -->
+        <NoteStruktur>
+          <UUID>dcd371c0-80ef-11e2-9e96-0800200c9a66</UUID>
+          <EgneNoterKode>andet</EgneNoterKode>
+          <MedcomKode>DRUGEFFECTUATION</MedcomKode>
+          <DatoTid>2013-02-27T10:00:00Z</DatoTid>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>EFFECTUATIONIDENTIFIER;12345678909876</t>
+                <t>DRUGNAME;Hjertemagnyl</t>
+                <t>DRUGFORMTEXT;Tablet</t>
+                <t>DRUGSTRENGTHTEXT;75 mg</t>
+                <t>DOSAGEFREETEXT;1 x dagligt</t>
+                <t>ACCORDINGTONEED;TRUE</t>
+                <t>INDICATIONFREETEXT;Mod hjerteflimmer</t>
+                <t>ATCCODE;B01AC06</t>
+              </r>
+            </p>
+          </Tekst>
+          <BehandlerIdentifikator>Apoteket Svanen</BehandlerIdentifikator>
+        </NoteStruktur>
+
+      </NoteSamling>
+      <DiagnoseSamling>
+        <DiagnoseStruktur>
+          <UUID>8e4dfa88-c113-11e1-afa7-0800200c9a66</UUID>
+          <StartDato>2006-05-04</StartDato>
+          <KodeStruktur>
+            <KlassifikationsIdentifikator>ICD10</KlassifikationsIdentifikator>
+            <Kode>K92</Kode>
+            <KodeTekst>Perifer karsygdom</KodeTekst>
+          </KodeStruktur>
+          <BehandlerIdentifikator>Lægehuset, Birte Hvam</BehandlerIdentifikator>
+        </DiagnoseStruktur>
+        <DiagnoseStruktur>
+          <UUID>8e4dfa89-c113-11e1-afa7-0800200c9a66</UUID>
+          <StartDato>2006-05-04</StartDato>
+          <KodeStruktur>
+            <KlassifikationsIdentifikator>ICPC</KlassifikationsIdentifikator>
+            <Kode>P03</Kode>
+            <KodeTekst>Nedtrykthed</KodeTekst>
+          </KodeStruktur>
+          <BehandlerIdentifikator>Lægehuset, Birte Hvam</BehandlerIdentifikator>
+        </DiagnoseStruktur>
+      </DiagnoseSamling>
+
+      <LabSkemaSamling>
+        <!-- KRAM -->
+        <LabSkemaStruktur>
+          <UUID>8e4dfa82-c113-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>CQU</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>NPU03804</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>Legeme masse;Pt</LangtNavnTekst>
+          <ProducentKode>PNT</ProducentKode>
+          <ProducentNavn>Sundhedshuset, Assens</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst>77,6</ResultatTekst>
+            <ResultatEnhedKode>Kg</ResultatEnhedKode>
+          </ResultatStruktur>
+          <MinRefTekst>25,6</MinRefTekst>
+          <MaxRefTekst>77,0</MaxRefTekst>
+          <AlarmIndikator>hoej</AlarmIndikator>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>KRAM;WEIGHT</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+        <LabSkemaStruktur>
+          <UUID>8e4dfa83-c113-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>CQU</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>NPU03794</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>Legeme højde;Pt</LangtNavnTekst>
+          <ProducentKode>PNT</ProducentKode>
+          <ProducentNavn>Sundhedshuset, Assens</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst>176</ResultatTekst>
+            <ResultatEnhedKode>cm</ResultatEnhedKode>
+          </ResultatStruktur>
+          <MinRefTekst>25,6</MinRefTekst>
+          <MaxRefTekst>77,0</MaxRefTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>KRAM;HEIGHT</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+        <LabSkemaStruktur>
+          <UUID>8e4dfa84-c113-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>91</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>MCS88036</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>Ryger du?;  (Dagl,Lejl,Ophørt,Aldrig)=?</LangtNavnTekst>
+          <ProducentKode>OUH</ProducentKode>
+          <ProducentNavn>4202120 KKA Odense UNI.Hospital</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst>Ophørt</ResultatTekst>
+            <ResultatEnhedKode>arb.Enhed</ResultatEnhedKode>
+          </ResultatStruktur>
+          <!--           <AlarmIndikator>Uspecificeret ksn ikke angives</AlarmIndikator>  -->
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>KRAM;SMOKING</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+        <LabSkemaStruktur>
+          <UUID>8e4dfa85-c113-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>91</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>MCS88011</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>Alkoholforbrug</LangtNavnTekst>
+          <ProducentKode>POT</ProducentKode>
+          <ProducentNavn>Patient målt</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst> &lt; 15</ResultatTekst>
+            <ResultatEnhedKode>genstande/u</ResultatEnhedKode>
+          </ResultatStruktur>
+          <!--           <AlarmIndikator>Uspecificeret ksn ikke angives</AlarmIndikator>  -->
+          <MinRefTekst>0</MinRefTekst>
+          <MaxRefTekst>15</MaxRefTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>KRAM;ALCOHOL</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+        <LabSkemaStruktur>
+          <UUID>8e4dfa86-c113-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:52Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>91</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>MCS88001</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>Pt-Motion;tid</LangtNavnTekst>
+          <ProducentKode>POT</ProducentKode>
+          <ProducentNavn>Patient målt</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst>3</ResultatTekst>
+            <ResultatEnhedKode>h/uge</ResultatEnhedKode>
+          </ResultatStruktur>
+          <!--           <AlarmIndikator>Uspecificeret ksn ikke angives</AlarmIndikator>  -->
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>KRAM;EXERCISE</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+        <!-- Laboratoriesvar -->
+        <LabSkemaStruktur>
+          <UUID>8e4dfa8c-c113-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2011-10-26T21:32:00Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>CQU</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>NPU01568</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>Kolesterol LDL;P</LangtNavnTekst>
+          <ProducentKode>OUH</ProducentKode>
+          <ProducentNavn>Biokemeisk Afd</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst> &gt; 2,0</ResultatTekst>
+            <ResultatEnhedKode>mmol/l</ResultatEnhedKode>
+          </ResultatStruktur>
+          <MinRefTekst>1,0</MinRefTekst>
+          <MaxRefTekst>3</MaxRefTekst>
+          <AlarmIndikator>hoej</AlarmIndikator>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>LABORATORIESVAR</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+        <LabSkemaStruktur>
+          <UUID>82ec3de0-c1b4-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>CQU</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>NPU02321</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>Haemoglobin A</LangtNavnTekst>
+          <ProducentKode>OUH</ProducentKode>
+          <ProducentNavn>Biokemeisk Afd</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst> &lt; 7,0</ResultatTekst>
+            <ResultatEnhedKode>mmol/l</ResultatEnhedKode>
+          </ResultatStruktur>
+          <MinRefTekst>3,5</MinRefTekst>
+          <MaxRefTekst>9,7</MaxRefTekst>
+          <!--          <AlarmIndikator>Uspecificerte kan ikke angives</AlarmIndikator>  -->
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>LABORATORIESVAR</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+
+        <!-- Hjemmemon. -->
+        <LabSkemaStruktur>
+          <UUID>b33be781-bf97-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>91</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>MCS88015</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>FEV1</LangtNavnTekst>
+          <ProducentKode>POT</ProducentKode>
+          <ProducentNavn>Patient målt</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst>&lt; 3,2</ResultatTekst>
+            <ResultatEnhedKode>Liter</ResultatEnhedKode>
+          </ResultatStruktur>
+          <MinRefTekst>1</MinRefTekst>
+          <MaxRefTekst>3</MaxRefTekst>
+          <AlarmIndikator>hoej</AlarmIndikator>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>HJEMMEMONITORERING</t>
+                <t>SPIROMETRI</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+        <LabSkemaStruktur>
+          <UUID>b33be782-bf97-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>91</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>MCS88016</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>FVC</LangtNavnTekst>
+          <ProducentKode>POT</ProducentKode>
+          <ProducentNavn>Patient målt</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst>&lt; 3,7</ResultatTekst>
+            <ResultatEnhedKode>Liter</ResultatEnhedKode>
+          </ResultatStruktur>
+          <MinRefTekst>unspecified</MinRefTekst>
+          <MaxRefTekst>unspecified</MaxRefTekst>
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>HJEMMEMONITORERING</t>
+                <t>SPIROMETRI</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+        <LabSkemaStruktur>
+          <UUID>b33be783-bf97-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>91</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>MCS88017</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>FEV1/FVC</LangtNavnTekst>
+          <ProducentKode>POT</ProducentKode>
+          <ProducentNavn>Patient målt</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst>85</ResultatTekst>
+            <ResultatEnhedKode>%</ResultatEnhedKode>
+          </ResultatStruktur>
+          <MinRefTekst>unspecified</MinRefTekst>
+          <MaxRefTekst>unspecified</MaxRefTekst>
+          <!--          <AlarmIndikator>unspecified kan ikke angives</AlarmIndikator>  -->
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>HJEMMEMONITORERING</t>
+                <t>SPIROMETRI</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+        <LabSkemaStruktur>
+          <UUID>b33be784-bf97-11e1-afa7-0800200c9a66</UUID>
+          <DatoTid>2006-05-04T18:13:51Z</DatoTid>
+          <AnalyseKodeStruktur>
+            <AnalyseTabelIdentifikator>91</AnalyseTabelIdentifikator>
+            <AnalyseKodeIdentifikator>MCS88017</AnalyseKodeIdentifikator>
+          </AnalyseKodeStruktur>
+          <LangtNavnTekst>FEV1/FVC</LangtNavnTekst>
+          <ProducentKode>POT</ProducentKode>
+          <ProducentNavn>Patient målt</ProducentNavn>
+          <ResultatStruktur>
+            <ResultatTekst>85</ResultatTekst>
+            <ResultatEnhedKode>%</ResultatEnhedKode>
+          </ResultatStruktur>
+          <MinRefTekst>unspecified</MinRefTekst>
+          <MaxRefTekst>unspecified</MaxRefTekst>
+          <!--          <AlarmIndikator>unspecified kan ikke angives</AlarmIndikator>  -->
+          <Tekst>
+            <p xmlns="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+              <r>
+                <t>HJEMMEMONITORERING</t>
+                <t>SPIROMETRI</t>
+              </r>
+            </p>
+          </Tekst>
+          <EndeligtSvarIndikator>true</EndeligtSvarIndikator>
+        </LabSkemaStruktur>
+
+      </LabSkemaSamling>
+
+    </PatientUdtraekStruktur>
+  </PLOUdtraekStruktur>
+</PLOFormatStruktur>

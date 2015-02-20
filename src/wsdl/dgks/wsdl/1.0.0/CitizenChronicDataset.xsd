@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+    <include schemaLocation="Citizen.xsd"/>
+    <include schemaLocation="GeneralPractitioner.xsd"/>
+    <include schemaLocation="Relative.xsd"/>
+    <include schemaLocation="Consent.xsd"/>
+    <include schemaLocation="KramPredictor.xsd"/>
+    <include schemaLocation="DiaryNoteCollection.xsd"/>
+    <include schemaLocation="MedicalInvestigationCollection.xsd"/>
+    <include schemaLocation="ContactPersonCollection.xsd"/>
+    <include schemaLocation="DiagnosisOfRelevanceCollection.xsd"/>
+    <include schemaLocation="CurrentDrugEffectuationCollection.xsd"/>
+    <include schemaLocation="LaboratoryReportCollection.xsd"/>
+    <include schemaLocation="HealthAndPreventionProfile.xsd"/>
+    <include schemaLocation="HealthProfessionalNoteCollection.xsd"/>
+    <include schemaLocation="AppointmentCollection.xsd"/>
+    <include schemaLocation="SelfMonitoredSampleCollection.xsd"/>
+    <include schemaLocation="PersonalGoalCollection.xsd"/>
+    
+    <element name="CitizenChronicDataset" type="mc:CitizenChronicDatasetType"/>
+    
+    <complexType name="CitizenChronicDatasetType">
+        <sequence>
+            <element ref="mc:Citizen"/>
+            <element ref="mc:GeneralPractitioner" minOccurs="0"/>
+            <element ref="mc:Relative" minOccurs="0"/>
+            <element ref="mc:ContactPersonCollection" minOccurs="0"/>
+            <element ref="mc:Consent" minOccurs="0"/>
+            <element ref="mc:KramPredictor" minOccurs="0"/>
+            <element ref="mc:MedicalInvestigationCollection" minOccurs="0"/>
+            <element ref="mc:DiagnosisOfRelevanceCollection" minOccurs="0"/>
+            <element ref="mc:DiaryNoteCollection" minOccurs="0"/>
+            <element ref="mc:CurrentDrugEffectuationCollection" minOccurs="0"/>
+            <element ref="mc:LaboratoryReportOfRelevanceCollection" minOccurs="0"/>
+            <element ref="mc:HealthAndPreventionProfile" minOccurs="0"/>
+            <element ref="mc:HealthProfessionalNoteCollection" minOccurs="0"/>
+            <element ref="mc:AppointmentCollection" minOccurs="0"/>
+            <element ref="mc:SelfMonitoredSampleCollection" minOccurs="0"/>
+            <element ref="mc:PersonalGoalCollection" minOccurs="0"/>
+        </sequence>
+    </complexType>
+</schema>

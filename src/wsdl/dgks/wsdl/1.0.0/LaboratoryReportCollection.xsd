@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="LaboratoryReport.xsd"/>
+    
+    <element name="LaboratoryReportCollection" type="mc:LaboratoryReportCollectionType"/>
+    <element name="LaboratoryReportOfRelevanceCollection" type="mc:LaboratoryReportCollectionType"/>
+    
+    <complexType name="LaboratoryReportCollectionType">
+        <sequence>
+            <element ref="mc:LaboratoryReport" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+</schema>

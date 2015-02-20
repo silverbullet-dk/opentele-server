@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Kim Vinter (Acure A/S) -->
+<xs:schema xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gepj="http://medinfo.dk/epj/proj/gepka/20030701/xml/schema" xmlns:dkcpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:include schemaLocation="BookingConfirmation.xsd"></xs:include>
+    <xs:include schemaLocation="ClinicalEmail.xsd"/>
+	<xs:include schemaLocation="LaboratoryAnalysisFile.xsd"/>
+	<xs:include schemaLocation="LaboratoryRequest.xsd"/>
+	<xs:include schemaLocation="GeneralElements.xsd"/>
+	<xs:include schemaLocation="GeneralTypes.xsd"/>
+	<xs:group name="Letters">
+		<xs:choice>
+			<xs:element ref="LaboratoryAnalysisFile"/>
+			<xs:element ref="LaboratoryRequest"/>
+		    <xs:element ref="ClinicalEmail"/>
+		    <xs:element ref="BookingConfirmation"/>
+		</xs:choice>
+	</xs:group>
+</xs:schema>

@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mc20040601="http://rep.oio.dk/medcom.dk/xml/schemas/2004/06/01/"
+	xmlns:mc20050807="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2005/08/07/"
+	xmlns:mc20060701="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/"
+	xmlns:mc20070201="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2007/02/01/"
+	xmlns:mc20080917="http://rep.oio.dk/medcom.dk/xml/schemas/2008/09/17/"
+	xmlns:mc20090801="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2009/08/01/"
+	xmlns:mc20110217="http://rep.oio.dk/medcom.dk/xml/schemas/2011/02/17/"
+	xmlns:mc20110615="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/15/"
+	xmlns:mc20110620="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+	xmlns:mc20120328="http://rep.oio.dk/medcom.dk/xml/schemas/2012/03/28/"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+	xmlns:tns="urn:oio:medcom:emessage:1.0.0" 
+	name="EMessageService"
+	targetNamespace="urn:oio:medcom:emessage:1.0.0">
+
+	<wsdl:types>
+		<xs:schema targetNamespace="http://rep.oio.dk/medcom.dk/xml/schemas/2004/06/01/" elementFormDefault="qualified">
+			<xs:include schemaLocation="EMessageService_2004_06_01.xsd"/>
+		</xs:schema>
+		
+		<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2005/08/07/" elementFormDefault="qualified">
+			<xs:include schemaLocation="EMessageService_2005_08_07.xsd"/>
+		</xs:schema>
+	
+		<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" elementFormDefault="qualified">
+			<xs:include schemaLocation="EMessageService_2006_07_01.xsd"/>
+		</xs:schema>
+		
+		<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2007/02/01/" elementFormDefault="qualified">
+				<xs:include schemaLocation="EMessageService_2007_02_01.xsd"/>
+		</xs:schema>
+		
+		<xs:schema targetNamespace="http://rep.oio.dk/medcom.dk/xml/schemas/2008/09/17/" elementFormDefault="qualified">
+			<xs:include schemaLocation="EMessageService_2008_09_17.xsd"/>
+		</xs:schema>
+		
+		<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2009/08/01/" elementFormDefault="qualified">
+				<xs:include schemaLocation="EMessageService_2009_08_01.xsd"/>
+		</xs:schema>
+		
+		<xs:schema targetNamespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/02/17/" elementFormDefault="qualified">
+			<xs:include schemaLocation="EMessageService_2011_02_17.xsd"/>
+		</xs:schema>
+
+		<xs:schema targetNamespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/15/" elementFormDefault="qualified">
+			<xs:include schemaLocation="EMessageService_2011_06_15.xsd"/>
+		</xs:schema>
+
+		<xs:schema targetNamespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/" elementFormDefault="qualified">
+			<xs:include schemaLocation="EMessageService_2011_06_20.xsd"/>
+		</xs:schema>
+
+		<xs:schema targetNamespace="http://rep.oio.dk/medcom.dk/xml/schemas/2012/03/28/" elementFormDefault="qualified">
+			<xs:include schemaLocation="EMessageService_2012_03_28.xsd"/>
+		</xs:schema>
+		
+		<xs:schema>
+			<xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="Fault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+
+	<wsdl:message name="FaultMessage">
+		<wsdl:part name="fault" element="mc:Fault"/>
+	</wsdl:message>
+	
+	<wsdl:message name="SendEMessageRequestMessage_2004_06_01">
+		<wsdl:part name="parameter" element="mc20040601:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2004_06_01">
+		<wsdl:part name="parameter" element="mc20040601:SendEMessageResponseMessage"/>
+	</wsdl:message>
+
+	<wsdl:message name="SendEMessageRequestMessage_2005_08_07">
+		<wsdl:part name="parameter" element="mc20050807:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2005_08_07">
+		<wsdl:part name="parameter" element="mc20050807:SendEMessageResponseMessage"/>
+	</wsdl:message>
+
+	<wsdl:message name="SendEMessageRequestMessage_2006_07_01">
+		<wsdl:part name="parameter" element="mc20060701:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2006_07_01">
+		<wsdl:part name="parameter" element="mc20060701:SendEMessageResponseMessage"/>
+	</wsdl:message>
+
+	<wsdl:message name="SendEMessageRequestMessage_2007_02_01">
+		<wsdl:part name="parameter" element="mc20070201:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2007_02_01">
+		<wsdl:part name="parameter" element="mc20070201:SendEMessageResponseMessage"/>
+	</wsdl:message>
+
+	<wsdl:message name="SendEMessageRequestMessage_2008_09_17">
+		<wsdl:part name="parameter" element="mc20080917:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2008_09_17">
+		<wsdl:part name="parameter" element="mc20080917:SendEMessageResponseMessage"/>
+	</wsdl:message>
+
+	<wsdl:message name="SendEMessageRequestMessage_2009_08_01">
+		<wsdl:part name="parameter" element="mc20090801:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2009_08_01">
+		<wsdl:part name="parameter" element="mc20090801:SendEMessageResponseMessage"/>
+	</wsdl:message>
+	
+	<wsdl:message name="SendEMessageRequestMessage_2011_02_17">
+		<wsdl:part name="parameter" element="mc20110217:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2011_02_17">
+		<wsdl:part name="parameter" element="mc20110217:SendEMessageResponseMessage"/>
+	</wsdl:message>
+
+	<wsdl:message name="SendEMessageRequestMessage_2011_06_15">
+		<wsdl:part name="parameter" element="mc20110615:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2011_06_15">
+		<wsdl:part name="parameter" element="mc20110615:SendEMessageResponseMessage"/>
+	</wsdl:message>
+
+	<wsdl:message name="SendEMessageRequestMessage_2011_06_20">
+		<wsdl:part name="parameter" element="mc20110620:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2011_06_20">
+		<wsdl:part name="parameter" element="mc20110620:SendEMessageResponseMessage"/>
+	</wsdl:message>
+
+	<wsdl:message name="SendEMessageRequestMessage_2012_03_28">
+		<wsdl:part name="parameter" element="mc20120328:SendEMessageRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendEMessageResponseMessage_2012_03_28">
+		<wsdl:part name="parameter" element="mc20120328:SendEMessageResponseMessage"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="EMessagePortType">
+		<wsdl:operation name="SendEMessage_2004_06_01">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2004_06_01"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2004_06_01"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+		
+		<wsdl:operation name="SendEMessage_2005_08_07">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2005_08_07"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2005_08_07"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2006_07_01">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2006_07_01"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2006_07_01"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2007_02_01">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2007_02_01"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2007_02_01"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2008_09_17">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2008_09_17"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2008_09_17"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2009_08_01">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2009_08_01"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2009_08_01"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2011_02_17">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2011_02_17"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2011_02_17"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2011_06_15">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2011_06_15"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2011_06_15"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2011_06_20">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2011_06_20"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2011_06_20"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2012_03_28">
+			<wsdl:input message="tns:SendEMessageRequestMessage_2012_03_28"/>
+			<wsdl:output message="tns:SendEMessageResponseMessage_2012_03_28"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="EMessageBinding" type="tns:EMessagePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="SendEMessage_2004_06_01">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2005_08_07">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	
+		<wsdl:operation name="SendEMessage_2006_07_01">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2007_02_01">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2008_09_17">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2009_08_01">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2011_02_17">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2011_06_15">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2011_06_20">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+
+		<wsdl:operation name="SendEMessage_2012_03_28">
+			<soap:operation soapAction="SendEMessage"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name="EMessageService">
+		<wsdl:port name="EMessagePort" binding="tns:EMessageBinding">
+			<soap:address location="http://localhost/NoServiceHere"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

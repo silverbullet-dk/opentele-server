@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">PatientMasterDataService</service>
+        <port xml:space="preserve">PatientMasterDataPort</port>
+        <operation xml:space="preserve">CreateUpdatePatientMasterData</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/PatientMasterDataService.asmx</URL>
+        <action xml:space="preserve">CreateUpdatePatientMasterData</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:patient-master-data:1.0.0&quot;
+    xmlns:ns1=&quot;http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/&quot;&gt;
+    &lt;SOAP-ENV:Header/&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;ns0:CreateUpdatePatientMasterDataRequestMessage&gt;
+        	&lt;ns0:CivilRegistrationNumber&gt;2512484916&lt;/ns0:CivilRegistrationNumber&gt;
+            &lt;ns0:Borger&gt;
+            	&lt;ns1:CPR&gt;2512484916&lt;/ns1:CPR&gt;
+            	&lt;ns1:Fornavn&gt;Fornavn_k_26&lt;/ns1:Fornavn&gt;
+            	&lt;ns1:Efternavn&gt;Efternavn_k_26&lt;/ns1:Efternavn&gt;
+                &lt;ns1:FoedselsDato&gt;1966-05-21&lt;/ns1:FoedselsDato&gt;
+                &lt;ns1:Koen&gt;K&lt;/ns1:Koen&gt;/&gt;
+            	&lt;ns1:Vej&gt;Adresse_k_26&lt;/ns1:Vej&gt;
+                &lt;ns1:Postnummer&gt;9998&lt;/ns1:Postnummer&gt;
+            	&lt;ns1:By&gt;By_k_26&lt;/ns1:By&gt;
+                &lt;ns1:Kontakttelefon&gt;99999999&lt;/ns1:Kontakttelefon&gt;
+                &lt;ns1:eMail&gt;ptmail@ukendtDomain.dk&lt;/ns1:eMail&gt;
+            &lt;/ns0:Borger&gt;
+        &lt;/ns0:CreateUpdatePatientMasterDataRequestMessage&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

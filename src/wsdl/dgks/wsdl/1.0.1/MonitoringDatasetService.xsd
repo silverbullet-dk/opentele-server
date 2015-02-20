@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+    xmlns:tns="urn:oio:medcom:monitoringdataset:1.0.1"
+    xmlns:mc100="urn:oio:medcom:chronicdataset:1.0.0"
+    xmlns:mc101="urn:oio:medcom:chronicdataset:1.0.1"
+    targetNamespace="urn:oio:medcom:monitoringdataset:1.0.1" elementFormDefault="qualified">
+
+    <xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="../1.0.0/UuidIdentifier.xsd"/>
+    
+    <xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+        schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/>
+    <xs:import namespace="urn:oio:medcom:chronicdataset:1.0.1" schemaLocation="CitizenMonitoringDataset.xsd"/>
+
+
+    <xs:element name="GetMonitoringDatasetRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+                <xs:element name="FromDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="ToDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+                <xs:element name="MaximumReturnedMonitorering" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetMonitoringDatasetResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mc101:CitizenMonitoringDataset"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CreateMonitoringDatasetRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+                <xs:element ref="mc101:SelfMonitoredSample" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="CreateMonitoringDatasetResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mc100:UuidIdentifier" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeleteMonitoringDatasetRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+                <xs:element ref="mc100:UuidIdentifier" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeleteMonitoringDatasetResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

@@ -1,0 +1,126 @@
+{
+	"title": "Blod sugar levels",
+	"nodes": {
+		"measurement2": {
+			"headline": "Blood sugar levels",
+			"id": "measurement2",
+			"position": {
+				"top": 392,
+				"left": 315
+			},
+			"measurementType": "BLOODSUGAR",
+			"measurementForm": "automatic",
+			"shortText": "Blood sugar levels",
+			"type": "measurement"
+		},
+		"input4": {
+			"id": "input4",
+			"position": {
+				"top": 535,
+				"left": 557
+			},
+			"dataType": "BOOLEAN",
+			"shortText": "Skip blood sugar level measurement?",
+			"question": "Are you sure you want to skip the blood sugar level measurement?",
+			"type": "input"
+		},
+		"end5": {
+			"id": "end5",
+			"position": {
+				"top": 870,
+				"left": 408
+			},
+			"type": "end"
+		},
+		"start1": {
+			"id": "start1",
+			"position": {
+				"top": 228,
+				"left": 314
+			},
+			"type": "start"
+		},
+		"measurement6": {
+			"headline": "Bloodsugar levels measurement",
+			"id": "measurement6",
+			"position": {
+				"top": 742,
+				"left": 708
+			},
+			"measurementType": "BLOODSUGAR",
+			"measurementForm": "automatic",
+			"shortText": "Blood sugar levels",
+			"type": "measurement"
+		}
+	},
+	"connections": [
+		{
+			"source": "start1",
+			"target": "measurement2",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement2",
+			"target": "input4",
+			"severity": "",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		},
+		{
+			"source": "input4",
+			"target": "end5",
+			"choiceValue": "true",
+			"severity": "",
+			"type": "choice"
+		},
+		{
+			"source": "input4",
+			"target": "measurement6",
+			"choiceValue": "false",
+			"severity": "",
+			"type": "choice"
+		},
+		{
+			"source": "measurement6",
+			"target": "end5",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement6",
+			"target": "end5",
+			"severity": "",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		},
+		{
+			"source": "measurement2",
+			"target": "end5",
+			"severity": "",
+			"type": "normal"
+		}
+	],
+	"standardSchedule": {
+		"type": "UNSCHEDULED",
+		"reminderStartMinutes": "30",
+		"introPeriodWeeks": "4",
+		"dayInterval": "2",
+		"startingDate": "22-11-2013",
+		"specificDate": "22-11-2013",
+		"timesOfDay": [
+			{
+				"hour": "00",
+				"minute": "00"
+			}
+		],
+		"reminderTime": {
+			"hour": "10",
+			"minute": "00"
+		},
+		"blueAlarmTime": {
+			"hour": "23",
+			"minute": "59"
+		}
+	}
+}

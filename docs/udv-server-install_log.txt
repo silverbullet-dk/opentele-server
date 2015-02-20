@@ -1,0 +1,307 @@
+Forudsætning: 
+Installeret og kørende CentOS 5.6 instans
+
+
+1) Installation af mysql
+
+Henter pakker med wget
+
+# wget http://dev.mysql.com/get/Downloads/MySQL-5.5/MySQL-server-5.5.20-1.linux2.6.i386.rpm/from/http://mirrors.dotsrc.org/mysql/
+
+# wget http://dev.mysql.com/get/Downloads/MySQL-5.5/MySQL-client-5.5.20-1.linux2.6.i386.rpm/from/http://mirrors.dotsrc.org/mysql/
+
+# wget http://dev.mysql.com/get/Downloads/MySQL-5.5/MySQL-shared-compat-5.5.20-1.linux2.6.i386.rpm/from/http://mirrors.dotsrc.org/mysql/
+
+# rpm -i MySQL-server-5.5.20-1.linux2.6.i386.rpm 
+# rpm -i MySQL-shared-compat-5.5.20-1.linux2.6.i386.rpm 
+# rpm -i MySQL-client-5.5.20-1.linux2.6.i386.rpm
+
+
+
+Initier MySQL ved at kalde "/etc/init.d/mysqld start"
+
+Kør mysql_install_db for at færdiggøre installationen:
+# /usr/bin/mysql_install_db
+
+Kør /usr/bin/mysql_secure_installation
+Angiv root password og fjern anonym adgang
+
+
+Set root password? [Y/n] Y
+Remove anonymous users? [Y/n] Y
+Disallow root login remotely? [Y/n] Y
+Remove test database and access to it? [Y/n] Y
+Reload privilege tables now? [Y/n] Y
+
+Log på mysql fra shellen, med kommandoen:
+
+mysql -uroot -p
+
+- Angiv password
+
+Opret opentele database + login med kommandoerne:
+
+create database opentele character set utf8; 
+
+GRANT SELECT, INSERT, UPDATE, CREATE, DELETE, DROP, ALTER, INDEX on opentele.* TO 'opentele'@'localhost' IDENTIFIED BY 'opentele';
+
+flush privileges;
+
+Afslut mysql shell'en med "exit"
+
+
+Sæt Mysql til at starte op automatisk:
+chkconfig --level 2345 mysql on
+
+Tilpas /etc/init.d/mysql
+I headeren tilrettes #chkconfig linien, så den bliver til: (den er det sandsynligvis allerede ..)
+# chkconfig: 2345 64 36
+
+
+
+Installér Java
+
+Forudsætning: Downloadet Java SE Development Kit 6u30 fra java.com (jdk-6u30-linux-i586-rpm.bin).
+
+Skift til biblioteket hvor JDKʼet (ikke JRE'et) blev downloadet til. Bemærk at ”6u30” står for ”JDK 6 Update 30” – det skal tilpasses til den faktiske version, der blev downloadet.
+Skift rettigheder for ”bin” filen med:
+# chmod a+x jdk-6u30-linux-i586-rpm.bin
+
+Eksekver filen. Skriv nedenstående kommando og tryk <enter>: 
+# ./jdk-6u16-linux-i586-rpm.bin
+Filerne udpakkes og installeres nu..
+
+Tryk <enter> når programmet beder om det. 
+Java er nu installeret under:
+
+/usr/java/jdk1.6.0_30/
+Lav ”java.sh” script i /etc/profile.d med indhold: 
+
+export JDK_HOME=/usr/java/jdk1.6.0_30 
+export PATH=$JDK_HOME/bin:$PATH
+
+Skift rettigheder for filen med chmod 755 /etc/profile.d/java.sh
+
+
+Installer Tomcat
+* Indtil videre på port 80, uden admin webapp.
+
+Hent Tomcat 7.0.25 som tar.gz fil
+
+ap	
+ 
+Udpak med:
+tar xvzf apache-tomcat-7.0.25.tar.gz 
+
+Flyt det udpakkede bibliotek til /srv:
+mv apache-tomcat-7.0.25 /srv/
+
+Lav symbolsk link til Tomcat installationen:
+ln -s /srv/apache-tomcat-7.0.25 /tomcat
+
+Hent f.eks. tomcat daemon script (i tomcat.zip) fra: http://www.satollo.net/wp-content/plugins/download-monitor/download.php?id=13
+
+Udpak
+
+Kopier filen (tomcat) til /etc/init.d, og skift rettigheder/permissions med:
+
+# chown root:root /etc/init.d/tomcat
+
+# chmod a+x /etc/init.d/tomcat
+
+Skift stierne i scriptet, så de peger på korrekt placering af tomcat (/tomcat)
+
+
+To install the script for various runlevels, I ran
+
+chkconfig --add tomcat
+
+it will be marked as “on” for runlevel 3, 4, 5 (I’m interested in rulevel 5). To see the configuration of all services, you can run
+
+/sbin/chkconfig --list
+
+On my server Apache was installed and running and I need to stop it to free the port 80. So I marked it as “off” for every runlevel:
+/sbin/chkconfig httpd off
+and then I stopped it:
+/etc/init.d/httpd stop
+
+
+Now it’s time to configure and then try to run Tomcat. Firstly I changed the configuration
+
+/tomcat/conf/server.xml
+
+to make it listen to the port 80. Find the string port=”8080″ and change it to port=”80″. Easy. OBS: TO steder.. Skkift også redirectport fra 8443 til 443!
+
+Gammel vane: Slet alle *.bat filerne i /tomcat/bin
+
+To run Tomcat has to be configured with the Java path. Remember we are using a JDK so we need to set the environment variable JAVA_HOME. I did it creating the file “setenv.sh” in /usr/tomcat/bin. This file is used by startup and shutdown scripts, without modify them or the catalina.sh script (this is a good practice for future Tomcat upgrade). The file content will be:
+
+export JAVA_HOME=/usr/java/latest
+export CATALINA_PID=/var/run/tomcat.pid
+
+The CATALINA_PID variable force Tomcat to create the pid file of the process, useful to kill it. Note that a shutdown of Tomcat can be done in two way. With the call:
+
+/usr/tomcat/bin/shutdown
+
+the same call made from our deamon script, or
+
+/usr/tomcat/bin/shutdown -force
+
+which make the script to wait a little and if the process doesn’t terminate it will be killed (using the pid). You can modify the deamon script to shutdown with “force” (I do it everytime). To start and stop Tomcat:
+
+/etc/init.d/tomcat start
+
+/etc/init.d/tomcat stop
+
+
+Opsætning ad Tomcat admin app:
+
+Rediger:
+/tomcat/conf/tomcat-users.xml
+
+Tomcat admin app pw sættes til: XxX
+Brugeren icadmin oprettes… Og tildeles admin+manager-gui rollerne
+(Husk at slå udkommenteringen fra..)
+Klip fra tomcat-users.xml:
+...
+  <role rolename="manager-gui"/>     
+  <role rolename="tomcat"/>
+  <role rolename="admin-gui"/>
+<user username="teleadmin" password="XxX" roles="tomcat,manager-gui,admin-gui"/>
+
+
+Access-logning enables ved at fjerne udkommenteringen nederst i /tomcat/conf/server.xml:
+
+<!-- Access log processes all example.
+             Documentation at: /docs/config/valve.html -->
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"
+               prefix="access_log." suffix=".log" 
+               pattern="%h %l %u %t &quot;%r&quot; %s %b" resolveHosts="false"/>
+
+Ryd op i Tomcat indstillingerne. F.eks. ved at følge retningslinierne på:
+http://www.owasp.org/index.php/Securing_tomcat#UNIX
+
+
+Indsat error-page direktiv nederst i conf/web.xml og tilføj simple fejlsider, som ikke afslører hvilken appserver serveren afvikler..
+
+Web.xml:
+…
+    </welcome-file-list>
+<error-page>
+   <error-code>401</error-code>
+   <location>/401.jsp</location>
+</error-page>
+<error-page>
+   <error-code>403</error-code>
+   <location>/403.jsp</location>
+</error-page>
+<error-page>
+   <error-code>404</error-code>
+   <location>/404.jsp</location>
+</error-page>
+</web-app>
+
+
+Docs web-appen fjernes fra tomcat ved at slette webapps/docs
+
+Fjern evt. filer fra webapps/ROOT mappen og opret 401.jsp, 403.jsp og 404.jsp ud fra nedenstående eksempel..
+Opret også en tom index.jsp fil!
+
+
+Eksempel: 401.jsp
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+   <title>401: Unauthorized</title>
+   <meta http-equiv="Content-type" content="text/html; charset=ISO-8859-1" />
+</head>
+<body>
+<h1>401: Unauthorized</h1>
+</body>
+</html>
+
+
+
+Diable/shutdown sendmail:
+[root@HRA-KKJ-Test ]# chkconfig --del sendmail
+[root@HRA-KKJ-Test ]# /etc/init.d/sendmail stop
+
+
+
+Boot serveren, og chek at tomcat og MySQL starter op korrekt efterfølgende!
+# shutdown -r now
+
+
+
+Opsætning af Tomcat med SSL:
+
+Ikke officielt certifikat (til test formål)
+
+
+Følger vejledning på http://tomcat.apache.org/tomcat-7.0-doc/ssl-howto.html
+
+1) Opret certificate keystore:
+/usr/java/latest/bin/keytool -genkey -alias tomcat -keyalg RSA
+Sæt adgangskode til "changeit"
+
+2) Uncomment the "SSL HTTP/1.1 Connector" entry in /tomcat/conf/server.xml and modify as described in the Configuration section below.
+
+Skift port til 443 i connector sektionen..
+
+OBS: If you change the port number here, you should also change the value specified for the redirectPort attribute on the non-SSL connector. This allows Tomcat to automatically redirect users who attempt to access a page with a security constraint specifying that SSL is required, as required by the Servlet Specification.
+
+TIlføj til SSL connectoren definitionen i server.xml:
+keystoreFile="${user.home}/.keystore" keystorePass="changeit"
+
+
+OBS: Slå evt. connectoren på port 80 fra, ved at udkommentere den i server.xml!
+
+
+
+
+
+
+
+Officielt certifikat (til prod)
+
+Forudsætning: Certifikat til serveren (f.eks. købt hos GoDaddy.com)
+
+
+
+Følgende baseret på vejledning fra http://help.godaddy.com/topic/742/article/5239
+
+Installation Option Two: Install the SSL Certificate and Intermediate Certificate Separately
+Installing Root and Intermediate Certificates
+
+Once you have downloaded the certificates to your local machine, please use the following keytool commands to import them:
+
+Root:
+keytool -import -alias root -keystore tomcat.keystore -trustcacerts -file valicert_class2_root.crt
+
+First intermediate (gd_cross_intermediate.crt):
+keytool -import -alias cross -keystore tomcat.keystore -trustcacerts -file gd_cross_intermediate.crt
+
+Second intermediate (gd_intermediate.crt):
+keytool -import -alias intermed -keystore tomcat.keystore -trustcacerts -file gd_intermediate.crt
+Installing SSL Certificate
+
+Use the following command to import the issued certificate into your keystore.
+keytool -import -alias tomcat -keystore tomcat.keystore -trustcacerts -file <name of your certificate>
+Updating the server.xml Configuration File
+
+When you have completed installing your certificate, you must configure your Tomcat server.xml configuration file to point to the correct keystore file:
+
+    Open the server.xml file.
+    After uncommenting the SSL/TLS connector from server.xml, locate the following text section:
+    <Factory className="org.apache.coyote.tomcat4.CoyoteServerSocketFactory" clientAuth="false" protocol="TLS" />
+    Add the "keystoreFile" and "keystorePass directives:
+    <Factory className="org.apache.coyote.tomcat4.CoyoteServerSocketFactory" clientAuth="false" protocol="TLS" keystoreFile="/full/path/to/tomcat.keystore" keystorePass="changeit" />
+    Restart Tomcat.
+
+
+
+
+
+
+
+

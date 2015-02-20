@@ -1,0 +1,305 @@
+{
+    "title": "RH KOL-Spørgetræ (Manuel)",
+    "version": 3,
+    "nodes": {
+        "measurement3": {
+            "headline": "Iltmætning",
+            "id": "measurement3",
+            "position": {
+                "top": 240,
+                "left": 507
+            },
+            "measurementType": "SATURATION",
+            "measurementForm": "manual",
+            "shortText": "Iltmætning",
+            "type": "measurement"
+        },
+        "text2": {
+            "id": "text2",
+            "position": {
+                "top": 131,
+                "left": 432
+            },
+            "text": "Iltmåling\nVarm din finger godt op.\nNår din finger er varm, sættes iltmåleren på",
+            "type": "text"
+        },
+        "start1": {
+            "id": "start1",
+            "position": {
+                "top": 19,
+                "left": 507
+            },
+            "type": "start"
+        },
+        "measurement8": {
+            "headline": "Stil dig på vægten uden at støtte dig til noget. Indtast din vægt",
+            "id": "measurement8",
+            "position": {
+                "top": 892,
+                "left": 853
+            },
+            "measurementType": "WEIGHT",
+            "measurementForm": "manual",
+            "shortText": "Vægt",
+            "type": "measurement"
+        },
+        "measurement5": {
+            "headline": "Iltmætning",
+            "id": "measurement5",
+            "position": {
+                "top": 477,
+                "left": 886
+            },
+            "measurementType": "SATURATION",
+            "measurementForm": "manual",
+            "shortText": "Iltmætning",
+            "type": "measurement"
+        },
+        "measurement6": {
+            "headline": "Stil dig på vægten uden at støtte dig til noget. Indtast din vægt",
+            "id": "measurement6",
+            "position": {
+                "top": 593,
+                "left": 537
+            },
+            "measurementType": "WEIGHT",
+            "measurementForm": "manual",
+            "shortText": "Vægt",
+            "type": "measurement"
+        },
+        "input4": {
+            "id": "input4",
+            "position": {
+                "top": 364,
+                "left": 794
+            },
+            "dataType": "BOOLEAN",
+            "shortText": "Udelad itlmætning",
+            "question": "Er du sikker på at du vil udelade at måle iltmætning",
+            "type": "input"
+        },
+        "input7": {
+            "id": "input7",
+            "position": {
+                "top": 725,
+                "left": 831
+            },
+            "dataType": "BOOLEAN",
+            "shortText": "Udelad vægt",
+            "question": "Er du sikker på at du vil udelade at måle vægt",
+            "type": "input"
+        },
+        "input12": {
+            "id": "input12",
+            "position": {
+                "top": 1516,
+                "left": 526
+            },
+            "dataType": "BOOLEAN",
+            "shortText": "Mere betændt",
+            "question": "Har din slim ændret farve?",
+            "type": "input"
+        },
+        "input11": {
+            "id": "input11",
+            "position": {
+                "top": 1364,
+                "left": 531
+            },
+            "dataType": "BOOLEAN",
+            "shortText": "Mere slim",
+            "question": "Har mere slim end vanligt?",
+            "type": "input"
+        },
+        "input9": {
+            "id": "input9",
+            "position": {
+                "top": 1017,
+                "left": 514
+            },
+            "dataType": "BOOLEAN",
+            "shortText": "Mere åndenød",
+            "question": "Har du mere åndenød end vanligt?",
+            "type": "input"
+        },
+        "input10": {
+            "id": "input10",
+            "position": {
+                "top": 1205,
+                "left": 526
+            },
+            "dataType": "BOOLEAN",
+            "shortText": "Mere hoste",
+            "question": "Har mere hoste en vanligt",
+            "type": "input"
+        },
+        "end13": {
+            "id": "end13",
+            "position": {
+                "top": 1686,
+                "left": 538
+            },
+            "type": "end"
+        }
+    },
+    "connections": [
+        {
+            "source": "start1",
+            "target": "text2",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "text2",
+            "target": "measurement3",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement3",
+            "target": "input4",
+            "severity": "",
+            "measurementSkipped": "true",
+            "type": "measurementSkipped"
+        },
+        {
+            "source": "input4",
+            "target": "measurement5",
+            "choiceValue": "false",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input4",
+            "target": "measurement6",
+            "choiceValue": "true",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "measurement5",
+            "target": "measurement6",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement5",
+            "target": "measurement6",
+            "severity": "",
+            "measurementSkipped": "true",
+            "type": "measurementSkipped"
+        },
+        {
+            "source": "measurement3",
+            "target": "measurement6",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement6",
+            "target": "input7",
+            "severity": "",
+            "measurementSkipped": "true",
+            "type": "measurementSkipped"
+        },
+        {
+            "source": "input7",
+            "target": "measurement8",
+            "choiceValue": "false",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "measurement6",
+            "target": "input9",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "input7",
+            "target": "input9",
+            "choiceValue": "true",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "measurement8",
+            "target": "input9",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement8",
+            "target": "input9",
+            "severity": "",
+            "measurementSkipped": "true",
+            "type": "measurementSkipped"
+        },
+        {
+            "source": "input9",
+            "target": "input10",
+            "choiceValue": "true",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input9",
+            "target": "input10",
+            "choiceValue": "false",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input10",
+            "target": "input11",
+            "choiceValue": "false",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input10",
+            "target": "input11",
+            "choiceValue": "true",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input11",
+            "target": "input12",
+            "choiceValue": "true",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input11",
+            "target": "input12",
+            "choiceValue": "false",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input12",
+            "target": "end13",
+            "choiceValue": "true",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input12",
+            "target": "end13",
+            "choiceValue": "false",
+            "severity": "",
+            "type": "choice"
+        }
+    ],
+    "standardSchedule": {
+        "type": "UNSCHEDULED",
+        "weekdays": [],
+        "daysInMonth": [],
+        "dayInterval": 2,
+        "startingDate": "25/06/2013",
+        "specificDate": "",
+        "timesOfDay": [],
+        "reminderStartMinutes": 30
+    }
+}

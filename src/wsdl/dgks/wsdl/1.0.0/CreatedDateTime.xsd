@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0">
+    
+    <xs:element name="CreatedDateTime" type="xs:dateTime"/>
+    
+</xs:schema>

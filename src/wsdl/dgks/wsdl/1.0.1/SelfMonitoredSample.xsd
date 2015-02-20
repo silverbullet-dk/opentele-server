@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc100="urn:oio:medcom:chronicdataset:1.0.0" xmlns="urn:oio:medcom:chronicdataset:1.0.1"
+    xmlns:mc101="urn:oio:medcom:chronicdataset:1.0.1" targetNamespace="urn:oio:medcom:chronicdataset:1.0.1">
+
+    <xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="../1.0.0/1.0.0.xsd"/>
+    
+    <xs:include schemaLocation="MeasurementLocation.xsd"/>
+    <xs:include schemaLocation="LaboratoryReportExtendedCollection.xsd"/>
+    <xs:include schemaLocation="HealthCareProfessionalComment.xsd"/>
+    <xs:include schemaLocation="MeasuringCircumstances.xsd"/>
+    
+    <xs:element name="SelfMonitoredSample" type="mc101:SelfMonitoredSampleType"/>
+
+    <xs:complexType name="SelfMonitoredSampleType">
+        <xs:sequence>
+          <xs:element ref="mc101:LaboratoryReportExtendedCollection"/>
+          <xs:element ref="mc100:CreatedByText"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

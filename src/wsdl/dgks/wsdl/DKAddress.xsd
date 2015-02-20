@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Kim Vinter (Acure A/S) -->
+<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:cvr="http://rep.oio.dk/cvr.dk/xml/schemas/2002/06/28/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="GeneralElements.xsd"/>
+	<xs:element name="DKAddress" type="DKAddressType"/>
+	<xs:complexType name="DKAddressType">
+		<xs:sequence>
+			<xs:element ref="StreetName">
+				<xs:annotation>
+					<xs:documentation>Address</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="SuburbName" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Name of city, in case postal code and postal district is not sufficient</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="DistrictName">
+				<xs:annotation>
+					<xs:documentation>Postal district</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="PostCodeIdentifier">
+				<xs:annotation>
+					<xs:documentation>Postal code</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

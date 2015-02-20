@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0"
+    xmlns:fmk2008="http://www.dkma.dk/medicinecard/xml.schema/2008/06/01"
+    xmlns:fmk2009="http://www.dkma.dk/medicinecard/xml.schema/2009/01/01">
+    
+    <import schemaLocation="FMK/DKMA_EffectuationIdentifier.xsd" namespace="http://www.dkma.dk/medicinecard/xml.schema/2008/06/01"/>
+    <import schemaLocation="FMK/DKMA_DrugName.xsd" namespace="http://www.dkma.dk/medicinecard/xml.schema/2008/06/01"/>
+    <import schemaLocation="FMK/DKMA_DrugFormText.xsd" namespace="http://www.dkma.dk/medicinecard/xml.schema/2008/06/01"/>
+    <import schemaLocation="FMK/DKMA_DrugStrengthText.xsd" namespace="http://www.dkma.dk/medicinecard/xml.schema/2008/06/01"/>
+    <import schemaLocation="FMK/DKMA_IndicationFreeText.xsd" namespace="http://www.dkma.dk/medicinecard/xml.schema/2009/01/01"/>
+    <import schemaLocation="FMK/DKMA_DosageFreeText.xsd" namespace="http://www.dkma.dk/medicinecard/xml.schema/2009/01/01"/>
+    <import schemaLocation="FMK/DKMA_ATCCode.xsd" namespace="http://www.dkma.dk/medicinecard/xml.schema/2008/06/01"/>
+    
+    
+    <element name="DrugEffectuation" type="mc:DrugEffectuationType"/>
+    
+    <complexType name="DrugEffectuationType">
+        <sequence>
+            <element ref="fmk2008:EffectuationIdentifier"/>
+            <element name="CreatedDateTime" type="dateTime"/>
+            <element ref="fmk2008:DrugName"/>
+            <element ref="fmk2008:DrugFormText"/>
+            <element ref="fmk2008:DrugStrengthText"/>
+            <element ref="fmk2009:DosageFreeText"/>
+            <element name="AccordingToNeed" type="boolean" minOccurs="0"/>
+            <element ref="fmk2009:IndicationFreeText" minOccurs="0"/>
+            <element ref="fmk2008:ATCCode"/>
+            <element name="CreatedBy" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

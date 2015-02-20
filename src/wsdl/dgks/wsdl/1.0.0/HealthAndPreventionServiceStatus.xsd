@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <element name="HealthAndPreventionServiceStatus" type="mc:HealthAndPreventionServiceStatusType"/>
+    
+    <simpleType name="HealthAndPreventionServiceStatusType">
+        <restriction base="string">
+            <enumeration value="offered"/>
+            <enumeration value="finish"/>
+            <enumeration value="not_relevant"/>
+        </restriction>
+    </simpleType>
+    
+</schema>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+
+    <include schemaLocation="UuidIdentifier.xsd"/>
+    
+    <element name="CountyContactPerson" type="mc:ContactPersonType"/>
+    <element name="HospitalContactPerson" type="mc:ContactPersonType"/>
+    
+    <complexType name="ContactPersonType">
+        <sequence>
+            <element ref="mc:UuidIdentifier"/>
+            <element name="CreatedDateTime" type="dateTime"/>
+            <element name="ContactPersonDetailsText" type="string"/>
+            <element name="CreatedByText" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

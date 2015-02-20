@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" targetNamespace="urn:oio:medcom:chronicdataset:relative:1.0.0"
+    elementFormDefault="qualified">
+
+    <xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+        schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/>
+
+    <xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="Relative.xsd"/>
+
+    <xs:element name="CreateUpdateRelativeRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+                <xs:element name="Relative" type="mc:RelativeType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CreateUpdateRelativeResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteRelativeRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteRelativeResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

@@ -1,0 +1,76 @@
+{
+    "title": "Vægt (manuel)",
+    "nodes": {
+        "measurement3": {
+            "headline": "Mål din vægt og indtast resultatet i feltet nedenfor",
+            "id": "measurement3",
+            "position": {
+                "top": 146,
+                "left": 206
+            },
+            "measurementType": "WEIGHT",
+            "measurementForm": "manual",
+            "shortText": "Vægt",
+            "type": "measurement"
+        },
+        "start1": {
+            "id": "start1",
+            "position": {
+                "top": 20,
+                "left": 206
+            },
+            "type": "start"
+        },
+        "end2": {
+            "id": "end2",
+            "position": {
+                "top": 290,
+                "left": 208
+            },
+            "type": "end"
+        }
+    },
+    "connections": [
+        {
+            "source": "start1",
+            "target": "measurement3",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement3",
+            "target": "end2",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement3",
+            "target": "end2",
+            "severity": "YELLOW",
+            "measurementSkipped": "true",
+            "type": "measurementSkipped"
+        }
+    ],
+    "standardSchedule": {
+        "type": "UNSCHEDULED",
+        "reminderStartMinutes": "30",
+        "introPeriodWeeks": "4",
+        "dayInterval": "2",
+        "startingDate": "22-07-2013",
+        "specificDate": "12-03-2014",
+        "timesOfDay": [
+            {
+                "hour": "10",
+                "minute": "00"
+            }
+        ],
+        "reminderTime": {
+            "hour": "10",
+            "minute": "00"
+        },
+        "blueAlarmTime": {
+            "hour": "23",
+            "minute": "59"
+        }
+    }
+}

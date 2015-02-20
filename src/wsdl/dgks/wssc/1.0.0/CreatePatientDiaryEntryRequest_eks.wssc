@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">PatientDiaryService</service>
+        <port xml:space="preserve">PatientDiaryPort</port>
+        <operation xml:space="preserve">CreatePatientDiaryEntry</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/PatientDiaryService.asmx</URL>
+        <action xml:space="preserve">CreatePatientDiaryEntry</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:patient-diary:1.0.0&quot;
+	xmlns:ns1=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+	&lt;soap:Body&gt;
+		&lt;ns0:CreatePatientDiaryEntryRequestMessage&gt;
+			&lt;ns0:PersonCivilRegistrationIdentifier&gt;2512484916&lt;/ns0:PersonCivilRegistrationIdentifier&gt;
+			&lt;ns1:DiaryNote&gt;
+				&lt;ns1:UuidIdentifier&gt;9cf8b400-e155-11e1-9b23-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+				&lt;ns1:CreatedDateTime&gt;2012-08-08T07:35:12&lt;/ns1:CreatedDateTime&gt;
+				&lt;ns1:ContentsFormattedText&gt;Jeg sov meget dÃ¥rligt i nat, havde voldsom hovedpine.&lt;/ns1:ContentsFormattedText&gt;
+			&lt;/ns1:DiaryNote&gt;
+		&lt;/ns0:CreatePatientDiaryEntryRequestMessage&gt;
+	&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

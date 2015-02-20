@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">ConsentService</service>
+        <port xml:space="preserve">ConsentPort</port>
+        <operation xml:space="preserve">CreateUpdateConsent</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/ConsentService.asmx</URL>
+        <action xml:space="preserve">CreateUpdateConsent</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:consent:1.0.0&quot;
+	xmlns:ns1=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+	&lt;soap:Body&gt;
+		&lt;ns0:CreateUpdateConsentRequestMessage&gt;
+			&lt;ns0:PersonCivilRegistrationIdentifier&gt;2512484916&lt;/ns0:PersonCivilRegistrationIdentifier&gt;
+			&lt;ns0:Consent&gt;
+				&lt;ns1:ConsentDeclaredDateTime&gt;2012-08-07T12:30:50&lt;/ns1:ConsentDeclaredDateTime&gt;
+				&lt;ns1:ConsentGivenIndicator&gt;true&lt;/ns1:ConsentGivenIndicator&gt;
+			&lt;/ns0:Consent&gt;
+		&lt;/ns0:CreateUpdateConsentRequestMessage&gt;
+	&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

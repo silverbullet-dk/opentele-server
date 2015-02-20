@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    targetNamespace="urn:oio:medcom:chronicdataset:healthandprevention:1.0.0" elementFormDefault="qualified">
+
+    <xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+        schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/>
+    <xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="HealthAndPreventionProfile.xsd"/>
+    
+    <xs:element name="HealthAndPreventionProfileEntryRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+                <xs:element ref="mc:HealthAndPreventionProfile"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="HealthAndPreventionProfileEntryResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="UpdatedDateTime" type="xs:dateTime"/>
+                <xs:element name="UpdatedByText" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeleteHealthAndPreventionProfileEntryRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteHealthAndPreventionProfileEntryResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

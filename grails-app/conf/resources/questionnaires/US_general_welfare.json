@@ -1,0 +1,126 @@
+{
+	"title": "How are you feeling today",
+	"nodes": {
+		"input2": {
+			"id": "input2",
+			"position": {
+				"top": 244,
+				"left": 302
+			},
+			"dataType": "BOOLEAN",
+			"shortText": "Feeling well?",
+			"question": "Are you feeling well today?",
+			"type": "input"
+		},
+		"measurement3": {
+			"headline": "Please take your blood pressure",
+			"id": "measurement3",
+			"position": {
+				"top": 428,
+				"left": 468
+			},
+			"measurementType": "BLOOD_PRESSURE_PULSE",
+			"measurementForm": "automatic",
+			"shortText": "Blood pressure/pulse",
+			"type": "measurement"
+		},
+		"end5": {
+			"id": "end5",
+			"position": {
+				"top": 821,
+				"left": 425
+			},
+			"type": "end"
+		},
+		"start1": {
+			"id": "start1",
+			"position": {
+				"top": 75,
+				"left": 309
+			},
+			"type": "start"
+		},
+		"measurement4": {
+			"headline": "Please enter your weight",
+			"id": "measurement4",
+			"position": {
+				"top": 608,
+				"left": 422
+			},
+			"measurementType": "WEIGHT",
+			"measurementForm": "manual",
+			"shortText": "Weight",
+			"type": "measurement"
+		}
+	},
+	"connections": [
+		{
+			"source": "input2",
+			"target": "measurement3",
+			"choiceValue": "false",
+			"severity": "RED",
+			"type": "choice"
+		},
+		{
+			"source": "input2",
+			"target": "measurement4",
+			"choiceValue": "true",
+			"severity": "",
+			"type": "choice"
+		},
+		{
+			"source": "measurement3",
+			"target": "measurement4",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement3",
+			"target": "measurement4",
+			"severity": "",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		},
+		{
+			"source": "start1",
+			"target": "input2",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement4",
+			"target": "end5",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement4",
+			"target": "end5",
+			"severity": "",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		}
+	],
+	"standardSchedule": {
+		"type": "UNSCHEDULED",
+		"reminderStartMinutes": "30",
+		"introPeriodWeeks": "4",
+		"dayInterval": "2",
+		"startingDate": "22-11-2013",
+		"specificDate": "22-11-2013",
+		"timesOfDay": [
+			{
+				"hour": "10",
+				"minute": "00"
+			}
+		],
+		"reminderTime": {
+			"hour": "10",
+			"minute": "00"
+		},
+		"blueAlarmTime": {
+			"hour": "23",
+			"minute": "59"
+		}
+	}
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mc101:CitizenMonitoringDataset 
+ xmlns:mc101="urn:oio:medcom:chronicdataset:1.0.1"
+ xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+ xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+ xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/"
+ xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/"
+ xmlns:itst="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/"
+ xmlns:dkcc2005="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/">
+    <mc:Citizen>
+        <cpr:PersonCivilRegistrationIdentifier>2512484916</cpr:PersonCivilRegistrationIdentifier>
+        <itst:PersonNameStructure>
+            <dkcc:PersonGivenName>Nancy</dkcc:PersonGivenName>
+            <dkcc:PersonSurnameName>Berggren</dkcc:PersonSurnameName>
+        </itst:PersonNameStructure>
+        <xkom:AddressPostal>
+            <dkcc2005:StreetName>Skovvejen</dkcc2005:StreetName>
+            <dkcc:StreetBuildingIdentifier>12</dkcc:StreetBuildingIdentifier>
+            <dkcc2005:PostCodeIdentifier>8010</dkcc2005:PostCodeIdentifier>
+            <dkcc2005:DistrictName>Aarhus N</dkcc2005:DistrictName>
+        </xkom:AddressPostal>
+        <mc:PhoneNumberIdentifier>86121824</mc:PhoneNumberIdentifier>
+        <mc:EmailAddressIdentifier>nb@meail.dk</mc:EmailAddressIdentifier>
+    </mc:Citizen>
+    <mc101:SelfMonitoredSampleCollection>
+        <mc101:SelfMonitoredSample>
+            <mc101:LaboratoryReportExtendedCollection>
+                <mc101:LaboratoryReportExtended>
+                    <mc:UuidIdentifier>b33be781-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>FEV1</mc:AnalysisText>
+                    <mc:ResultText>3.2</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                    <mc:ResultUnitText>Liter</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>to_high</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>1</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>3</mc:ResultMaximumText>
+                    <mc101:ResultTypeOfInterval>therapeutic</mc101:ResultTypeOfInterval>
+                    <mc:NationalSampleIdentifier>9999999999</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88015</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                    <mc101:Instrument>
+                        <mc101:MedComID>EPQ12225</mc101:MedComID>
+                        <mc101:Manufacturer>AD Medical</mc101:Manufacturer>
+                        <mc101:ProductType>Multifunction Kit</mc101:ProductType>
+                        <mc101:Model>UA-767PTB-C</mc101:Model>
+                        <mc101:SoftwareVersion>10.0.3452r45</mc101:SoftwareVersion>
+                    </mc101:Instrument>
+                    <mc101:MeasurementTransferredBy>automatic</mc101:MeasurementTransferredBy>
+                    <mc101:MeasurementLocation>home</mc101:MeasurementLocation>
+                    <mc101:MeasuringDataClassification>clinical</mc101:MeasuringDataClassification>
+                    <mc101:MeasurementDuration>120 sek</mc101:MeasurementDuration>
+                    <mc101:MeasurementScheduled>scheduled</mc101:MeasurementScheduled>
+                    <mc101:HealthCareProfessionalComment>Pt. havde meget svært ved at puste igennem
+                        idag</mc101:HealthCareProfessionalComment>
+                    <mc101:MeasuringCircumstances>Udblæsningen blev foretaget siddende på en stol lige efter
+                        morgenmaden</mc101:MeasuringCircumstances>
+                </mc101:LaboratoryReportExtended>
+                <mc101:LaboratoryReportExtended>
+                    <mc:UuidIdentifier>b33be782-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>FVC</mc:AnalysisText>
+                    <mc:ResultText>3.7</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                    <mc:ResultUnitText>Liter</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>unspecified</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>unspecified</mc:ResultMaximumText>
+                    <mc101:ResultTypeOfInterval>therapeutic</mc101:ResultTypeOfInterval>
+                    <mc:NationalSampleIdentifier>999999991</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88016</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                    <mc101:Instrument>
+                        <mc101:MedComID>EPQ12225</mc101:MedComID>
+                        <mc101:Manufacturer>AD Medical</mc101:Manufacturer>
+                        <mc101:ProductType>Multifunction Kit</mc101:ProductType>
+                        <mc101:Model>UA-767PTB-C</mc101:Model>
+                        <mc101:SoftwareVersion>10.0.3452r45</mc101:SoftwareVersion>
+                    </mc101:Instrument>
+                    <mc101:MeasurementTransferredBy>automatic</mc101:MeasurementTransferredBy>
+                    <mc101:MeasurementLocation>home</mc101:MeasurementLocation>
+                    <mc101:MeasuringDataClassification>clinical</mc101:MeasuringDataClassification>
+                    <mc101:MeasurementDuration>120 sek</mc101:MeasurementDuration>
+                    <mc101:MeasurementScheduled>scheduled</mc101:MeasurementScheduled>
+                    <mc101:HealthCareProfessionalComment>Pt. havde meget svært ved at puste igennem
+                        idag</mc101:HealthCareProfessionalComment>
+                    <mc101:MeasuringCircumstances>Udblæsningen blev foretaget siddende på en stol lige efter
+                        morgenmaden</mc101:MeasuringCircumstances>
+                </mc101:LaboratoryReportExtended>
+                <mc101:LaboratoryReportExtended>
+                    <mc:UuidIdentifier>b33be783-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>FEV1/FVC</mc:AnalysisText>
+                    <mc:ResultText>85</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>%</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>unspecified</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>unspecified</mc:ResultMaximumText>
+                    <mc101:ResultTypeOfInterval>therapeutic</mc101:ResultTypeOfInterval>
+                    <mc:NationalSampleIdentifier>999999992</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88017</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                    <mc101:Instrument>
+                        <mc101:MedComID>EPQ12225</mc101:MedComID>
+                        <mc101:Manufacturer>AD Medical</mc101:Manufacturer>
+                        <mc101:ProductType>Multifunction Kit</mc101:ProductType>
+                        <mc101:Model>UA-767PTB-C</mc101:Model>
+                        <mc101:SoftwareVersion>10.0.3452r45</mc101:SoftwareVersion>
+                    </mc101:Instrument>
+                    <mc101:MeasurementTransferredBy>automatic</mc101:MeasurementTransferredBy>
+                    <mc101:MeasurementLocation>home</mc101:MeasurementLocation>
+                    <mc101:MeasuringDataClassification>clinical</mc101:MeasuringDataClassification>
+                    <mc101:MeasurementDuration>120 sek</mc101:MeasurementDuration>
+                    <mc101:MeasurementScheduled>scheduled</mc101:MeasurementScheduled>
+                    <mc101:HealthCareProfessionalComment>Pt. havde meget svært ved at puste igennem
+                        idag</mc101:HealthCareProfessionalComment>
+                    <mc101:MeasuringCircumstances>Udblæsningen blev foretaget siddende på en stol lige efter
+                        morgenmaden</mc101:MeasuringCircumstances>
+                </mc101:LaboratoryReportExtended>
+                <mc101:LaboratoryReportExtended>
+                    <mc:UuidIdentifier>b33be784-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>FEV i prc.</mc:AnalysisText>
+                    <mc:ResultText>78</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>%</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>unspecified</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>unspecified</mc:ResultMaximumText>
+                    <mc101:ResultTypeOfInterval>therapeutic</mc101:ResultTypeOfInterval>
+                    <mc:NationalSampleIdentifier>999999993</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88023</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                    <mc101:Instrument>
+                        <mc101:MedComID>EPQ12225</mc101:MedComID>
+                        <mc101:Manufacturer>AD Medical</mc101:Manufacturer>
+                        <mc101:ProductType>Multifunction Kit</mc101:ProductType>
+                        <mc101:Model>UA-767PTB-C</mc101:Model>
+                        <mc101:SoftwareVersion>10.0.3452r45</mc101:SoftwareVersion>
+                    </mc101:Instrument>
+                    <mc101:MeasurementTransferredBy>automatic</mc101:MeasurementTransferredBy>
+                    <mc101:MeasurementLocation>home</mc101:MeasurementLocation>
+                    <mc101:MeasuringDataClassification>clinical</mc101:MeasuringDataClassification>
+                    <mc101:MeasurementDuration>120 sek</mc101:MeasurementDuration>
+                    <mc101:MeasurementScheduled>scheduled</mc101:MeasurementScheduled>
+                    <mc101:HealthCareProfessionalComment>Pt. havde meget svært ved at puste igennem
+                        idag</mc101:HealthCareProfessionalComment>
+                    <mc101:MeasuringCircumstances>Udblæsningen blev foretaget siddende på en stol lige efter
+                        morgenmaden</mc101:MeasuringCircumstances>
+                </mc101:LaboratoryReportExtended>
+            </mc101:LaboratoryReportExtendedCollection>
+            <mc:CreatedByText>Helbredsprofilen</mc:CreatedByText>
+        </mc101:SelfMonitoredSample>
+    </mc101:SelfMonitoredSampleCollection>
+</mc101:CitizenMonitoringDataset>
+

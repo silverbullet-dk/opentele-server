@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:oio-med-com-kd="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+    xmlns:oio-med-com-clinic-e-mail="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/"
+    targetNamespace="urn:oio:medcom:clinical-e-mail:1.0.0"
+    elementFormDefault="qualified">
+   
+    <xs:import namespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/" schemaLocation="MedComKD_V0.2.xsd"/>
+    <xs:import namespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" schemaLocation="ClinicalEmail.xsd"/>
+    
+    <xs:element name="SendClinicalEMailRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element name="ClinicalEMail" type="oio-med-com-clinic-e-mail:ClinicalEmailType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="SendClinicalEMailResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="oio-med-com-kd:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

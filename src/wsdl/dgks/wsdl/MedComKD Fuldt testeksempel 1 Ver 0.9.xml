@@ -1,0 +1,877 @@
+<?xml version="1.0" encoding="UTF-8"?>		
+<MedComKD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/ MedComKD_V0.9.xsd"
+	xmlns="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/">
+	<Borger>
+		<CPR>2512484916</CPR>
+		<Fornavn>Nancy</Fornavn>
+		<Efternavn>Berggren</Efternavn>
+		<Vej>Skovvejen 12</Vej>
+		<Postnummer>8010</Postnummer>
+		<By>Aarhus N</By>
+		<Kontakttelefon>86121824</Kontakttelefon>
+		<eMail>nb@meail.dk</eMail>
+	</Borger>
+	<EgenLaege>
+		<Ydernummer>44164</Ydernummer>
+		<Praksis>Laegehuset</Praksis>
+		<Navn>Birte Hvam</Navn>
+		<Vej>Sundhedsgade 12</Vej>
+		<Postnummer>3400</Postnummer>
+		<By>Hilleroed</By>
+		<Kontakttelefon>87679911</Kontakttelefon>
+		<eMail>bh@mail.dk</eMail>
+	</EgenLaege>
+	<Paaroerende>
+		<Fornavn>Mads</Fornavn>
+		<Efternavn>Berggren</Efternavn>
+		<Vej>Skovejen12</Vej>
+		<Postnummer>8210</Postnummer>
+		<By>Aarhus N</By>
+		<Kontakttelefon>22348647</Kontakttelefon>
+		<eMail>at@mail.dk</eMail>
+	</Paaroerende>
+	<Kontakter>
+		<Sygehuskontakt>
+			<Kontakt>Birte Jensen, Afd A Tlf 9876543</Kontakt>
+			<ID>MYDv0X987663</ID>
+			<UdfoertAf>Birthe Jensen</UdfoertAf>
+		</Sygehuskontakt>
+		<Kommunekontakt>
+			<Kontakt>Lone Ejby, mail le@odense.dk</Kontakt>
+			<ID>MYDv0X987688</ID>
+			<UdfoertAf>Birthe Jensen</UdfoertAf>
+		</Kommunekontakt>
+	</Kontakter>
+	<Samtykke>
+		<Dato>2011-10-26T21:32:00</Dato>
+		<SamtykkeGivet>true</SamtykkeGivet>
+	</Samtykke>
+	<Kram>
+		<Vaegt>
+			<ID>9ff59d21-b07d-11e1-afa6-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>1346543221</AnalyseID>
+			<IUPAC>NPU03804</IUPAC>
+			<Analyse>Vaegt</Analyse>
+			<Resultat>77,6</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>kg</Enhed>
+			<Abnorm>uspecificeret</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Sundhedshuset, Assens</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</Vaegt>
+		<Hoejde>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T15:39:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<IUPAC>NPU03794</IUPAC>
+			<Analyse>Hoejde</Analyse>
+			<Resultat>1,76</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>m</Enhed>
+			<ProducentAfResultat>
+				<Producent>Sundhedshuset, Assens</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</Hoejde>
+		<Alkohol>
+			<ID>dade98c0-b07c-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-07T10:44:00</Dato>
+			<AnalyseID>99887766</AnalyseID>
+			<IUPAC>MCS88036</IUPAC>
+			<Analyse>Alkoholforbrug</Analyse>
+			<Resultat>15</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>genstande/u</Enhed>
+			<ProducentAfResultat>
+				<Producent>Patient målt</Producent>
+				<ProducentKode>POT</ProducentKode>
+			</ProducentAfResultat>
+		</Alkohol>
+		<Motion>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2011-03-18T10:09:00</Dato>
+			<AnalyseID>6543221123</AnalyseID>
+			<IUPAC>NPU88001</IUPAC>
+			<Analyse>Motion, antal timer om ugen</Analyse>
+			<Resultat>2</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>h/uge</Enhed>
+			<Min>3</Min>
+			<ProducentAfResultat>
+				<Producent>Patient målt</Producent>
+				<ProducentKode>POT</ProducentKode>
+			</ProducentAfResultat>
+		</Motion>
+	</Kram>
+	<LaegensUdredning>
+		<ID>MKDv0X9879</ID>
+		<Dato>2011-10-26T21:32:00</Dato>
+		<HenvisningsDiagnose>
+			<DiagnoseType>ICD10</DiagnoseType>
+			<DiagnoseKode>E10.0</DiagnoseKode>
+			<DiagnoseBeskrivelse>Sukkersyge, insulinkraevende</DiagnoseBeskrivelse>
+		</HenvisningsDiagnose>
+		<OensketYdelse>RYGE-A, AMBUS-C</OensketYdelse>
+		<Anamnese>Pt.har gennem laengere tid..</Anamnese>
+		<UdfoertAf>Laegehuset, Birte Hvam</UdfoertAf>
+	</LaegensUdredning>
+	<RelevanteDiagnoser>
+		<Diagnose>
+			<ID>MKDv0X987667</ID>
+			<Dato>2011-10-26T21:32:00</Dato>
+			<DiagnoseType>ICPC</DiagnoseType>
+			<DiagnoseKode>T 90</DiagnoseKode>
+			<DiagnoseBeskrivelse>Diabetes</DiagnoseBeskrivelse>
+			<UdfoertAf>Laegehuset, Birte Hvam</UdfoertAf>
+		</Diagnose>
+		<Diagnose>
+			<ID>MKDv0X9876gt</ID>
+			<Dato>2004-09-10T11:17:00</Dato>
+			<DiagnoseType>ICD10</DiagnoseType>
+			<DiagnoseKode>E13</DiagnoseKode>
+			<DiagnoseBeskrivelse>Sukkersyge, anden form</DiagnoseBeskrivelse>
+			<UdfoertAf>OUH, Afd N, Birte Jensen/L</UdfoertAf>
+		</Diagnose>
+	</RelevanteDiagnoser>
+	<MinDagbog>
+		<Notat>
+			<ID>MKDv0X98769</ID>
+			<Dato>2011-10-26T21:32:00</Dato>
+			<Tekst>Jeg sover daarligt, men jeg tror</Tekst>
+		</Notat>
+		<Notat>
+			<ID>MKDv0X98762</ID>
+			<Dato>2010-09-02T09:21:00</Dato>
+			<Tekst>Hovedpinen kommer igen naar..</Tekst>
+		</Notat>
+	</MinDagbog>
+	<AktuelMedicin>
+		<Medicin>
+			<ID>MKDv0X987645</ID>
+			<Dato>2009-08-21T00:00:00</Dato>
+			<FMK>PEM</FMK>
+			<Praeparat>Hjertemagnyl</Praeparat>
+			<Form>Tablet</Form>
+			<Styrke>75 mg</Styrke>
+			<Dosis>1 x dagligt   Mod hj..</Dosis>
+			<Type>Fast</Type>
+			<Indikation>Mod hjerteflimmer</Indikation>
+			<ATC>B01AC06</ATC>
+			<UdfoertAf>Apoteket Svanen</UdfoertAf>
+		</Medicin>
+		<Medicin>
+			<ID>MKDv0X987632</ID>
+			<Dato>2009-09-20T00:00:00</Dato>
+			<FMK>PEM</FMK>
+			<Praeparat>Hjertemagnyl</Praeparat>
+			<Form>Tablet</Form>
+			<Styrke>75 mg</Styrke>
+			<Dosis>1 x dagligt   Mod hj..</Dosis>
+			<Type>Fast</Type>
+			<Indikation>Mod hjerteflimmer</Indikation>
+			<ATC>B01AC06</ATC>
+			<UdfoertAf>Apoteket Svanen</UdfoertAf>
+		</Medicin>
+	</AktuelMedicin>
+	<RelevanteLabsvar>
+		<Labsvar>
+			<ID>MKDv0X9876ty</ID>
+			<Dato>2011-10-26T21:32:00</Dato>
+			<Analyse>LDLKolesterol</Analyse>
+			<Resultat>2,0</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>mmol/l</Enhed>
+			<Abnorm>uspecificeret</Abnorm>
+			<Max>3</Max>
+			<AnalyseID>5454545</AnalyseID>
+			<IUPAC>NPU01568</IUPAC>
+			<ProducentAfResultat>
+				<Producent>Biokemeisk Afd</Producent>
+				<ProducentKode>OUH</ProducentKode>
+			</ProducentAfResultat>
+		</Labsvar>
+		<Labsvar>
+			<ID>MKDv0X987645</ID>
+			<Dato>2010-11-09T13:23:00</Dato>
+			<Analyse>Haemoglobin A</Analyse>
+			<Resultat>7,0</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>mmol/l</Enhed>
+			<Abnorm>uspecificeret</Abnorm>
+			<AnalyseID>8767676</AnalyseID>
+			<IUPAC>NPU02321</IUPAC>
+			<ProducentAfResultat>
+				<Producent>Biokemeisk Afd</Producent>
+				<ProducentKode>OUH</ProducentKode>
+			</ProducentAfResultat>
+		</Labsvar>
+	</RelevanteLabsvar>
+	<Soft>
+		<ID>e6aced22-6de0-11e1-b0c4-0800200c9a89</ID>
+		<Dato>2012-06-06T15:15:30</Dato>
+		<Fysisktraening>
+			<SoftTilbudStatus>Tilbudt</SoftTilbudStatus>
+		</Fysisktraening>
+		<Patientuddannelse>
+			<SoftTilbudStatus>Gennemfoert</SoftTilbudStatus>
+		</Patientuddannelse>
+		<Rygestopkursus>
+			<SoftTilbudStatus>Ikke_aktuelt</SoftTilbudStatus>
+		</Rygestopkursus>
+		<Kostvejledning>
+			<SoftTilbudStatus>Gennemfoert</SoftTilbudStatus>
+		</Kostvejledning>
+		<UdfoertAf>Sundhed.dk</UdfoertAf>
+	</Soft>
+	<SKLNoter>
+		<Note>
+			<ID>MKDv0X987698</ID>
+			<Dato>2011-10-26T21:32:00</Dato>
+			<TYPE>LAEGE</TYPE>
+			<Titel>Plan</Titel>
+			<Tekst>Der er udarbejdet plan for det foelger</Tekst>
+			<UdfoertAf>Laegehuset, Helmer Petersen</UdfoertAf>
+		</Note>
+		<Note>
+			<ID>MKDv0X987698</ID>
+			<Dato>2010-08-12T10:00:10</Dato>
+			<TYPE>SYGEHUS</TYPE>
+			<Titel>AmbUS</Titel>
+			<Tekst>Pt. dd gennemfoert spiometriUS. Result..</Tekst>
+			<UdfoertAf>Herlev Hospital, Medicinsk Afdelin M</UdfoertAf>
+		</Note>
+		<Note>
+			<ID>MKDv0X989998</ID>
+			<Dato>2010-09-12T10:00:10</Dato>
+			<TYPE/>
+			<Titel>Kostplan</Titel>
+			<Tekst>Kostplan for Nancy: Morgen let diæt…</Tekst>
+			<UdfoertAf>Odense, Diætist Anne Ol.</UdfoertAf>
+		</Note>
+	</SKLNoter>
+	<Kalender>
+		<Aftale>
+			<ID>MKDv0X9876e3</ID>
+			<Dato>2010-07-08T14:00:00</Dato>
+			<Kode>RYG567</Kode>
+			<Tekst>Rygestop - 3 ugers aftenunderv, Borgerskolen - Tilbudt</Tekst>
+			<UdfoertAf>Rudersdal Kommune, Forebyggelsen</UdfoertAf>
+		</Aftale>
+		<Aftale>
+			<ID>MKDv0X9876io</ID>
+			<Dato>2010-08-11T00:00:00</Dato>
+			<Kode>HVA654</Kode>
+			<Tekst>Amb beh - Kontrolbesoeg paa Hvidovre, afd. A - Ansoegt</Tekst>
+			<UdfoertAf>Hvidovre Hospital, Medicinsk Afd</UdfoertAf>
+		</Aftale>
+		<Aftale>
+			<ID>MKDv0X9876YU</ID>
+			<Dato>2010-08-11T00:00:00</Dato>
+			<Kode>SPI5662</Kode>
+			<Tekst>Spirometer- Monitoreringsbox til hjemme - Ansoegt</Tekst>
+			<UdfoertAf>Rudersdal Kommune, Forebyggelsen</UdfoertAf>
+		</Aftale>
+		<Aftale>
+			<ID>MKDv0X9876VP</ID>
+			<Dato>2010-08-11T10:00:00</Dato>
+			<Kode>YNR967</Kode>
+			<Tekst>Lægebesøg - Opfoelgning hos egen læge - Udfoert</Tekst>
+			<UdfoertAf>Lægehuset, Sundhedsgade 12, Birte Hvam</UdfoertAf>
+		</Aftale>
+	</Kalender>
+	<MonitoreringOgMaal>
+		<Spirometri>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<FEV1>
+				<IUPAC>MCS88015</IUPAC>
+				<Analyse>FEV1</Analyse>
+				<Resultat>3</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>Liter</Enhed>
+				<Abnorm>uspecificeret</Abnorm>
+			</FEV1>
+			<FVC>
+				<IUPAC>MCS88016</IUPAC>
+				<Analyse>FVC</Analyse>
+				<Resultat>3,5</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>Liter</Enhed>
+				<Abnorm>uspecificeret</Abnorm>
+			</FVC>
+			<FEV1FVCRatio>
+				<IUPAC>MCS88017</IUPAC>
+				<Analyse>FEV1FVCRatio i procent</Analyse>
+				<Resultat>85</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>Prc</Enhed>
+				<Abnorm>uspecificeret</Abnorm>
+			</FEV1FVCRatio>
+			<FEV1Pct>
+				<IUPAC>MCS88023</IUPAC>
+				<Analyse>FEV1 i procent af normal</Analyse>
+				<Resultat>70</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>Prc</Enhed>
+			</FEV1Pct>
+			<UdfoertAf>OUH, KKA</UdfoertAf>
+		</Spirometri>
+		<MRC>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<IUPAC>MCS88021</IUPAC>
+			<Analyse>MRC Aandenoed</Analyse>
+			<Resultat>3</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>Uspecificeret</Enhed>
+			<Min>1</Min>
+			<Max>5</Max>
+			<Abnorm>for_lav</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Laegehuset, Birte Hvam</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</MRC>
+		<NYHA>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>654324721</AnalyseID>
+			<IUPAC>MCS88032</IUPAC>
+			<Analyse>NYHA Aandenoed</Analyse>
+			<Resultat>4</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>Uspecificeret</Enhed>
+			<Min>1</Min>
+			<Max>4</Max>
+			<Abnorm>for_lav</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Laegehuset, Birte Hvam</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</NYHA>
+		<Iltmaetning>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2011-01-17T15:34:00</Dato>
+			<AnalyseID>6543546</AnalyseID>
+			<IUPAC>NPUXXXX mangler</IUPAC>
+			<Analyse>Målt iltindhold i prc af det maksimale ilttryk</Analyse>
+			<Resultat>45</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>Prc</Enhed>
+			<Min>0</Min>
+			<Max>100</Max>
+			<Abnorm>for_lav</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Laegehuset, Birte Hvam</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</Iltmaetning>
+		<INR>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2011-01-17T15:34:00</Dato>
+			<AnalyseID>6543546</AnalyseID>
+			<IUPAC>NPUXXXX mangler</IUPAC>
+			<Analyse>Målt INR-værdi med koagulometer</Analyse>
+			<Resultat>2,5</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>Uspecificeret</Enhed>
+			<Min>1</Min>
+			<Max>6</Max>
+			<Abnorm>uspecificeret</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Patient målt</Producent>
+				<ProducentKode>POT</ProducentKode>
+			</ProducentAfResultat>
+		</INR>
+		<AntalExacerbationer>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<IUPAC>MCS88022</IUPAC>
+			<Analyse>Antal Exacerbationer seneste aar</Analyse>
+			<Resultat>9</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>Uspecificeret</Enhed>
+			<Min>1</Min>
+			<Max>20</Max>
+			<Abnorm>for_lav</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Laegehuset, Birte Hvam</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</AntalExacerbationer>
+		<KlinikBT>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<Systolisk>
+				<IUPAC>DNK05472</IUPAC>
+				<Analyse>Systolisk</Analyse>
+				<Resultat>135</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>mmHG</Enhed>
+				<Max>140</Max>
+			</Systolisk>
+			<Diastolisk>
+				<IUPAC>DNK05473</IUPAC>
+				<Analyse>Diagstolisk</Analyse>
+				<Resultat>100</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>mmHG</Enhed>
+				<Max>90</Max>
+			</Diastolisk>
+			<UdfoertAf>OUH, Afd M, Birte Jensen, Sp.</UdfoertAf>
+		</KlinikBT>
+		<HjemmeBT>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T14:25:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<Systolisk>
+				<IUPAC>MCS88019</IUPAC>
+				<Analyse>Systolisk</Analyse>
+				<Resultat>135</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>mmHG</Enhed>
+				<Max>140</Max>
+				<Abnorm>uspecificeret</Abnorm>
+			</Systolisk>
+			<Diastolisk>
+				<IUPAC>MCS88020</IUPAC>
+				<Analyse>Diagstolisk</Analyse>
+				<Resultat>100</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>mmHG</Enhed>
+				<Max>90</Max>
+				<Abnorm>for_hoej</Abnorm>
+			</Diastolisk>
+			<UdfoertAf>OUH, Afd M, Birte Jensen, Sp.</UdfoertAf>
+		</HjemmeBT>
+		<Puls>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T11:17:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<IUPAC>NPU21692</IUPAC>
+			<Analyse>Puls</Analyse>
+			<Resultat>66</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>1/min</Enhed>
+			<Min>20</Min>
+			<Max>200</Max>
+			<Abnorm>uspecificeret</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Patient målt</Producent>
+				<ProducentKode>POT</ProducentKode>
+			</ProducentAfResultat>
+		</Puls>
+		<HbA1C>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T11:28:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<IUPAC>NPU27412</IUPAC>
+			<Analyse>HBA1c blodsukker</Analyse>
+			<Resultat>7</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>mmol/l</Enhed>
+			<Min>4</Min>
+			<Max>10</Max>
+			<Abnorm>uspecificeret</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Patient målt</Producent>
+				<ProducentKode>POT</ProducentKode>
+			</ProducentAfResultat>
+		</HbA1C>
+		<Blodsukker>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>6543228</AnalyseID>
+			<IUPAC>NPU02187</IUPAC>
+			<Analyse>Blodsukker</Analyse>
+			<Resultat>8</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>mmol/l</Enhed>
+			<Min>4</Min>
+			<Max>10</Max>
+			<Abnorm>uspecificeret</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Laegehuset, Birte Hvam</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</Blodsukker>
+		<Kolesterol>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>765432219</AnalyseID>
+			<SamletKolesterol>
+				<IUPAC>NPU01566</IUPAC>
+				<Analyse>Samlet Kolesterol</Analyse>
+				<Resultat>5</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>mmol/l</Enhed>
+				<Min>1</Min>
+				<Max>6</Max>
+				<Abnorm>uspecificeret</Abnorm>
+			</SamletKolesterol>
+			<HDL>
+				<IUPAC>NPU01567</IUPAC>
+				<Analyse>HDL High-density cholesterol</Analyse>
+				<Resultat>1</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>mmol/l</Enhed>
+				<Min>1</Min>
+				<Abnorm>uspecificeret</Abnorm>
+			</HDL>
+			<LDL>
+				<IUPAC>NPU01568</IUPAC>
+				<Analyse>LDL Low-density cholesterol</Analyse>
+				<Resultat>3</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>mmol/l</Enhed>
+				<Min>0</Min>
+				<Max>5</Max>
+				<Abnorm>uspecificeret</Abnorm>
+			</LDL>
+			<Triglycerid>
+				<IUPAC>NPU04094</IUPAC>
+				<Analyse>LDL Low-density cholesterol</Analyse>
+				<Resultat>0,3</Resultat>
+				<ResultatType>numerisk</ResultatType>
+				<Enhed>mmol/l</Enhed>
+				<Min>0</Min>
+				<Max>2</Max>
+				<Abnorm>uspecificeret</Abnorm>
+			</Triglycerid>
+			<UdfoertAf>OUH, afd M</UdfoertAf>
+		</Kolesterol>
+		<Vaegt>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>1346543221</AnalyseID>
+			<IUPAC>NPU03804</IUPAC>
+			<Analyse>Vaegt</Analyse>
+			<Resultat>77,6</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>kg</Enhed>
+			<ProducentAfResultat>
+				<Producent>Patient målt</Producent>
+				<ProducentKode>POT</ProducentKode>
+			</ProducentAfResultat>
+		</Vaegt>
+		<Livvidde>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T15:33:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<IUPAC>MCS88018</IUPAC>
+			<Analyse>Livvidde</Analyse>
+			<Resultat>123</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>cm</Enhed>
+			<ProducentAfResultat>
+				<Producent>Patient målt</Producent>
+				<ProducentKode>POT</ProducentKode>
+			</ProducentAfResultat>
+		</Livvidde>
+		<Hoejde>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T15:39:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<IUPAC>NPU03794</IUPAC>
+			<Analyse>Hoejde</Analyse>
+			<Resultat>1,76</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>m</Enhed>
+			<ProducentAfResultat>
+				<Producent>Sundhedshuset, Assens</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</Hoejde>
+		<Skridttaeller>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>6543221</AnalyseID>
+			<IUPAC>MCS88AAA</IUPAC>
+			<Analyse>Antal skridt pr dag</Analyse>
+			<Resultat>8000</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>skridt</Enhed>
+			<Min>10000</Min>
+			<ProducentAfResultat>
+				<Producent>Patient målt</Producent>
+				<ProducentKode>POT</ProducentKode>
+			</ProducentAfResultat>
+		</Skridttaeller>
+		<ProteinUri>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>116543666</AnalyseID>
+			<IUPAC>NPU17997</IUPAC>
+			<Analyse>Proteinuir - Udskilles af æggehvide (protein) i urinen</Analyse>
+			<Resultat>420</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>mg pr doegn</Enhed>
+			<Min>30</Min>
+			<Max>300</Max>
+			<Abnorm>for_hoej</Abnorm>
+			<ProducentAfResultat>
+				<Producent>Sundhedshuset, Assens</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</ProteinUri>
+		<OedemGrad>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>6543666</AnalyseID>
+			<IUPAC>NPUXXXX mangler</IUPAC>
+			<Analyse>Ødemgrad  - Vægtøgning</Analyse>
+			<Resultat>5,5</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>Kg</Enhed>
+			<Min>0</Min>
+			<Max>5,5</Max>
+			<ProducentAfResultat>
+				<Producent>OUH, Afd. M</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</OedemGrad>
+		<FosterAktivitet>
+			<ID>e6aced22-6de0-11e1-b0c4-0800200c9a66</ID>
+			<Dato>2010-11-28T12:33:00</Dato>
+			<AnalyseID>6543666</AnalyseID>
+			<IUPAC>NPUXXXX mangler</IUPAC>
+			<Analyse>Count to ten</Analyse>
+			<Resultat>19</Resultat>
+			<ResultatType>numerisk</ResultatType>
+			<Enhed>Uspecificeret</Enhed>
+			<Min>13</Min>
+			<Max>30</Max>
+			<Abnorm>uspecificeret</Abnorm>
+			<ProducentAfResultat>
+				<Producent>OUH, Afd. M</Producent>
+				<ProducentKode>PNT</ProducentKode>
+			</ProducentAfResultat>
+		</FosterAktivitet>
+	</MonitoreringOgMaal>
+	<BorgerensMaal>
+		<Maal>
+			<ID>9ff59d23-b07d-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-07T15:16:35</Dato>
+			<MonitorType>FEV1</MonitorType>
+			<Analyse>FEV1</Analyse>
+			<IUPAC>MCS88015</IUPAC>
+			<PersonligtMaal>3</PersonligtMaal>
+			<Enhed>Liter</Enhed>
+			<UdfoertAf>OUH, KKA</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>9ff59d24-b07d-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-07T14:16:35</Dato>
+			<MonitorType>FVC</MonitorType>
+			<Analyse>FVC</Analyse>
+			<IUPAC>MCS88016</IUPAC>
+			<PersonligtMaal>3,5</PersonligtMaal>
+			<Enhed>Liter</Enhed>
+			<UdfoertAf>OUH, KKA</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>321cf500-b0a0-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-04-07T14:16:35</Dato>
+			<MonitorType>FEV1FVCRatio</MonitorType>
+			<Analyse>FEV1FVCRatio</Analyse>
+			<IUPAC>MCS88017</IUPAC>
+			<PersonligtMaal>85</PersonligtMaal>
+			<Enhed>Prc</Enhed>
+			<UdfoertAf>Lægehuset, Assens</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>321cf501-b0a0-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-07T11:16:35</Dato>
+			<MonitorType>FEV1Pct</MonitorType>
+			<Analyse>FEV1 i procent af normal</Analyse>
+			<IUPAC>MCS88023</IUPAC>
+			<PersonligtMaal>70</PersonligtMaal>
+			<Enhed>Prc</Enhed>
+			<UdfoertAf>Lægehuset, Assens</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>321cf502-b0a0-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-07T12:33:00</Dato>
+			<MonitorType>MRC</MonitorType>
+			<Analyse>MRC Aandenoed</Analyse>
+			<IUPAC>MCS88021</IUPAC>
+			<PersonligtMaal>3</PersonligtMaal>
+			<Enhed>Uspecificeret</Enhed>
+			<UdfoertAf>Laegehuset, Birte Hvam</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>321cf503-b0a0-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-01T12:35:00</Dato>
+			<MonitorType>NYHA</MonitorType>
+			<Analyse>NYHA Aandenoed</Analyse>
+			<IUPAC>MCS88032</IUPAC>
+			<PersonligtMaal>4</PersonligtMaal>
+			<Enhed>Uspecificeret</Enhed>
+			<UdfoertAf>Laegehuset, Birte Hvam</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>321cf504-b0a0-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-07T15:34:00</Dato>
+			<MonitorType>Iltmaetning</MonitorType>
+			<Analyse>Målt iltindhold i prc af det maksimale ilttryk</Analyse>
+			<PersonligtMaal>45</PersonligtMaal>
+			<Enhed>Prc</Enhed>
+			<UdfoertAf>Laegehuset, Birte Hvam</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>e6aced22-6de0-12e1-b0c4-0800200c9a66</ID>
+			<Dato>2012-05-17T16:34:00</Dato>
+			<MonitorType>INR</MonitorType>
+			<Analyse>INR-værdi</Analyse>
+			<PersonligtMaal>2,5</PersonligtMaal>
+			<Enhed>Uspecificeret</Enhed>
+			<UdfoertAf>Sundhed.dk</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>8eba9a91-b0a2-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-07-02T19:33:00</Dato>
+			<MonitorType>EXACERBATIONER</MonitorType>
+			<Analyse>Antal Exacerbationer seneste aar</Analyse>
+			<IUPAC>MCS88022</IUPAC>
+			<PersonligtMaal>9</PersonligtMaal>
+			<Enhed>Uspecificeret</Enhed>
+			<UdfoertAf>Laegehuset, Birte Hvam</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>28325af0-b134-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-07-08T08:36:10</Dato>
+			<MonitorType>BLODTRYK</MonitorType>
+			<Analyse>Systolisk</Analyse>
+			<PersonligtMaal>140</PersonligtMaal>
+			<Enhed>mmHG</Enhed>
+			<UdfoertAf>OUH, Afd M, Birte Jensen, Sp.</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>28325af1-b134-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-07-08T08:38:10</Dato>
+			<MonitorType>BLODTRYK</MonitorType>
+			<Analyse>Diagstolisk</Analyse>
+			<PersonligtMaal>90</PersonligtMaal>
+			<Enhed>mmHG</Enhed>
+			<UdfoertAf>OUH, Afd M, Birte Jensen, Sp.</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>28325af2-b134-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-08T08:44:00</Dato>
+			<MonitorType>PULS</MonitorType>
+			<Analyse>Puls</Analyse>
+			<IUPAC>NPU21692</IUPAC>
+			<PersonligtMaal>66</PersonligtMaal>
+			<Enhed>1/min</Enhed>
+			<UdfoertAf>OUH, afd M</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>28325af3-b134-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-08T08:46:11</Dato>
+			<MonitorType>HBA1C</MonitorType>
+			<Analyse>HBA1c blodsukker</Analyse>
+			<IUPAC>NPU27412</IUPAC>
+			<PersonligtMaal>7</PersonligtMaal>
+			<Enhed>mmol/l</Enhed>
+			<UdfoertAf>OUH, afd M</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>28325af4-b134-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-08T08:50:00</Dato>
+			<MonitorType>BLODSUKKER</MonitorType>
+			<Analyse>Blodsukker</Analyse>
+			<IUPAC>NPU02187</IUPAC>
+			<PersonligtMaal>8</PersonligtMaal>
+			<Enhed>mmol/l</Enhed>
+			<UdfoertAf>Lægehuset, Assens</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>cfab0eb0-b136-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-08T08:55:45</Dato>
+			<MonitorType>SAMLETKOLESTEROL</MonitorType>
+			<Analyse>Samlet Kolesterol</Analyse>
+			<IUPAC>NPU01566</IUPAC>
+			<PersonligtMaal>5</PersonligtMaal>
+			<Enhed>mmol/l</Enhed>
+			<UdfoertAf>OUH, afd M</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>cfab0eb1-b136-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-08T08:58:42</Dato>
+			<MonitorType>HDLKOLESTEROL</MonitorType>
+			<Analyse>HDL High-density cholesterol</Analyse>
+			<IUPAC>NPU01567</IUPAC>
+			<PersonligtMaal>3</PersonligtMaal>
+			<Enhed>mmol/l</Enhed>
+			<UdfoertAf>OUH, afd M</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>cfab0eb2-b136-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-08T09:03:43</Dato>
+			<MonitorType>LDLKOLESTEROL</MonitorType>
+			<Analyse>LDL Low-density cholesterol</Analyse>
+			<IUPAC>NPU01568</IUPAC>
+			<PersonligtMaal>2,5</PersonligtMaal>
+			<Enhed>mmol/l</Enhed>
+			<UdfoertAf>Lægehuset, Assens</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>cfab0eb4-b136-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-08T10:11:10</Dato>
+			<MonitorType>VAEGT</MonitorType>
+			<Analyse>Vaegt</Analyse>
+			<IUPAC>NPU03804</IUPAC>
+			<PersonligtMaal>69</PersonligtMaal>
+			<Enhed>kg</Enhed>
+			<UdfoertAf>Sundhedshuset, Assens</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>ceacb080-b141-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-08T10:13:12</Dato>
+			<MonitorType>LIVVIDDE</MonitorType>
+			<Analyse>Livvidde</Analyse>
+			<IUPAC>MCS88018</IUPAC>
+			<PersonligtMaal>110</PersonligtMaal>
+			<Enhed>cm</Enhed>
+			<UdfoertAf>Sundhedshuset, Assens</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>ceacb081-b141-11e1-afa6-0800200c9a66</ID>
+			<Dato>2011-01-28T14:36:00</Dato>
+			<MonitorType>BMI</MonitorType>
+			<Analyse>Body Mass Index</Analyse>
+			<IUPAC>NPU27281</IUPAC>
+			<PersonligtMaal>25</PersonligtMaal>
+			<Enhed>kg/m2</Enhed>
+			<UdfoertAf>Sundhedshuset, Assens</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>ceacb082-b141-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-07T10:29:40</Dato>
+			<MonitorType>ALKOHOLFORBRUG</MonitorType>
+			<Analyse>Alkoholforbrug</Analyse>
+			<IUPAC>MCS88036</IUPAC>
+			<PersonligtMaal>10</PersonligtMaal>
+			<Enhed>genstande/u</Enhed>
+			<UdfoertAf>Sundhed.dk</UdfoertAf>
+		</Maal>
+		<Maal>
+			<ID>ceacb083-b141-11e1-afa6-0800200c9a66</ID>
+			<Dato>2012-06-08T10:31:00</Dato>
+			<MonitorType>MOTION</MonitorType>
+			<Analyse>Motion, antal timer/uge</Analyse>
+			<IUPAC>NPU88001</IUPAC>
+			<PersonligtMaal>4</PersonligtMaal>
+			<Enhed>h/uge</Enhed>
+			<UdfoertAf>Sundhed.dk</UdfoertAf>
+		</Maal>
+	</BorgerensMaal>
+</MedComKD>

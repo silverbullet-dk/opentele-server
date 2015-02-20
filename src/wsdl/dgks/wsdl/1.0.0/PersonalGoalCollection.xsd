@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="PersonalGoal.xsd"/>
+    
+    <element name="PersonalGoalCollection" type="mc:PersonalGoalCollectionType"/>
+    
+    <complexType name="PersonalGoalCollectionType">
+        <sequence>
+            <element ref="mc:PersonalGoal" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,76 @@
+{
+	"title": "Blodtryk m/alarm",
+	"nodes": {
+		"measurement2": {
+			"headline": "BT (m/alarm)",
+			"id": "measurement2",
+			"position": {
+				"top": 164,
+				"left": 94
+			},
+			"measurementType": "BLOOD_PRESSURE_PULSE",
+			"measurementForm": "manual",
+			"shortText": "Blodtryk",
+			"type": "measurement"
+		},
+		"end3": {
+			"id": "end3",
+			"position": {
+				"top": 333,
+				"left": 106
+			},
+			"type": "end"
+		},
+		"start1": {
+			"id": "start1",
+			"position": {
+				"top": 20,
+				"left": 20
+			},
+			"type": "start"
+		}
+	},
+	"connections": [
+		{
+			"source": "start1",
+			"target": "measurement2",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement2",
+			"target": "end3",
+			"severity": "YELLOW",
+			"type": "normal"
+		},
+		{
+			"source": "measurement2",
+			"target": "end3",
+			"severity": "RED",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		}
+	],
+	"standardSchedule": {
+		"type": "UNSCHEDULED",
+		"reminderStartMinutes": "30",
+		"introPeriodWeeks": "4",
+		"dayInterval": "2",
+		"startingDate": "19-02-2014",
+		"specificDate": "19-02-2014",
+		"timesOfDay": [
+			{
+				"hour": "10",
+				"minute": "00"
+			}
+		],
+		"reminderTime": {
+			"hour": "10",
+			"minute": "00"
+		},
+		"blueAlarmTime": {
+			"hour": "23",
+			"minute": "59"
+		}
+	}
+}

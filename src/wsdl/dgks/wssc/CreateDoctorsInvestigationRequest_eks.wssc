@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">DoctorsInvestigationService</service>
+        <port xml:space="preserve">DoctorsInvestigationPort</port>
+        <operation xml:space="preserve">CreateDoctorsInvestigation</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DoctorsInvestigationService.asmx</URL>
+        <action xml:space="preserve">CreateDoctorsInvestigation</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:doctors-investigation:1.0.0&quot;
+    xmlns:ns1=&quot;http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/&quot;&gt;
+    &lt;SOAP-ENV:Header/&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;ns0:CreateDoctorsInvestigationRequestMessage&gt;
+        	&lt;ns0:CivilRegistrationNumber&gt;2512484916&lt;/ns0:CivilRegistrationNumber&gt;
+            &lt;ns0:LaegensUdredning&gt;
+            	&lt;ns1:ID&gt;b4a41d80-e6bc-11e1-aff1-0800200c9a66&lt;/ns1:ID&gt;
+                &lt;ns1:HenvisningsDiagnose&gt;
+                	&lt;ns1:Dato&gt;2012-08-15T11:37:00&lt;/ns1:Dato&gt;
+                    &lt;ns1:DiagnoseType&gt;ICD10&lt;/ns1:DiagnoseType&gt;
+                	&lt;ns1:DiagnoseKode&gt;DJ43&lt;/ns1:DiagnoseKode&gt;
+                	&lt;ns1:DiagnoseBeskrivelse&gt;Emfysem&lt;/ns1:DiagnoseBeskrivelse&gt;
+                &lt;/ns1:HenvisningsDiagnose&gt;
+            	&lt;ns1:OensketYdelse&gt;RYGE-Afvending&lt;ns1:Space/&gt;
+                &lt;/ns1:OensketYdelse&gt;
+                &lt;ns1:Anamnese&gt;Pt. har gennem længere tid klaget over dårrlig vejrtrækning&lt;/ns1:Anamnese&gt;
+                &lt;ns1:UdfoertAf&gt;MedCom, Forskerparken, MDM&lt;/ns1:UdfoertAf&gt;
+            &lt;/ns0:LaegensUdredning&gt;
+        &lt;/ns0:CreateDoctorsInvestigationRequestMessage&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

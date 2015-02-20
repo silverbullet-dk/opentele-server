@@ -1,0 +1,173 @@
+{
+    "title": "Overførsel af blodsukkermålinger",
+    "nodes": {
+        "input5": {
+            "id": "input5",
+            "position": {
+                "top": 380,
+                "left": 275
+            },
+            "dataType": "BOOLEAN",
+            "shortText": "Lave blodsukre",
+            "question": "Har du haft lave blodsukre siden sidste overførsel?",
+            "type": "input"
+        },
+        "text3": {
+            "id": "text3",
+            "position": {
+                "top": 138,
+                "left": 214
+            },
+            "text": "Overfør blodsukkermålinger via USB",
+            "type": "text"
+        },
+        "input7": {
+            "id": "input7",
+            "position": {
+                "top": 624,
+                "left": 256
+            },
+            "dataType": "BOOLEAN",
+            "shortText": "Reduceret insulinbehov",
+            "question": "Har du reduceret dit insulinbehov siden sidste overførsel?",
+            "type": "input"
+        },
+        "input6": {
+            "id": "input6",
+            "position": {
+                "top": 512,
+                "left": 118
+            },
+            "dataType": "INTEGER",
+            "shortText": "Antal lave blodsukre",
+            "question": "Hvor mange (ca.)?",
+            "type": "input"
+        },
+        "start1": {
+            "id": "start1",
+            "position": {
+                "top": 19,
+                "left": 289
+            },
+            "type": "start"
+        },
+        "end2": {
+            "id": "end2",
+            "position": {
+                "top": 876,
+                "left": 299
+            },
+            "type": "end"
+        },
+        "text8": {
+            "id": "text8",
+            "position": {
+                "top": 751,
+                "left": 123
+            },
+            "text": "Kontakt personale",
+            "type": "text"
+        },
+        "measurement4": {
+            "headline": "Blodsukker",
+            "id": "measurement4",
+            "position": {
+                "top": 266,
+                "left": 287
+            },
+            "measurementType": "BLOODSUGAR",
+            "measurementForm": "automatic",
+            "shortText": "Blodsukker",
+            "type": "measurement"
+        }
+    },
+    "connections": [
+        {
+            "source": "start1",
+            "target": "text3",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "text3",
+            "target": "measurement4",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement4",
+            "target": "input5",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement4",
+            "target": "input5",
+            "severity": "YELLOW",
+            "measurementSkipped": "true",
+            "type": "measurementSkipped"
+        },
+        {
+            "source": "input5",
+            "target": "input6",
+            "choiceValue": "true",
+            "severity": "GREEN",
+            "type": "choice"
+        },
+        {
+            "source": "input6",
+            "target": "input7",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "input5",
+            "target": "input7",
+            "choiceValue": "false",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input7",
+            "target": "end2",
+            "choiceValue": "false",
+            "severity": "",
+            "type": "choice"
+        },
+        {
+            "source": "input7",
+            "target": "text8",
+            "choiceValue": "true",
+            "severity": "RED",
+            "type": "choice"
+        },
+        {
+            "source": "text8",
+            "target": "end2",
+            "severity": "",
+            "type": "normal"
+        }
+    ],
+    "standardSchedule": {
+        "type": "UNSCHEDULED",
+        "reminderStartMinutes": "30",
+        "introPeriodWeeks": "4",
+        "dayInterval": "2",
+        "startingDate": "22-07-2013",
+        "specificDate": "12-03-2014",
+        "timesOfDay": [
+            {
+                "hour": "10",
+                "minute": "00"
+            }
+        ],
+        "reminderTime": {
+            "hour": "10",
+            "minute": "00"
+        },
+        "blueAlarmTime": {
+            "hour": "23",
+            "minute": "59"
+        }
+    }
+}

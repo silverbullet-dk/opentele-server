@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+	xmlns:tns="urn:oio:medcom:chronicdataset:contact:1.0.0" 
+	name="ContactService"
+	targetNamespace="urn:oio:medcom:chronicdataset:contact:1.0.0">
+	<wsdl:types>
+		<xs:schema targetNamespace="urn:oio:medcom:chronicdataset:contact:1.0.0" elementFormDefault="qualified">
+			<xs:include schemaLocation="ContactService.xsd"/>
+			<xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="Fault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="FaultMessage">
+		<wsdl:part name="fault" element="mc:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUpdateHospitalContactRequestMessage">
+		<wsdl:part name="parameter" element="tns:CreateUpdateHospitalContactRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUpdateHospitalContactResponseMessage">
+		<wsdl:part name="parameter" element="tns:CreateUpdateHospitalContactResponseMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteHospitalContactRequestMessage">
+		<wsdl:part name="parameter" element="tns:DeleteHospitalContactRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteHospitalContactResponseMessage">
+		<wsdl:part name="parameter" element="tns:DeleteHospitalContactResponseMessage"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUpdateMunicipalityContactRequestMessage">
+		<wsdl:part name="parameter" element="tns:CreateUpdateMunicipalityContactRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUpdateMunicipalityContactResponseMessage">
+		<wsdl:part name="parameter" element="tns:CreateUpdateMunicipalityContactResponseMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMunicipalityContactRequestMessage">
+		<wsdl:part name="parameter" element="tns:DeleteMunicipalityContactRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMunicipalityContactResponseMessage">
+		<wsdl:part name="parameter" element="tns:DeleteMunicipalityContactResponseMessage"/>
+	</wsdl:message>
+	<wsdl:portType name="ContactPortType">
+		<wsdl:operation name="CreateUpdateHospitalContact">
+			<wsdl:input message="tns:CreateUpdateHospitalContactRequestMessage"/>
+			<wsdl:output message="tns:CreateUpdateHospitalContactResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteHospitalContact">
+			<wsdl:input message="tns:DeleteHospitalContactRequestMessage"/>
+			<wsdl:output message="tns:DeleteHospitalContactResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateUpdateMunicipalityContact">
+			<wsdl:input message="tns:CreateUpdateMunicipalityContactRequestMessage"/>
+			<wsdl:output message="tns:CreateUpdateMunicipalityContactResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMunicipalityContact">
+			<wsdl:input message="tns:DeleteMunicipalityContactRequestMessage"/>
+			<wsdl:output message="tns:DeleteMunicipalityContactResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ContactBinding" type="tns:ContactPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CreateUpdateHospitalContact">
+			<soap:operation soapAction="CreateUpdateHospitalContact"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteHospitalContact">
+			<soap:operation soapAction="DeleteHospitalContact"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateUpdateMunicipalityContact">
+			<soap:operation soapAction="CreateUpdateMunicipalityContact"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMunicipalityContact">
+			<soap:operation soapAction="DeleteMunicipalityContact"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ContactService">
+		<wsdl:port name="ContactPort" binding="tns:ContactBinding">
+			<soap:address location="http://localhost/NoServiceHere"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

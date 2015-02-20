@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc101="urn:oio:medcom:chronicdataset:1.0.1"
+    xmlns="urn:oio:medcom:chronicdataset:1.0.1"
+    targetNamespace="urn:oio:medcom:chronicdataset:1.0.1" >
+    
+    <xs:include schemaLocation="LaboratoryReportExtended.xsd"/>
+    
+    <xs:element name="LaboratoryReportExtendedCollection" type="mc101:LaboratoryReportExtendedCollectionType"/>
+    
+    <xs:complexType name="LaboratoryReportExtendedCollectionType">
+        <xs:sequence>
+            <xs:element ref="mc101:LaboratoryReportExtended" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

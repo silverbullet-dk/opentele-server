@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" 
+    xmlns:itst="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/"
+    xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/">
+    
+    <import namespace="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/" schemaLocation="http://digitaliser.dk/resource/6962/artefact/ITST_PersonNameStructure.xsd"/>
+    <import namespace="http://rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/" schemaLocation="http://digitaliser.dk/resource/170/artefact/XKOM_AddressPostal.xsd"/>
+    
+    <include schemaLocation="MedicalPracticeIdentifier.xsd"/>
+    <include schemaLocation="EmailAddressIdentifier.xsd"/>
+    <include schemaLocation="PhoneNumberIdentifier.xsd"/>
+    
+    <element name="GeneralPractitioner" type="mc:GeneralPractitionerType"/>
+    
+    <complexType name="GeneralPractitionerType">
+        <sequence>
+            <element ref="mc:MedicalPracticeIdentifier"/>
+            <element name="MedicalPracticeName" type="string"/>
+            <element ref="itst:PersonNameStructure" minOccurs="0"/>
+            <element ref="xkom:AddressPostal" minOccurs="0"/>
+            <element ref="mc:PhoneNumberIdentifier" minOccurs="0"/>
+            <element ref="mc:EmailAddressIdentifier" minOccurs="0"/>
+        </sequence>
+    </complexType>
+</schema>

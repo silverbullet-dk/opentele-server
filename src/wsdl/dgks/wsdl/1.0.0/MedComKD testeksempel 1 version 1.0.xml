@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="http://svn.medcom.dk/svn/drafts/Standarder/Den%20gode%20kronikerservice/html/dynamic_view.xsl"?>
+<mc:CitizenChronicDataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="urn:oio:medcom:chronicdataset:1.0.0 CitizenChronicDataset.xsd"
+ xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+ xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+ xmlns:xkom="http://rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/"
+ xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/"
+ xmlns:itst="http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/"
+ xmlns:dkcc2005="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/">
+    <mc:Citizen>
+        <cpr:PersonCivilRegistrationIdentifier>2512484916</cpr:PersonCivilRegistrationIdentifier>
+        <itst:PersonNameStructure>
+            <dkcc:PersonGivenName>Nancy</dkcc:PersonGivenName>
+            <dkcc:PersonSurnameName>Berggren</dkcc:PersonSurnameName>
+        </itst:PersonNameStructure>
+        <xkom:AddressPostal>
+            <dkcc2005:StreetName>Skovvejen</dkcc2005:StreetName>
+            <dkcc:StreetBuildingIdentifier>12</dkcc:StreetBuildingIdentifier>
+            <dkcc2005:PostCodeIdentifier>8010</dkcc2005:PostCodeIdentifier>
+            <dkcc2005:DistrictName>Aarhus N</dkcc2005:DistrictName>
+        </xkom:AddressPostal>
+        <mc:PhoneNumberIdentifier>86121824</mc:PhoneNumberIdentifier>
+        <mc:EmailAddressIdentifier>nb@meail.dk</mc:EmailAddressIdentifier>
+    </mc:Citizen>
+    <mc:GeneralPractitioner>
+        <mc:MedicalPracticeIdentifier>44164</mc:MedicalPracticeIdentifier>
+        <mc:MedicalPracticeName>Lægehuset</mc:MedicalPracticeName>
+        <itst:PersonNameStructure>
+            <dkcc:PersonGivenName>Birte</dkcc:PersonGivenName>
+            <dkcc:PersonSurnameName>Hvam</dkcc:PersonSurnameName>
+        </itst:PersonNameStructure>
+        <xkom:AddressPostal>
+            <dkcc2005:StreetName>Sundhedsgade</dkcc2005:StreetName>
+            <dkcc:StreetBuildingIdentifier>12</dkcc:StreetBuildingIdentifier>
+            <dkcc2005:PostCodeIdentifier>3400</dkcc2005:PostCodeIdentifier>
+            <dkcc2005:DistrictName>Hillerød</dkcc2005:DistrictName>
+        </xkom:AddressPostal>
+        <mc:PhoneNumberIdentifier>87679911</mc:PhoneNumberIdentifier>
+        <mc:EmailAddressIdentifier>bh@mail.dk</mc:EmailAddressIdentifier>
+    </mc:GeneralPractitioner>
+    <mc:Relative>
+        <itst:PersonNameStructure>
+            <dkcc:PersonGivenName>Mads</dkcc:PersonGivenName>
+            <dkcc:PersonSurnameName>Berggren</dkcc:PersonSurnameName>
+        </itst:PersonNameStructure>
+        <xkom:AddressPostal>
+            <dkcc2005:StreetName>Skovejen</dkcc2005:StreetName>
+            <dkcc:StreetBuildingIdentifier>12</dkcc:StreetBuildingIdentifier>
+            <dkcc2005:PostCodeIdentifier>8010</dkcc2005:PostCodeIdentifier>
+            <dkcc2005:DistrictName>Aarhus N</dkcc2005:DistrictName>
+        </xkom:AddressPostal>
+        <mc:PhoneNumberIdentifier>22348647</mc:PhoneNumberIdentifier>
+        <mc:EmailAddressIdentifier>at@mail.dk</mc:EmailAddressIdentifier>
+    </mc:Relative>
+    <mc:ContactPersonCollection>
+        <mc:CountyContactPerson>
+            <mc:UuidIdentifier>8e4dfa80-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51</mc:CreatedDateTime>
+            <mc:ContactPersonDetailsText>Birte Jensen, Afd A Tlf 9876543</mc:ContactPersonDetailsText>
+            <mc:CreatedByText>Birte Jensen</mc:CreatedByText>
+        </mc:CountyContactPerson>
+        <mc:HospitalContactPerson>
+            <mc:UuidIdentifier>8e4dfa81-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:ContactPersonDetailsText>Lone Ejby, mail le@odense.dk</mc:ContactPersonDetailsText>
+            <mc:CreatedByText>Lene Liensen, områdesekretær</mc:CreatedByText>
+        </mc:HospitalContactPerson>
+    </mc:ContactPersonCollection>
+    <mc:Consent>
+        <mc:ConsentDeclaredDateTime>2006-05-04T18:13:51</mc:ConsentDeclaredDateTime>
+        <mc:ConsentGivenIndicator>true</mc:ConsentGivenIndicator>
+    </mc:Consent>
+    <mc:KramPredictor>
+        <mc:Weight>
+            <mc:UuidIdentifier>8e4dfa82-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:AnalysisText>Legeme masse;Pt</mc:AnalysisText>
+            <mc:ResultText>77.6</mc:ResultText>
+            <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+            <mc:ResultUnitText>Kg</mc:ResultUnitText>
+            <mc:ResultAbnormalIdentifier>to_high</mc:ResultAbnormalIdentifier>
+            <mc:ResultMinimumText>25.6</mc:ResultMinimumText>
+            <mc:ResultMaximumText>77.0</mc:ResultMaximumText>
+            <mc:NationalSampleIdentifier>98989898980</mc:NationalSampleIdentifier>
+            <mc:IupacIdentifier>NPU03804</mc:IupacIdentifier>
+            <mc:ProducerOfLabResult>
+                <mc:Identifier>Sundhedshuset, Assens</mc:Identifier>
+                <mc:IdentifierCode>PNT</mc:IdentifierCode>
+            </mc:ProducerOfLabResult>
+        </mc:Weight>
+        <mc:Height>
+            <mc:UuidIdentifier>8e4dfa83-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51</mc:CreatedDateTime>
+            <mc:AnalysisText>Legeme højde;Pt</mc:AnalysisText>
+            <mc:ResultText>176</mc:ResultText>
+            <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+            <mc:ResultUnitText>cm</mc:ResultUnitText>
+            <mc:NationalSampleIdentifier>98989898981</mc:NationalSampleIdentifier>
+            <mc:IupacIdentifier>NPU03794</mc:IupacIdentifier>
+            <mc:ProducerOfLabResult>
+                <mc:Identifier>Sundhedshuset, Assens</mc:Identifier>
+                <mc:IdentifierCode>PNT</mc:IdentifierCode>
+            </mc:ProducerOfLabResult>
+        </mc:Height>
+        <mc:Smoking>
+            <mc:UuidIdentifier>8e4dfa84-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:AnalysisText>Ryger du?;  (Dagl,Lejl,Ophørt,Aldrig)=?</mc:AnalysisText>
+            <mc:ResultText>Ophørt</mc:ResultText>
+            <mc:ResultEncodingIdentifier>alphanumeric</mc:ResultEncodingIdentifier>
+            <mc:ResultUnitText>arb.Enhed</mc:ResultUnitText>
+            <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+            <mc:NationalSampleIdentifier>98989898982</mc:NationalSampleIdentifier>
+            <mc:IupacIdentifier>MCS88011</mc:IupacIdentifier>
+            <mc:ProducerOfLabResult>
+                <mc:Identifier>4202120 KKA Odense UNI.Hospital</mc:Identifier>
+                <mc:IdentifierCode>OUH</mc:IdentifierCode>
+            </mc:ProducerOfLabResult>
+        </mc:Smoking>
+        <mc:Alcohol>
+            <mc:UuidIdentifier>8e4dfa85-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:AnalysisText>Alkoholforbrug</mc:AnalysisText>
+            <mc:ResultText>15</mc:ResultText>
+            <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+            <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+            <mc:ResultUnitText>genstande/u</mc:ResultUnitText>
+            <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+            <mc:ResultMinimumText>0</mc:ResultMinimumText>
+            <mc:ResultMaximumText>15</mc:ResultMaximumText>
+            <mc:NationalSampleIdentifier>98989898983</mc:NationalSampleIdentifier>
+            <mc:IupacIdentifier>MCS88036</mc:IupacIdentifier>
+            <mc:ProducerOfLabResult>
+                <mc:Identifier>Patient målt</mc:Identifier>
+                <mc:IdentifierCode>POT</mc:IdentifierCode>
+            </mc:ProducerOfLabResult>
+        </mc:Alcohol>
+        <mc:Exercise>
+            <mc:UuidIdentifier>8e4dfa86-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:52</mc:CreatedDateTime>
+            <mc:AnalysisText>Pt-Motion;tid</mc:AnalysisText>
+            <mc:ResultText>3</mc:ResultText>
+            <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+            <mc:ResultUnitText>h/uge</mc:ResultUnitText>
+            <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+            <mc:NationalSampleIdentifier>98989898983</mc:NationalSampleIdentifier>
+            <mc:IupacIdentifier>MCS88001</mc:IupacIdentifier>
+            <mc:ProducerOfLabResult>
+                <mc:Identifier>Patient målt</mc:Identifier>
+                <mc:IdentifierCode>POT</mc:IdentifierCode>
+            </mc:ProducerOfLabResult>
+        </mc:Exercise>
+    </mc:KramPredictor>
+    <mc:MedicalInvestigationCollection>
+        <mc:MedicalInvestigation>
+            <mc:UuidIdentifier>8e4dfa87-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:54</mc:CreatedDateTime>
+            <mc:ReferralDiagnosisCollection>
+                <mc:ReferralDiagnosis>
+                    <mc:DiagnosisClassificationIdentifier>ICPC</mc:DiagnosisClassificationIdentifier>
+                    <mc:DiagnosisIdentifier>T90</mc:DiagnosisIdentifier>
+                    <mc:DescriptionText>Diabetes Type 2</mc:DescriptionText>
+                </mc:ReferralDiagnosis>
+                <mc:ReferralDiagnosis>
+                    <mc:DiagnosisClassificationIdentifier>ICPC</mc:DiagnosisClassificationIdentifier>
+                    <mc:DiagnosisIdentifier>R95</mc:DiagnosisIdentifier>
+                    <mc:DescriptionText>Kronisk obstruktiv lungesygdom</mc:DescriptionText>
+                </mc:ReferralDiagnosis>
+            </mc:ReferralDiagnosisCollection>
+            <mc:DesiredServiceFormattedText>
+                <mc:Right>
+                    <mc:Space/>RYGE-A, AMBUS-C<mc:Space/>
+                </mc:Right>
+            </mc:DesiredServiceFormattedText>
+            <mc:AnamnesisFormattedText>Pt.har gennem længere tid klaget over brystsmerter.<mc:Break/></mc:AnamnesisFormattedText>
+            <mc:CreatedByText>Lægehuset, Birte Hvam</mc:CreatedByText>
+        </mc:MedicalInvestigation>
+    </mc:MedicalInvestigationCollection>
+    <mc:DiagnosisOfRelevanceCollection>
+        <mc:Diagnosis>
+            <mc:UuidIdentifier>8e4dfa88-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:DiagnosisClassificationIdentifier>ICD10</mc:DiagnosisClassificationIdentifier>
+            <mc:DiagnosisIdentifier>K92</mc:DiagnosisIdentifier>
+            <mc:DescriptionText>Perifer karsygdom</mc:DescriptionText>
+            <mc:CreatedByText>Lægehuset, Birte Hvam</mc:CreatedByText>
+        </mc:Diagnosis>
+        <mc:Diagnosis>
+            <mc:UuidIdentifier>8e4dfa89-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:DiagnosisClassificationIdentifier>ICPC</mc:DiagnosisClassificationIdentifier>
+            <mc:DiagnosisIdentifier>P03</mc:DiagnosisIdentifier>
+            <mc:DescriptionText>Nedtrykthed</mc:DescriptionText>
+            <mc:CreatedByText>Lægehuset, Birte Hvam</mc:CreatedByText>
+        </mc:Diagnosis>
+    </mc:DiagnosisOfRelevanceCollection>
+    <mc:DiaryNoteCollection>
+        <mc:DiaryNote>
+            <mc:UuidIdentifier>8e4dfa8a-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2011-10-26T21:32:00</mc:CreatedDateTime>
+            <mc:ContentsFormattedText>Jeg sover daarligt, men jeg tror</mc:ContentsFormattedText>
+        </mc:DiaryNote>
+        <mc:DiaryNote>
+            <mc:UuidIdentifier>8e4dfa8b-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2010-09-02T09:21:00</mc:CreatedDateTime>
+            <mc:ContentsFormattedText>
+                <mc:Bold>Hovedpinen kommer igen når jeg lægger mig på sofaen.</mc:Bold>
+                    <mc:Break/>Overvejer at lægge mig i sengen i stedet for</mc:ContentsFormattedText>
+        </mc:DiaryNote>
+    </mc:DiaryNoteCollection>
+    <mc:LaboratoryReportOfRelevanceCollection>
+        <mc:LaboratoryReport>
+            <mc:UuidIdentifier>8e4dfa8c-c113-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2011-10-26T21:32:00</mc:CreatedDateTime>
+            <mc:AnalysisText>Kolesterol LDL;P</mc:AnalysisText>
+            <mc:ResultText>2.0</mc:ResultText>
+            <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+            <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+            <mc:ResultUnitText>mmol/l</mc:ResultUnitText>
+            <mc:ResultAbnormalIdentifier>to_high</mc:ResultAbnormalIdentifier>
+            <mc:ResultMinimumText>1.0</mc:ResultMinimumText>
+            <mc:ResultMaximumText>3</mc:ResultMaximumText>
+            <mc:NationalSampleIdentifier>989898989805</mc:NationalSampleIdentifier>
+            <mc:IupacIdentifier>NPU01568</mc:IupacIdentifier>
+            <mc:ProducerOfLabResult>
+                <mc:Identifier>Biokemeisk Afd</mc:Identifier>
+                <mc:IdentifierCode>OUH</mc:IdentifierCode>
+            </mc:ProducerOfLabResult>
+        </mc:LaboratoryReport>
+        <mc:LaboratoryReport>
+            <mc:UuidIdentifier>82ec3de0-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:AnalysisText>Haemoglobin A</mc:AnalysisText>
+            <mc:ResultText>7.0</mc:ResultText>
+            <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+            <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+            <mc:ResultUnitText>mmol/l</mc:ResultUnitText>
+            <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+            <mc:ResultMinimumText>3.5</mc:ResultMinimumText>
+            <mc:ResultMaximumText>9.7</mc:ResultMaximumText>
+            <mc:NationalSampleIdentifier>989898989805</mc:NationalSampleIdentifier>
+            <mc:IupacIdentifier>NPU02321</mc:IupacIdentifier>
+            <mc:ProducerOfLabResult>
+                <mc:Identifier>Biokemeisk Afd</mc:Identifier>
+                <mc:IdentifierCode>OUH</mc:IdentifierCode>
+            </mc:ProducerOfLabResult>
+        </mc:LaboratoryReport>
+    </mc:LaboratoryReportOfRelevanceCollection>
+    <mc:HealthAndPreventionProfile>
+        <mc:UpdatedDateTime>2006-05-04T18:13:51.0Z</mc:UpdatedDateTime>
+        <mc:PhysicalRehabilitation>
+            <mc:HealthAndPreventionServiceStatus>offered</mc:HealthAndPreventionServiceStatus>
+        </mc:PhysicalRehabilitation>
+        <mc:PatientEducation>
+            <mc:HealthAndPreventionServiceStatus>finish</mc:HealthAndPreventionServiceStatus>
+        </mc:PatientEducation>
+        <mc:SmokingCessationCourse>
+            <mc:HealthAndPreventionServiceStatus>not_relevant</mc:HealthAndPreventionServiceStatus>
+        </mc:SmokingCessationCourse>
+        <mc:NutritionalCounseling>
+            <mc:HealthAndPreventionServiceStatus>finish</mc:HealthAndPreventionServiceStatus>
+        </mc:NutritionalCounseling>
+        <mc:CurrentStatutoryProvidedService>
+            <mc:AccordingToSocialLegislation>false</mc:AccordingToSocialLegislation>
+            <mc:AccordingToHealthLegislation>true</mc:AccordingToHealthLegislation>
+            <mc:ProvidedByHealthCenter>true</mc:ProvidedByHealthCenter>
+        </mc:CurrentStatutoryProvidedService>
+        <mc:RecentYearStatutoryProvidedService>
+            <mc:AccordingToSocialLegislation>false</mc:AccordingToSocialLegislation>
+            <mc:AccordingToHealthLegislation>false</mc:AccordingToHealthLegislation>
+            <mc:ProvidedByHealthCenter>false</mc:ProvidedByHealthCenter>
+        </mc:RecentYearStatutoryProvidedService>
+        <mc:UpdatedByText>Sundhed.dk</mc:UpdatedByText>
+    </mc:HealthAndPreventionProfile>
+    <mc:HealthProfessionalNoteCollection>
+        <mc:HealthProfessionalNote>
+            <mc:UuidIdentifier>82ec3de1-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2011-10-26T21:32:00</mc:CreatedDateTime>
+            <mc:TitleText>Plan</mc:TitleText>
+            <mc:ContentsFormattedText>
+                <mc:FixedFont>Der er udarbejdet plan for det foelger</mc:FixedFont>
+            </mc:ContentsFormattedText>
+            <mc:HealthCareAreaIdentifier>gp</mc:HealthCareAreaIdentifier>
+            <mc:CreatedBy>Lægehuset, Helmer Petersen</mc:CreatedBy>
+        </mc:HealthProfessionalNote>
+        <mc:HealthProfessionalNote>
+            <mc:UuidIdentifier>82ec3de2-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2010-08-12T10:00:10</mc:CreatedDateTime>
+            <mc:TitleText>AmbUS</mc:TitleText>
+            <mc:ContentsFormattedText>
+                <mc:Space/>
+                <mc:FixedFont>
+                    <mc:Underline>Pt. dd gennemfoert spiometriUS. Result..
+                    </mc:Underline>
+                </mc:FixedFont>
+            </mc:ContentsFormattedText>
+            <mc:HealthCareAreaIdentifier>hospital</mc:HealthCareAreaIdentifier>
+            <mc:CreatedBy>Herlev Hospital, Medicinsk Afdelin M</mc:CreatedBy>
+        </mc:HealthProfessionalNote>
+        <mc:HealthProfessionalNote>
+            <mc:UuidIdentifier>82ec3de3-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2010-08-14T10:15:10</mc:CreatedDateTime>
+            <mc:TitleText>Kostplan</mc:TitleText>
+            <mc:ContentsFormattedText>Kostplan for Nancy: Morgen let diæt…</mc:ContentsFormattedText>
+            <mc:HealthCareAreaIdentifier>hospital</mc:HealthCareAreaIdentifier>
+            <mc:CreatedBy>Odense, Diætist Anne Ol.</mc:CreatedBy>
+        </mc:HealthProfessionalNote>
+    </mc:HealthProfessionalNoteCollection>
+    <mc:AppointmentCollection>
+        <mc:Appointment>
+            <mc:UuidIdentifier>82ec3de4-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2010-07-08T14:00:00</mc:CreatedDateTime>
+            <mc:TitleIdentifier>RYG567</mc:TitleIdentifier>
+            <mc:DescriptionFormattedText>
+                <mc:Italic>Rygestop - 3 ugers aftenunderv, Borgerskolen - Tilbudt</mc:Italic>
+            </mc:DescriptionFormattedText>
+            <mc:CreatedBy>Rudersdal Kommune, Forebyggelsen</mc:CreatedBy>
+        </mc:Appointment>
+        <mc:Appointment>
+            <mc:UuidIdentifier>82ec3de5-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2010-08-11T00:00:00</mc:CreatedDateTime>
+            <mc:TitleIdentifier>HVA654</mc:TitleIdentifier>
+            <mc:DescriptionFormattedText>
+                <mc:Bold>Amb beh - Kontrolbesoeg paa Hvidovre, afd. A - Ansoegt</mc:Bold>
+            </mc:DescriptionFormattedText>
+            <mc:CreatedBy>Hvidovre Hospital, Medicinsk Afd</mc:CreatedBy>
+        </mc:Appointment>
+        <mc:Appointment>
+            <mc:UuidIdentifier>82ec3de6-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2010-08-11T00:00:00</mc:CreatedDateTime>
+            <mc:TitleIdentifier>SPI5662</mc:TitleIdentifier>
+            <mc:DescriptionFormattedText>
+                <mc:Bold>Spirometer- Monitoreringsbox til hjemme - Ansoegt</mc:Bold>
+            </mc:DescriptionFormattedText>
+            <mc:CreatedBy>Rudersdal Kommune, Forebyggelsen</mc:CreatedBy>
+        </mc:Appointment>
+        <mc:Appointment>
+            <mc:UuidIdentifier>82ec3de7-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2010-08-11T10:00:00</mc:CreatedDateTime>
+            <mc:TitleIdentifier>YNR967</mc:TitleIdentifier>
+            <mc:DescriptionFormattedText>
+                <mc:Bold>Lægebesøg - Opfoelgning hos egen læge - Udfoert</mc:Bold>
+            </mc:DescriptionFormattedText>
+            <mc:CreatedBy>Lægehuset, Sundhedsgade 12, Birte Hvam</mc:CreatedBy>
+        </mc:Appointment>
+    </mc:AppointmentCollection>
+    <mc:SelfMonitoredSampleCollection>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>b33be780-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Spirometri</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be781-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>FEV1</mc:AnalysisText>
+                    <mc:ResultText>3.2</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                    <mc:ResultUnitText>Liter</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>to_high</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>1</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>3</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>9999999999</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88015</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be782-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>FVC</mc:AnalysisText>
+                    <mc:ResultText>3.7</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                    <mc:ResultUnitText>Liter</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>unspecified</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>unspecified</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>999999991</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88016</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be783-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>FEV1/FVC</mc:AnalysisText>
+                    <mc:ResultText>85</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>%</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>unspecified</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>unspecified</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>999999992</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88017</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be784-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>FEV i prc.</mc:AnalysisText>
+                    <mc:ResultText>78</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>%</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>unspecified</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>unspecified</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>999999993</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88023</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Helbredsprofilen</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>b33be787-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>MRC</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be788-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>MRC</mc:AnalysisText>
+                    <mc:ResultText>3</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>1 til 5</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>1</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>5</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>9999999994</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88021</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Laegehuset, Birte Hvam</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Laegehuset, Birthe Hvam</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>b33be785-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>NYHA</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be786-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>NYHA</mc:AnalysisText>
+                    <mc:ResultText>4</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+                    <mc:ResultUnitText>1 til 4</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>to_high</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>1</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>4</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>9999999995</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88032</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Laegehuset, Birte Hvam</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Laegehuset, Birthe Hvam</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>b33be789-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Iltmætning</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be78a-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>O2 sat.;Hb(aB)</mc:AnalysisText>
+                    <mc:ResultText>95.3</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>%</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999996</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU03011</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Laegehuset, Birte Hvam</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Laegehuset, Birthe Hvam</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>b33be78b-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Exacerbationer</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be78c-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>KOL-Ant.eksacerbationer sidste år?</mc:AnalysisText>
+                    <mc:ResultText>5</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>numerisk</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999998</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88022</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Laegehuset, Birte Hvam</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Laegehuset, Birthe Hvam</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>b33be78d-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Klinik BT</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be78e-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Blodtryk systolisk;Arm</mc:AnalysisText>
+                    <mc:ResultText>135</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>mm/HG</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999910</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>DNK05472</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>OUH, Afd M, Birte Jensen</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be78f-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Blodtryk diastolisk;Arm</mc:AnalysisText>
+                    <mc:ResultText>90</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>mm/HG</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999911</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>DNK05473</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>OUH, Afd M, Birte Jensen</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>OUH, Afd. M, Birthe Jensen</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>b33be790-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Hjemme BT</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be791-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Blodtryk systolisk;Arm</mc:AnalysisText>
+                    <mc:ResultText>100</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>mm/HG</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999912</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88019</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be792-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Blodtryk diastolisk;Arm</mc:AnalysisText>
+                    <mc:ResultText>95</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>mm/HG</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999913</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88020</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Helbredsprofilen</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>b33be78b-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Puls</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be793-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Puls;Hjerte</mc:AnalysisText>
+                    <mc:ResultText>66</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>1/min</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999914</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU21692</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Helbredsprofilen</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>b33be78b-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>HbA1C</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>b33be794-bf97-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Glukose, middel (fra HbA1c);P</mc:AnalysisText>
+                    <mc:ResultText>7</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>mmol/l</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999915</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU27412</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>OUH, Afd M, Birte Jensen</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>OUH, Afd M, Birte Jensen</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>92a85ba0-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Blodsukker</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85ba1-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Glukose;B</mc:AnalysisText>
+                    <mc:ResultText>11</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+                    <mc:ResultUnitText>mmol/l</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>abnormal</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>2</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>8</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>9999999916</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU02187</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>OUH, Afd M, Birte Jensen</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>OUH, Afd M, Birte Jensen</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>92a85ba2-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Kolesterol</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85ba3-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Kolesterol;P</mc:AnalysisText>
+                    <mc:ResultText>5</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+                    <mc:ResultUnitText>mmol/l</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>to_high</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>1</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>5</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>9999999917</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU01566</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>OUH, Afd M, Birte Jensen</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85ba4-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Kolesterol HDL;P</mc:AnalysisText>
+                    <mc:ResultText>1</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+                    <mc:ResultUnitText>mmol/l</mc:ResultUnitText>
+                    <mc:ResultAbnormalIdentifier>unspecified</mc:ResultAbnormalIdentifier>
+                    <mc:ResultMinimumText>1</mc:ResultMinimumText>
+                    <mc:NationalSampleIdentifier>9999999918</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU01567</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>OUH, Afd M, Birte Jensen</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85ba4-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Kolesterol LDL;P</mc:AnalysisText>
+                    <mc:ResultText>3</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>mmol/l</mc:ResultUnitText>
+                    <mc:ResultMinimumText>0</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>5</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>9999999919</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU01568</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>OUH, Afd M, Birte Jensen</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85ba5-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Triglycerid;P</mc:AnalysisText>
+                    <mc:ResultText>0.3</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>mmol/l</mc:ResultUnitText>
+                    <mc:ResultMinimumText>0</mc:ResultMinimumText>
+                    <mc:ResultMaximumText>2</mc:ResultMaximumText>
+                    <mc:NationalSampleIdentifier>9999999920</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU04094</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>OUH, Afd M, Birte Jensen</mc:Identifier>
+                        <mc:IdentifierCode>PNT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>OUH, Afd M, Birte Jensen</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>92a85ba6-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Vægt</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85ba7-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Legeme masse;Pt</mc:AnalysisText>
+                    <mc:ResultText>76.0</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>kg</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999921</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU03804</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Klonk</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>92a85ba8-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Livvidde</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85ba9-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Livvidde</mc:AnalysisText>
+                    <mc:ResultText>92</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>cm</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999922</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88018</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Klonk</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>92a85baa-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Højde</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85bab-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Legeme højde;Pt</mc:AnalysisText>
+                    <mc:ResultText>1.92</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>m</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999923</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU03794</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Hjerteportalen</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>92a85bac-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Motion</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85bad-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Pt-Motion;tid</mc:AnalysisText>
+                    <mc:ResultText>5.5</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>h/uge</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999924</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>MCS88801</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Sundhed.dk</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+        <mc:SelfMonitoredSample>
+            <mc:UuidIdentifier>92a85bae-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Proteinuri</mc:SampleCategoryIdentifier>
+            <mc:LaboratoryReportCollection>
+                <mc:LaboratoryReport>
+                    <mc:UuidIdentifier>92a85baf-bfad-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+                    <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+                    <mc:AnalysisText>Albumin (semikvant);U</mc:AnalysisText>
+                    <mc:ResultText>2</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultUnitText>Arb.enhed 1 2 3 4</mc:ResultUnitText>
+                    <mc:NationalSampleIdentifier>9999999925</mc:NationalSampleIdentifier>
+                    <mc:IupacIdentifier>NPU17997</mc:IupacIdentifier>
+                    <mc:ProducerOfLabResult>
+                        <mc:Identifier>Patient målt</mc:Identifier>
+                        <mc:IdentifierCode>POT</mc:IdentifierCode>
+                    </mc:ProducerOfLabResult>
+                </mc:LaboratoryReport>
+            </mc:LaboratoryReportCollection>
+            <mc:CreatedByText>Helbredsportalen</mc:CreatedByText>
+        </mc:SelfMonitoredSample>
+    </mc:SelfMonitoredSampleCollection>
+    <mc:PersonalGoalCollection>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>625870f0-c077-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Spirometri</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>FEV1</mc:AnalysisText>
+                    <mc:ResultText>3.0</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                </mc:PersonalGoalResult>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>FVC</mc:AnalysisText>
+                    <mc:ResultText>3.5</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>FEV1/FVC</mc:AnalysisText>
+                    <mc:ResultText>85</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                </mc:PersonalGoalResult>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>FEV i prc.</mc:AnalysisText>
+                    <mc:ResultText>78</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>OUH, KKA</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec3de8-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2006-05-04T18:13:51.0Z</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>MRC</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>MRC</mc:AnalysisText>
+                    <mc:ResultText>3</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Laegehuset, Birte Hvam</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec3de9-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-06-01T12:35:00</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>NYHA</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>NYHA</mc:AnalysisText>
+                    <mc:ResultText>3.5</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Laegehuset, Birte Hvam</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec3dea-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-06-01T12:45:00</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Iltmætning</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>O2 sat.;Hb(aB)</mc:AnalysisText>
+                    <mc:ResultText>98</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Laegehuset, Birte Hvam</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec3dec-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-07-01T13:45:00</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Exacerbationer</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>KOL-Ant.eksacerbationer sidste år?</mc:AnalysisText>
+                    <mc:ResultText>1</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Sundhed.dk</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec3ded-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-07-01T11:45:00</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Blodtryk</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Blodtryk systolisk;Arm</mc:AnalysisText>
+                    <mc:ResultText>110</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Blodtryk diatolisk;Arm</mc:AnalysisText>
+                    <mc:ResultText>130</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Sundhed.dk</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec3dee-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-07-02T13:45:00</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Puls</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Puls;Hjerte</mc:AnalysisText>
+                    <mc:ResultText>70</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Sundhed.dk</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec3def-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-07-03T13:45:00</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>HbA1C</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Glukose, middel (fra HbA1c);P</mc:AnalysisText>
+                    <mc:ResultText>7</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Lægehuset Assens</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec3df0-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-07-02T13:58:10</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Blodsukker</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Glukose;B</mc:AnalysisText>
+                    <mc:ResultText>8</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Lægehuset Assens</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec3df1-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-07-01T13:58:10</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Kolesterol</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Kolesterol;P</mc:AnalysisText>
+                    <mc:ResultText>1.5</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Kolesterol HDL;P</mc:AnalysisText>
+                    <mc:ResultText>1.5</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Kolesterol LDL;P</mc:AnalysisText>
+                    <mc:ResultText>2</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Triglycerid;P</mc:AnalysisText>
+                    <mc:ResultText>0.2</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Lægehuset Assens</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec64f0-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-06-02T13:58:10</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Vægt</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Legeme masse;Pt</mc:AnalysisText>
+                    <mc:ResultText>70</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Sundhed.dk</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec64f1-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-06-01T15:58:10</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Livvidde</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Livvidde</mc:AnalysisText>
+                    <mc:ResultText>85</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Sundhed.dk</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec64f2-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-06-05T11:58:10</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>BMI</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>BMI;Pt</mc:AnalysisText>
+                    <mc:ResultText>22.5</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Sundhedshuset, Birkerød</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec64f3-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-06-06T11:10:10</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Alkoholforbrug</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Alkoholforbrug</mc:AnalysisText>
+                    <mc:ResultText>13</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>less_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Sundhedshuset, Birkerød</mc:CreatedByText>
+        </mc:PersonalGoal>
+        <mc:PersonalGoal>
+            <mc:UuidIdentifier>82ec64f4-c1b4-11e1-afa7-0800200c9a66</mc:UuidIdentifier>
+            <mc:CreatedDateTime>2012-06-07T11:10:10</mc:CreatedDateTime>
+            <mc:SampleCategoryIdentifier>Motion</mc:SampleCategoryIdentifier>
+            <mc:PersonalGoalResultCollection>
+                <mc:PersonalGoalResult>
+                    <mc:AnalysisText>Pt-Motion;tid</mc:AnalysisText>
+                    <mc:ResultText>6</mc:ResultText>
+                    <mc:ResultEncodingIdentifier>numeric</mc:ResultEncodingIdentifier>
+                    <mc:ResultOperatorIdentifier>greater_than</mc:ResultOperatorIdentifier>
+                </mc:PersonalGoalResult>
+            </mc:PersonalGoalResultCollection>
+            <mc:CreatedByText>Sundhedshuset, Birkerød</mc:CreatedByText>
+        </mc:PersonalGoal>
+    </mc:PersonalGoalCollection>
+</mc:CitizenChronicDataset>

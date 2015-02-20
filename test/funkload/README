@@ -1,0 +1,32 @@
+Howto install? 
+==============
+Read this: 
+
+http://pyfunc.blogspot.dk/2011/12/installing-funkload-on-mac.html
+
+It works fine with homebrew as well instead of macports
+
+Basically the instructions are:
+
+virtualenv --no-site-packages loadtest
+source loadtest/bin/activate
+pip install yolk
+
+pip install funkload
+
+brew install gnuplot
+
+Now everything is setup and ready (remember to activate virtuel env). 
+
+To run tests: 
+./bin/fl-run-test test_OpenteleWeb.py
+
+To run load test for Web interface: 
+./bin/fl-run-bench test_OpenteleWeb.py OpenteleWeb.test_opentele_web
+
+To run load test for rest interface: 
+./bin/fl-run-bench test_OpenteleWeb.py OpenteleWeb.test_opentele_rest
+
+To generate HTML report to /tmp
+./bin/fl-build-report --html -o /tmp/ opentele_web-bench.xml
+

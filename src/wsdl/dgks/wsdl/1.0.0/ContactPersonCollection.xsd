@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="ContactPerson.xsd"/>
+    
+    <element name="ContactPersonCollection" type="mc:ContactPersonCollectionType"/>
+    
+    <complexType name="ContactPersonCollectionType">
+        <choice maxOccurs="unbounded">
+            <element ref="mc:CountyContactPerson"/>
+            <element ref="mc:HospitalContactPerson"/>
+        </choice>
+    </complexType>
+</schema>

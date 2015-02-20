@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="UuidIdentifier.xsd"/>
+    <include schemaLocation="ReferralDiagnosisCollection.xsd"/>
+    <include schemaLocation="FormattedText/FormattedText.xsd"/>
+    
+    <element name="MedicalInvestigation" type="mc:MedicalInvestigationType"/>
+    
+    
+    <complexType name="MedicalInvestigationType">
+        <sequence>
+            <element ref="mc:UuidIdentifier"/>
+            <element name="CreatedDateTime" type="dateTime"/>
+            <element ref="mc:ReferralDiagnosisCollection"/>
+            <element name="DesiredServiceFormattedText" type="mc:FormattedTextType" minOccurs="0"/>
+            <element name="AnamnesisFormattedText" type="mc:FormattedTextType" minOccurs="0"/>
+            <element name="CreatedByText" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

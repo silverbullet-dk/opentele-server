@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    attributeFormDefault="unqualified" xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    targetNamespace="urn:oio:medcom:chronicdataset:1.0.0">
+
+    <element name="DiagnosisClassificationIdentifier" type="mc:DiagnosisClassificationIdentifierType"/>
+
+    <simpleType name="DiagnosisClassificationIdentifierType">
+        <restriction base="string">
+            <enumeration value="SKS"/>
+            <enumeration value="ICD10"/>
+            <enumeration value="ICPC"/>
+            <enumeration value="unspecified"/>
+        </restriction>
+    </simpleType>
+
+</schema>

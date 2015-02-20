@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="ReferralDiagnosis.xsd"/>
+    
+    <element name="ReferralDiagnosisCollection" type="mc:ReferralDiagnosisCollectionType"/>
+    
+    <complexType name="ReferralDiagnosisCollectionType">
+        <sequence>
+            <element ref="mc:ReferralDiagnosis" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:fault="urn:oio:medcom:chronic-fault:1.0.0"
+	xmlns:tns="urn:oio:medcom:diagnose:1.0.0" 
+	name="DiagnosisService"
+	targetNamespace="urn:oio:medcom:diagnose:1.0.0">
+	<wsdl:types>
+		<xs:schema targetNamespace="urn:oio:medcom:diagnose:1.0.0" elementFormDefault="qualified">
+			<xs:include schemaLocation="DiagnosisService.xsd"/>
+			<xs:import namespace="urn:oio:medcom:chronic-fault:1.0.0" schemaLocation="fault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="HardFaultMessage">
+		<wsdl:part name="fault" element="fault:HardFaultDetailMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SoftFaultMessage">
+		<wsdl:part name="fault" element="fault:SoftFaultDetailMessage"/>
+	</wsdl:message>
+	<wsdl:message name="CreateDiagnosisRequestMessage">
+		<wsdl:part name="parameter" element="tns:CreateDiagnosisRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="CreateDiagnosisResponseMessage">
+		<wsdl:part name="parameter" element="tns:CreateDiagnosisResponseMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDiagnosisRequestMessage">
+		<wsdl:part name="parameter" element="tns:DeleteDiagnosisRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDiagnosisResponseMessage">
+		<wsdl:part name="parameter" element="tns:DeleteDiagnosisResponseMessage"/>
+	</wsdl:message>
+	<wsdl:portType name="DiagnosisPortType">
+		<wsdl:operation name="CreateDiagnosis">
+			<wsdl:input message="tns:CreateDiagnosisRequestMessage"/>
+			<wsdl:output message="tns:CreateDiagnosisResponseMessage"/>
+			<wsdl:fault name="SoftFault" message="tns:SoftFaultMessage"/>
+			<wsdl:fault name="HardFault" message="tns:HardFaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDiagnosis">
+			<wsdl:input message="tns:DeleteDiagnosisRequestMessage"/>
+			<wsdl:output message="tns:DeleteDiagnosisResponseMessage"/>
+			<wsdl:fault name="SoftFault" message="tns:SoftFaultMessage"/>
+			<wsdl:fault name="HardFault" message="tns:HardFaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DiagnosisBinding" type="tns:DiagnosisPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CreateDiagnosis">
+			<soap:operation soapAction="CreateDiagnosis"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="SoftFault">
+				<soap:fault name="SoftFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="HardFault">
+				<soap:fault name="HardFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDiagnosis">
+			<soap:operation soapAction="DeleteDiagnosis"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="SoftFault">
+				<soap:fault name="SoftFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="HardFault">
+				<soap:fault name="HardFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DiagnosisService">
+		<wsdl:port name="DiagnosisPort" binding="tns:DiagnosisBinding">
+			<soap:address location="http://localhost/NoServiceHere"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

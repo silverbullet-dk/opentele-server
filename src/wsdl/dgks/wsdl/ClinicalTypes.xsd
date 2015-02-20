@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Henrik Gørup Rasmussen (Acure) -->
+<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="GeneralTypes.xsd"/>
+	<xs:include schemaLocation="ValueLists.xsd"/>
+	<xs:include schemaLocation="FormattedText.xsd"/>
+	<xs:complexType name="DiagnosesType">
+		<xs:sequence>
+			<xs:element name="Main" type="SimpelDiagnoseType" minOccurs="0"/>
+			<xs:element name="MainAdditional" type="SimpelDiagnoseType" minOccurs="0" maxOccurs="5"/>
+			<xs:element name="Other" type="FullQualifiedDiagnoseOrTreatmentType" minOccurs="0" maxOccurs="50"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="ClinicalInformation" type="ClinicalInformationType"/>
+	<xs:complexType name="ClinicalInformationType">
+		<xs:sequence>
+			<xs:element name="Signed" type="DateTimeType" minOccurs="0"/>
+			<xs:element name="Text01" type="FormattedTextType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SimpelDiagnoseType">
+		<xs:sequence>
+			<xs:element name="DiagnoseCode" type="String_1_17"/>
+			<xs:element name="DiagnoseText" type="String_1_70"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QualifiedDiagnoseType">
+		<xs:sequence>
+			<xs:element name="DiagnoseCode" type="String_1_17"/>
+			<xs:element name="DiagnoseTypeCode" type="DiagnoseTypeCodeType"/>
+			<xs:element name="DiagnoseText" type="String_1_70"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="XQualifiedDiagnoseType">
+		<xs:sequence>
+			<xs:element name="DiagnoseCode" type="String_1_17" minOccurs="0"/>
+			<xs:element name="DiagnoseTypeCode" type="DiagnoseTypeCodeType"/>
+			<xs:element name="DiagnoseText" type="String_1_70"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="QualifiedDiagnoseOrTreatmentType">
+		<xs:annotation>
+			<xs:documentation>kvalificeret diagnose eller behandling </xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DiagnoseDescriptionCode" type="DiagnoseDescriptionCodeType"/>
+			<xs:element name="DiagnoseCode" type="String_1_17" minOccurs="0"/>
+			<xs:element name="DiagnoseTypeCode" type="DiagnoseTypeCodeType"/>
+			<xs:element name="DiagnoseText" type="String_1_70"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FullQualifiedDiagnoseOrTreatmentType">
+		<xs:annotation>
+			<xs:documentation>Fuld kvalificeret diagnose</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="DiagnoseDescriptionCode" type="DiagnoseDescriptionCodeType"/>
+			<xs:element name="DiagnoseCode" type="String_1_17"/>
+			<xs:element name="DiagnoseTypeCode" type="DiagnoseTypeCodeType"/>
+			<xs:element name="DiagnoseText" type="String_1_70"/>
+			<xs:element name="DiagnoseDateTime" type="DateTimeType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

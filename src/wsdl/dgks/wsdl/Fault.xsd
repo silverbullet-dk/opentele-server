@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:tns="urn:oio:medcom:chronic-fault:1.0.0"
+    targetNamespace="urn:oio:medcom:chronic-fault:1.0.0"
+    elementFormDefault="qualified">
+
+    <xs:complexType name="FaultDetailMessageType">
+        <xs:sequence>
+            <xs:element name="Message" type="xs:string"/>
+            <xs:element name="Code" type="xs:string" minOccurs="0"/>
+            <xs:element name="System" type="xs:string" minOccurs="0"/>
+            <xs:element name="Cause" type="xs:string" minOccurs="0"/>
+            <xs:element name="Detail" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="SoftFaultDetailMessage" type="tns:FaultDetailMessageType"/>
+
+    <xs:element name="HardFaultDetailMessage" type="tns:FaultDetailMessageType"/>
+
+</xs:schema>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:oio-med-com-kd="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+    targetNamespace="urn:oio:medcom:skl-notes:1.0.0"
+    elementFormDefault="qualified">
+   
+    <xs:import namespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/" schemaLocation="MedComKD_V0.2.xsd"/>
+    
+    <xs:element name="SendSKLNoteRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element name="SKLNoter" type="oio-med-com-kd:SKLNoterType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="SendSKLNoteResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="oio-med-com-kd:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeleteSKLNoteRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element ref="oio-med-com-kd:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeleteSKLNoteResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

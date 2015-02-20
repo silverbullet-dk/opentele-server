@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="GeneralTypes.xsd"/>
+	<xs:simpleType name="AcknowledgementCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="minuspositivkvitt"/>
+			<xs:enumeration value="pluspositivkvitt"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="VersionCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="XA0135Z"/>
+			<xs:enumeration value="XD0133L"/>
+			<xs:enumeration value="XD0233L"/>
+			<xs:enumeration value="XD0333L"/>
+			<xs:enumeration value="XD0533L"/>
+			<xs:enumeration value="XD1333L"/>
+			<xs:enumeration value="XD9133L"/>
+		    <xs:enumeration value="XD9134L"/>
+			<xs:enumeration value="XD1431C"/>
+			<xs:enumeration value="XD1730C"/>
+			<xs:enumeration value="XD2030C"/>
+			<xs:enumeration value="XD1930C"/>
+			<xs:enumeration value="XH0130R"/>
+			<xs:enumeration value="XH0230R"/>
+			<xs:enumeration value="XR0130K"/>
+			<xs:enumeration value="XR0230M"/>
+			<xs:enumeration value="XR0330P"/>
+			<xs:enumeration value="XR0430P"/>
+			<xs:enumeration value="XLMS015"/>
+			<xs:enumeration value="XLMS016"/>
+			<xs:enumeration value="XR6031W"/>
+			<xs:enumeration value="XC0130Q"/>
+			<xs:enumeration value="XC0230Q"/>
+			<xs:enumeration value="XC0330Q"/>
+			<xs:enumeration value="XQ0131K"/>
+			<xs:enumeration value="XQ0230M"/>
+			<xs:enumeration value="XQ0330P"/>
+			<xs:enumeration value="XQ0430M"/>
+			<xs:enumeration value="XB0130X"/>
+			<xs:enumeration value="XLA1211203A"/>
+			<xs:enumeration value="XLA1251001A"/>
+			<xs:enumeration value="XLA1411203A"/>
+			<xs:enumeration value="XLA1451001A"/>
+			<xs:enumeration value="XLA1651001A"/>
+			<xs:enumeration value="XLA2011001A"/>
+			<xs:enumeration value="XLA2051001A"/>
+			<xs:enumeration value="XLA2111001A"/>
+			<xs:enumeration value="XLA2151001A"/>
+			<xs:enumeration value="XI0001D"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="IdentifierCodeType">
+		<xs:annotation>
+			<xs:documentation>Kode for aktør</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sygehusafdelingsnummer"/>
+			<xs:enumeration value="ydernummer"/>
+			<xs:enumeration value="lokationsnummer"/>
+			<xs:enumeration value="kommunenummer"/>
+		        <xs:enumeration value="amt"/>
+		       <xs:enumeration value="sorkode"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DiagnoseTypeCodeType">
+		<xs:annotation>
+			<xs:documentation>Kode for diagnose typen</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SKSdiagnosekode"/>
+			<xs:enumeration value="uspecificeretkode"/>
+			<xs:enumeration value="ICPCkode"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="MedicalSpecialityCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ikkeklassificeret"/>
+			<xs:enumeration value="intern_medicin_sygehus"/>
+			<xs:enumeration value="geriatri"/>
+			<xs:enumeration value="hepatologi"/>
+			<xs:enumeration value="haematologi"/>
+			<xs:enumeration value="infektionsmedicin"/>
+			<xs:enumeration value="kardiologi"/>
+			<xs:enumeration value="med_allergologi"/>
+			<xs:enumeration value="med_endokrinologi"/>
+			<xs:enumeration value="med_gastroenterologi"/>
+			<xs:enumeration value="med_lungesygdomme"/>
+			<xs:enumeration value="nefrologi"/>
+			<xs:enumeration value="reumatologi"/>
+			<xs:enumeration value="dermato_venerologi_sygehus"/>
+			<xs:enumeration value="neurologi"/>
+			<xs:enumeration value="onkologi"/>
+			<xs:enumeration value="kirurgi_sygehus"/>
+			<xs:enumeration value="karkirurgi"/>
+			<xs:enumeration value="kir_gastroenterologi"/>
+			<xs:enumeration value="plastikkirurgi"/>
+			<xs:enumeration value="thoraxkirurgi"/>
+			<xs:enumeration value="urologi"/>
+			<xs:enumeration value="gynaekologi_obstetrik_sygehus"/>
+			<xs:enumeration value="neurokirurgi"/>
+			<xs:enumeration value="ortopaedisk_kirurgi_sygehus"/>
+			<xs:enumeration value="oftalmologi"/>
+			<xs:enumeration value="oto_rhino_laryngologi"/>
+			<xs:enumeration value="hospitalsodontologi"/>
+			<xs:enumeration value="psykiatri_sygehus"/>
+			<xs:enumeration value="boerne_ungdomspsykiatri"/>
+			<xs:enumeration value="klin_biokemi"/>
+			<xs:enumeration value="klin_fys_nuklearmedicin"/>
+			<xs:enumeration value="klin_immunologi"/>
+			<xs:enumeration value="klin_mikrobiologi"/>
+			<xs:enumeration value="klin_neurofysiologi"/>
+			<xs:enumeration value="patologisk_anatomi"/>
+			<xs:enumeration value="diagnostisk_radiologi"/>
+			<xs:enumeration value="klin_farmakologi"/>
+			<xs:enumeration value="klin_genetik"/>
+			<xs:enumeration value="anaestesiologi_sygehus"/>
+			<xs:enumeration value="arbejdsmedicin"/>
+			<xs:enumeration value="almen_medicin"/>
+			<xs:enumeration value="samfundsmedicin"/>
+			<xs:enumeration value="almenlaege_laegevagt"/>
+			<xs:enumeration value="oejenlaege"/>
+			<xs:enumeration value="oere_naese_halslaege"/>
+			<xs:enumeration value="anaestesiologi_praksis"/>
+			<xs:enumeration value="roentgen_kbh"/>
+			<xs:enumeration value="dermato_venerologi_praksis"/>
+			<xs:enumeration value="roentgen"/>
+			<xs:enumeration value="reumatologi_fysiurgi"/>
+			<xs:enumeration value="gynaekologi_obstetrik_praksis"/>
+			<xs:enumeration value="intern_medicin_praksis"/>
+			<xs:enumeration value="kirurgi_praksis"/>
+			<xs:enumeration value="klinisk_kemi"/>
+			<xs:enumeration value="neuromedicin"/>
+			<xs:enumeration value="ortopaedisk_kirurgi_praksis"/>
+			<xs:enumeration value="patologi "/>
+			<xs:enumeration value="plastkirurgi"/>
+			<xs:enumeration value="psykiatri_praksis"/>
+			<xs:enumeration value="paediatri"/>
+			<xs:enumeration value="boernepsykiatri"/>
+			<xs:enumeration value="tropemedicin"/>
+			<xs:enumeration value="tandlaege"/>
+			<xs:enumeration value="fysioterapi"/>
+			<xs:enumeration value="kiropraktor"/>
+			<xs:enumeration value="briller"/>
+			<xs:enumeration value="fodterapi"/>
+			<xs:enumeration value="fodbehandlking"/>
+			<xs:enumeration value="med_laboratorier"/>
+			<xs:enumeration value="omegnslaboratorier"/>
+			<xs:enumeration value="psykolog"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TypeCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="XDIS01"/>
+			<xs:enumeration value="XDIS02"/>
+			<xs:enumeration value="XDIS03"/>
+			<xs:enumeration value="XDIS05"/>
+			<xs:enumeration value="XDIS13"/>
+			<xs:enumeration value="XDIS91"/>
+			<xs:enumeration value="XDIS14"/>
+			<xs:enumeration value="XDIS17"/>
+			<xs:enumeration value="XDIS20"/>
+			<xs:enumeration value="XDIS19"/>
+			<xs:enumeration value="XREF01"/>
+			<xs:enumeration value="XREF02"/>
+			<xs:enumeration value="XRPT01"/>
+			<xs:enumeration value="XRPT02"/>
+			<xs:enumeration value="XRPT03"/>
+			<xs:enumeration value="XRPT04"/>
+			<xs:enumeration value="XPRE01"/>
+			<xs:enumeration value="XPRE60"/>
+			<xs:enumeration value="XCONTRL"/>
+			<xs:enumeration value="XREQ01"/>
+			<xs:enumeration value="XREQ02"/>
+			<xs:enumeration value="XREQ03"/>
+			<xs:enumeration value="XREQ04"/>
+			<xs:enumeration value="XDAO01"/>
+			<xs:enumeration value="XBIN01"/>
+			<xs:enumeration value="XLA121"/>
+			<xs:enumeration value="XLA125"/>
+			<xs:enumeration value="XLA141"/>
+			<xs:enumeration value="XLA145"/>
+			<xs:enumeration value="XLA165"/>
+			<xs:enumeration value="XLA201"/>
+			<xs:enumeration value="XLA205"/>
+			<xs:enumeration value="XLA211"/>
+			<xs:enumeration value="XLA215"/>
+			<xs:enumeration value="XI0001"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DiagnoseDescriptionCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="uspec_diagnose"/>
+			<xs:enumeration value="henv_diagnose"/>
+			<xs:enumeration value="bidiagnose"/>
+			<xs:enumeration value="tillaegsdiagnose"/>
+			<xs:enumeration value="aktionsdiagnose"/>
+			<xs:enumeration value="midlertidig_diagnose"/>
+			<xs:enumeration value="forloebsdiagnose"/>
+			<xs:enumeration value="operation"/>
+			<xs:enumeration value="roentgenundersoegelse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EpisodeOfCareStatusCodeType">
+		<xs:annotation>
+			<xs:documentation>Patient status</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="inaktiv"/>
+			<xs:enumeration value="indlagt"/>
+			<xs:enumeration value="ambulant"/>
+			<xs:enumeration value="doed"/>
+			<xs:enumeration value="ambulant_roentgen"/>
+			<xs:enumeration value="udskrevet_til_hjemmet"/>
+			<xs:enumeration value="udskrevet_til_andet"/>
+			<xs:enumeration value="flyttet_til_sygehusafd"/>
+			<xs:enumeration value="uoplyst"/>
+			<xs:enumeration value="flyttet_til_sygehus"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EpisodeOfCareStatusCode01Type">
+		<xs:annotation>
+			<xs:documentation>Patient status</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="EpisodeOfCareStatusCodeType">
+			<xs:enumeration value="inaktiv"/>
+			<xs:enumeration value="indlagt"/>
+			<xs:enumeration value="ambulant"/>
+			<xs:enumeration value="doed"/>
+			<xs:enumeration value="ambulant_roentgen"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EpisodeOfCareStatusCode02Type">
+		<xs:annotation>
+			<xs:documentation>Patient status 2</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="EpisodeOfCareStatusCodeType">
+			<xs:enumeration value="indlagt"/>
+			<xs:enumeration value="doed"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="EpisodeOfCareStatusCode03Type">
+		<xs:restriction base="EpisodeOfCareStatusCodeType">
+			<xs:enumeration value="doed"/>
+			<xs:enumeration value="udskrevet_til_hjemmet"/>
+			<xs:enumeration value="udskrevet_til_andet"/>
+			<xs:enumeration value="flyttet_til_sygehusafd"/>
+			<xs:enumeration value="uoplyst"/>
+			<xs:enumeration value="flyttet_til_sygehus"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="RelationCodeType">
+		<xs:annotation>
+			<xs:documentation>Pårørendes relation til patienten</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="uspec_paaroerende"/>
+			<xs:enumeration value="mor"/>
+			<xs:enumeration value="far"/>
+			<xs:enumeration value="barn"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TelephoneCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="privat"/>
+			<xs:enumeration value="arbejde"/>
+			<xs:enumeration value="mobil"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="PriorityCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="elektiv"/>
+			<xs:enumeration value="akut"/>
+			<xs:enumeration value="saerlige_forhold"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ReferralStatusType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ambulant"/>
+			<xs:enumeration value="indlaeggelse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="TransportType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ingen"/>
+			<xs:enumeration value="liggende"/>
+			<xs:enumeration value="siddende"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="InformationCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ustruktureret"/>
+			<xs:enumeration value="egen_laege"/>
+			<xs:enumeration value="henvisning_modtaget"/>
+			<xs:enumeration value="visitering"/>
+			<xs:enumeration value="indkaldt"/>
+			<xs:enumeration value="indlagt_paa"/>
+			<xs:enumeration value="udenamts_kaution"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="OriginalVersionCodeType">
+		<xs:annotation>
+			<xs:documentation>ORGVERSION</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="String_1_7"/>
+	</xs:simpleType>
+	<xs:simpleType name="PathologyAnalysisCodeTypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="PA1"/>
+			<xs:enumeration value="PA2"/>
+			<xs:enumeration value="PA3"/>
+			<xs:enumeration value="PA4"/>
+			<xs:enumeration value="PA5"/>
+			<xs:enumeration value="PA6"/>
+			<xs:enumeration value="PA7"/>
+			<xs:enumeration value="PA8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!--<xs:simpleType name="PathologyAnalysisCodeTypeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="S100"/>
+			<xs:enumeration value="S200"/>
+			<xs:enumeration value="S300"/>
+			<xs:enumeration value="S101"/>
+			<xs:enumeration value="S102"/>
+			<xs:enumeration value="S201"/>
+			<xs:enumeration value="S202"/>
+			<xs:enumeration value="S203"/>
+			<xs:enumeration value="S301"/>
+			<xs:enumeration value="T100"/>
+			<xs:enumeration value="T200"/>
+			<xs:enumeration value="T300"/>
+			<xs:enumeration value="T400"/>
+			<xs:enumeration value="T500"/>
+			<xs:enumeration value="T998"/>
+			<xs:enumeration value="I100"/>
+			<xs:enumeration value="I101"/>
+			<xs:enumeration value="I200"/>
+			<xs:enumeration value="I300"/>
+			<xs:enumeration value="I400"/>
+			<xs:enumeration value="STAT01"/>
+			<xs:enumeration value="STAT02"/>
+			<xs:enumeration value="H01"/>
+			<xs:enumeration value="H02"/>
+			<xs:enumeration value="H03"/>
+			<xs:enumeration value="H04"/>
+			<xs:enumeration value="H05"/>
+			<xs:enumeration value="H06"/>
+			<xs:enumeration value="H07"/>
+			<xs:enumeration value="H08"/>
+			<xs:enumeration value="H09"/>
+			<xs:enumeration value="H10"/>
+			<xs:enumeration value="H11"/>
+			<xs:enumeration value="H12"/>
+			<xs:enumeration value="H13"/>
+			<xs:enumeration value="H14"/>
+			<xs:enumeration value="H15"/>
+			<xs:enumeration value="H16"/>
+			<xs:enumeration value="H17"/>
+			<xs:enumeration value="H18"/>
+			<xs:enumeration value="H19"/>
+			<xs:enumeration value="H20"/>
+			<xs:enumeration value="H21"/>
+			<xs:enumeration value="H22"/>
+			<xs:enumeration value="H23"/>
+			<xs:enumeration value="H24"/>
+			<xs:enumeration value="H25"/>
+			<xs:enumeration value="H26"/>
+			<xs:enumeration value="H27"/>
+			<xs:enumeration value="H28"/>
+			<xs:enumeration value="XR0230M"/>
+			<xs:enumeration value="XQ0130K"/>
+			<xs:enumeration value="XQ0230M"/>
+			<xs:enumeration value="XQ0330P"/>
+			<xs:enumeration value="XA0130Z"/>
+			<xs:enumeration value="XU0130U"/>
+			<xs:enumeration value="XU0230U"/>
+			<xs:enumeration value="XU0330U"/>
+			<xs:enumeration value="XU0430U"/>
+			<xs:enumeration value="XU0530U"/>
+			<xs:enumeration value="XD2030C"/>
+			<xs:enumeration value="XD1430C"/>
+			<xs:enumeration value="XD1730C"/>
+			<xs:enumeration value="XD1830C"/>
+			<xs:enumeration value="XD1930C"/>
+			<xs:enumeration value="XI0130D"/>
+			<xs:enumeration value="XI0230D"/>
+			<xs:enumeration value="XI0330D"/>
+			<xs:enumeration value="XI0430D"/>
+			<xs:enumeration value="XSST012"/>
+		</xs:restriction>
+	</xs:simpleType>-->
+</xs:schema>

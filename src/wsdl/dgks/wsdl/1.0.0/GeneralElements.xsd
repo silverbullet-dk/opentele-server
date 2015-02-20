@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0">
+    
+    <xs:include schemaLocation="EncodingIdentifier.xsd"/>
+    <xs:include schemaLocation="OperatorIdentifier.xsd"/>
+    <xs:include schemaLocation="AbnormalIdentifier.xsd"/>
+    
+    <xs:element name="CreatedDateTime" type="xs:dateTime"/>
+    <xs:element name="AnalysisText" type="xs:string"/>
+    <xs:element name="ResultText" type="xs:string"/>
+    <xs:element name="ResultUnitText" type="xs:string"/>
+    <xs:element name="ResultMinimumText" type="xs:string"/>
+    <xs:element name="ResultMaximumText" type="xs:string"/>
+    <xs:element name="NationalSampleIdentifier" type="xs:string"/>
+    <xs:element name="IupacIdentifier" type="xs:string"/>
+    <xs:element name="SampleCategoryIdentifier" type="xs:string"/>
+    <xs:element name="CreatedByText" type="xs:string"/>
+    <xs:element name="ResultEncodingIdentifier" type="EncodingIdentifierType"/>  
+    <xs:element name="ResultOperatorIdentifier" type="OperatorIdentifierType"/>
+    <xs:element name="ResultAbnormalIdentifier" type="AbnormalIdentifierType"/>
+    
+</xs:schema>

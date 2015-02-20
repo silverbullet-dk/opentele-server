@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="EncodingIdentifier.xsd"/>
+    <include schemaLocation="OperatorIdentifier.xsd"/>
+    
+    <element name="PersonalGoalResult" type="mc:PersonalGoalResultType"/>
+    
+    <complexType name="PersonalGoalResultType">
+        <sequence>
+            <element name="AnalysisText" type="string"/>
+            <element name="ResultText" type="string"/>
+            <element name="ResultEncodingIdentifier" type="mc:EncodingIdentifierType"/>
+            <element name="ResultOperatorIdentifier" type="mc:OperatorIdentifierType" minOccurs="0"/>
+        </sequence>
+    </complexType>
+</schema>

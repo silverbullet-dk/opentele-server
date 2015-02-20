@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns="urn:oio:medcom:chronicdataset:1.0.1"
+    targetNamespace="urn:oio:medcom:chronicdataset:1.0.1"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+    <xs:include schemaLocation="MeasurementLocation.xsd"/>
+    <xs:include schemaLocation="SelfMonitoredSampleCollection.xsd"/>
+    <xs:include schemaLocation="SelfMonitoredSample.xsd"/>
+    <xs:include schemaLocation="MeasurementTransferredBy.xsd"/>
+    <xs:include schemaLocation="Instrument.xsd"/>
+    <xs:include schemaLocation="ResultTypeOfInterval.xsd"/>
+    <xs:include schemaLocation="HealthCareProfessionalComment.xsd"/>
+    <xs:include schemaLocation="MeasuringCircumstances.xsd"/>
+    <xs:include schemaLocation="MeasuringDataClassification.xsd"/>
+    <xs:include schemaLocation="MeasurementScheduled.xsd"/>
+    <xs:include schemaLocation="MeasurementDuration.xsd"/>
+    
+</xs:schema>

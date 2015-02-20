@@ -1,0 +1,50 @@
+<%@ page import="org.opentele.server.model.Clinician"%>
+<!doctype html>
+<html>
+<head>
+<meta name="layout" content="main">
+<g:set var="entityName"
+	value="${message(code: 'nextofkin.label', default: 'Next of kin')}" />
+<title><g:message code="default.remove.label" args="[entityName]" /></title>
+</head>
+
+<body>
+	<div id="remove-patientGroup" class="content scaffold-create" role="main">
+		<h1><g:message code="default.remove.label" args="[entityName]" /></h1>
+		<g:if test="${flash.message}">
+			<div class="message" role="status">
+				${flash.message}
+			</div>
+		</g:if>
+		<g:hasErrors bean="${patientInstance}">
+			<ul class="errors" role="alert">
+				<g:eachError bean="${patientInstance}" var="error">
+					<li <g:if test="${error in org.springframework.validation.FieldError}">data-field-id="${error.field}"</g:if>>
+                        <g:message error="${error}" />
+                    </li>
+				</g:eachError>
+			</ul>
+		</g:hasErrors>
+		<g:form action="doRemoveNextOfKin">
+			<g:hiddenField name="patient.id" value="${patientInstance.id}" />
+			<fieldset class="form">
+				<div class="fieldcontain ${hasErrors(bean: nextOfKinPersons, field: 'nextOfKin', 'error')} required">
+					<label for="nextOfKin">
+                        <g:message code="default.patient2NextOfKin.label" />
+						<span class="required-indicator">*</span>
+					</label>
+					<g:select id="nextOfKin" name="nextOfKin.id"
+						from="${patientInstance.nextOfKinPersons}"
+						optionKey="id" required=""
+						value="${nextOfKinPersons?.id}"
+						class="many-to-one" />
+				</div>
+			</fieldset>
+			<fieldset class="buttons">
+				<g:submitButton name="remove" class="delete" value="${message(code: 'default.button.remove.label2')}" />
+			</fieldset>
+		</g:form>
+	</div>
+</body>
+</html>
+

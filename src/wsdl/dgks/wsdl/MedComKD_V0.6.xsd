@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/" xmlns="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+    xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+    attributeFormDefault="unqualified">
+
+    <xs:element name="MedComKD" type="MedComKDType">
+        <xs:annotation>
+            <xs:documentation>Kroniker Data Sæt</xs:documentation>
+        </xs:annotation>
+    </xs:element>
+
+    <xs:complexType name="MedComKDType">
+        <xs:annotation>
+            <xs:documentation>Definition af en Kroniker Data Sæt meddelelse</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Borger" type="BorgerType"/>
+            <xs:element name="EgenLaege" type="EgenLaegeType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Paaroerende" type="PaaroerendeType" minOccurs="0"/>
+            <xs:element name="Samtykke" type="SamtykkeType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="MinDagbog" type="MinDagbogType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="LaegensUdredning" type="LaegensUdredningType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Kontakter" type="KontakterType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="RelevanteDiagnoser" type="RelevanteDiagnoserType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="RelevanteLabsvar" type="RelevanteLabsvarType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="AktuelMedicin" type="AktuelMedicinType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="SKLNoter" type="SKLNoterType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Kalender" type="KalenderType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="MonitoreringOgMaal" type="MonitoreringOgMaalType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Funktionsevner" type="FunktionsevnerType" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="BorgerType">
+        <xs:annotation>
+            <xs:documentation>Definition af Borger</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="CPR" type="xs:string"/>
+            <xs:element ref="Fornavn" minOccurs="0"/>
+            <xs:element ref="Efternavn" minOccurs="0"/>
+            <xs:element ref="FoedselsDato" minOccurs="0"/>
+            <xs:element ref="Koen" minOccurs="0"/>
+            <xs:element ref="Vej" minOccurs="0"/>
+            <xs:element ref="Postnummer" minOccurs="0"/>
+            <xs:element ref="By" minOccurs="0"/>
+            <xs:element ref="Kontakttelefon" minOccurs="0"/>
+            <xs:element ref="eMail" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EgenLaegeType">
+        <xs:sequence>
+            <xs:annotation>
+                <xs:documentation>Definition af Egen læge</xs:documentation>
+            </xs:annotation>
+            <xs:element ref="Ydernummer"/>
+            <xs:element ref="Praksis"/>
+            <xs:element ref="Navn" minOccurs="0"/>
+            <xs:element ref="Vej" minOccurs="0"/>
+            <xs:element ref="Postnummer" minOccurs="0"/>
+            <xs:element ref="By" minOccurs="0"/>
+            <xs:element ref="Kontakttelefon" minOccurs="0"/>
+            <xs:element ref="eMail" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PaaroerendeType">
+        <xs:annotation>
+            <xs:documentation>Definition af Pårørende</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="Fornavn"/>
+            <xs:element ref="Efternavn"/>
+            <xs:element ref="Vej" minOccurs="0"/>
+            <xs:element ref="Postnummer" minOccurs="0"/>
+            <xs:element ref="By" minOccurs="0"/>
+            <xs:element ref="Kontakttelefon" minOccurs="0"/>
+            <xs:element ref="eMail" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SamtykkeType">
+        <xs:annotation>
+            <xs:documentation>Definition af samtykke</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Dato" type="xs:dateTime"/>
+            <xs:element name="SamtykkeGivet" type="xs:boolean"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MinDagbogType">
+        <xs:annotation>
+            <xs:documentation>Definition af Min Dagbog</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Notat" type="NotatType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NotatType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="Tekst"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LaegensUdredningType">
+        <xs:annotation>
+            <xs:documentation>Definition af Lægens udredning</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element name="HenvisningsDiagnose" type="HenvisningsDiagnoseType" maxOccurs="unbounded"/>
+            <xs:element name="OensketYdelse" type="FormattedTextType" minOccurs="0"/>
+            <xs:element name="Anamnese" type="FormattedTextType" minOccurs="0"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="HenvisningsDiagnoseType">
+        <xs:sequence>
+            <xs:element ref="Dato"/>
+            <xs:element ref="DiagnoseType"/>
+            <xs:element ref="DiagnoseKode"/>
+            <xs:element ref="DiagnoseBeskrivelse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="KontakterType">
+        <xs:annotation>
+            <xs:documentation>Definition af Kontakter</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Sygehuskontakt" type="KontakterTypeType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Kommunekontakt" type="KontakterTypeType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="KontakterTypeType">
+        <xs:annotation>
+            <xs:documentation>Definition af Kontakter type</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Kontakt" type="xs:string"/>
+            <xs:element ref="ID"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RelevanteDiagnoserType">
+        <xs:annotation>
+            <xs:documentation>Definition af Relevante Diagnoser</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Diagnose" type="DiagnoseType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="DiagnoseType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="DiagnoseType"/>
+            <xs:element ref="DiagnoseKode"/>
+            <xs:element ref="DiagnoseBeskrivelse" minOccurs="0"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="RelevanteLabsvarType">
+        <xs:annotation>
+            <xs:documentation>Definition af Relevante Laboratoriesvar</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Labsvar" type="LabSvarType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LabSvarType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="Analyse"/>
+            <xs:element ref="Resultat"/>
+            <xs:element ref="Enhed"/>
+            <xs:element ref="Abnorm" minOccurs="0"/>
+            <xs:element ref="Min" minOccurs="0"/>
+            <xs:element ref="Max" minOccurs="0"/>
+            <xs:element ref="AnalyseID"/>
+            <xs:element ref="IUPAC"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AktuelMedicinType">
+        <xs:annotation>
+            <xs:documentation>Definition af Aktuel Medicin</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Medicin" type="MedicinType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MedicinType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="FMK"/>
+            <xs:element ref="Praeparat"/>
+            <xs:element ref="Form"/>
+            <xs:element ref="Styrke"/>
+            <xs:element ref="Dosis"/>
+            <xs:element ref="Type" minOccurs="0"/>
+            <xs:element ref="Indikation" minOccurs="0"/>
+            <xs:element ref="ATC"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SKLNoterType">
+        <xs:annotation>
+            <xs:documentation>Definition af SKL Noter</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Note" type="NoteTypeType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NoteTypeType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element name="TYPE" type="SKLType"/>
+            <xs:element ref="Titel" minOccurs="0"/>
+            <xs:element ref="Tekst" minOccurs="0"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="KalenderType">
+        <xs:annotation>
+            <xs:documentation>Definition af Kalender med aftaler</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Aftale" type="AftaleType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="AftaleType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="Kode"/>
+            <xs:element ref="Tekst"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MonitoreringOgMaalType">
+        <xs:annotation>
+            <xs:documentation>Definition af Monitorering og Mål</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Spirometri" type="SpirometriType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="MRC" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="NYHA" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Iltmaetning" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="INR" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="AntalExacerbationer" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="KlinikBT" type="BlodtrykType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="HjemmeBT" type="BlodtrykType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Puls" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="HbA1C" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Blodsukker" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Kolesterol" type="KolesterolType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Kost" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Rygning" type="RygningType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Vaegt" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Livvidde" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Hoejde" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="BMI" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Skridttaeller" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="Motion" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="ProteinUri" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="OedemGrad" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="FosterAktivitet" type="StdHjemmeMonType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+
+    <xs:complexType name="SpirometriType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="AnalyseID"/>
+            <xs:element name="FEV1" type="HjemmeMonType"/>
+            <xs:element name="FVC" type="HjemmeMonType"/>
+            <xs:element name="FEV1FVCRatio" type="HjemmeMonType"/>
+            <xs:element name="FEV1Pct" type="HjemmeMonType"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="BlodtrykType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="AnalyseID"/>
+            <xs:element name="Systolisk" type="HjemmeMonType"/>
+            <xs:element name="Diastolisk" type="HjemmeMonType"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="KolesterolType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="AnalyseID"/>
+            <xs:element name="SamletKolesterol" type="HjemmeMonType"/>
+            <xs:element name="HDL" type="HjemmeMonType"/>
+            <xs:element name="LDL" type="HjemmeMonType"/>
+            <xs:element name="Triglycerid" type="HjemmeMonType"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RygningType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="AnalyseID"/>
+            <xs:element name="Status" type="HjemmeMonType"/>
+            <xs:element name="PakkeAar" type="HjemmeMonType"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="Fornavn" type="xs:string"/>
+    <xs:element name="Efternavn" type="xs:string"/>
+    <xs:element name="FoedselsDato" type="xs:date"/>
+    <xs:element name="Koen">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="K"/>
+                <xs:enumeration value="M"/>
+                <xs:enumeration value="U"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+    <xs:element name="Vej" type="xs:string"/>
+    <xs:element name="Postnummer" type="xs:string"/>
+    <xs:element name="By" type="xs:string"/>
+    <xs:element name="Kontakttelefon" type="xs:string"/>
+    <xs:element name="eMail" type="xs:string"/>
+    <xs:element name="Ydernummer" type="xs:string"/>
+    <xs:element name="Praksis" type="xs:string"/>
+    <xs:element name="Navn" type="xs:string"/>
+    <xs:element name="ID" type="xs:string"/>
+    <xs:element name="Dato" type="xs:dateTime"/>
+    <xs:element name="Tekst" type="FormattedTextType"/>
+    <xs:element name="Organisation" type="xs:string"/>
+    <xs:element name="Afdeling" type="xs:string"/>
+    <xs:element name="Person" type="xs:string"/>
+    <xs:element name="DiagnoseKode" type="xs:string"/>
+    <xs:element name="DiagnoseBeskrivelse" type="xs:string"/>
+    <xs:element name="Analyse" type="xs:string"/>
+    <xs:element name="Resultat" type="xs:string"/>
+    <xs:element name="Enhed" type="xs:string"/>
+    <xs:element name="Min" type="xs:string"/>
+    <xs:element name="Max" type="xs:string"/>
+    <xs:element name="AnalyseID" type="xs:string"/>
+    <xs:element name="IUPAC" type="xs:string"/>
+    <xs:element name="UdfoertAf" type="xs:string"/>
+    <xs:element name="Praeparat" type="xs:string"/>
+    <xs:element name="Form" type="xs:string"/>
+    <xs:element name="Styrke" type="xs:string"/>
+    <xs:element name="Dosis" type="xs:string"/>
+    <xs:element name="Type" type="xs:string"/>
+    <xs:element name="Indikation" type="xs:string"/>
+    <xs:element name="ATC" type="xs:string"/>
+    <xs:element name="Titel" type="xs:string"/>
+    <xs:element name="Kode" type="xs:string"/>
+    <xs:element name="PatientensMaal" type="xs:string"/>
+
+    <xs:element name="DiagnoseType">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="SKS"/>
+                <xs:enumeration value="ICD10"/>
+                <xs:enumeration value="ICPC"/>
+                <xs:enumeration value="Uspecificeret"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="Abnorm">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="Normal"/>
+                <xs:enumeration value="Abnorm"/>
+                <xs:enumeration value="Uspecificeret"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="FMK">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:enumeration value="FMK"/>
+                <xs:enumeration value="PEM"/>
+                <xs:enumeration value="Uspecificeret"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:simpleType name="SKLType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="LAEGE"/>
+            <xs:enumeration value="KOMMUNE"/>
+            <xs:enumeration value="HOSPITAL"/>
+            <xs:enumeration value="SYGEHUS"/>
+            <xs:enumeration value="Uspecificeret"/>
+            <xs:enumeration value=""/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="KvalificeretDiagnoseType">
+        <xs:sequence>
+            <xs:element ref="DiagnoseType"/>
+            <xs:element ref="DiagnoseKode"/>
+            <xs:element ref="DiagnoseBeskrivelse" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="HjemmeMonType">
+        <xs:sequence>
+            <xs:element ref="IUPAC"/>
+            <xs:element ref="Analyse"/>
+            <xs:element ref="Resultat"/>
+            <xs:element ref="Enhed"/>
+            <xs:element ref="Min" minOccurs="0"/>
+            <xs:element ref="Max" minOccurs="0"/>
+            <xs:element ref="Abnorm" minOccurs="0"/>
+            <xs:element ref="PatientensMaal" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StdHjemmeMonType">
+        <xs:sequence>
+            <xs:element ref="ID"/>
+            <xs:element ref="Dato"/>
+            <xs:element ref="AnalyseID"/>
+            <xs:element ref="IUPAC"/>
+            <xs:element ref="Analyse"/>
+            <xs:element ref="Resultat"/>
+            <xs:element ref="Enhed"/>
+            <xs:element ref="Min" minOccurs="0"/>
+            <xs:element ref="Max" minOccurs="0"/>
+            <xs:element ref="Abnorm" minOccurs="0"/>
+            <xs:element ref="PatientensMaal" minOccurs="0"/>
+            <xs:element ref="UdfoertAf"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FormattedTextType" mixed="true">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="Space"/>
+            <xs:element ref="Break"/>
+            <xs:element ref="Right"/>
+            <xs:element ref="Center"/>
+            <xs:element ref="Bold"/>
+            <xs:element ref="Italic"/>
+            <xs:element ref="Underline"/>
+            <xs:element ref="FixedFont"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:element name="FixedFont" type="SimpleFormattedText"/>
+    <xs:complexType name="SimpleFormattedText" mixed="true">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="Space"/>
+            <xs:element ref="Break"/>
+            <xs:element ref="Right"/>
+            <xs:element ref="Center"/>
+            <xs:element ref="Bold"/>
+            <xs:element ref="Italic"/>
+            <xs:element ref="Underline"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:element name="Right" type="BreakableText"/>
+    <xs:element name="Center" type="BreakableText"/>
+    <xs:element name="Bold" type="BreakableText"/>
+    <xs:element name="Italic" type="BreakableText"/>
+    <xs:element name="Underline" type="BreakableText"/>
+    <xs:complexType name="BreakableText" mixed="true">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="Space"/>
+            <xs:element ref="Break"/>
+        </xs:choice>
+    </xs:complexType>
+    <xs:element name="Break">
+        <xs:complexType/>
+    </xs:element>
+    <xs:element name="Space">
+        <xs:complexType/>
+    </xs:element>
+
+    <xs:simpleType name="ScoreType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ikke_vurderet"/>
+            <xs:enumeration value="ubetydelige"/>
+            <xs:enumeration value="lette"/>
+            <xs:enumeration value="moderate"/>
+            <xs:enumeration value="svaere"/>
+            <xs:enumeration value="totale"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="FunktionsevnerType">
+        <xs:sequence>
+            <xs:element name="SidsteOpdatDato" type="xs:date"/>
+            <xs:element name="PersonligHygiejne">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Bade">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Score" type="ScoreType"/>
+                                    <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="VaskeSig">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Score" type="ScoreType"/>
+                                    <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="AfOgPaaklaedning">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Score" type="ScoreType"/>
+                        <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ToiletBesoeg">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Score" type="ScoreType"/>
+                        <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="MobilitetInde">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="FlytteSig">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Score" type="ScoreType"/>
+                                    <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="FaerdesIEgenBolig">
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Score" type="ScoreType"/>
+                                    <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Drikke">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Score" type="ScoreType"/>
+                        <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Spise">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Score" type="ScoreType"/>
+                        <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="LaveMad">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Score" type="ScoreType"/>
+                        <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="SammenhaengIHverdagsAktiviteter">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Score" type="ScoreType"/>
+                        <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="ForebyggeTabAfFunktionsevne">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Score" type="ScoreType"/>
+                        <xs:element minOccurs="0" name="Kommentar" type="FormattedTextType"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

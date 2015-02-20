@@ -1,0 +1,12 @@
+Til at generere SQL statements til at droppe alle foreign-keys til de tables der ikke kan sletttes:
+select
+        'alter table ' + object_name(parent_object_id) + ' drop constraint ' + name + ';'
+from sys.foreign_keys
+where referenced_object_id in (object_id('users'), object_id('patient_questionnaire'), object_id('patient_questionnaire_node'),object_id('patient'),object_id('monitoring_plan'), object_id('questionnaire_node'),
+object_id('questionnaire'), object_id('meter_type'), object_id('clinician'),object_id('role'),object_id('completed_questionnaire'), object_id('standard_threshold_set'));
+
+copy-paste result set og execute. Herefter drop resterende tables med (kald den evt. et par gange):
+
+EXEC sp_MSforeachtable @command1 = "DROP TABLE ?"
+
+

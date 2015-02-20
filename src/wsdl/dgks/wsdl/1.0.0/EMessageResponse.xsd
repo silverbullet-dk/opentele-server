@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    xmlns:tns="urn:oio:medcom:emessage:1.0.0"
+    targetNamespace="urn:oio:medcom:emessage:1.0.0" >
+    
+    <import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="UuidIdentifier.xsd"/>
+
+    <element name="EMessageResponse" type="tns:EMessageResponseType"/>
+    
+    <complexType name="EMessageResponseType">
+        <sequence>
+            <element name="EMessageResponseDetail" type="tns:EMessageResponseDetailType"  minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+    </complexType>
+    
+    <complexType name="EMessageResponseDetailType">
+        <sequence>
+            <element name="ResponseFrom" type="string"/>
+            <element ref="mc:UuidIdentifier"/>
+        </sequence>
+    </complexType>
+    
+    
+</schema>

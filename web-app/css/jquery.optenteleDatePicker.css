@@ -1,0 +1,37 @@
+.ui-datepicker-opentele input.ui-datepicker-ot-time {
+    width: 28px !important;
+    text-align: center !important;
+}
+
+.ui-datepicker-opentele input.ui-datepicker-ot-date {
+    width: 90px !important;
+    padding-right: 42px !important;
+    text-align: right !important;
+}
+
+.ui-datepicker-opentele div.ui-datepicker-wrapper {
+    display: inline;
+    position: relative;
+    vertical-align: text-top;
+}
+
+.ui-datepicker-opentele div.ui-datepicker-wrapper button.ui-datepicker-trigger {
+    display: inline;
+    position: absolute;
+    right: 0;
+}
+
+.ui-datepicker-opentele div.ui-datepicker-timewrapper {
+    vertical-align: text-top;
+    display: inline;
+}
+
+.ui-datepicker-opentele-simple {
+    position: relative;
+}
+
+.ui-datepicker-opentele-simple .ui-datepicker-trigger {
+    top: -6px;
+    right: 0;
+    position: absolute;
+}

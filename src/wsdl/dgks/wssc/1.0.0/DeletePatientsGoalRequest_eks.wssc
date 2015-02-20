@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">PatientsGoalService</service>
+        <port xml:space="preserve">PatientsGoalPort</port>
+        <operation xml:space="preserve">DeletePatientsGoal</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/PatientsGoalService.asmx</URL>
+        <action xml:space="preserve">DeletePatientsGoal</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:patients-goal:1.0.0&quot;
+	xmlns:ns1=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+	&lt;soap:Body&gt;
+		&lt;ns0:DeletePatientsGoalRequestMessage&gt;
+			&lt;ns0:CivilRegistrationNumber&gt;2512484916&lt;/ns0:CivilRegistrationNumber&gt;
+			&lt;ns1:UuidIdentifier&gt;ba38e1b0-e83b-11e1-aff1-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+		&lt;/ns0:DeletePatientsGoalRequestMessage&gt;
+	&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

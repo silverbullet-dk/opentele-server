@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" xmlns:tns="urn:oio:medcom:chronicdataset:all:1.0.0"
+    targetNamespace="urn:oio:medcom:chronicdataset:all:1.0.0" elementFormDefault="qualified">
+
+    <xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+        schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/>
+    <xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="CitizenChronicDataset.xsd"/>
+
+    <xs:complexType name="DataSegmentListType">
+        <xs:sequence>
+            <xs:element name="DataSegment" minOccurs="0" maxOccurs="unbounded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="GeneralPractitioner"/>
+                        <xs:enumeration value="Relative"/>
+                        <xs:enumeration value="Consent"/>
+                        <xs:enumeration value="KramPredictor"/>
+                        <xs:enumeration value="DiaryNoteCollection"/>
+                        <xs:enumeration value="MedicalInvestigationCollection"/>
+                        <xs:enumeration value="ContactPersonCollection"/>
+                        <xs:enumeration value="DiagnosisOfRelevanceCollection"/>
+                        <xs:enumeration value="CurrentDrugEffectuationCollection"/>
+                        <xs:enumeration value="LaboratoryReportCollection"/>
+                        <xs:enumeration value="HealthAndPreventionProfile"/>
+                        <xs:enumeration value="HealthProfessionalNoteCollection"/>
+                        <xs:enumeration value="AppointmentCollection"/>
+                        <xs:enumeration value="SelfMonitoredSampleCollection"/>
+                        <xs:enumeration value="PersonalGoalCollection"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="GetChronicDatasetRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+                <xs:element name="Since" type="xs:date" minOccurs="0"/>
+                <xs:element name="MaximumReturnedMonitorering" type="xs:integer" minOccurs="0"/>
+                <xs:element name="DataSegmentList" minOccurs="0" type="tns:DataSegmentListType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetChronicDatasetResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mc:CitizenChronicDataset"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

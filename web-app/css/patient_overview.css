@@ -1,0 +1,213 @@
+/*
+Each line contains (left to right):
+- Patient status (CQs worst severity) icon
+- Messages to patient
+- Messages from patient
+- Patient name and CPR
+- Expand/Collapse icon
+- Patient notes
+(- Disable alarm if unread msg to patient button)
+(- Remove all blue alarms button)
+- Acknowledge all green button
+*/
+
+/**
+ * Which method of 'clearfix' is best?
+ * http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best
+ * and http://www.quirksmode.org/css/clearing.html
+ */
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.clearfix {
+    zoom:1;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* End of clearfix */
+
+div#overviewButtons select, div#overviewButtons .search {
+    float: right;
+}
+
+div#questionnaireListHeader {
+    /* One entry pr line */
+    height: 30px;
+    padding: 5px 0px 5px 0px;
+    margin: 5px 0px 5px 0px;
+
+    background-color: #fafafa;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #e2e2e2;
+    /*background-color: green;*/
+}
+div#questionnaireListHeader * {
+    float: left;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0;
+
+    /*background-color: yellow;*/
+}
+
+#statusIcon {
+    width: 30px;
+    padding: 0px 2px 0px 2px;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: #e2e2e2;
+}
+#inboxIcon {
+    width: 30px;
+    padding: 0px 2px 0px 2px;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: #e2e2e2;
+}
+#outboxIcon {
+    width: 30px;
+    padding: 0px 2px 0px 2px;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: #e2e2e2;
+}
+h2.questionnaireListHeader {
+    padding: 0px 2px 0px 2px;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: #e2e2e2;
+    font-weight: 300;
+    font-size: 1.15em;
+}
+
+h2#patientName {
+    width: 300px;
+}
+h2#patientCPR {
+    width: 100px;
+    height: 30px;
+    padding: 0px 5px 0px 5px;
+    font-size: 1.00em;
+}
+
+#measurementsIcon {
+    padding: 0px 2px 0px 2px;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: #e2e2e2;
+}
+#noteIcon {
+    padding: 0px 2px 0px 2px;
+    border-style: solid;
+    border-width: 0px 1px 0px 0px;
+    border-color: #e2e2e2;
+}
+div .patientNotes {
+    height: 30px;
+    width: 30px;
+}
+
+div#acknowledgeButton {
+    float: right;
+    padding: 0px 3px 0px 3px;
+}
+
+div#acknowledgeButton fieldset.buttons {
+    border: 0;
+    background-color: transparent;
+}
+
+div#removeBlueButton {
+    float: right;
+    padding: 0px 3px 0px 3px;
+}
+
+div#removeBlueButton fieldset.buttons {
+    border: 0;
+    background-color: transparent;
+}
+
+div#noAlarmIfUnreadMessagesToPatient {
+    float: right;
+    padding: 0px 3px 0px 3px;
+}
+
+div#noAlarmIfUnreadMessagesToPatient fieldset.buttons {
+    border: 0;
+    background-color: transparent;
+}
+
+.buttons .acknowledgeAll, .buttons .acknowledgeAll:active {
+    width: 30px;
+    background-image: url(../images/acknowledged.png);
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    text-transform: capitalize;	/*Makes text-indent work for all buttons in IE7*/
+}
+
+.buttons .removeBlueAlarms, .buttons .removeBlueAlarms:active {
+    width: 30px;
+    background-image: url(../images/remove_blue_alarms.png);
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    text-transform: capitalize;	/*Makes text-indent work for all buttons in IE7*/
+}
+
+.buttons .noAlarmIfUnreadMessagesToPatient, .buttons .noAlarmIfUnreadMessagesToPatient:active {
+    width: 30px;
+    background-image: url(../images/outboxNewIgnore.png);
+    background-repeat: no-repeat;
+    text-indent: 25px;
+    text-transform: capitalize;	/*Makes text-indent work for all buttons in IE7*/
+}
+
+.overviewStyleShadow {
+    /*-moz-box-shadow: 0 0 2px #cccccc;*/
+    /*-webkit-box-shadow: 0 0 2px#cccccc;*/
+    /*box-shadow: 0 0 2px #cccccc;*/
+    /* For IE 8 */
+    /*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=45, Color='#cccccc')";*/
+    /* For IE 5.5 - 7 */
+    /*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=45, Color='#cccccc');*/
+}
+
+select#filterDropdown {
+    color: #4d4d4d;
+    display: inline-block;
+    font-weight: 300;
+    font-size: medium;
+    margin: 5px;
+    word-wrap: break-word;
+    vertical-align: middle;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: #e2e2e2;
+    padding: 5px 0px 5px 5px;
+    height: 30px;
+    max-width: 340px;
+    line-height: 30px;
+}
+
+.ie select#filterDropdown {
+    width: 300px;
+    position: absolute;
+}
+
+/* Prevent selects with height: 100%; from getting rendered with a crazy height in IE7 */
+/* Only IE7 parses the *+html selector */
+*+html div.content div.fieldcontain select#datePicker_day,
+*+html div.content div.fieldcontain select#datePicker_month,
+*+html div.content div.fieldcontain select#datePicker_year,
+*+html select {
+    height: 30px;
+}

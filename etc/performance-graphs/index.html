@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+</style>
+<body>
+<script src="http://d3js.org/d3.v3.js"></script>
+<script>
+
+var margin = {top: 20, right: 20, bottom: 30, left: 50},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom;
+
+//var parseDate = d3.time.format("%Y-%m-%d %H:%M:%S.%L0000").parse;
+
+var x = d3.time.scale()
+    .range([0, width]);
+
+var y = d3.scale.linear()
+    .range([height, 0]);
+
+var xAxis = d3.svg.axis()
+    .scale(x)
+    .orient("bottom");
+
+var yAxis = d3.svg.axis()
+    .scale(y)
+    .orient("left");
+
+// var line = d3.svg.line()
+var line = d3.svg.line().interpolate("basic")
+    .x(function(d) { return x(d.StartTime); })
+    .y(function(d) { return y(d.Duration); });
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Semi-colon separated text file
+var dsv = d3.dsv(";", "text/plain");
+
+
+//dsv("splits/opentele_patientNote_listTeam.csv", function(error, data) {
+dsv("splits/opentele_patient_questionnaires_rnprod.csv", function(error, data) {
+data.forEach(function(d) {
+  //  var dd = new Date(d.StartTime);
+    d.StartTime = d.StartTime; // Not necessary
+    d.Duration = +d.Duration;
+    d.Duration = d.Duration/1000;
+  });
+
+  x.domain(d3.extent(data, function(d) {
+     return d.StartTime; })
+  );
+  y.domain(d3.extent(data, function(d) { return d.Duration; }));
+
+  svg.append("g")
+      .attr("class", "x axis")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  svg.append("g")
+      .attr("class", "y axis")
+      .call(yAxis)
+    .append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", 6)
+      .attr("dy", ".71em")
+      .style("text-anchor", "end")
+      .text("Svartid (sekunder)");
+
+  svg.append("path")
+      .datum(data)
+      .attr("class", "line")
+      .attr("d", line);
+
+// Add dots to line
+svg.selectAll("dot")
+        .data(data)
+    .enter().append("circle")
+        .attr("r", 1.5)
+        .attr("cx", function(d) { return x(d.StartTime); })
+        .attr("cy", function(d) { return y(d.Duration); });
+
+
+});
+
+</script>

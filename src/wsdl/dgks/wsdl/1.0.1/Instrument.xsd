@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc101="urn:oio:medcom:chronicdataset:1.0.1" targetNamespace="urn:oio:medcom:chronicdataset:1.0.1">
+
+    <xs:element name="Instrument" type="mc101:InstrumentType"/>
+
+    <xs:complexType name="InstrumentType">
+        <xs:sequence>
+            <xs:element name="MedComID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Manufacturer" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="ProductType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="Model" type="xs:string" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="SoftwareVersion" type="xs:string" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

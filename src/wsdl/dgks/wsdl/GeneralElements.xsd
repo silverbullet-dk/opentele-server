@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:gepj="http://medinfo.dk/epj/proj/gepka/20030701/xml/schema"
+	xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="GeneralTypes.xsd"/>
+	<xs:include schemaLocation="ValueLists.xsd"/>
+	<xs:include schemaLocation="ClinicalTypes.xsd"/>
+	<xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" schemaLocation="Cpr/CPR_CivilRegistrationNumber.xsd"/>
+	<xs:element name="AlternativeIdentifier" type="AlternativeCprType"/>
+	<xs:element name="CivilRegistrationNumber" type="CivilRegistrationNumberType"/>
+	<xs:element name="RelationCode" type="RelationCodeType"/>
+	<xs:element name="PersonIdentifier" type="String_1_10"/>
+	<xs:element name="PersonSurnameName" type="String_1_70"/>
+	<xs:element name="PersonGivenName" type="String_1_70"/>
+	<xs:element name="OccupancyText" type="String_1_35"/>
+	<xs:element name="EpisodeOfCareStatusCode" type="EpisodeOfCareStatusCode01Type"/>
+	<xs:element name="EANIdentifier" type="EANIdentifierType"/>
+	<xs:element name="Identifier" type="String_1_17"/>
+	<xs:element name="IdentifierCode" type="IdentifierCodeType"/>
+	<xs:element name="OrganisationName" type="String_1_35"/>
+	<xs:element name="DepartmentName" type="String_1_35"/>
+	<xs:element name="UnitName" type="String_1_35"/>
+	<xs:element name="StreetName" type="String_1_35"/>
+	<xs:element name="SuburbName" type="String_1_35"/>
+	<xs:element name="DistrictName" type="String_1_35"/>
+	<xs:element name="PostCodeIdentifier">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="9"/>
+				<xs:minLength value="1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="TelephoneCode" type="TelephoneCodeType"/>
+	<xs:element name="TelephoneSubscriberIdentifier" type="String_1_25"/>
+	<xs:element name="TelefaxSubscriberIdentifier" type="String_1_25"/>
+	<xs:element name="EmailIdentifier" type="String_1_35"/>
+	<xs:element name="MedicalSpecialityCode" type="MedicalSpecialityCodeType"/>
+	<xs:element name="ObjectIdentifier" type="String_1_35"/>
+	<xs:element name="ObjectCode" type="ObjectCodeType"/>
+	<xs:element name="ObjectExtensionCode" type="ObjectExtensionCodeType"/>
+	<xs:element name="OriginalObjectSize" type="xs:positiveInteger"/>
+	<xs:element name="AnswerTo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="EANIdentifier"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AnalysisCodeType" type="AnalysisCodeTypeType"/>
+	<xs:element name="AnalysisCode" type="String_1_17"/>
+	<xs:element name="AnalysisCodeResponsible" type="String_1_3"/>
+	<xs:element name="Analysis" type="AnalysisType"/>
+	<xs:complexType name="AnalysisType">
+		<xs:sequence>
+			<xs:element ref="AnalysisCode"/>
+			<xs:element ref="AnalysisCodeType"/>
+			<xs:element ref="AnalysisCodeResponsible"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AnalysisCompleteType">
+		<xs:complexContent>
+			<xs:extension base="AnalysisType">
+				<xs:sequence>
+					<xs:element ref="AnalysisShortName" minOccurs="0"/>
+					<xs:element ref="AnalysisCompleteName"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="MicrobiologyAnalysisType">
+		<xs:sequence>
+			<xs:element name="AnalysisCode" type="String_1_17"/>
+			<xs:element ref="AnalysisCodeType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="PathologyAnalysisType">
+		<xs:sequence>
+			<xs:sequence>
+				<xs:element ref="AnalysisCode"/>
+				<xs:element name="AnalysisCodeType" type="PathologyAnalysisCodeTypeType"/>
+				<xs:element ref="AnalysisShortName"/>
+			</xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="AnalysisCompleteName" type="BreakableText"/>
+	<xs:element name="AnalysisShortName" type="String_1_35"/>
+	<xs:element name="SamplingDateTimeType">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="faktisk"/>
+				<xs:enumeration value="oensket"/>
+				<xs:enumeration value=""/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SamplingDateTime" type="DateTimeType"/>
+	<xs:element name="RequisitionDateTime" type="DateTimeType">
+		<xs:annotation>
+			<xs:documentation>RekvTid</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SamplingLocationCode">
+		<xs:annotation>
+			<xs:documentation>PRKODE</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="rekvirenten"/>
+				<xs:enumeration value="laboratoriet"/>
+				<xs:enumeration value="laboratoriet_eksternt"/>
+				<xs:enumeration value="patienten"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="AnalysisMDSName" type="AnalysisMDSNameType">
+		<xs:annotation>
+			<xs:documentation>Undersoegelsesnavn:Materiale:Lokalisation</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="AnalysisMDSNameType">
+		<xs:sequence>
+			<xs:element name="Examination" type="String_1_70"/>
+			<xs:element name="Material" type="String_1_70" minOccurs="0"/>
+			<xs:element name="Location" type="String_1_70" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="MICAnalysisCode" type="String_1_17">
+		<xs:annotation>
+			<xs:documentation>LabKode</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="RequisitionGroup">
+		<xs:annotation>
+			<xs:documentation>FTX+AGR</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Identifier" type="String_1_8">
+					<xs:annotation>
+						<xs:documentation>Rekvisitionsgruppe</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="IdentifierResponsible" type="String_1_3">
+					<xs:annotation>
+						<xs:documentation>LokalLabOrg</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Name" type="String_1_70">
+					<xs:annotation>
+						<xs:documentation>RekvisitionsgruppeNavn</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Order">
+		<xs:annotation>
+			<xs:documentation>Sorteringsorden</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:int">
+				<xs:minInclusive value="1"/>
+				<xs:maxInclusive value="999"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:group name="AdressGroup">
+		<xs:sequence>
+			<xs:element ref="StreetName"/>
+			<xs:element ref="SuburbName"/>
+			<xs:element ref="DistrictName"/>
+			<xs:element ref="PostCodeIdentifier"/>
+		</xs:sequence>
+	</xs:group>
+  <xs:simpleType name="CivilRegistrationNumberType">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[0-9]{10}"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

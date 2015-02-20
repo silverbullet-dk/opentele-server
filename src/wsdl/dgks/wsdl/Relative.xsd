@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Henrik Rasmussen (private) -->
+<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="GeneralElements.xsd"/>
+	<xs:element name="Relative" type="RelativeType"/>
+	<xs:complexType name="RelativeType">
+		<xs:sequence>
+			<xs:element ref="RelationCode"/>
+			<xs:element ref="PersonIdentifier" minOccurs="0"/>
+			<xs:element ref="PersonSurnameName"/>
+			<xs:element ref="PersonGivenName" minOccurs="0"/>
+			<xs:element ref="StreetName" minOccurs="0"/>
+			<xs:element ref="SuburbName" minOccurs="0"/>
+			<xs:element ref="DistrictName" minOccurs="0"/>
+			<xs:element ref="PostCodeIdentifier" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

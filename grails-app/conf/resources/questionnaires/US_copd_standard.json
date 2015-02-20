@@ -1,0 +1,224 @@
+{
+	"title": "COPD standard test",
+	"nodes": {
+		"end9": {
+			"id": "end9",
+			"position": {
+				"top": 874,
+				"left": 465
+			},
+			"type": "end"
+		},
+		"measurement3": {
+			"headline": "Measure oxygen saturation",
+			"id": "measurement3",
+			"position": {
+				"top": 150,
+				"left": 33
+			},
+			"measurementType": "SATURATION",
+			"measurementForm": "automatic",
+			"shortText": "Saturation",
+			"type": "measurement"
+		},
+		"input5": {
+			"id": "input5",
+			"position": {
+				"top": 383,
+				"left": 445
+			},
+			"dataType": "BOOLEAN",
+			"shortText": "Breathshortness",
+			"question": "Are you having more shortness of breath than usual?",
+			"type": "input"
+		},
+		"input7": {
+			"id": "input7",
+			"position": {
+				"top": 486,
+				"left": 453
+			},
+			"dataType": "BOOLEAN",
+			"shortText": "More coughing",
+			"question": "Are you coughing more than usual?",
+			"type": "input"
+		},
+		"text4": {
+			"headline": "Prepare for measuring bloodpressure",
+			"id": "text4",
+			"position": {
+				"top": 286,
+				"left": 19
+			},
+			"text": "Please make ready for measuring your bloodpressure. Put on the measuring device, and press next when ready.",
+			"type": "text"
+		},
+		"text2": {
+			"headline": "Please prepare for measurements",
+			"id": "text2",
+			"position": {
+				"top": 80,
+				"left": 339
+			},
+			"text": "Please make ready for measuring your oxygen saturation ad bloodpressure. Start by sitting down and warming up your finger for five minutes. Press next when ready.",
+			"type": "text"
+		},
+		"input8": {
+			"id": "input8",
+			"position": {
+				"top": 622,
+				"left": 402
+			},
+			"dataType": "BOOLEAN",
+			"shortText": "More mucus",
+			"question": "Are you coughing up more mucus than usual?",
+			"type": "input"
+		},
+		"start1": {
+			"id": "start1",
+			"position": {
+				"top": 19,
+				"left": 45
+			},
+			"type": "start"
+		},
+		"text10": {
+			"headline": "End of test",
+			"id": "text10",
+			"position": {
+				"top": 764,
+				"left": 389
+			},
+			"text": "You have now finished the test. Please press next and submit your results to the hospital on the next page. Thank you, and have a nice day.",
+			"type": "text"
+		},
+		"measurement6": {
+			"headline": "Measure bloodpressure",
+			"id": "measurement6",
+			"position": {
+				"top": 248,
+				"left": 427
+			},
+			"measurementType": "BLOOD_PRESSURE_PULSE",
+			"measurementForm": "automatic",
+			"shortText": "Bloodpressure",
+			"type": "measurement"
+		}
+	},
+	"connections": [
+		{
+			"source": "start1",
+			"target": "text2",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "text2",
+			"target": "measurement3",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement3",
+			"target": "text4",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement3",
+			"target": "text4",
+			"severity": "YELLOW",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		},
+		{
+			"source": "text4",
+			"target": "measurement6",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement6",
+			"target": "input5",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement6",
+			"target": "input5",
+			"severity": "YELLOW",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		},
+		{
+			"source": "input5",
+			"target": "input7",
+			"choiceValue": "true",
+			"severity": "YELLOW",
+			"type": "choice"
+		},
+		{
+			"source": "input5",
+			"target": "input7",
+			"choiceValue": "false",
+			"severity": "",
+			"type": "choice"
+		},
+		{
+			"source": "input7",
+			"target": "input8",
+			"choiceValue": "true",
+			"severity": "YELLOW",
+			"type": "choice"
+		},
+		{
+			"source": "input7",
+			"target": "text10",
+			"choiceValue": "false",
+			"severity": "",
+			"type": "choice"
+		},
+		{
+			"source": "input8",
+			"target": "text10",
+			"choiceValue": "true",
+			"severity": "RED",
+			"type": "choice"
+		},
+		{
+			"source": "input8",
+			"target": "text10",
+			"choiceValue": "false",
+			"severity": "",
+			"type": "choice"
+		},
+		{
+			"source": "text10",
+			"target": "end9",
+			"severity": "",
+			"type": "normal"
+		}
+	],
+	"standardSchedule": {
+		"type": "EVERY_NTH_DAY",
+		"reminderStartMinutes": "30",
+		"introPeriodWeeks": "4",
+		"dayInterval": "7",
+		"startingDate": "25-03-2014",
+		"specificDate": "25-03-2014",
+		"timesOfDay": [
+			{
+				"hour": "10",
+				"minute": "00"
+			}
+		],
+		"reminderTime": {
+			"hour": "10",
+			"minute": "00"
+		},
+		"blueAlarmTime": {
+			"hour": "23",
+			"minute": "59"
+		}
+	}
+}

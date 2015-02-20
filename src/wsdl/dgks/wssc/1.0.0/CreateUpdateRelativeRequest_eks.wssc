@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">RelativeService</service>
+        <port xml:space="preserve">RelativePort</port>
+        <operation xml:space="preserve">CreateUpdateRelative</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/RelativeService.asmx</URL>
+        <action xml:space="preserve">CreateUpdateRelative</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:relative:1.0.0&quot;
+    xmlns:ns1=&quot;http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/&quot; xmlns:ns2=&quot;http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/&quot;
+    xmlns:ns3=&quot;http://rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/&quot; xmlns:ns4=&quot;http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/&quot;
+    xmlns:ns5=&quot;http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/&quot; xmlns:ns6=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;ns0:CreateUpdateRelativeRequestMessage&gt;
+        	&lt;ns0:PersonCivilRegistrationIdentifier&gt;2512484916&lt;/ns0:PersonCivilRegistrationIdentifier&gt;
+            &lt;ns0:Relative&gt;
+                &lt;ns1:PersonNameStructure&gt;
+                	&lt;ns2:PersonGivenName&gt;Mads&lt;/ns2:PersonGivenName&gt;
+                    &lt;ns2:PersonSurnameName&gt;Berggren&lt;/ns2:PersonSurnameName&gt;
+                &lt;/ns1:PersonNameStructure&gt;
+                &lt;ns3:AddressPostal&gt;
+                	&lt;ns4:StreetName&gt;Skovejen&lt;/ns4:StreetName&gt;
+                                        &lt;ns2:StreetBuildingIdentifier&gt;12&lt;/ns2:StreetBuildingIdentifier&gt;
+                                        &lt;ns4:PostCodeIdentifier&gt;8010&lt;/ns4:PostCodeIdentifier&gt;
+                    &lt;ns4:DistrictName&gt;Aarhus N&lt;/ns4:DistrictName&gt;
+                &lt;/ns3:AddressPostal&gt;
+            	&lt;ns6:PhoneNumberIdentifier&gt;22348647&lt;/ns6:PhoneNumberIdentifier&gt;
+                &lt;ns6:EmailAddressIdentifier&gt;mb@danmarksmestkendtepatient.dk&lt;/ns6:EmailAddressIdentifier&gt;
+            &lt;/ns0:Relative&gt;
+        &lt;/ns0:CreateUpdateRelativeRequestMessage&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

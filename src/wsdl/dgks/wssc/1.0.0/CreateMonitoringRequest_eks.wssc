@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">MonitoringService</service>
+        <port xml:space="preserve">MonitoringPort</port>
+        <operation xml:space="preserve">CreateMonitoring</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/MonitoringService.asmx</URL>
+        <action xml:space="preserve">CreateMonitoring</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:monitoring:1.0.0&quot;
+	xmlns:ns1=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+	&lt;soap:Body&gt;
+		&lt;ns0:CreateMonitoringRequestMessage&gt;
+			&lt;ns0:PersonCivilRegistrationIdentifier&gt;2512484916&lt;/ns0:PersonCivilRegistrationIdentifier&gt;
+			&lt;ns1:SelfMonitoredSample&gt;
+				&lt;ns1:UuidIdentifier&gt;b33be780-bf97-11e1-afa7-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+				&lt;ns1:CreatedDateTime&gt;2012-08-16T11:59:51&lt;/ns1:CreatedDateTime&gt;
+				&lt;ns1:SampleCategoryIdentifier&gt;Spirometri&lt;/ns1:SampleCategoryIdentifier&gt;
+				&lt;ns1:LaboratoryReportCollection&gt;
+					&lt;ns1:LaboratoryReport&gt;
+						&lt;ns1:UuidIdentifier&gt;b33be781-bf97-11e1-afa7-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+						&lt;ns1:CreatedDateTime&gt;2012-08-16T11:59:51&lt;/ns1:CreatedDateTime&gt;
+						&lt;ns1:AnalysisText&gt;FEV1&lt;/ns1:AnalysisText&gt;
+						&lt;ns1:ResultText&gt;3.2&lt;/ns1:ResultText&gt;
+						&lt;ns1:ResultEncodingIdentifier&gt;numeric&lt;/ns1:ResultEncodingIdentifier&gt;
+						&lt;ns1:ResultOperatorIdentifier&gt;less_than&lt;/ns1:ResultOperatorIdentifier&gt;
+						&lt;ns1:ResultUnitText&gt;Liter&lt;/ns1:ResultUnitText&gt;
+						&lt;ns1:ResultAbnormalIdentifier&gt;to_high&lt;/ns1:ResultAbnormalIdentifier&gt;
+						&lt;ns1:ResultMinimumText&gt;1&lt;/ns1:ResultMinimumText&gt;
+						&lt;ns1:ResultMaximumText&gt;3&lt;/ns1:ResultMaximumText&gt;
+						&lt;ns1:NationalSampleIdentifier&gt;9999999999&lt;/ns1:NationalSampleIdentifier&gt;
+						&lt;ns1:IupacIdentifier&gt;MCS88015&lt;/ns1:IupacIdentifier&gt;
+						&lt;ns1:ProducerOfLabResult&gt;
+							&lt;ns1:Identifier&gt;Patient mÃƒÂ¥lt&lt;/ns1:Identifier&gt;
+							&lt;ns1:IdentifierCode&gt;POT&lt;/ns1:IdentifierCode&gt;
+						&lt;/ns1:ProducerOfLabResult&gt;
+					&lt;/ns1:LaboratoryReport&gt;
+					&lt;ns1:LaboratoryReport&gt;
+						&lt;ns1:UuidIdentifier&gt;b33be782-bf97-11e1-afa7-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+						&lt;ns1:CreatedDateTime&gt;2006-05-04T18:13:51.0Z&lt;/ns1:CreatedDateTime&gt;
+						&lt;ns1:AnalysisText&gt;FVC&lt;/ns1:AnalysisText&gt;
+						&lt;ns1:ResultText&gt;3.7&lt;/ns1:ResultText&gt;
+						&lt;ns1:ResultEncodingIdentifier&gt;numeric&lt;/ns1:ResultEncodingIdentifier&gt;
+						&lt;ns1:ResultOperatorIdentifier&gt;less_than&lt;/ns1:ResultOperatorIdentifier&gt;
+						&lt;ns1:ResultUnitText&gt;Liter&lt;/ns1:ResultUnitText&gt;
+						&lt;ns1:ResultAbnormalIdentifier&gt;unspecified&lt;/ns1:ResultAbnormalIdentifier&gt;
+						&lt;ns1:ResultMinimumText&gt;unspecified&lt;/ns1:ResultMinimumText&gt;
+						&lt;ns1:ResultMaximumText&gt;unspecified&lt;/ns1:ResultMaximumText&gt;
+						&lt;ns1:NationalSampleIdentifier&gt;999999991&lt;/ns1:NationalSampleIdentifier&gt;
+						&lt;ns1:IupacIdentifier&gt;MCS88016&lt;/ns1:IupacIdentifier&gt;
+						&lt;ns1:ProducerOfLabResult&gt;
+							&lt;ns1:Identifier&gt;Patient mÃƒÂ¥lt&lt;/ns1:Identifier&gt;
+							&lt;ns1:IdentifierCode&gt;POT&lt;/ns1:IdentifierCode&gt;
+						&lt;/ns1:ProducerOfLabResult&gt;
+					&lt;/ns1:LaboratoryReport&gt;
+					&lt;ns1:LaboratoryReport&gt;
+						&lt;ns1:UuidIdentifier&gt;b33be783-bf97-11e1-afa7-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+						&lt;ns1:CreatedDateTime&gt;2006-05-04T18:13:51.0Z&lt;/ns1:CreatedDateTime&gt;
+						&lt;ns1:AnalysisText&gt;FEV1/FVC&lt;/ns1:AnalysisText&gt;
+						&lt;ns1:ResultText&gt;85&lt;/ns1:ResultText&gt;
+						&lt;ns1:ResultEncodingIdentifier&gt;numeric&lt;/ns1:ResultEncodingIdentifier&gt;
+						&lt;ns1:ResultUnitText&gt;%&lt;/ns1:ResultUnitText&gt;
+						&lt;ns1:ResultAbnormalIdentifier&gt;unspecified&lt;/ns1:ResultAbnormalIdentifier&gt;
+						&lt;ns1:ResultMinimumText&gt;unspecified&lt;/ns1:ResultMinimumText&gt;
+						&lt;ns1:ResultMaximumText&gt;unspecified&lt;/ns1:ResultMaximumText&gt;
+						&lt;ns1:NationalSampleIdentifier&gt;999999992&lt;/ns1:NationalSampleIdentifier&gt;
+						&lt;ns1:IupacIdentifier&gt;MCS88017&lt;/ns1:IupacIdentifier&gt;
+						&lt;ns1:ProducerOfLabResult&gt;
+							&lt;ns1:Identifier&gt;Patient mÃƒÂ¥lt&lt;/ns1:Identifier&gt;
+							&lt;ns1:IdentifierCode&gt;POT&lt;/ns1:IdentifierCode&gt;
+						&lt;/ns1:ProducerOfLabResult&gt;
+					&lt;/ns1:LaboratoryReport&gt;
+					&lt;ns1:LaboratoryReport&gt;
+						&lt;ns1:UuidIdentifier&gt;b33be784-bf97-11e1-afa7-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+						&lt;ns1:CreatedDateTime&gt;2006-05-04T18:13:51.0Z&lt;/ns1:CreatedDateTime&gt;
+						&lt;ns1:AnalysisText&gt;FEV i prc.&lt;/ns1:AnalysisText&gt;
+						&lt;ns1:ResultText&gt;78&lt;/ns1:ResultText&gt;
+						&lt;ns1:ResultEncodingIdentifier&gt;numeric&lt;/ns1:ResultEncodingIdentifier&gt;
+						&lt;ns1:ResultUnitText&gt;%&lt;/ns1:ResultUnitText&gt;
+						&lt;ns1:ResultAbnormalIdentifier&gt;unspecified&lt;/ns1:ResultAbnormalIdentifier&gt;
+						&lt;ns1:ResultMinimumText&gt;unspecified&lt;/ns1:ResultMinimumText&gt;
+						&lt;ns1:ResultMaximumText&gt;unspecified&lt;/ns1:ResultMaximumText&gt;
+						&lt;ns1:NationalSampleIdentifier&gt;999999993&lt;/ns1:NationalSampleIdentifier&gt;
+						&lt;ns1:IupacIdentifier&gt;MCS88023&lt;/ns1:IupacIdentifier&gt;
+						&lt;ns1:ProducerOfLabResult&gt;
+							&lt;ns1:Identifier&gt;Patient mÃƒÂ¥lt&lt;/ns1:Identifier&gt;
+							&lt;ns1:IdentifierCode&gt;POT&lt;/ns1:IdentifierCode&gt;
+						&lt;/ns1:ProducerOfLabResult&gt;
+					&lt;/ns1:LaboratoryReport&gt;
+				&lt;/ns1:LaboratoryReportCollection&gt;
+				&lt;ns1:CreatedByText&gt;Helbredsprofilen&lt;/ns1:CreatedByText&gt;
+			&lt;/ns1:SelfMonitoredSample&gt;
+		&lt;/ns0:CreateMonitoringRequestMessage&gt;
+	&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

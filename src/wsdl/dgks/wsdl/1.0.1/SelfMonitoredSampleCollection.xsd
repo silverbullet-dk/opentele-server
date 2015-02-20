@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc100="urn:oio:medcom:chronicdataset:1.0.0" xmlns:mc101="urn:oio:medcom:chronicdataset:1.0.1" 
+    xmlns="urn:oio:medcom:chronicdataset:1.0.1" targetNamespace="urn:oio:medcom:chronicdataset:1.0.1" >
+    
+    <xs:include schemaLocation="SelfMonitoredSample.xsd"/>
+    
+    <xs:element name="SelfMonitoredSampleCollection" type="mc101:SelfMonitoredSampleCollectionType"/>
+    
+    <xs:complexType name="SelfMonitoredSampleCollectionType">
+        <xs:sequence>
+            <xs:element name="SelfMonitoredSample" type="mc101:SelfMonitoredSampleType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

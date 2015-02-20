@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="GeneralElements.xsd"/>
+	<xs:element name="Referral" type="ReferralType"/>
+	<xs:complexType name="ReferralType">
+		<xs:sequence>
+			<xs:element name="Identifier" type="String_1_35" minOccurs="0"/>
+			<xs:element name="Received" type="DateTimeType" minOccurs="0"/>
+			<xs:element name="Refer" type="QualifiedDiagnoseType" minOccurs="0"/>
+			<xs:element name="ReferalAdditional" type="QualifiedDiagnoseType" minOccurs="0" maxOccurs="5"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

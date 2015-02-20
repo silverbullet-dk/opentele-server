@@ -1,0 +1,837 @@
+/* Fonts */
+body, input, select, textarea {
+
+    font-family:  sans-serif;
+}
+
+/* General */
+    html {
+        background-color: #d3d3d3;
+    }
+
+    body {
+        /* Instance of 960 GS */
+        margin-left: 10px;
+        margin-right: 10px;
+        background-color: white;
+    }
+
+    div#header {
+        display: block;
+        overflow: auto;
+        border: 0 solid #93b8ce;
+        border-bottom-width: 1px;
+        background-color: #f2f2f2;
+    }
+
+    div#leftmenu {
+        display: block;
+        float: left;
+        width: 225px;
+        margin: 10px 10px 0 10px;
+    }
+
+    div#content {
+        display: block;
+        min-width: 150px;
+        margin: 10px 10px 0 250px;
+        /*background-color: yellow;*/
+    }
+    div#content a:hover {
+        text-decoration: underline;
+    }
+    div#content .buttons a:hover {
+        text-decoration: none;
+    }
+    div#content th a:hover {
+        text-decoration: none;
+    }
+
+    div#footer {
+        overflow: auto;
+        display: block;
+        float: none;
+        width: 100%;
+        text-align: center;
+        /*background-color: #8b0000;*/
+    }
+
+    ul {
+        list-style-type: none;
+        border-style: none;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    h1 {
+        height: 30px;
+        line-height: 30px;
+        border: 1px solid #93b8ce;
+        background-color: #f1f1f1;
+        /*color: #93b8ce;*/
+        color: #397391;
+
+        font-weight: 300;
+        font-size: 1.15em;
+        text-align: center;
+
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    h2 {
+        height: 30px;
+        line-height: 30px;
+        /*color: #93b8ce;*/
+        color: #397391;
+
+        font-weight: 300;
+        font-size: 1.00em;
+        text-align: left;
+
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    a img {
+        border: 0 none;
+    }
+
+    textarea {
+        width: 250px;
+        height: 100px;
+    }
+
+    .twoCharacterInput {
+        width: 34px !important;
+    }
+
+    .wide_select {
+        width: auto !important;
+    }
+
+    .ui-datepicker-opentele {
+        display: inline-block;
+    }
+
+    .vendor-ie .ui-datepicker-opentele {
+        zoom: 1;
+        *display: inline;
+    }
+
+    .ui-datepicker-opentele select#datePicker_day {
+        width:55px;
+        height: 100%;
+    }
+    .ui-datepicker-opentele select#datePicker_month {
+        width:115px;
+        height: 100%;
+
+    }
+    .ui-datepicker-opentele select#datePicker_year {
+        width:100px;
+        height: 100%;
+    }
+    .ui-datepicker-opentele select#datePicker_hour {
+        width:55px;
+        height: 100%;
+    }
+    .ui-datepicker-opentele select#datePicker_minute {
+        width:55px;
+        height: 100%;
+    }
+
+
+tfoot tr td {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+.standardThresholdSet {
+    margin-bottom: 30px;
+}
+
+tfoot tr td .buttons {
+    border: 1px solid #e2e2e2;
+    border-top: 0;
+    background-color: #fafafa;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+fieldset.buttons, div.pagination {
+        width: 100%;
+        border: 1px solid #e2e2e2;
+        background-color: #fafafa;
+        margin: 0 0 10px 0;
+        padding: 0 0 0 0;
+    }
+    .buttons a, .buttons a:visited, .buttons input,
+    .pagination a, .pagination a:visited, .pagination span {
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+    .buttons a, .buttons a:visited, .buttons input,
+    .pagination a, .pagination a:visited, .pagination span {
+        height: 30px;
+
+        display: inline-block;
+        float: left;
+        /*overflow: auto;*/
+
+        font-size: 1.10em;
+        text-decoration: none;
+        text-align: center;
+        line-height: 30px;
+        /*color: #93b8ce;*/
+        color: #397391;
+        background: #f1f1f1;
+
+        border: 1px solid #e2e2e2;
+
+        padding: 0 5px 0 5px;
+        margin: 5px 5px 5px 5px;
+
+        /*background-color: yellow;*/
+    }
+    .buttons a, .buttons a:visited {   /* <a ..> is treated differently than <input..> and gets +2px on width and height for some reason */
+        height: 28px;
+    }
+    td.buttons a, td.buttons a:visited, td.buttons input { /* Don't float left inside table*/
+        float:none;
+    }
+    .buttons a:active, .buttons input:active, .pagination a:active {
+        background: #fafafa;
+    }
+    div.pagination {
+        display: inline-block;
+    }
+    td.warning {
+        background-color: yellow !important;
+    }
+    td.alert {
+        background-color: red !important;
+    }
+
+    tr.highlight {
+        background-color: #ffffcc;
+    }
+
+
+/* Flash messages */
+    div.message, div.errors {
+        color: #397391;
+        padding: 2px 0 2px 10px;
+        margin: 5px 10px 5px 10px;
+        border: 1px solid #e2e2e2;
+    }
+    div.errors, ul.errors {
+        color: red;
+        border: 1px solid #e2e2e2;
+    }
+
+/* Header specific */
+    div#header div#logo {
+        display: inline-block;
+        float: left;
+        padding: 10px 10px 0 10px;
+    }
+
+    div#header img {
+        border: none
+    }
+
+    div#header div#userinfo {
+        display: inline-block;
+        float: right;
+        padding: 20px 10px 20px 0;
+    }
+
+    /* Leftmenu specific */
+    div#leftmenu div.leftmenu {
+        border: 1px solid #93b8ce;
+        border-top-width: 0;
+        background-color: #fafafa;
+        text-align: left;
+        margin: 0 0 20px 0;
+    }
+
+    div#leftmenu div.leftmenu ul {
+        list-style-type: none;
+        margin: 0 0 0 0;
+        padding: 5px 0 0 0;
+    }
+
+    div#leftmenu div.leftmenu li {
+        height: 36px;
+        width: 240px;
+        padding: 0 0 5px 0;
+        margin: 0 0 0 0;
+    }
+
+    div#leftmenu a {
+        /*color: #93b8ce;*/
+        color: #397391;
+        text-decoration: none;
+        font-size: medium;
+        font-weight: 300;
+        line-height: 41px;
+        padding: 0 0 0 5px;
+    }
+
+    div#leftmenu a:hover {
+        text-decoration: underline;
+    }
+
+    div#leftmenu li.selected {
+        background: url("../images/leftmenu_active.png") no-repeat top left;
+        background-size: contain;
+    }
+
+    div#leftmenu li.selected a {
+        color: #ffffff;
+        text-decoration: none;
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    div#leftmenu a img.icon {
+        width: 20px;
+        height: 20px;
+        margin-top: -3px;
+        vertical-align: middle;
+        padding-right: 5px;
+    }
+
+    div#leftmenu div#namebox {
+        padding: 5px 5px 0 5px;
+        margin: 0 0 0 0;
+        font-size: smaller;
+    }
+
+    div#leftmenu strong.messagecount.red {
+        color: red;
+    }
+/* Content specific */
+
+    a, a:visited {
+        text-decoration: none;
+        color: black;
+    }
+
+    div.content h1 {
+        text-align: left;
+        padding: 0 0 0 10px;
+        margin: 0 0 10px 0;
+    }
+
+    div.content ol.property-list {
+        list-style-type: none;
+        padding: 0 0 0 0;
+    }
+
+    div.content li.fieldcontain span.property-label, div.content div.fieldcontain label {
+        vertical-align: top;
+        /*color: #93b8ce;*/
+        color: #397391;
+        padding: 5px 0 20px 5px;
+        display: inline-block;
+        width: 25%;
+        height: 25px;
+        zoom: 1;
+        *display: inline;
+    }
+
+    div.content div.fieldcontain li.buttons {
+        display: block;
+        width: 100%;
+        float: left;
+    }
+
+    div.fieldcontain img {
+        vertical-align: top
+    }
+
+    div.fieldcontain div.inlined {
+        margin-top: 4px;
+        display: inline-block;
+        zoom: 1;
+        *display: inline;
+    }
+
+    div.content li.fieldcontain span.property-value,
+    div.content div.fieldcontain input,
+    div.content div.fieldcontain textarea,
+    div.content div.fieldcontain select {
+        color: #4d4d4d;
+        padding: 0 0 10px 5px;
+        display: inline-block;
+        width: 40%;
+        height: 25px;
+        font-weight: 300;
+        font-size: medium;
+        margin-bottom: 10px;
+        word-wrap: break-word;
+        zoom: 1;
+        *display: inline;
+    }
+
+
+    div.content li.fieldcontain span.property-value {
+        width: auto;
+    }
+
+    div.content li.fieldcontain span.property-value.fullheight {
+        height: 100%;
+    }
+
+    div.content div.fieldcontain input,
+    div.content div.fieldcontain textarea,
+    div.content div.fieldcontain select {
+        border: 1px solid #e2e2e2;
+        padding: 5px 0 5px 5px;
+        height:100%;
+    }
+
+    .vendor-ie div.content div.fieldcontain select {
+        height: auto;
+    }
+
+
+    div.content div.talltextarea textarea {
+        height: 200px;
+    }
+
+    fieldset.form {
+        border-style: none;
+        padding: 0;
+    }
+
+    .required-indicator {
+        color: red;
+    }
+
+    div.content table {
+        width: 100%;
+        border-collapse: collapse;
+        border-spacing: 0;
+        margin: 0 0 10px 0;
+    }
+
+    div.content table th {
+        height: 30px;
+        background-color: #f1f1f1;
+        border: 1px solid #e2e2e2;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+    }
+
+    div.content table th.first-th {
+        background-color: #d0e3ee;
+    }
+
+    div.content table tbody td {
+        height: 30px;
+        border: 1px solid #e2e2e2;
+        margin: 0 0 0 0;
+        padding: 0 0 0 0;
+        text-align: center;
+    }
+    div.content table.thresholds thead th, div.content table.thresholds tbody td{
+        width: 60px;
+    }
+    div.content table.thresholds thead th:first-child, div.content table.thresholds tbody td:first-child {
+        width: 130px;
+    }
+    div.content table.questionnaire thead th, div.content table.questionnaire tbody td{
+        width: 60px;
+    }
+    div.content table.questionnaire thead th:first-child, div.content table.questionnaire tbody td:first-child {
+        width: 130px;
+        text-align: left;
+        padding-left: 6px;
+    }
+    div.content table.questionnaire tbody td:first-child input {
+        margin-right: 6px;
+    }
+
+
+    div.content table tbody td.table-label-td {
+        /*text-align: left;*/
+        background-color: #f1f1f1;
+    }
+
+    div#custom_interval_chooser fieldset.buttons {
+        margin: 10px 0 10px 0;
+        display: inline-block;
+    }
+    div#custom_interval_chooser fieldset.buttons select, div#custom_interval_chooser fieldset.buttons label {
+        margin: 10px 0 0 5px;
+    }
+    div#custom_interval_chooser fieldset.buttons input {
+        float:right;
+    }
+    div#slider {
+        margin: 10px 20px 0 20px;
+    }
+    div#ignoreReasonInput {
+        width: 100%;
+    }
+    div#ignoreReasonInput span {
+        width: 35%;
+        vertical-align: top;
+    }
+    div#ignoreReasonInput textarea {
+        width: 60%;
+        height: 100px;
+    }
+    div#ignoreReasonInput input {
+        float: none;
+    }
+
+    select.patientGroup {
+        width: 300px;
+    }
+
+    div#overviewButtons a {
+        display: inline;
+    }
+
+    div#overviewButtons span {
+        display: inline;
+        float:left;
+        vertical-align: middle;
+        line-height: 40px;
+    }
+
+
+    /* Content specific: Measurement result table(s) styling is in measurement_results_tables.css */
+
+
+/* Browser specific bugs */  /*monthlyScheduleSetupContainer*/
+
+    /* No borders around radio buttons etc. in IE */
+    div.content div.fieldcontain.noborder input  {
+        border: 0 none;
+    }
+
+    /* Make sure 'logged in as .. ' text stays right in IE7 */
+    div#loggedInAsLabel {
+        text-align: right;
+    }
+
+    /* Make divs inside td's in lefttable actually use the entire td width */
+    div#resultsContainer td div.question {
+        width: 150px; /* 100% doesn't work */
+    }
+
+    /* Prevent selects with height: 100%; from getting rendered with a crazy height in IE7 */
+    /* Only IE7 parses the *+html selector */
+    *+html div.content div.fieldcontain select#datePicker_day,
+    *+html div.content div.fieldcontain select#datePicker_month,
+    *+html div.content div.fieldcontain select#datePicker_year,
+    *+html div.content div.fieldcontain select#datePicker_hour,
+    *+html div.content div.fieldcontain select#datePicker_minute,
+    *+html select {
+        height: 30px;
+    }
+
+    /* .. annnd the above is good, unless we have a multiple select. Can't select
+    on HTML-element properties, thus we add each one individually - Only for IE7*/
+    *+html div.content div#monthlyScheduleSetupContainer div.fieldcontain select,
+    *+html div.content div.fieldcontain select {
+        height: 100px;
+    }
+
+    /* Prevent selects with height: 100%; from getting rendered with a crazy height in IE7 */
+    /* Also prevents radiobuttons and checkboxes from collapsing to height 0px in
+        normal browsers */
+    /* NB: The .noborder class is key in leaving out e.g. buttons*/
+    html div.content div.fieldcontain.noborder input {
+        height: 15px;
+    }
+
+    /* To fix everyone's beloved IE7 margin-bottom bug (only applies to buttons inside a fieldcontain.buttons */
+    *+html .buttons {
+        padding-bottom: 5px;
+    }
+
+    /* Fix two buttons in one TD displaying on two lines */
+    /* Can't seem to find a fix for this :-/ */
+
+    /* Prevent buttons with two word labels form wrapping in IE7 */
+    .buttons a {
+        white-space: nowrap;
+    }
+
+/* Stylish */
+    .shadow {
+        -moz-box-shadow: 3px 3px 4px #000;
+        -webkit-box-shadow: 3px 3px 4px #000;
+        box-shadow: 3px 3px 4px #000;
+        /* For IE 8 */
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+        /* For IE 5.5 - 7 */
+        filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+    }
+
+.buttons a, .buttons a:visited, .buttons input, div.pagination a, div.pagination a:visited, div.pagination span, .buttons button {
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+        border-radius: 5px;
+        position: relative;
+    }
+
+    .buttons input[disabled] {
+        color: #ccc;
+    }
+
+.buttons button {
+    background: none;
+    border: 1px solid rgb(226, 226, 226);
+    padding: 7px 2px 2px 3px;
+    margin: 5px;
+    line-height: 19px;
+    cursor: pointer;
+
+}
+
+.buttons .delete, .buttons a.delete:active, .buttons a.delete:visited, .buttons input.delete:active {
+    background-image: url(../images/delete.png);
+    }
+
+    .buttons .goback, .buttons a.goback:active, .buttons a.goback:visited, .buttons input.goback:active {
+        background-image: url(../images/goback.png);
+    }
+
+    .buttons .gonext, .buttons a.gonext:active, .buttons a.gonext:visited, .buttons input.gonext:active {
+        background-image: url(../images/gonext.png);
+    }
+
+    .buttons .acknowledge, .buttons a.acknowledge:active, .buttons a.acknowledge:visited, .buttons input.acknowledge:active {
+        background-image: url(../images/accept.png);
+    }
+
+    .buttons .print, .buttons a.print:active, .buttons a.print:visited, .buttons input.print:active {
+        background-image: url(../images/print.png);
+    }
+
+    .buttons .edit, .buttons a.edit:active, .buttons a.edit:visited, .buttons input.edit:active {
+        background-image: url(../images/edit.png);
+    }
+    .buttons .resetPassword, .buttons a.resetPassword:active, .buttons a.resetPassword:visited, .buttons input.resetPassword:active {
+        background-image: url(../images/key.png);
+    }
+
+    .buttons .create, .buttons a.create:active, .buttons a.create:visited, .buttons input.create:active {
+        background-image: url(../images/add.png);
+    }
+
+    .buttons .save, .buttons a.save:active, .buttons a.save:visited, .buttons input.save:active {
+        background-image: url(../images/save.png);
+    }
+
+    .buttons .blue, .buttons a.blue:active, .buttons a.blue:visited, .buttons input.blue:active {
+        background-image: url(../images/blue_alarm.png);
+    }
+
+    .buttons .search, .buttons a.search:active, .buttons a.search:visited, .buttons input.search:active {
+        background-image: url(../images/search.png);
+    }
+
+    .buttons .cancel, .buttons a.cancel:active, .buttons a.cancel:visited, .buttons input.cancel:active {
+        background-image: url(../images/cancel.png);
+    }
+
+    .buttons .mail, .buttons a.mail:active, .buttons a.mail:visited, .buttons input.mail:active {
+        background-image: url(../images/mail.png);
+    }
+
+    .buttons .publish, .buttons a.publish:active, .buttons a.publish:visited, .buttons input.publish:active {
+        background-image: url(../images/questionnairePublished.png);
+    }
+
+    .buttons .delete,       .buttons a.delete:active,       .buttons a.delete:visited,       .buttons input.delete:active,
+    .buttons .edit,         .buttons a.edit:active,         .buttons a.edit:visited,         .buttons input.edit:active,
+    .buttons .resetPassword,.buttons a.resetPassword:active,.buttons a.resetPassword:visited,.buttons input.resetPassword:active,
+    .buttons .save,         .buttons a.save:active,         .buttons a.save:visited,         .buttons input.save:active,
+    .buttons .blue,         .buttons a.blue:active,         .buttons a.blue:visited,         .buttons input.blue:active,
+    .buttons .acknowledge,  .buttons a.acknowledge:active,  .buttons a.acknowledge:visited,  .buttons input.acknowledge:active,
+    .buttons .goback,       .buttons a.goback:active,       .buttons a.goback:visited,       .buttons input.goback:active,
+    .buttons .gonext,       .buttons a.gonext:active,       .buttons a.gonext:visited,       .buttons input.gonext:active,
+    .buttons .print,        .buttons a.print:active,        .buttons a.print:visited,        .buttons input.print:active,
+    .buttons .create,       .buttons a.create:active,       .buttons a.create:visited,       .buttons input.create:active,
+    .buttons .search,       .buttons a.search:active,       .buttons a.search:visited,       .buttons input.search:active,
+    .buttons .cancel,       .buttons a.cancel:active,       .buttons a.cancel:visited,       .buttons input.cancel:active,
+    .buttons .mail,         .buttons a.mail:active,         .buttons a.mail:visited,         .buttons input.mail:active,
+    .buttons .publish,      .buttons a.publish:active,      .buttons a.publish:visited,      .buttons input.publish:active {
+        /*background-position: 0.7em center;*/
+        background-repeat: no-repeat;
+        text-indent: 25px;
+        text-transform: capitalize;	/*Makes text-indent work for all buttons in IE7*/
+    }
+
+.actions.buttons a {
+    width: 20px;
+}
+
+    ul.bullet-list {
+        list-style-type: circle;
+        border-style: none;
+        margin: 0 0 20px 40px;
+        padding: 0 0 0 0;
+    }
+
+.button-icon-only {
+    width: 34px !important;
+    height: 30px !important;;
+    padding: 1px !important;;
+    margin: 5px !important;;
+}
+
+
+
+table .actions {
+    width: 130px;
+}
+
+/* FIX for IE7: http://stackoverflow.com/questions/7157625/can-css-content-property-work-in-ie7 */
+th.sortable a {*zoom: expression( this.runtimeStyle.zoom="1", this.appendChild( document.createElement("i"), this.firstChild ).className="ie-after" );}
+th.sortable a .ie-after {*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&nbsp;');}​
+
+th.sortable a {
+    white-space: nowrap;
+}
+
+th.sortable a:after, th.sortable a i.ie-after {
+    content:"";
+    float:right;
+    width:8px;
+    height:16px;
+    margin:0 5px 0 0;
+    background: url('../images/order.png') no-repeat 0 0;
+}
+
+th.sortable.desc a:after, th.sortable.desc a i.ie-after {
+    background-position: -8px 0;
+}
+
+th.sortable.asc a:after,th.sortable.asc a i.ie-after  {
+    background-position: -16px 0;
+}
+
+div.acknowledgeAll a img {
+    vertical-align: middle;
+}
+
+.ui-datepicker{
+    z-index: 9999 !important;
+}
+
+.ui-datepicker-opentele-knockout {
+    position: relative;
+}
+
+.ui-datepicker-opentele-knockout .ui-datepicker-trigger {
+    top: -8px;
+    right: -1px;
+    position: absolute;
+    border: 1px solid transparent;
+}
+
+
+tr.thresholds td  {
+    position: relative;
+    text-align: right !important;
+    padding-right: 15px !important;
+}
+
+tr.thresholds td input {
+    text-align: right;
+    height: 18px;
+    width: 40%;
+    font-size: 16px;
+    border: 1px solid #e2e2e2;
+    padding: 2px 25px 2px 5px;
+}
+
+tr.thresholds td img {
+    position: relative;
+    top: 4px;
+    right: 25px;
+}
+
+html.vendor-ie tr.thresholds td img {
+    right: 0;
+}
+
+.scheduleTypeSelector {
+    display: inline-block;
+}
+
+.vendor-ie .scheduleTypeSelector {
+    zoom: 1;
+    *display: inline;
+}
+
+
+.scheduleTypeSelector input[type="radio"]{
+    width: auto !important;
+    height: 13px !important;
+}
+.scheduleTypeSelector label {
+    width: auto !important;
+}
+
+
+.narrow-checkbox {
+    width: auto !important;
+    margin-top: 6px;
+}
+
+#reminderStartMinutes {
+    width: 100px !important
+}
+
+.weekdays, .timeOfDayInlined, .timesOfDayAdd, .nthDayInterval {
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    margin-right: 20px;
+}
+
+.timesOfDayAdd, .nthDayInterval {
+    vertical-align: middle;
+}
+
+
+.vendor-ie .nthDayInterval input[name="dayInterval"] {
+    vertical-align: top;
+}
+
+.vendor-ie .nthDayInterval .inlined {
+    vertical-align: top;
+    padding-top: 5px;
+}
+.vendor-ie .nthDayInterval .ui-datepicker-opentele {
+    vertical-align: top;
+}
+
+.timesOfDayList .timeOfDay {
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.vendor-ie .timeOfDayInlined .timeOfDay {
+    vertical-align: top;
+}
+
+.vendor-ie .timesOfDayAdd {
+    vertical-align: top;
+}
+
+.weekdays label {
+    width: auto !important;
+    height: auto !important;
+}
+
+.weekdays input {
+    height: auto !important;
+
+}

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">ContactService</service>
+        <port xml:space="preserve">ContactPort</port>
+        <operation xml:space="preserve">CreateUpdateHospitalContact</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/ContactService.asmx</URL>
+        <action xml:space="preserve">CreateUpdateHospitalContact</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:contact:1.0.0&quot;
+    xmlns:ns1=&quot;http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/&quot;&gt;
+    &lt;SOAP-ENV:Header/&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;ns0:CreateUpdateHospitalContactRequestMessage&gt;
+        	&lt;ns0:CivilRegistrationNumber&gt;2512484916&lt;/ns0:CivilRegistrationNumber&gt;
+            &lt;ns0:Sygehuskontakt&gt;
+                &lt;ns1:Sygehuskontakt&gt;
+                	&lt;ns1:Kontakt&gt;Birte Jensen, Afd A Tlf 9876543&lt;/ns1:Kontakt&gt;
+                	&lt;ns1:ID&gt;3241d0c0-e6c7-11e1-aff1-0800200c9a66&lt;/ns1:ID&gt;
+                    &lt;ns1:UdfoertAf&gt;MedCom, MDM, WS-test&lt;/ns1:UdfoertAf&gt;
+                &lt;/ns1:Sygehuskontakt&gt;
+            &lt;/ns0:Sygehuskontakt&gt;
+        &lt;/ns0:CreateUpdateHospitalContactRequestMessage&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

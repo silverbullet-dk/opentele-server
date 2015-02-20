@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <element name="AbnormalIdentifier" type="mc:AbnormalIdentifierType"/>
+    
+    
+    <simpleType name="AbnormalIdentifierType">
+        <restriction base="string">
+            <enumeration value="to_high"/>
+            <enumeration value="to_low"/>
+            <enumeration value="abnormal"/>
+            <enumeration value="unspecified"/>
+        </restriction>
+    </simpleType>
+</schema>

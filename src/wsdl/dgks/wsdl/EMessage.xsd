@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:gepj="http://medinfo.dk/epj/proj/gepka/20030701/xml/schema" xmlns:dkcpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="Letters.xsd"/>
+	<xs:include schemaLocation="GeneralElements.xsd"/>
+	<xs:include schemaLocation="GeneralTypes.xsd"/>
+	<xs:element name="Emessage">
+		<xs:annotation>
+			<xs:documentation>Indpakningen for en forsendelse</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Envelope" type="EnvelopeType">
+					<xs:annotation>
+						<xs:documentation>Generelle forsendelses oplysninger</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:sequence maxOccurs="unbounded">
+					<xs:group ref="Letters"/>
+					<xs:element name="Local_Elements" type="xs:anyType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="EnvelopeType">
+		<xs:annotation>
+			<xs:documentation>Gennerel information om forsendelsen</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Sent" type="DateTimeType"/>
+			<xs:element name="Identifier" type="String_1_14"/>
+			<xs:element name="AcknowledgementCode" type="AcknowledgementCodeType"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

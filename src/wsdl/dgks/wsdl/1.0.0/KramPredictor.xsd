@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="LaboratoryReport.xsd"/>
+    
+    <element name="KramPredictor" type="mc:KramPredictorType"/>
+    
+    <complexType name="KramPredictorType">
+        <sequence>
+            <element name="Weight" type="mc:LaboratoryReportType" minOccurs="0"/>
+            <element name="Height" type="mc:LaboratoryReportType" minOccurs="0"/>
+            <element name="Smoking" type="mc:LaboratoryReportType" minOccurs="0"/>
+            <element name="Alcohol" type="mc:LaboratoryReportType" minOccurs="0"/>
+            <element name="Exercise" type="mc:LaboratoryReportType" minOccurs="0"/>
+        </sequence>
+    </complexType>
+</schema>

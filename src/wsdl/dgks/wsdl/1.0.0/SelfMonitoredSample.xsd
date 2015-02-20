@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="UuidIdentifier.xsd"/>
+    <include schemaLocation="LaboratoryReportCollection.xsd"/>
+    
+    <element name="SelfMonitoredSample" type="mc:SelfMonitoredSampleType"/>
+    
+    <complexType name="SelfMonitoredSampleType">
+        <sequence>
+            <element ref="mc:UuidIdentifier"/>
+            <element name="CreatedDateTime" type="dateTime"/>
+            <element name="SampleCategoryIdentifier" type="string"/>
+            <element ref="mc:LaboratoryReportCollection"/>
+            <element name="CreatedByText" type="string"/> 
+        </sequence>
+    </complexType>
+</schema>

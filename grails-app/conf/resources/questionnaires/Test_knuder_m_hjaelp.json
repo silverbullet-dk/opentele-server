@@ -1,0 +1,150 @@
+{
+	"title": "Hjælpetest",
+	"nodes": {
+		"start1": {
+			"type": "start",
+			"id": "start1",
+			"position": {
+				"top": 20,
+				"left": 20
+			}
+		},
+		"measurement2": {
+			"type": "measurement",
+			"measurementType": "BLOOD_PRESSURE_PULSE",
+			"measurementForm": "manual",
+			"headline": "Overskrift for målingsknude",
+			"shortText": "Beskrivelse",
+			"helpText": "Hjælpetekst til målingsknude",
+			"helpImage": "BT4.jpg",
+			"id": "measurement2",
+			"position": {
+				"top": 138,
+				"left": 227
+			}
+		},
+		"text3": {
+			"type": "text",
+			"headline": "Overskrift til tekstknude",
+			"text": "Tekst til tekstknude",
+			"helpText": "Hjælpetekst til tekstknude",
+			"helpImage": "CTG2a med rettelser.jpg",
+			"id": "text3",
+			"position": {
+				"top": 19,
+				"left": 223
+			}
+		},
+		"input4": {
+			"type": "input",
+			"question": "Spørgsmål til inputknude",
+			"dataType": "BOOLEAN",
+			"shortText": "Beskrivelse af inputknude",
+			"helpText": "Hjælpetekst til inputknude",
+			"helpImage": "janejtestbillede.jpg",
+			"id": "input4",
+			"position": {
+				"top": 283,
+				"left": 185
+			}
+		},
+		"end5": {
+			"type": "end",
+			"id": "end5",
+			"position": {
+				"top": 572,
+				"left": 225
+			}
+		},
+		"measurement6": {
+			"type": "measurement",
+			"measurementType": "BLOOD_PRESSURE_PULSE",
+			"measurementForm": "automatic",
+			"headline": "Overskrift for målingsknude",
+			"shortText": "Beskrivelse",
+			"helpText": "Hjælpetekst til automatisk målingsknude",
+			"helpImage": "null",
+			"id": "measurement6",
+			"position": {
+				"top": 450,
+				"left": 214
+			}
+		}
+	},
+	"connections": [
+		{
+			"source": "start1",
+			"target": "text3",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "text3",
+			"target": "measurement2",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement2",
+			"target": "input4",
+			"severity": "",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		},
+		{
+			"source": "measurement2",
+			"target": "input4",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "input4",
+			"target": "measurement6",
+			"choiceValue": "true",
+			"severity": "",
+			"type": "choice"
+		},
+		{
+			"source": "input4",
+			"target": "measurement6",
+			"choiceValue": "false",
+			"severity": "",
+			"type": "choice"
+		},
+		{
+			"source": "measurement6",
+			"target": "end5",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement6",
+			"target": "end5",
+			"severity": "",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		}
+	],
+	"standardSchedule": {
+		"type": "UNSCHEDULED",
+		"reminderStartMinutes": "30",
+		"introPeriodWeeks": "4",
+		"dayInterval": "2",
+		"startingDate": "16-12-2014",
+		"specificDate": "16-12-2014",
+		"timesOfDay": [
+			{
+				"hour": "10",
+				"minute": "00"
+			}
+		],
+		"reminderTime": {
+			"hour": "10",
+			"minute": "00"
+		},
+		"blueAlarmTime": {
+			"hour": "23",
+			"minute": "59"
+		}
+	}
+}

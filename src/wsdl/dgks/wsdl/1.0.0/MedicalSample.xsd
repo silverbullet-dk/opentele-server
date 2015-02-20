@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="UuidIdentifier.xsd"/>
+    <include schemaLocation="AbnormalIdentifier.xsd"/>
+    <include schemaLocation="EncodingIdentifier.xsd"/>
+    <include schemaLocation="OperatorIdentifier.xsd"/>
+    <include schemaLocation="Manufacturer.xsd"/>
+    
+    
+    <element name="LaboratoryReport" type="mc:LaboratoryReportType"/>
+    
+    <complexType name="LaboratoryReportType">
+        <sequence>
+            <element ref="mc:UuidIdentifier"/>
+            <element name="CreatedDateTime" type="dateTime"/>
+            <element name="AnalysisText" type="string"/>
+            <element name="ResultText" type="string"/>
+            <element name="ResultEncodingIdentifier" type="mc:EncodingIdentifierType"/>
+            <element name="ResultOperatorIdentifier" type="mc:OperatorIdentifierType" minOccurs="0"/>
+            <element name="ResultUnitText" type="string"/>
+            <element name="ResultAbnormalIdentifier" type="mc:AbnormalIdentifierType" minOccurs="0"/>
+            <element name="ResultMinimumText" type="string" minOccurs="0"/>
+            <element name="ResultMaximumText" type="string" minOccurs="0"/>
+            <element name="NationalSampleIdentifier" type="string"/>
+            <element name="IupacIdentifier" type="string"/>
+            <element ref="mc:Manufacturer"/>
+        </sequence>
+    </complexType>
+</schema>
+

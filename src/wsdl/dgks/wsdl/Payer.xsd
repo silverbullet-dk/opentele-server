@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp1 U (http://www.altova.com) by Jacob Glasdam (Center for Sundheds-telematik) -->
+<!-- edited with XMLSPY v5 rel. 4 U (http://www.xmlspy.com) by Henrik Gørup Rasmussen (Acure) -->
+<xs:schema xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:gepj="http://medinfo.dk/epj/proj/gepka/20030701/xml/schema" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="GeneralElements.xsd"/>
+	<xs:element name="Payer" type="PayerType"/>
+	<xs:complexType name="PayerType">
+		<xs:sequence>
+			<xs:element ref="PayersTypeCode"/>
+			<xs:element ref="Identifier" minOccurs="0"/>
+			<xs:element name="IdentifierCode" minOccurs="0">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:enumeration value="amt"/>
+						<xs:enumeration value="lokationsnummer"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element ref="OrganisationName" minOccurs="0"/>
+			<xs:element name="OrderIdentifier" type="String_1_35" minOccurs="0"/>
+			<xs:element name="AccountIdentifier" type="String_1_35" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="PayersTypeCode" type="PayersTypeCodeType"/>
+	<xs:simpleType name="PayersTypeCodeType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="sygesikring_gruppe_1"/>
+			<xs:enumeration value="sygesikring_gruppe_2"/>
+			<xs:enumeration value="rekvirent"/>
+			<xs:enumeration value="anden"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

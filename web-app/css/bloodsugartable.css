@@ -1,0 +1,41 @@
+#bloodsugartable {
+    border-collapse: collapse;
+    width: 100%;
+}
+#bloodsugartable td,
+#bloodsugartable th {
+    border-collapse: collapse;
+}
+
+#bloodsugartable thead {
+    display: table-header-group;
+}
+
+#bloodsugartable > table {
+    text-align: center;
+}
+#bloodsugartable > table > td , #bloodsugartable > table  {
+    border: none;
+}
+
+#bloodsugartable table, #bloodsugartable table td {
+    text-align: center;
+    border: none;
+}
+
+#bloodsugartable td img,
+#bloodsugardescription img {
+    width: 10px;
+}
+#bloodsugartable .unknown_meal {
+    padding-top: 19px;
+}
+#bloodsugardescription {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+.bloodsugarPrint {
+    margin-left: 10px;
+    vertical-align: middle;
+}

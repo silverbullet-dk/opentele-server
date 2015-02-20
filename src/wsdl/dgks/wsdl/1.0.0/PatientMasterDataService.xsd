@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+    targetNamespace="urn:oio:medcom:chronicdataset:patient-master-data:1.0.0"
+    elementFormDefault="qualified">
+   
+    <xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/>
+    
+    <xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="Citizen.xsd"/>
+    
+    <xs:element name="CreateUpdatePatientMasterDataRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+                <xs:element name="Citizen" type="mc:CitizenType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="CreateUpdatePatientMasterDataResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeletePatientMasterDataRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeletePatientMasterDataResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

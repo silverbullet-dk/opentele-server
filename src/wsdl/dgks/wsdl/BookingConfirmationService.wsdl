@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:fault="urn:oio:medcom:chronic-fault:1.0.0"
+	xmlns:tns="urn:oio:medcom:booking-confirmation:1.0.0" 
+	name="BookingConfirmationService"
+	targetNamespace="urn:oio:medcom:booking-confirmation:1.0.0">
+	<wsdl:types>
+		<xs:schema targetNamespace="urn:oio:medcom:booking-confirmation:1.0.0" elementFormDefault="qualified">
+			<xs:include schemaLocation="BookingConfirmationService.xsd"/>
+			<xs:import namespace="urn:oio:medcom:chronic-fault:1.0.0" schemaLocation="fault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="HardFaultMessage">
+		<wsdl:part name="fault" element="fault:HardFaultDetailMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SoftFaultMessage">
+		<wsdl:part name="fault" element="fault:SoftFaultDetailMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendBookingConfirmationRequestMessage">
+		<wsdl:part name="parameter" element="tns:SendBookingConfirmationRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendBookingConfirmationResponseMessage">
+		<wsdl:part name="parameter" element="tns:SendBookingConfirmationResponseMessage"/>
+	</wsdl:message>
+	<wsdl:portType name="BookingConfirmationPortType">
+		<wsdl:operation name="SendBookingConfirmation">
+			<wsdl:input message="tns:SendBookingConfirmationRequestMessage"/>
+			<wsdl:output message="tns:SendBookingConfirmationResponseMessage"/>
+			<wsdl:fault name="SoftFault" message="tns:SoftFaultMessage"/>
+			<wsdl:fault name="HardFault" message="tns:HardFaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="BookingConfirmationBinding" type="tns:BookingConfirmationPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="SendBookingConfirmation">
+			<soap:operation soapAction="SendBookingConfirmation"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="SoftFault">
+				<soap:fault name="SoftFault" use="literal"/>
+			</wsdl:fault>
+			<wsdl:fault name="HardFault">
+				<soap:fault name="HardFault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="BookingConfirmationService">
+		<wsdl:port name="BookingConfirmationPort" binding="tns:BookingConfirmationBinding">
+			<soap:address location="http://localhost/NoServiceHere"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

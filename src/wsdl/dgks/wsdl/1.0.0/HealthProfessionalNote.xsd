@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="UuidIdentifier.xsd"/>
+    <include schemaLocation="FormattedText/FormattedText.xsd"/>
+    <include schemaLocation="HealthCareAreaIdentifier.xsd"/>
+    
+    <element name="HealthProfessionalNote" type="mc:HealthProfessionalNoteType"/>
+    
+    <complexType name="HealthProfessionalNoteType">
+        <sequence>
+            <element ref="mc:UuidIdentifier"/>
+            <element name="CreatedDateTime" type="dateTime"/>
+            <element name="TitleText" type="string" minOccurs="0"/>
+            <element name="ContentsFormattedText" type="mc:FormattedTextType" minOccurs="0"/>
+            <element ref="mc:HealthCareAreaIdentifier"/>
+            <element name="CreatedBy" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

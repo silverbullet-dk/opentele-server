@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    xmlns:tns="urn:oio:medcom:chronicdataset:calendar:1.0.0" 
+	name="CalendarService"
+	targetNamespace="urn:oio:medcom:chronicdataset:calendar:1.0.0">
+	<wsdl:types>
+		<xs:schema targetNamespace="urn:oio:medcom:chronicdataset:calendar:1.0.0" elementFormDefault="qualified">
+			<xs:include schemaLocation="CalendarService.xsd"/>
+			<xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="Fault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="FaultMessage">
+		<wsdl:part name="fault" element="mc:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="CreateCalendarEntryRequestMessage">
+		<wsdl:part name="parameter" element="tns:CreateCalendarEntryRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="CreateCalendarEntryResponseMessage">
+		<wsdl:part name="parameter" element="tns:CreateCalendarEntryResponseMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCalendarEntryRequestMessage">
+		<wsdl:part name="parameter" element="tns:DeleteCalendarEntryRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCalendarEntryResponseMessage">
+		<wsdl:part name="parameter" element="tns:DeleteCalendarEntryResponseMessage"/>
+	</wsdl:message>
+	<wsdl:portType name="CalendarPortType">
+		<wsdl:operation name="CreateCalendarEntry">
+			<wsdl:input message="tns:CreateCalendarEntryRequestMessage"/>
+			<wsdl:output message="tns:CreateCalendarEntryResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCalendarEntry">
+			<wsdl:input message="tns:DeleteCalendarEntryRequestMessage"/>
+			<wsdl:output message="tns:DeleteCalendarEntryResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="CalendarBinding" type="tns:CalendarPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CreateCalendarEntry">
+			<soap:operation soapAction="CreateCalendarEntry"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCalendarEntry">
+			<soap:operation soapAction="DeleteCalendarEntry"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="CalendarService">
+		<wsdl:port name="CalendarPort" binding="tns:CalendarBinding">
+			<soap:address location="http://localhost/NoServiceHere"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:oio-med-com-kd="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+    xmlns:tns="urn:oio:medcom:chronic-dataset:1.0.0"
+    targetNamespace="urn:oio:medcom:chronic-dataset:1.0.0"
+    elementFormDefault="qualified">
+   
+    <xs:import namespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/" schemaLocation="MedComKD_V0.2.xsd"/>
+    
+    <xs:complexType name="DataSegmentListType">
+        <xs:sequence>
+            <xs:element name="DataSegment" minOccurs="0" maxOccurs="unbounded">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="EgenLaege"/>
+                        <xs:enumeration value="Paaroerende"/>
+                        <xs:enumeration value="Samtykke"/>
+                        <xs:enumeration value="MinDagbog"/>
+                        <xs:enumeration value="LaegensUdredning"/>
+                        <xs:enumeration value="Kontakter"/>
+                        <xs:enumeration value="RelevanteDiagnoser"/>
+                        <xs:enumeration value="RelevanteLabsvar"/>
+                        <xs:enumeration value="AktuelMedicin"/>
+                        <xs:enumeration value="SKLNoter"/>
+                        <xs:enumeration value="Kalender"/>
+                        <xs:enumeration value="MonitoreringOgMaal"/>
+                        <xs:minLength value="1"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="GetChronicDatasetRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element name="Since" type="xs:date" minOccurs="0"/>
+                <xs:element name="MaximumReturnedMonitoreringOgMaal" type="xs:integer" minOccurs="0"/>
+                <xs:element name="DataSegmentList" minOccurs="0" type="tns:DataSegmentListType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetChronicDatasetResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="oio-med-com-kd:MedComKD"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UploadChronicDatasetRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="oio-med-com-kd:MedComKD"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UploadChronicDatasetResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

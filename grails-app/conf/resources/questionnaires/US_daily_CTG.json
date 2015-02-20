@@ -1,0 +1,76 @@
+{
+	"title": "Daily CTG",
+	"nodes": {
+		"start1": {
+			"type": "start",
+			"id": "start1",
+			"position": {
+				"top": 19,
+				"left": 260
+			}
+		},
+		"measurement2": {
+			"type": "measurement",
+			"measurementType": "CTG",
+			"measurementForm": "automatic",
+			"headline": "Please measure CTG",
+			"shortText": "CTG",
+			"id": "measurement2",
+			"position": {
+				"top": 135,
+				"left": 266
+			}
+		},
+		"end3": {
+			"type": "end",
+			"id": "end3",
+			"position": {
+				"top": 285,
+				"left": 264
+			}
+		}
+	},
+	"connections": [
+		{
+			"source": "start1",
+			"target": "measurement2",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement2",
+			"target": "end3",
+			"severity": "",
+			"type": "normal"
+		},
+		{
+			"source": "measurement2",
+			"target": "end3",
+			"severity": "YELLOW",
+			"measurementSkipped": "true",
+			"type": "measurementSkipped"
+		}
+	],
+	"standardSchedule": {
+		"type": "UNSCHEDULED",
+		"reminderStartMinutes": "30",
+		"introPeriodWeeks": "4",
+		"dayInterval": "2",
+		"startingDate": "25-03-2014",
+		"specificDate": "25-03-2014",
+		"timesOfDay": [
+			{
+				"hour": "10",
+				"minute": "00"
+			}
+		],
+		"reminderTime": {
+			"hour": "10",
+			"minute": "00"
+		},
+		"blueAlarmTime": {
+			"hour": "23",
+			"minute": "59"
+		}
+	}
+}

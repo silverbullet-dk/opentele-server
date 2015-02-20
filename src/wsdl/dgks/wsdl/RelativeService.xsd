@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:oio-med-com-kd="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+    targetNamespace="urn:oio:medcom:relative:1.0.0"
+    elementFormDefault="qualified">
+   
+    <xs:import namespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/" schemaLocation="MedComKD_V0.2.xsd"/>
+    
+    <xs:element name="CreateUpdateRelativeRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element name="Paaroerende" type="oio-med-com-kd:PaaroerendeType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="CreateUpdateRelativeResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeleteRelativeRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeleteRelativeResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

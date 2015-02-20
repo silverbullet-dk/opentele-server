@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    xmlns:tns="urn:oio:medcom:chronicdataset:krampredictor:1.0.0" 
+	name="KramPredictorService"
+	targetNamespace="urn:oio:medcom:chronicdataset:krampredictor:1.0.0">
+	<wsdl:types>
+		<xs:schema targetNamespace="urn:oio:medcom:chronicdataset:krampredictor:1.0.0" elementFormDefault="qualified">
+			<xs:include schemaLocation="KramPredictorService.xsd"/>
+			<xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="Fault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="FaultMessage">
+		<wsdl:part name="fault" element="mc:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUpdateKramPredictorEntryRequestMessage">
+		<wsdl:part name="parameter" element="tns:CreateUpdateKramPredictorEntryRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUpdateKramPredictorEntryResponseMessage">
+		<wsdl:part name="parameter" element="tns:CreateUpdateKramPredictorEntryResponseMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteKramPredictorEntryRequestMessage">
+		<wsdl:part name="parameter" element="tns:DeleteKramPredictorEntryRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteKramPredictorEntryResponseMessage">
+		<wsdl:part name="parameter" element="tns:DeleteKramPredictorEntryResponseMessage"/>
+	</wsdl:message>
+	<wsdl:portType name="KramPredictorPortType">
+		<wsdl:operation name="CreateUpdateKramPredictorEntry">
+			<wsdl:input message="tns:CreateUpdateKramPredictorEntryRequestMessage"/>
+			<wsdl:output message="tns:CreateUpdateKramPredictorEntryResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteKramPredictorEntry">
+			<wsdl:input message="tns:DeleteKramPredictorEntryRequestMessage"/>
+			<wsdl:output message="tns:DeleteKramPredictorEntryResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="KramPredictorBinding" type="tns:KramPredictorPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CreateUpdateKramPredictorEntry">
+			<soap:operation soapAction="CreateUpdateKramPredictorEntry"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteKramPredictorEntry">
+			<soap:operation soapAction="DeleteKramPredictorEntry"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="KramPredictorService">
+		<wsdl:port name="KramPredictorPort" binding="tns:KramPredictorBinding">
+			<soap:address location="http://localhost/NoServiceHere"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

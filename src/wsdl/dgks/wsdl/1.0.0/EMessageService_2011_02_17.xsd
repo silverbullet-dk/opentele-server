@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:mc20110217="http://rep.oio.dk/medcom.dk/xml/schemas/2011/02/17/"
+    xmlns:tns="urn:oio:medcom:emessage:1.0.0"
+    targetNamespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/02/17/"
+    elementFormDefault="qualified">
+
+    <xs:include schemaLocation="http://svn.medcom.dk/svn/drafts/Konverter/trunk/Konverter/xml/Schemas/2011/02/17/EMessage.xsd"/>
+    <xs:import namespace="urn:oio:medcom:emessage:1.0.0" schemaLocation="EMessageResponse.xsd"/>
+    
+    <xs:element name="SendEMessageRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="mc20110217:Emessage"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SendEMessageResponseMessage" type="tns:EMessageResponseType"/>
+    
+</xs:schema>

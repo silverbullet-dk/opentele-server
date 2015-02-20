@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">CalendarService</service>
+        <port xml:space="preserve">CalendarPort</port>
+        <operation xml:space="preserve">CreateCalendarEntry</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/CalendarService.asmx</URL>
+        <action xml:space="preserve">CreateCalendarEntry</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:calendar:1.0.0&quot;
+	xmlns:ns1=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+	&lt;soap:Body&gt;
+		&lt;ns0:CreateCalendarEntryRequestMessage&gt;
+			&lt;ns0:PersonCivilRegistrationIdentifier&gt;2512484916&lt;/ns0:PersonCivilRegistrationIdentifier&gt;
+			&lt;ns1:Appointment&gt;
+				&lt;ns1:UuidIdentifier&gt;abda6890-e6a7-11e1-aff1-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+				&lt;ns1:CreatedDateTime&gt;2012-08-11T10:00:00&lt;/ns1:CreatedDateTime&gt;
+				&lt;ns1:TitleIdentifier&gt;YNR967&lt;/ns1:TitleIdentifier&gt;
+				&lt;ns1:DescriptionFormattedText&gt;LÃƒÂ¦gebesÃƒÂ¸g - OpfÃƒÂ¸lgning hos egen lÃƒÂ¦ge - UdfÃƒÂ¸rt
+				&lt;/ns1:DescriptionFormattedText&gt;
+				&lt;ns1:CreatedBy&gt;LÃƒÂ¦gehuset, Sundhedsgade 12, Birte Hvam&lt;/ns1:CreatedBy&gt;
+			&lt;/ns1:Appointment&gt;
+		&lt;/ns0:CreateCalendarEntryRequestMessage&gt;
+	&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

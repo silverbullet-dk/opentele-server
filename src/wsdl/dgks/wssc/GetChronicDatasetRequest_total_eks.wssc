@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">ChronicDatasetService</service>
+        <port xml:space="preserve">ChronicDatasetPort</port>
+        <operation xml:space="preserve">GetChronicDataset</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/ChronicDatasetService.asmx</URL>
+        <action xml:space="preserve">GetChronicDataset</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronic-dataset:1.0.0&quot;&gt;
+    &lt;SOAP-ENV:Header/&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;ns0:GetChronicDatasetRequestMessage&gt;
+        	&lt;ns0:CivilRegistrationNumber&gt;2512484916&lt;/ns0:CivilRegistrationNumber&gt;
+            &lt;ns0:Since&gt;2011-01-01&lt;/ns0:Since&gt;
+            &lt;ns0:MaximumReturnedMonitoreringOgMaal&gt;50&lt;/ns0:MaximumReturnedMonitoreringOgMaal&gt;
+              &lt;/ns0:GetChronicDatasetRequestMessage&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

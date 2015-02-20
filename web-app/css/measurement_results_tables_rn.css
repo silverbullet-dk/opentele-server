@@ -1,0 +1,155 @@
+div#resultsContainer, div#resultsContainer * {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+}
+
+div#resultsContainer {
+    width:1px;
+    margin-bottom: 10px;
+}
+
+div#resultsContainer table {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+div#resultsContainer td {
+    height: 100%;
+    vertical-align:top;
+}
+
+div#resultsContainer div.tableContainer td div {
+    width: 150px;
+    height: 30px;
+    overflow:auto;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+div#resultsContainer td.outerCell {
+    border: none;
+    padding: 0;
+    text-align: left;
+    background-color: #ffffff;
+}
+
+div#resultsContainer td.outerCell * {
+    text-align: center;
+}
+
+div#resultsContainer div#staticHeader th {
+    height: 55px;
+}
+
+div#resultsContainer div#headerContainer {
+    overflow: hidden;
+    border-right: 1px solid #e2e2e2;
+    width: 570px;
+}
+
+div#resultsContainer div#headerContainer th div {
+    width: 135px;
+    height: 52px;
+    padding-top: 3px;
+}
+
+div#resultsContainer div#leftHeaderContainer {
+    overflow: hidden;
+    border-bottom: 1px solid #e2e2e2;
+    max-height: 510px;
+}
+
+div#resultsContainer div#resultTableContainer {
+    overflow: scroll;
+    width: 590px;
+    max-height: 510px;
+}
+
+div#resultsContainer div#resultTableContainer td div {
+    width: 125px;
+    height: 30px;
+    overflow: auto;
+}
+
+div#resultsContainer div#leftHeaderContainer select {
+    width:130px;
+    max-width:130px;
+    height: 30px;
+    float:left;
+    background: transparent;
+    padding: 2px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+
+
+div#resultsContainer div#leftHeaderContainer tr#prefQuestion td {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
+div#resultsContainer tbody.questionTable tr.prefQuestion td div {
+    padding-top: 12px;
+    height: 36px;
+}
+
+div#resultsContainer tr.prefResult td {
+    background-color: #fafafa;
+}
+
+div#resultsContainer tr.prefQuestion td {
+    background-color: #fafafa;
+}
+
+div#resultsContainer div#resultTableContainer th img {
+    vertical-align: middle;
+    width: 30px;
+    height: 30px;
+}
+
+div button.remove {
+    border-style: none;
+    background-color: transparent;
+}
+
+div button.remove img {
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    float:left;
+}
+
+fieldset#hiddenparams, fieldset#patientparams {
+    height: 0px;
+    margin: 0px;
+    padding: 0px;
+    border-style: none;
+}
+
+img.measurementResultSeverityIcon {
+    width: 10px;
+    height: 10px;
+}
+
+tr:nth-child(even) {background: #e2e2e2}
+tr:nth-child(odd) {background: #FFF}
+div#resultTableContainer td {
+    border: 1px solid #93b8ce;
+}
+div#resultsContainer tr th {
+    border: 1px solid #93b8ce;
+    border-bottom: none;
+}
+div#resultsContainer div#leftHeaderContainer td{
+    border: 1px solid #93b8ce;
+}
+
+div.question {
+    font-size: smaller !important;
+}
+
+

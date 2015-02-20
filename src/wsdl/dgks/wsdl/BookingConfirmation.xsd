@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="GeneralElements.xsd"/>
+	<xs:include schemaLocation="LetterType.xsd"/>
+	<xs:include schemaLocation="Sender.xsd"/>
+	<xs:include schemaLocation="Receiver.xsd"/>
+	<xs:include schemaLocation="CCReceiver.xsd"/>
+	<xs:include schemaLocation="Patient.xsd"/>
+	<xs:include schemaLocation="Relative.xsd"/>
+	<xs:include schemaLocation="Referral.xsd"/>
+	<xs:element name="BookingConfirmation" type="BookingConfirmationType">
+		<xs:annotation>
+			<xs:documentation>Bookingsvar</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="BookingConfirmationType">
+		<xs:annotation>
+			<xs:documentation>Definition af et bookingsvar</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Letter" type="BookingConfirmationLetterType">
+				<xs:annotation>
+					<xs:documentation>Kan betragtes som et Letter element, som blot begrænses til VersionCode=XD1333L</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="Sender"/>
+			<xs:element ref="Receiver"/>
+			<xs:element ref="Patient"/>
+			<xs:element name="Referral" type="BookingConfirmationReferralType" minOccurs="0"/>
+			<xs:element name="Confirmation" type="DateTimeType" minOccurs="0"/>
+			<xs:element name="ClinicalInformation" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Text03" type="String_1_70"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="BookingConfirmationLetterType">
+		<xs:annotation>
+			<xs:documentation>Kan betragtes som en LetterType, som blot begrænses til VersionCode=XD1333L  og TypeCode=XDIS13</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:restriction base="LetterType">
+				<xs:sequence>
+					<xs:element name="Identifier" type="String_1_14"/>
+					<xs:element name="VersionCode">
+						<xs:simpleType>
+							<xs:restriction base="VersionCodeType">
+								<xs:pattern value="XD1333L"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="StatisticalCode" type="String_1_8"/>
+					<xs:element name="Authorisation" type="DateTimeType"/>
+					<xs:element name="TypeCode">
+						<xs:simpleType>
+							<xs:restriction base="TypeCodeType">
+								<xs:pattern value="XDIS13"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:element>
+					<xs:element name="StatusCode" type="StatusCodeType"/>
+					<xs:element name="EpisodeOfCareIdentifier" type="String_1_35" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="BookingConfirmationReferralType">
+		<xs:complexContent>
+			<xs:restriction base="ReferralType">
+				<xs:sequence>
+					<xs:element name="Identifier" type="String_1_35" minOccurs="0"/>
+					<xs:element name="Received" type="DateTimeType" minOccurs="0"/>
+				</xs:sequence>
+			</xs:restriction>
+		</xs:complexContent>
+	</xs:complexType>
+</xs:schema>

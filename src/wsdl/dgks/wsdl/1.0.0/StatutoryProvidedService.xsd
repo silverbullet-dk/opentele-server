@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="HealthAndPreventionService.xsd"/>
+    
+    <element name="StatutoryProvidedService" type="mc:StatutoryProvidedServiceType"/>
+    
+    <complexType name="StatutoryProvidedServiceType">
+        <sequence>
+            <element name="AccordingToSocialLegislation" type="boolean" minOccurs="0"/>
+            <element name="AccordingToHealthLegislation" type="boolean" minOccurs="0"/>
+            <element name="ProvidedByHealthCenter" type="boolean" minOccurs="0"/>
+        </sequence>
+    </complexType>
+</schema>

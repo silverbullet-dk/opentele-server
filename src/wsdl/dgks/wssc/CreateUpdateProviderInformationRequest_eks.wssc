@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">ProviderInformationService</service>
+        <port xml:space="preserve">ProviderInformationPort</port>
+        <operation xml:space="preserve">CreateUpdateProviderInformation</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/ProviderInformationService.asmx</URL>
+        <action xml:space="preserve">CreateUpdateProviderInformation</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;SOAP-ENV:Envelope xmlns:SOAP-ENV=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:provider-information:1.0.0&quot;
+    xmlns:ns1=&quot;http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/&quot;&gt;
+    &lt;SOAP-ENV:Header/&gt;
+    &lt;SOAP-ENV:Body&gt;
+        &lt;ns0:CreateUpdateProviderInformationRequestMessage&gt;
+        	&lt;ns0:CivilRegistrationNumber&gt;2512484916&lt;/ns0:CivilRegistrationNumber&gt;
+            &lt;ns0:EgenLaege&gt;
+                &lt;ns1:Ydernummer&gt;44164&lt;/ns1:Ydernummer&gt;
+                &lt;ns1:Praksis&gt;Lægehuset&lt;/ns1:Praksis&gt;
+                &lt;ns1:Navn&gt;Birthe Hvam&lt;/ns1:Navn&gt;
+                &lt;ns1:Vej&gt;Sundhedsgade 12&lt;/ns1:Vej&gt;
+                &lt;ns1:Postnummer&gt;3400&lt;/ns1:Postnummer&gt;
+                &lt;ns1:By&gt;Hillerød&lt;/ns1:By&gt;
+            	&lt;ns1:Kontakttelefon&gt;87679911&lt;/ns1:Kontakttelefon&gt;
+            	&lt;ns1:eMail&gt;bh@mail.dk&lt;/ns1:eMail&gt;
+            &lt;/ns0:EgenLaege&gt;
+        &lt;/ns0:CreateUpdateProviderInformationRequestMessage&gt;
+    &lt;/SOAP-ENV:Body&gt;
+&lt;/SOAP-ENV:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

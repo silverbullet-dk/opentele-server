@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">MonitoringService</service>
+        <port xml:space="preserve">MonitoringPort</port>
+        <operation xml:space="preserve">DeleteMonitoring</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/MonitoringService.asmx</URL>
+        <action xml:space="preserve">DeleteMonitoring</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:monitoring:1.0.0&quot;
+	xmlns:ns1=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+	&lt;soap:Body&gt;
+		&lt;ns0:DeleteMonitoringRequestMessage&gt;
+			&lt;ns0:PersonCivilRegistrationIdentifier&gt;2512484916&lt;/ns0:PersonCivilRegistrationIdentifier&gt;
+			&lt;ns1:UuidIdentifier&gt;b33be780-bf97-11e1-afa7-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+		&lt;/ns0:DeleteMonitoringRequestMessage&gt;
+	&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

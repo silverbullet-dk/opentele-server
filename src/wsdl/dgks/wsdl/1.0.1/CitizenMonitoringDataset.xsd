@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mc100="urn:oio:medcom:chronicdataset:1.0.0" xmlns:mc101="urn:oio:medcom:chronicdataset:1.0.1" targetNamespace="urn:oio:medcom:chronicdataset:1.0.1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+    <xs:include schemaLocation="1.0.1.xsd"/>
+    <xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="../1.0.0/1.0.0.xsd"/>
+    
+    <xs:element name="CitizenMonitoringDataset" type="mc101:CitizenMonitoringDatasetType"/>
+    
+    <xs:complexType name="CitizenMonitoringDatasetType">
+        <xs:sequence>
+            <xs:element ref="mc100:Citizen"/>
+            <xs:element ref="mc101:SelfMonitoredSampleCollection" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

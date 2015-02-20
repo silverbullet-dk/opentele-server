@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+	xmlns:tns="urn:oio:medcom:chronicdataset:skl-notes:1.0.0" 
+	name="SKLNoteService"
+	targetNamespace="urn:oio:medcom:chronicdataset:skl-notes:1.0.0">
+	<wsdl:types>
+		<xs:schema targetNamespace="urn:oio:medcom:chronicdataset:skl-notes:1.0.0" elementFormDefault="qualified">
+			<xs:include schemaLocation="SKLNotesService.xsd"/>
+			<xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="Fault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="FaultMessage">
+		<wsdl:part name="fault" element="mc:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="SendSKLNoteRequestMessage">
+		<wsdl:part name="parameter" element="tns:SendSKLNoteRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="SendSKLNoteResponseMessage">
+		<wsdl:part name="parameter" element="tns:SendSKLNoteResponseMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteSKLNoteRequestMessage">
+		<wsdl:part name="parameter" element="tns:DeleteSKLNoteRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteSKLNoteResponseMessage">
+		<wsdl:part name="parameter" element="tns:DeleteSKLNoteResponseMessage"/>
+	</wsdl:message>
+	<wsdl:portType name="SKLNotePortType">
+		<wsdl:operation name="SendSKLNote">
+			<wsdl:input message="tns:SendSKLNoteRequestMessage"/>
+			<wsdl:output message="tns:SendSKLNoteResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteSKLNote">
+			<wsdl:input message="tns:DeleteSKLNoteRequestMessage"/>
+			<wsdl:output message="tns:DeleteSKLNoteResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SKLNoteBinding" type="tns:SKLNotePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="SendSKLNote">
+			<soap:operation soapAction="SendSKLNote"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteSKLNote">
+			<soap:operation soapAction="DeleteSKLNote"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="SKLNoteService">
+		<wsdl:port name="SKLNotePort" binding="tns:SKLNoteBinding">
+			<soap:address location="http://localhost/NoServiceHere"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

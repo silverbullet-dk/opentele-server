@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="Space.xsd"/>
+    <include schemaLocation="Break.xsd"/>
+    <include schemaLocation="BreakableText.xsd"/>
+    
+    <element name="FixedFont" type="mc:SimpleFormattedTextType"/>
+    
+    <complexType name="SimpleFormattedTextType" mixed="true">
+        <choice minOccurs="0" maxOccurs="unbounded">
+            <element ref="mc:Space"/>
+            <element ref="mc:Break"/>
+            <element ref="mc:Right"/>
+            <element ref="mc:Center"/>
+            <element ref="mc:Bold"/>
+            <element ref="mc:Italic"/>
+            <element ref="mc:Underline"/>
+        </choice>
+    </complexType>
+    
+</schema>

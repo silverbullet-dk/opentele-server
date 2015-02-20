@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">SKLNoteService</service>
+        <port xml:space="preserve">SKLNotePort</port>
+        <operation xml:space="preserve">SendSKLNote</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/SKLNoteService.asmx</URL>
+        <action xml:space="preserve">SendSKLNote</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:skl-notes:1.0.0&quot;
+	xmlns:ns1=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+	&lt;soap:Body&gt;
+		&lt;ns0:SendSKLNoteRequestMessage&gt;
+			&lt;ns0:PersonCivilRegistrationIdentifier&gt;2512484916&lt;/ns0:PersonCivilRegistrationIdentifier&gt;
+			&lt;ns1:HealthProfessionalNote&gt;
+				&lt;ns1:UuidIdentifier&gt;68637780-6d3c-11e1-b0c4-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+				&lt;ns1:CreatedDateTime&gt;2010-08-12T10:00:10&lt;/ns1:CreatedDateTime&gt;
+				&lt;ns1:TitleText&gt;AmbUS&lt;/ns1:TitleText&gt;
+				&lt;ns1:ContentsFormattedText&gt;Pt. har dd gennemfÃ¸rt spiometriUS. Result..
+				&lt;/ns1:ContentsFormattedText&gt;
+				&lt;ns1:HealthCareAreaIdentifier&gt;hospital&lt;/ns1:HealthCareAreaIdentifier&gt;
+				&lt;ns1:CreatedBy&gt;Herlev Hospital, Medicinsk Afdelin M&lt;/ns1:CreatedBy&gt;
+			&lt;/ns1:HealthProfessionalNote&gt;
+		&lt;/ns0:SendSKLNoteRequestMessage&gt;
+	&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

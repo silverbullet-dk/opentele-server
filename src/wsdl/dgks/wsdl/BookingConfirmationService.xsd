@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:oio-med-com-kd="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+    xmlns:oio-med-com-booking-confirmation="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/"
+    targetNamespace="urn:oio:medcom:booking-confirmation:1.0.0" elementFormDefault="qualified">
+
+    <xs:import namespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+        schemaLocation="MedComKD_V0.2.xsd"/>
+    <xs:import namespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/"
+        schemaLocation="BookingConfirmation.xsd"/>
+
+    <xs:element name="SendBookingConfirmationRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element name="BookingConfirmation"
+                    type="oio-med-com-booking-confirmation:BookingConfirmationType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="SendBookingConfirmationResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="oio-med-com-kd:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

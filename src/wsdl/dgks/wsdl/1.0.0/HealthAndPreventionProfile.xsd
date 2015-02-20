@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0" >
+    
+    <include schemaLocation="HealthAndPreventionService.xsd"/>
+    <include schemaLocation="StatutoryProvidedService.xsd"/>
+    
+    <element name="HealthAndPreventionProfile" type="mc:HealthAndPreventionProfileType"/>
+    
+    <complexType name="HealthAndPreventionProfileType">
+        <sequence>
+            <element name="UpdatedDateTime" type="dateTime"/>
+            <element name="PhysicalRehabilitation" type="mc:HealthAndPreventionServiceType" minOccurs="0"/>
+            <element name="PatientEducation" type="mc:HealthAndPreventionServiceType" minOccurs="0"/>
+            <element name="SmokingCessationCourse" type="mc:HealthAndPreventionServiceType" minOccurs="0"/>
+            <element name="NutritionalCounseling" type="mc:HealthAndPreventionServiceType" minOccurs="0"/>
+            <element name="CurrentStatutoryProvidedService" type="mc:StatutoryProvidedServiceType" minOccurs="0"/>
+            <element name="RecentYearStatutoryProvidedService" type="mc:StatutoryProvidedServiceType" minOccurs="0"/>
+            <element name="UpdatedByText" type="string"/>
+        </sequence>
+    </complexType>
+</schema>

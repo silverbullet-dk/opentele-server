@@ -1,0 +1,123 @@
+/* Fonts */
+body, input, select, textarea {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* General */
+html {
+    background-color: #d3d3d3;
+}
+
+body {
+    /* Instance of 960 GS */
+    width: 100%;
+    margin-left: 10px;
+    margin-right: 10px;
+    background-color: #ffffff;
+    text-align: center;
+    display: inline-block;
+}
+
+div#loginBox {
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+}
+
+div#logo {
+    display: block;
+    margin: 0 auto;
+}
+
+div#logo img {
+    border: none;
+}
+
+div.inner {
+    border-style: solid;
+    border-width: 0px 1px 1px 1px;
+    border-color: #93b8ce;
+    background-color: #fafafa;
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+}
+#loginForm p {
+    padding: 0;
+    margin: 0;
+}
+
+#loginForm p label {
+    width: 40%;
+    display: inline-block;
+    color: #93b8ce;
+    padding: 0px 10px 10px 5px;
+    display: inline-block;
+    height: 20px;
+    margin: 5px 0px 5px 0px;
+}
+#loginForm p input {
+    width: 50%;
+    display: inline-block;
+    color: #4d4d4d;
+    padding: 5px 0px 5px 0px;
+    height: 100%;
+
+    font-weight: lighter;
+    font-size: medium;
+    margin: 5px 0px 10px 0px;
+}
+
+p#remember_me_holder {
+    display: inline-block;
+    width: 100%;
+}
+
+p#remember_me_holder label{
+    width: 50%;
+    height: 25px;
+    padding: 0;
+    margin: 5px 0px 0px 0px;
+    display: inline-block;
+    float: left;
+}
+
+p#remember_me_holder input{
+    width: 50%;
+    height: 25px;
+    padding: 0;
+    margin: 0;
+    float:right;
+    display: inline-block;
+}
+
+div.fheader {
+    border-style: solid;
+    border-width: 1px 0 1px 0;
+    border-color: #93b8ce;
+    background-color: #f1f1f1;
+
+    font-weight: lighter;
+    font-size: 1.15em;
+    text-align: center;
+    color: #93b8ce;
+
+    margin: 0px 0px 0px 0px;
+    padding: 0;
+
+}
+
+div.footer {
+    display: inline-block;
+    float:left;
+    width: 100%;
+    text-align: center;
+    margin: 10px 0px 0px 0px;
+}
+
+
+
+/* Prevent selects with height: 100%; from going apeshit with height in IE7 */
+/* NB: The .noborder class is key in leaving out e.g. buttons*/
+*+html input#remember_me {
+    height: 25px;
+}

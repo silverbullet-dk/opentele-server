@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">PatientsGoalService</service>
+        <port xml:space="preserve">PatientsGoalPort</port>
+        <operation xml:space="preserve">SetPatientsGoal</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/PatientsGoalService.asmx</URL>
+        <action xml:space="preserve">SetPatientsGoal</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:patients-goal:1.0.0&quot;
+	xmlns:ns1=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+	&lt;soap:Body&gt;
+		&lt;ns0:SetPatientsGoalRequestMessage&gt;
+			&lt;ns0:CivilRegistrationNumber&gt;2512484916&lt;/ns0:CivilRegistrationNumber&gt;
+			&lt;ns1:PersonalGoal&gt;
+				&lt;ns1:UuidIdentifier&gt;ba38e1b0-e83b-11e1-aff1-0800200c9a66&lt;/ns1:UuidIdentifier&gt;
+				&lt;ns1:CreatedDateTime&gt;2012-08-17T09:19:10&lt;/ns1:CreatedDateTime&gt;
+				&lt;ns1:SampleCategoryIdentifier&gt;Spirometri&lt;/ns1:SampleCategoryIdentifier&gt;
+				&lt;ns1:PersonalGoalResultCollection&gt;
+					&lt;ns1:PersonalGoalResult&gt;
+						&lt;ns1:AnalysisText&gt;FEV1&lt;/ns1:AnalysisText&gt;
+						&lt;ns1:ResultText&gt;3.8&lt;/ns1:ResultText&gt;
+						&lt;ns1:ResultEncodingIdentifier&gt;numeric&lt;/ns1:ResultEncodingIdentifier&gt;
+						&lt;ns1:ResultOperatorIdentifier&gt;greater_than&lt;/ns1:ResultOperatorIdentifier&gt;
+					&lt;/ns1:PersonalGoalResult&gt;
+					&lt;ns1:PersonalGoalResult&gt;
+						&lt;ns1:AnalysisText&gt;FVC&lt;/ns1:AnalysisText&gt;
+						&lt;ns1:ResultText&gt;4&lt;/ns1:ResultText&gt;
+						&lt;ns1:ResultEncodingIdentifier&gt;numeric&lt;/ns1:ResultEncodingIdentifier&gt;
+						&lt;ns1:ResultOperatorIdentifier&gt;greater_than&lt;/ns1:ResultOperatorIdentifier&gt;
+					&lt;/ns1:PersonalGoalResult&gt;
+					&lt;ns1:PersonalGoalResult&gt;
+						&lt;ns1:AnalysisText&gt;FEV1/FVC&lt;/ns1:AnalysisText&gt;
+						&lt;ns1:ResultText&gt;90&lt;/ns1:ResultText&gt;
+						&lt;ns1:ResultEncodingIdentifier&gt;numeric&lt;/ns1:ResultEncodingIdentifier&gt;
+						&lt;ns1:ResultOperatorIdentifier&gt;greater_than&lt;/ns1:ResultOperatorIdentifier&gt;
+					&lt;/ns1:PersonalGoalResult&gt;
+					&lt;ns1:PersonalGoalResult&gt;
+						&lt;ns1:AnalysisText&gt;FEV i prc.&lt;/ns1:AnalysisText&gt;
+						&lt;ns1:ResultText&gt;85&lt;/ns1:ResultText&gt;
+						&lt;ns1:ResultEncodingIdentifier&gt;numeric&lt;/ns1:ResultEncodingIdentifier&gt;
+						&lt;ns1:ResultOperatorIdentifier&gt;greater_than&lt;/ns1:ResultOperatorIdentifier&gt;
+					&lt;/ns1:PersonalGoalResult&gt;
+				&lt;/ns1:PersonalGoalResultCollection&gt;
+				&lt;ns1:CreatedByText&gt;Sundhed.dk&lt;/ns1:CreatedByText&gt;
+			&lt;/ns1:PersonalGoal&gt;
+		&lt;/ns0:SetPatientsGoalRequestMessage&gt;
+	&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

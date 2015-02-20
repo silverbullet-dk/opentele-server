@@ -1,0 +1,76 @@
+{
+    "title": "Kontinuert glukosemåling (simuleret)",
+    "nodes": {
+        "start1": {
+            "type": "start",
+            "id": "start1",
+            "position": {
+                "top": 19,
+                "left": 154
+            }
+        },
+        "measurement2": {
+            "type": "measurement",
+            "measurementType": "CONTINUOUS_BLOOD_SUGAR_MEASUREMENT",
+            "measurementForm": "simulated",
+            "headline": "Kontinuert glukosemåling",
+            "shortText": "Glukosemåling",
+            "id": "measurement2",
+            "position": {
+                "top": 162,
+                "left": 79
+            }
+        },
+        "end3": {
+            "type": "end",
+            "id": "end3",
+            "position": {
+                "top": 304,
+                "left": 163
+            }
+        }
+    },
+    "connections": [
+        {
+            "source": "start1",
+            "target": "measurement2",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement2",
+            "target": "end3",
+            "severity": "",
+            "type": "normal"
+        },
+        {
+            "source": "measurement2",
+            "target": "end3",
+            "severity": "",
+            "measurementSkipped": "true",
+            "type": "measurementSkipped"
+        }
+    ],
+    "standardSchedule": {
+        "type": "UNSCHEDULED",
+        "reminderStartMinutes": "30",
+        "introPeriodWeeks": "4",
+        "dayInterval": "2",
+        "startingDate": "25-02-2014",
+        "specificDate": "25-02-2014",
+        "timesOfDay": [
+            {
+                "hour": "10",
+                "minute": "00"
+            }
+        ],
+        "reminderTime": {
+            "hour": "10",
+            "minute": "00"
+        },
+        "blueAlarmTime": {
+            "hour": "23",
+            "minute": "59"
+        }
+    }
+}

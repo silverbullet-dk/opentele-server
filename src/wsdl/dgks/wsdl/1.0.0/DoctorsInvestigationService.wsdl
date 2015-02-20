@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+	xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+	xmlns:tns="urn:oio:medcom:chronicdataset:doctors-investigation:1.0.0" 
+	name="DoctorsInvestigationService"
+	targetNamespace="urn:oio:medcom:chronicdataset:doctors-investigation:1.0.0">
+	<wsdl:types>
+		<xs:schema targetNamespace="urn:oio:medcom:chronicdataset:doctors-investigation:1.0.0" elementFormDefault="qualified">
+			<xs:include schemaLocation="DoctorsInvestigationService.xsd"/>
+			<xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="Fault.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="FaultMessage">
+		<wsdl:part name="fault" element="mc:Fault"/>
+	</wsdl:message>
+	<wsdl:message name="CreateDoctorsInvestigationRequestMessage">
+		<wsdl:part name="parameter" element="tns:CreateDoctorsInvestigationRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="CreateDoctorsInvestigationResponseMessage">
+		<wsdl:part name="parameter" element="tns:CreateDoctorsInvestigationResponseMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDoctorsInvestigationRequestMessage">
+		<wsdl:part name="parameter" element="tns:DeleteDoctorsInvestigationRequestMessage"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDoctorsInvestigationResponseMessage">
+		<wsdl:part name="parameter" element="tns:DeleteDoctorsInvestigationResponseMessage"/>
+	</wsdl:message>
+	<wsdl:portType name="DoctorsInvestigationPortType">
+		<wsdl:operation name="CreateDoctorsInvestigation">
+			<wsdl:input message="tns:CreateDoctorsInvestigationRequestMessage"/>
+			<wsdl:output message="tns:CreateDoctorsInvestigationResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDoctorsInvestigation">
+			<wsdl:input message="tns:DeleteDoctorsInvestigationRequestMessage"/>
+			<wsdl:output message="tns:DeleteDoctorsInvestigationResponseMessage"/>
+			<wsdl:fault name="Fault" message="tns:FaultMessage"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="DoctorsInvestigationBinding" type="tns:DoctorsInvestigationPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CreateDoctorsInvestigation">
+			<soap:operation soapAction="CreateDoctorsInvestigation"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDoctorsInvestigation">
+			<soap:operation soapAction="DeleteDoctorsInvestigation"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="Fault">
+				<soap:fault name="Fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="DoctorsInvestigationService">
+		<wsdl:port name="DoctorsInvestigationPort" binding="tns:DoctorsInvestigationBinding">
+			<soap:address location="http://localhost/NoServiceHere"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

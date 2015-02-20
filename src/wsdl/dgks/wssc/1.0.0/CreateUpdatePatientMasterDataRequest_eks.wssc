@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAP-CALL>
+    <SOAP-FIELDS>
+        <service xml:space="preserve">PatientMasterDataService</service>
+        <port xml:space="preserve">PatientMasterDataPort</port>
+        <operation xml:space="preserve">CreateUpdatePatientMasterData</operation>
+        <URL xml:space="preserve">https://medcomkroniker-api.kmd.dk/DGKS/v1/PatientMasterDataService.asmx</URL>
+        <action xml:space="preserve">CreateUpdatePatientMasterData</action>
+        <soapVersion xml:space="preserve">1.1</soapVersion>
+    </SOAP-FIELDS>
+    <REQUEST><![CDATA[&lt;soap:Envelope xmlns:soap=&quot;http://schemas.xmlsoap.org/soap/envelope/&quot; xmlns:ns0=&quot;urn:oio:medcom:chronicdataset:patient-master-data:1.0.0&quot;
+	xmlns:ns1=&quot;http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/&quot; xmlns:ns2=&quot;http://rep.oio.dk/itst.dk/xml/schemas/2006/01/17/&quot;
+	xmlns:ns3=&quot;http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/&quot; xmlns:ns4=&quot;http://rep.oio.dk/xkom.dk/xml/schemas/2005/03/15/&quot;
+	xmlns:ns5=&quot;http://rep.oio.dk/ebxml/xml/schemas/dkcc/2005/03/15/&quot; xmlns:ns6=&quot;urn:oio:medcom:chronicdataset:1.0.0&quot;&gt;
+	&lt;soap:Header/&gt;
+	&lt;soap:Body&gt;
+		&lt;ns0:CreateUpdatePatientMasterDataRequestMessage&gt;
+			&lt;ns0:PersonCivilRegistrationIdentifier&gt;2512484916&lt;/ns0:PersonCivilRegistrationIdentifier&gt;
+			&lt;ns0:Citizen&gt;
+				&lt;ns1:PersonCivilRegistrationIdentifier&gt;2512484916&lt;/ns1:PersonCivilRegistrationIdentifier&gt;
+				&lt;ns2:PersonNameStructure&gt;
+					&lt;ns3:PersonGivenName&gt;Nancy&lt;/ns3:PersonGivenName&gt;
+					&lt;ns3:PersonSurnameName&gt;Berggren&lt;/ns3:PersonSurnameName&gt;
+				&lt;/ns2:PersonNameStructure&gt;
+				&lt;ns4:AddressPostal&gt;
+					&lt;ns5:StreetName&gt;Skovvejen&lt;/ns5:StreetName&gt;
+					&lt;ns3:StreetBuildingIdentifier&gt;12&lt;/ns3:StreetBuildingIdentifier&gt;
+					&lt;ns5:DistrictName&gt;Aarhus N&lt;/ns5:DistrictName&gt;
+				&lt;/ns4:AddressPostal&gt;
+				&lt;ns6:PhoneNumberIdentifier&gt;48302223&lt;/ns6:PhoneNumberIdentifier&gt;
+				&lt;ns6:EmailAddressIdentifier&gt;nancy.berggren@danmarksmestkendtepatient.dk&lt;/ns6:EmailAddressIdentifier&gt;
+			&lt;/ns0:Citizen&gt;
+		&lt;/ns0:CreateUpdatePatientMasterDataRequestMessage&gt;
+	&lt;/soap:Body&gt;
+&lt;/soap:Envelope&gt;
+]]></REQUEST>
+</SOAP-CALL>

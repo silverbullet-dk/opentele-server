@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    targetNamespace="urn:oio:medcom:chronicdataset:1.0.0"
+    elementFormDefault="qualified">
+    
+    <element name="Fault" type="mc:FaultType"/>
+
+    <complexType name="FaultType">
+        <sequence>
+            <element name="Code" type="string" minOccurs="0"/>
+            <element name="Cause" type="string" minOccurs="0"/>
+            <element name="Detail" type="string" minOccurs="0"/>
+            <element name="System" type="string" minOccurs="0"/>
+        </sequence>
+    </complexType>
+
+</schema>

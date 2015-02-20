@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    xmlns:tns="urn:oio:medcom:chronicdataset:patients-goal:1.0.0"
+    targetNamespace="urn:oio:medcom:chronicdataset:patients-goal:1.0.0"
+    elementFormDefault="qualified">
+   
+    <xs:import namespace="http://rep.oio.dk/cpr.dk/xml/schemas/core/2005/03/18/" schemaLocation="http://digitaliser.dk/resource/3541/artefact/CPR_PersonCivilRegistrationIdentifier.xsd"/>
+    <xs:import namespace="urn:oio:medcom:chronicdataset:1.0.0" schemaLocation="PersonalGoal.xsd"/>
+    
+    <xs:element name="SetPatientsGoalRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+                <xs:element ref="mc:PersonalGoal" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+
+    <xs:element name="SetPatientsGoalResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+            <xs:element ref="mc:UuidIdentifier" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeletePatientsGoalRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="PersonCivilRegistrationIdentifier" type="cpr:PersonCivilRegistrationIdentifierType"/>
+                <xs:element ref="mc:UuidIdentifier"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="DeletePatientsGoalResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+    
+</xs:schema>

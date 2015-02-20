@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cpr="http://rep.oio.dk/cpr.dk/xml/schemas/core/2002/06/28/" xmlns:dkcc="http://rep.oio.dk/ebxml/xml/schemas/dkcc/2003/02/13/" targetNamespace="http://rep.oio.dk/sundcom.dk/medcom.dk/xml/schemas/2006/07/01/" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="GeneralElements.xsd"/>
+  <xs:include schemaLocation="Reference.xsd"/>
+  <xs:include schemaLocation="LetterType.xsd"/>
+  <xs:include schemaLocation="Sender.xsd"/>
+  <xs:include schemaLocation="Receiver.xsd"/>
+  <xs:include schemaLocation="CCReceiver.xsd"/>
+  <xs:include schemaLocation="Patient.xsd"/>
+  <xs:include schemaLocation="Relative.xsd"/>
+  <xs:include schemaLocation="Referral.xsd"/>
+  <xs:element name="ClinicalEmail" type="ClinicalEmailType">
+    <xs:annotation>
+      <xs:documentation>Korrespondance</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="ClinicalEmailType">
+    <xs:annotation>
+      <xs:documentation>Definition af en korrespondance</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="Letter" type="ClinicalEmailLetterType">
+        <xs:annotation>
+          <xs:documentation>Kan betragtes som et Letter element, som blot begrænses til VersionCode=XD9134L  og TypeCode=XDIS91</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="Sender" type="SenderNoContactType"/>
+      <xs:element ref="Receiver"/>
+      <xs:element ref="Patient"/>
+      <xs:element name="AdditionalInformation" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Priority" minOccurs="0">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:enumeration value="rutine"/>
+                  <xs:enumeration value="høj_prioritet"/>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:element>
+            <xs:element name="Subject" type="String_1_70" minOccurs="0"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ClinicalInformation" type="ClinicalInformationNotSignedType" minOccurs="0" maxOccurs="10"/>
+      <xs:element ref="Reference" minOccurs="0" maxOccurs="10"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ClinicalEmailLetterType">
+    <xs:annotation>
+      <xs:documentation>Kan betragtes som en LetterType, som blot begrænses til VersionCode=XD9133L og TypeCode=XDIS91</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="LetterType">
+        <xs:sequence>
+          <xs:element name="Identifier" type="String_1_14"/>
+          <xs:element name="VersionCode">
+            <xs:simpleType>
+              <xs:restriction base="VersionCodeType">
+                <xs:pattern value="XD9134L"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="StatisticalCode" type="String_1_8"/>
+          <xs:element name="Authorisation" type="DateTimeType"/>
+          <xs:element name="TypeCode">
+            <xs:simpleType>
+              <xs:restriction base="TypeCodeType">
+                <xs:pattern value="XDIS91"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+          <xs:element name="StatusCode" type="StatusCodeType"/>
+          <xs:element name="EpisodeOfCareIdentifier" type="String_1_35" minOccurs="0"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SenderNoContactType">
+    <xs:complexContent>
+      <xs:restriction base="SenderType">
+        <xs:sequence>
+          <xs:element ref="EANIdentifier"/>
+          <xs:element ref="Identifier"/>
+          <xs:element ref="IdentifierCode"/>
+          <xs:element ref="OrganisationName"/>
+          <xs:element ref="DepartmentName" minOccurs="0"/>
+          <xs:element ref="UnitName" minOccurs="0"/>
+          <xs:element ref="StreetName" minOccurs="0"/>
+          <xs:element ref="SuburbName" minOccurs="0"/>
+          <xs:element ref="DistrictName" minOccurs="0"/>
+          <xs:element ref="PostCodeIdentifier" minOccurs="0"/>
+          <xs:element ref="TelephoneSubscriberIdentifier" minOccurs="0"/>
+          <xs:element ref="MedicalSpecialityCode" minOccurs="0"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ClinicalInformationNotSignedType">
+    <xs:complexContent>
+      <xs:restriction base="ClinicalInformationType">
+        <xs:sequence>
+          <xs:element name="Text01" type="FormattedTextType"/>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0"
+    targetNamespace="urn:oio:medcom:chronicdataset:1.0.0"
+    elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+    <include schemaLocation="Citizen.xsd"/>
+    <include schemaLocation="GeneralPractitioner.xsd"/>
+    <include schemaLocation="Relative.xsd"/>
+    <include schemaLocation="Consent.xsd"/>
+    <include schemaLocation="KramPredictor.xsd"/>
+    <include schemaLocation="DiaryNoteCollection.xsd"/>
+    <include schemaLocation="MedicalInvestigationCollection.xsd"/>
+    <include schemaLocation="ContactPersonCollection.xsd"/>
+    <include schemaLocation="DiagnosisOfRelevanceCollection.xsd"/>
+    <include schemaLocation="CurrentDrugEffectuationCollection.xsd"/>
+    <include schemaLocation="LaboratoryReportCollection.xsd"/>
+    <include schemaLocation="HealthAndPreventionProfile.xsd"/>
+    <include schemaLocation="HealthProfessionalNoteCollection.xsd"/>
+    <include schemaLocation="AppointmentCollection.xsd"/>
+    <include schemaLocation="PersonalGoalCollection.xsd"/>
+    <include schemaLocation="GeneralElements.xsd"/>
+    <include schemaLocation="FormattedText/FormattedText.xsd"/>
+    
+</schema>

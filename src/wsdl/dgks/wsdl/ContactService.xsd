@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:oio-med-com-kd="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+    targetNamespace="urn:oio:medcom:contact:1.0.0" elementFormDefault="qualified">
+
+    <xs:import namespace="http://rep.oio.dk/medcom.dk/xml/schemas/2011/06/20/"
+        schemaLocation="MedComKD_V0.2.xsd"/>
+
+    <xs:element name="CreateUpdateHospitalContactRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element name="Sygehuskontakt" type="oio-med-com-kd:KontakterType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CreateUpdateHospitalContactResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="oio-med-com-kd:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteHospitalContactRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element ref="oio-med-com-kd:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteHospitalContactResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CreateUpdateMunicipalityContactRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element name="Kommunekontakt" type="oio-med-com-kd:KontakterType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="CreateUpdateMunicipalityContactResponseMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="oio-med-com-kd:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteMunicipalityContactRequestMessage">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CivilRegistrationNumber" type="xs:string"/>
+                <xs:element ref="oio-med-com-kd:ID"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteMunicipalityContactResponseMessage">
+        <xs:complexType>
+            <xs:sequence/>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

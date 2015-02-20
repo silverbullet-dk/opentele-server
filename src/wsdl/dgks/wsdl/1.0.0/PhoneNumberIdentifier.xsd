@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns:mc="urn:oio:medcom:chronicdataset:1.0.0" targetNamespace="urn:oio:medcom:chronicdataset:1.0.0">
+    
+    <element name="PhoneNumberIdentifier" type="mc:PhoneNumberIdentifierType"/>
+    
+    <simpleType name="PhoneNumberIdentifierType"> 
+        <restriction base="string"> 
+            <pattern value="[0-9]{8}"/> 
+        </restriction> 
+    </simpleType> 
+    
+</schema>
