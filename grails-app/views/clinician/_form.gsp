@@ -17,7 +17,7 @@
 	<g:textField name="lastName" value="${cmd?.lastName}" />
 </div>
 
-<div class="fieldcontain ${hasErrors(bean: cmd, field: 'user.username', 'error')} required">
+<div class="fieldcontain ${hasErrors(bean: cmd, field: 'username', 'error')} required">
     <label for="username">
         <g:message code="clinician.username.label" default="Username" /> <span class="required-indicator">*</span>
     </label>
@@ -29,17 +29,17 @@
     </g:else>
 </div>
     <g:if test="${cmd?.cleartextPassword}">
-    <div class="fieldcontain ${hasErrors(bean: cmd, field: 'cpr', 'error')} required" data-tooltip="${message(code: 'tooltip.clinician.create.cleartextPassword')}">
+    <div class="fieldcontain ${hasErrors(bean: cmd, field: 'cleartextPassword', 'error')} required" data-tooltip="${message(code: 'tooltip.clinician.create.cleartextPassword')}">
 
         <label for="cleartextPassword">
-            <g:message code="clinician.cleartextPassword.label" default="Adgangskode" /> <span class="required-indicator">*</span>
+            <g:message code="clinician.cleartextPassword.label" default="Midlertidig Adgangskode" /> <span class="required-indicator">*</span>
         </label>
         <g:textField name="cleartextPassword" autocomplete="off" value="${cmd?.cleartextPassword}"/>
         <br />
     </div>
     </g:if>
     <g:else>
-        <div class="fieldcontain ${hasErrors(bean: cmd, field: 'cpr', 'error')} required" data-tooltip="${message(code: 'tooltip.clinician.edit.password')}">
+        <div class="fieldcontain ${hasErrors(bean: cmd, field: 'password', 'error')} required" data-tooltip="${message(code: 'tooltip.clinician.edit.password')}">
 
             <label for="password">
                 <g:message code="clinician.password.label" default="Adgangskode" /> <span class="required-indicator">*</span>

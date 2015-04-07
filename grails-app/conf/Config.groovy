@@ -1,7 +1,9 @@
 import grails.plugin.springsecurity.SecurityConfigType
 import org.apache.log4j.DailyRollingFileAppender
 
-grails.config.locations = [ "file:c:/kihdatamon/settings/datamon-config.properties", "file:${userHome}/.kih/datamon-config.properties"]
+grails.config.locations = ["file:c:/kihdatamon/settings/datamon-config.properties", "file:${userHome}/.kih/datamon-config.properties"]
+
+logging.suffix = "" // used to set a app specific suffix to log files. In case several apps deployed on same tomcat
 
 grails.databinding.convertEmptyStringsToNull = false
 
@@ -28,9 +30,7 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
 //grails.urlmapping.cache.maxsize = 1000
 
 // What URL patterns should be processed by the resources plugin
-grails.resources.adhoc.patterns = ['/images/*', '/css/*', '/js/*', '/plugins/*']
-
-
+grails.resources.adhoc.includes = ['/font/**', '/images/**', '/css/**', '/js/**', '/plugins/**']
 
 // The default codec used to encode data with ${}
 grails.views.default.codec = "none" // none, html, base64
@@ -102,9 +102,6 @@ video {
     }
 }
 
-//Allow fallback to only sorting patientoverview by questionnaire severity
-patientoverview.use.simple.sort = true;
-
 help {
     image {
         contentTypes = ["image/jpeg","image/pjpeg","image/png","image/x-png"]
@@ -114,21 +111,16 @@ help {
     }
 }
 
-defaultLocale = new Locale("da", "DK")
+defaultLocale = Locale.forLanguageTag("da-DK")
+
 measurement.results.tables.css = 'measurement_results_tables.css'
 
-// CORS setup
-cors.url.pattern = ''
-cors.expose.headers = 'AccountIsLocked'
-cors.headers = ['Access-Control-Allow-Headers': "origin, authorization, accept, content-type, x-requested-with, client-version"]
+patient.identification.isCpr = true
 
-// set per-environment serverURL stem for creating absolute links
 environments {
 	development {
 		grails.logging.jul.usebridge = true
-        
-        // Database plugin settings: Run autoupdate in all devel contexts.. But nowhere else..
-        grails.plugin.databasemigration.dropOnStart = true
+            grails.plugin.databasemigration.dropOnStart = true
         grails.plugin.databasemigration.updateOnStart = true
 
         // If developing using MSSQL server:
@@ -137,18 +129,13 @@ environments {
         grails.plugin.databasemigration.updateOnStartFileNames = ['changelog.groovy']
         grails.plugin.databasemigration.autoMigrateScripts = ['RunApp', 'TestApp']
 
-        // CORS setup
-        cors.url.pattern = ['/rest/*', '/currentVersion']
-
         greenmail.disabled = false
         // For at tillade Greenmail i UDV
         grails.plugin.springsecurity.controllerAnnotations.staticRules = [
                 '/greenmail/**': ['IS_AUTHENTICATED_ANONYMOUSLY']
         ]
 
-        cors.url.pattern = ['/rest/*', '/currentVersion']
     }
-
     performance {
 
         grails.plugin.databasemigration.dropOnStart = true
@@ -157,8 +144,6 @@ environments {
         grails.plugin.databasemigration.autoMigrateScripts = ['RunApp', 'TestApp']
 
         running.ctg.messaging.enabled = true
-
-        cors.url.pattern = ['/rest/*', '/currentVersion']
     }
     test {
         // Database plugin settings: Run autoupdate in all devel contexts..
@@ -174,25 +159,27 @@ environments {
         kihdb.createdByText = "OpenTele intern test"
         kihdb.serverURL = "https://kihdb-test.rn.dk/XXX"*/
 
-        // CORS setup
-        cors.url.pattern = ['/rest/*', '/currentVersion']
-
         greenmail.disabled = false
     }
 }
 
-String logDirectory = "${System.getProperty('catalina.base') ?: '.'}/logs"
-
 // Logging
 String commonPattern = "%d [%t] %-5p %c{2} %x - %m%n"
+String logDirectory = "${System.getProperty('catalina.base') ?: '.'}/logs"
+def appContext = { logging.suffix != "" ? "-${logging.suffix}" : "" }
 
 log4j = {
     appenders {
+
         console name: "stdout",
                 layout: pattern(conversionPattern: commonPattern)
         appender new DailyRollingFileAppender(
+                name:"stacktrace", datePattern: "'.'yyyy-MM-dd",
+                file:"${logDirectory}/stacktrace${appContext()}.log",
+                layout: pattern(conversionPattern: commonPattern))
+        appender new DailyRollingFileAppender(
                 name:"opentele", datePattern: "'.'yyyy-MM-dd",
-                file:"${logDirectory}/opentele.log",
+                file:"${logDirectory}/opentele${appContext()}.log",
                 layout: pattern(conversionPattern: commonPattern))
     }
 
@@ -229,6 +216,13 @@ log4j = {
 //            debug 'org.hibernate.SQL'
 //           trace 'org.hibernate.type'
         }
+        db_development {
+            debug 'grails.app',
+                    'org.opentele',
+                    'grails.app.jobs'
+//            debug 'org.springframework.security'
+//           trace 'org.hibernate.type'
+        }
         test {
             debug 'grails.app',
                     'org.opentele'
@@ -254,7 +248,7 @@ grails.plugin.springsecurity.password.hash.iterations = 1
 
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
         '/patient/createPatient': [org.opentele.server.core.model.types.PermissionName.PATIENT_CREATE],
-        '/dbconsole/**': [org.opentele.server.core.model.types.PermissionName.WEB_LOGIN]
+        '/dbconsole/**': [org.opentele.server.core.model.types.PermissionName.WEB_LOGIN],
 ]
 
 grails.plugin.springsecurity.filterChain.chainMap = [

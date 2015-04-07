@@ -15,14 +15,8 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
 
     def patientOverviewService
     def patientOverviewMaintenanceService
-    def grailsApplication
 
-    def cleanup() {
-        grailsApplication.config.patientoverview.use.simple.sort = false //Reset to default value to avoid test pollution
-    }
-
-
-    def 'PatientOverviews are primarily sorted by questionnaire severity....'() {
+    def 'PatientOverviews are counted correctly'() {
 
         setup:
         PatientGroup clinicianPatientGroup = PatientGroup.build()
@@ -31,114 +25,46 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
         clinician.save(failOnError: true)
 
-
-        def withRedAlarm = createPatientOverviewWithSeverity(Severity.RED, clinicianPatientGroup)
-        def withYellowAlarm = createPatientOverviewWithSeverity(Severity.YELLOW, clinicianPatientGroup)
-        def withBlueAlarm = createPatientOverviewWithSeverity(Severity.BLUE, clinicianPatientGroup)
-        def withOrangeAlarm = createPatientOverviewWithSeverity(Severity.ORANGE, clinicianPatientGroup)
-        def withGreenAlarm = createPatientOverviewWithSeverity(Severity.GREEN, clinicianPatientGroup)
+        createPatientOverviewWithSeverity(Severity.RED, clinicianPatientGroup)
+        createPatientOverviewWithSeverity(Severity.YELLOW, clinicianPatientGroup)
+        createPatientOverviewWithSeverity(Severity.BLUE, clinicianPatientGroup)
+        createPatientOverviewWithSeverity(Severity.ORANGE, clinicianPatientGroup)
+        createPatientOverviewWithSeverity(Severity.GREEN, clinicianPatientGroup)
 
         when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician)
+        def patientOverviewCount = patientOverviewService.count(clinician, null)
 
         then:
-        patientOverviews == [withRedAlarm, withYellowAlarm, withBlueAlarm, withOrangeAlarm,withGreenAlarm]
+        patientOverviewCount == 5
 
     }
 
-    def '... are secondarily sorted sorted by number of unread messages from patient...'() {
-        PatientGroup clinicianPatientGroup = PatientGroup.build()
+    def 'PatientOverviews are counted correctly when filtering on patient group'() {
 
-        Clinician clinician = Clinician.build()
-        clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
-        clinician.save(failOnError: true)
-
-        def withOneUnreadMessage = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(1, clinicianPatientGroup)
-        def withTwoUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(2, clinicianPatientGroup)
-        def withThreeUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(3, clinicianPatientGroup)
-        def withFourUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(4, clinicianPatientGroup)
-        def withFiveUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(5, clinicianPatientGroup)
-
-        when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician)
-
-        then:
-        patientOverviews == [withOneUnreadMessage, withTwoUnreadMessages, withThreeUnreadMessages, withFourUnreadMessages, withFiveUnreadMessages]
-
-    }
-
-    def '... are then thirdly sorted by number of unread messages to patient....'() {
-        PatientGroup clinicianPatientGroup = PatientGroup.build()
-
-        Clinician clinician = Clinician.build()
-        clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
-        clinician.save(failOnError: true)
-
-        def withOneUnreadMessage = createPatientOverviewWithNumberOfUnreadMessagesToPatient(1, clinicianPatientGroup)
-        def withTwoUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesToPatient(2, clinicianPatientGroup)
-        def withThreeUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesToPatient(3, clinicianPatientGroup)
-        def withFourUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesToPatient(4, clinicianPatientGroup)
-        def withFiveUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesToPatient(5, clinicianPatientGroup)
-
-        when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician)
-
-        then:
-        patientOverviews == [withOneUnreadMessage, withTwoUnreadMessages, withThreeUnreadMessages, withFourUnreadMessages, withFiveUnreadMessages]
-    }
-
-    def '... and are finally PatientOverviews are sorted by name'() {
-
-        PatientGroup clinicianPatientGroup = PatientGroup.build()
-
-        Clinician clinician = Clinician.build()
-        clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
-        clinician.save(failOnError: true)
-
-        def abe = createPatientOverviewForPatientWithName('Abe', clinicianPatientGroup)
-        def brown = createPatientOverviewForPatientWithName('Brown', clinicianPatientGroup)
-        def cecil = createPatientOverviewForPatientWithName('Cecil', clinicianPatientGroup)
-        def dwight = createPatientOverviewForPatientWithName('Dwight', clinicianPatientGroup)
-        def eugene = createPatientOverviewForPatientWithName('Eugene', clinicianPatientGroup)
-
-        when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician)
-
-        then:
-        patientOverviews == [abe, brown, cecil, dwight, eugene]
-
-    }
-
-    def 'after setting the simple sort flag PatientOverviews are still returned in questionnaire severity order'() {
         setup:
         PatientGroup clinicianPatientGroup = PatientGroup.build()
+        PatientGroup otherPatientGroup = PatientGroup.build()
 
         Clinician clinician = Clinician.build()
         clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
         clinician.save(failOnError: true)
 
-
-        def withRedAlarm = createPatientOverviewWithSeverity(Severity.RED, clinicianPatientGroup)
-        def withYellowAlarm = createPatientOverviewWithSeverity(Severity.YELLOW, clinicianPatientGroup)
-        def withBlueAlarm = createPatientOverviewWithSeverity(Severity.BLUE, clinicianPatientGroup)
-        def withOrangeAlarm = createPatientOverviewWithSeverity(Severity.ORANGE, clinicianPatientGroup)
-        def withGreenAlarm = createPatientOverviewWithSeverity(Severity.GREEN, clinicianPatientGroup)
+        createPatientOverviewWithSeverity(Severity.RED, clinicianPatientGroup)
+        createPatientOverviewWithSeverity(Severity.YELLOW, clinicianPatientGroup)
+        createPatientOverviewWithSeverity(Severity.BLUE, clinicianPatientGroup)
+        createPatientOverviewWithSeverity(Severity.BLUE, otherPatientGroup)
+        createPatientOverviewWithSeverity(Severity.ORANGE, otherPatientGroup)
+        createPatientOverviewWithSeverity(Severity.GREEN, clinicianPatientGroup)
 
         when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician)
+        def patientOverviewCount = patientOverviewService.count(clinician, clinicianPatientGroup)
 
         then:
-        patientOverviews == [withRedAlarm, withYellowAlarm, withBlueAlarm, withOrangeAlarm,withGreenAlarm]
+        patientOverviewCount == 4
+
     }
 
-
-
-    def 'PatientOverviews are primarily sorted by questionnaire severity by getPatientsForClinicianOverviewInPatientGroup....'() {
+    def 'PatientOverviews are sorted by questionnaire severity'() {
 
         setup:
         PatientGroup clinicianPatientGroup = PatientGroup.build()
@@ -147,7 +73,6 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
         clinician.save(failOnError: true)
 
-
         def withRedAlarm = createPatientOverviewWithSeverity(Severity.RED, clinicianPatientGroup)
         def withYellowAlarm = createPatientOverviewWithSeverity(Severity.YELLOW, clinicianPatientGroup)
         def withBlueAlarm = createPatientOverviewWithSeverity(Severity.BLUE, clinicianPatientGroup)
@@ -155,81 +80,15 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         def withGreenAlarm = createPatientOverviewWithSeverity(Severity.GREEN, clinicianPatientGroup)
 
         when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, clinicianPatientGroup)
+        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician, [:])
 
         then:
         patientOverviews == [withRedAlarm, withYellowAlarm, withBlueAlarm, withOrangeAlarm,withGreenAlarm]
 
     }
 
-    def '... are secondarily sorted sorted by number of unread messages from patient by getPatientsForClinicianOverviewInPatientGroup...'() {
-        PatientGroup clinicianPatientGroup = PatientGroup.build()
+    def 'PatientOverviews are sorted by questionnaire severity by getPatientsForClinicianOverviewInPatientGroup'() {
 
-        Clinician clinician = Clinician.build()
-        clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
-        clinician.save(failOnError: true)
-
-        def withOneUnreadMessage = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(1, clinicianPatientGroup)
-        def withTwoUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(2, clinicianPatientGroup)
-        def withThreeUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(3, clinicianPatientGroup)
-        def withFourUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(4, clinicianPatientGroup)
-        def withFiveUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesFromPatient(5, clinicianPatientGroup)
-
-        when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, clinicianPatientGroup)
-
-        then:
-        patientOverviews == [withOneUnreadMessage, withTwoUnreadMessages, withThreeUnreadMessages, withFourUnreadMessages, withFiveUnreadMessages]
-
-    }
-
-    def '... are then thirdly sorted by number of unread messages to patient by getPatientsForClinicianOverviewInPatientGroup....'() {
-        PatientGroup clinicianPatientGroup = PatientGroup.build()
-
-        Clinician clinician = Clinician.build()
-        clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
-        clinician.save(failOnError: true)
-
-        def withOneUnreadMessage = createPatientOverviewWithNumberOfUnreadMessagesToPatient(1, clinicianPatientGroup)
-        def withTwoUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesToPatient(2, clinicianPatientGroup)
-        def withThreeUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesToPatient(3, clinicianPatientGroup)
-        def withFourUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesToPatient(4, clinicianPatientGroup)
-        def withFiveUnreadMessages = createPatientOverviewWithNumberOfUnreadMessagesToPatient(5, clinicianPatientGroup)
-
-        when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, clinicianPatientGroup)
-
-        then:
-        patientOverviews == [withOneUnreadMessage, withTwoUnreadMessages, withThreeUnreadMessages, withFourUnreadMessages, withFiveUnreadMessages]
-    }
-
-    def '... and are finally PatientOverviews are sorted by name by getPatientsForClinicianOverviewInPatientGroup'() {
-
-        PatientGroup clinicianPatientGroup = PatientGroup.build()
-
-        Clinician clinician = Clinician.build()
-        clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
-        clinician.save(failOnError: true)
-
-        def abe = createPatientOverviewForPatientWithName('Abe', clinicianPatientGroup)
-        def brown = createPatientOverviewForPatientWithName('Brown', clinicianPatientGroup)
-        def cecil = createPatientOverviewForPatientWithName('Cecil', clinicianPatientGroup)
-        def dwight = createPatientOverviewForPatientWithName('Dwight', clinicianPatientGroup)
-        def eugene = createPatientOverviewForPatientWithName('Eugene', clinicianPatientGroup)
-
-        when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, clinicianPatientGroup)
-
-        then:
-        patientOverviews == [abe, brown, cecil, dwight, eugene]
-
-    }
-
-    def 'after setting the simple sort flag PatientOverviews are still returned in questionnaire severity order from getPatientsForClinicianOverviewInPatientGroup'() {
         setup:
         PatientGroup clinicianPatientGroup = PatientGroup.build()
 
@@ -237,7 +96,6 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         clinician.addToClinician2PatientGroups(patientGroup: clinicianPatientGroup)
         clinician.save(failOnError: true)
 
-
         def withRedAlarm = createPatientOverviewWithSeverity(Severity.RED, clinicianPatientGroup)
         def withYellowAlarm = createPatientOverviewWithSeverity(Severity.YELLOW, clinicianPatientGroup)
         def withBlueAlarm = createPatientOverviewWithSeverity(Severity.BLUE, clinicianPatientGroup)
@@ -245,13 +103,12 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         def withGreenAlarm = createPatientOverviewWithSeverity(Severity.GREEN, clinicianPatientGroup)
 
         when:
-        grailsApplication.config.patientoverview.use.simple.sort = true
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, clinicianPatientGroup)
+        def patientOverviews = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, [:], clinicianPatientGroup)
 
         then:
         patientOverviews == [withRedAlarm, withYellowAlarm, withBlueAlarm, withOrangeAlarm,withGreenAlarm]
-    }
 
+    }
 
     def 'can find patients for clinician overview'() {
         setup:
@@ -268,7 +125,7 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         createPatientWithMessage(PatientState.DECEASED, otherPatientGroup)
 
         when:
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician)
+        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician, [:])
 
         then:
         patientOverviews*.patient == [activePatientInPatientGroup]
@@ -295,7 +152,7 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         activePatientInOtherPatientGroupWithReminder.addToNotes(type: NoteType.IMPORTANT, note: 'Note', reminderDate: new Date()-1, seenBy: [])
 
         when:
-        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician)
+        def patientOverviews = patientOverviewService.getPatientsForClinicianOverview(clinician, [:])
 
         then:
         patientOverviews*.patient == [activePatientInPatientGroupWithUnseenReminder]
@@ -319,9 +176,9 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         createPatientWithMessage(PatientState.DECEASED, group2)
 
         when:
-        def activePatientOverviewsInGroup1 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, group1)
-        def activePatientOverviewsInGroup2 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, group2)
-        def activePatientOverviewsInGroup3 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, group3)
+        def activePatientOverviewsInGroup1 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, [:], group1)
+        def activePatientOverviewsInGroup2 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, [:], group2)
+        def activePatientOverviewsInGroup3 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, [:], group3)
 
         then:
         activePatientOverviewsInGroup1*.patient == [activePatientInPatientGroup1]
@@ -355,9 +212,9 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         activePatientInPatientGroup2WithUnseenReminder.addToNotes(type: NoteType.IMPORTANT, note: 'Note', reminderDate: new Date()-1, seenBy: [])
 
         when:
-        def activePatientOverviewsInGroup1 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, group1)
-        def activePatientOverviewsInGroup2 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, group2)
-        def activePatientOverviewsInGroup3 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, group3)
+        def activePatientOverviewsInGroup1 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, [:], group1)
+        def activePatientOverviewsInGroup2 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, [:], group2)
+        def activePatientOverviewsInGroup3 = patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, [:], group3)
 
         then:
         activePatientOverviewsInGroup1*.patient == [activePatientInPatientGroup1WithUnseenReminder]
@@ -374,7 +231,7 @@ class PatientOverviewServiceIntegrationSpec extends IntegrationSpec {
         clinician.addToClinician2PatientGroups(patientGroup: clinicianGroup)
 
         when:
-        patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, otherGroup)
+        patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, [:], otherGroup)
 
         then:
         thrown(IllegalArgumentException)

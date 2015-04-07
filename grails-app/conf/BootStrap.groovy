@@ -8,6 +8,7 @@ import org.opentele.server.core.model.BootStrapUtil
 import org.opentele.server.core.model.Schedule
 import org.opentele.server.core.model.types.MeasurementTypeName
 import org.opentele.server.core.model.types.MeterTypeName
+import org.opentele.server.core.model.types.NoteType
 import org.opentele.server.core.model.types.PatientState
 import org.opentele.server.core.model.types.PermissionName
 import org.opentele.server.core.model.types.ProteinValue
@@ -49,7 +50,7 @@ class BootStrap {
     private static final String ERNA_CPR = '0101800124'
     private static final String KIRAN_CPR = '1103811376'
     private static final String NANCY_CPR = '2512484916'
-    private static final String LENE_CPR = '25126884916'
+    private static final String LENE_CPR = '2512688916'
     private static final String SVEND_CPR = '1212852635'
 
     private static final String CARL_CPR = '1105491135'
@@ -152,6 +153,7 @@ class BootStrap {
     def passwordService
     def bootstrapQuestionnaireService
     def patientOverviewMaintenanceService
+    def patientIdentificationService
 
     BootStrapUtil bootStrapUtil = null
 
@@ -159,6 +161,7 @@ class BootStrap {
         def applicationContext = WebApplicationContextUtils.getWebApplicationContext(servletContext)
         configureDatasource(applicationContext)
 
+        patientIdentificationService.setupValidation()
         bootStrapUtil = new BootStrapUtil()
 
         // Setup marshaller
@@ -169,7 +172,10 @@ class BootStrap {
             development {
                 println "Initializing for DEVEL"
                 doBootstrapForTest()
+
+                setupRMTestUsers()
                 createPatientOverviewDataForPatients()
+
             }
             performance {
                 println "Initializing for PERFORMANCE"
@@ -177,7 +183,10 @@ class BootStrap {
 
                 createNancyAnnsClones(10)
                 createHelleClones(10)
+                setupRMTestUsers()
 
+                createNancyAnnsClones(500)
+                createHelleClones(100)
                 createPatientOverviewDataForPatients()
             }
             test {

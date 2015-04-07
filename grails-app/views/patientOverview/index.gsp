@@ -181,19 +181,22 @@
     </r:script>
 
 <div id="list-patient" class="content scaffold-list" role="main">
-		<g:each in="${patients}" var="patientOverview">
-			<div class="patientEntry" id="${patientOverview.patientId}">
-				<div class="questionnaireList" id="${patientOverview.patientId}">
-					<cq:renderOverviewForPatient patientOverview="${patientOverview}"
-                                                 patientNotes="${patientNotes[patientOverview.patientId]}"
-                                                 messagingEnabled="${idsOfPatientsWithMessaging.contains(patientOverview.patientId)}"
-                                                 alarmIfUnreadMessagesToPatientDisabled="${idsOfPatientsWithAlarmIfUnreadMessagesDisabled.contains(patientOverview.patientId)}"
-                    />
-					<div class="questionnaireListInner" style="display: none;">
-					</div>
-				</div>
-			</div>
-		</g:each>
-	</div>
+    <g:each in="${patients}" var="patientOverview">
+        <div class="patientEntry" id="${patientOverview.patientId}">
+            <div class="questionnaireList" id="${patientOverview.patientId}">
+                <cq:renderOverviewForPatient patientOverview="${patientOverview}"
+                                             patientNotes="${patientNotes[patientOverview.patientId]}"
+                                             messagingEnabled="${idsOfPatientsWithMessaging.contains(patientOverview.patientId)}"
+                                             alarmIfUnreadMessagesToPatientDisabled="${idsOfPatientsWithAlarmIfUnreadMessagesDisabled.contains(patientOverview.patientId)}"
+                />
+                <div class="questionnaireListInner" style="display: none;">
+                </div>
+            </div>
+        </div>
+    </g:each>
+    <div class="pagination">
+        <g:paginate total="${patientOverviewTotal}" />
+    </div>
+</div>
 </body>
 </html>

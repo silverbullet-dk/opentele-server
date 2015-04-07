@@ -156,62 +156,68 @@ tfoot tr td .buttons {
 }
 
 fieldset.buttons, div.pagination {
-        width: 100%;
-        border: 1px solid #e2e2e2;
-        background-color: #fafafa;
-        margin: 0 0 10px 0;
-        padding: 0 0 0 0;
-    }
-    .buttons a, .buttons a:visited, .buttons input,
-    .pagination a, .pagination a:visited, .pagination span {
-        margin: 0 0 0 0;
-        padding: 0 0 0 0;
-    }
-    .buttons a, .buttons a:visited, .buttons input,
-    .pagination a, .pagination a:visited, .pagination span {
-        height: 30px;
+    width: 100%;
+    border: 1px solid #e2e2e2;
+    background-color: #fafafa;
+    margin: 0 0 10px 0;
+    padding: 0 0 0 0;
+}
 
-        display: inline-block;
-        float: left;
-        /*overflow: auto;*/
+.pagination span.currentStep {
+    background: #93BBCE;
+    color: #FFFFFF;
+}
 
-        font-size: 1.10em;
-        text-decoration: none;
-        text-align: center;
-        line-height: 30px;
-        /*color: #93b8ce;*/
-        color: #397391;
-        background: #f1f1f1;
+.buttons a, .buttons a:visited, .buttons input,
+.pagination a, .pagination a:visited, .pagination span {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+.buttons a, .buttons a:visited, .buttons input,
+.pagination a, .pagination a:visited, .pagination span {
+    height: 30px;
 
-        border: 1px solid #e2e2e2;
+    display: inline-block;
+    float: left;
+    /*overflow: auto;*/
 
-        padding: 0 5px 0 5px;
-        margin: 5px 5px 5px 5px;
+    font-size: 1.10em;
+    text-decoration: none;
+    text-align: center;
+    line-height: 30px;
+    /*color: #93b8ce;*/
+    color: #397391;
+    background: #f1f1f1;
 
-        /*background-color: yellow;*/
-    }
-    .buttons a, .buttons a:visited {   /* <a ..> is treated differently than <input..> and gets +2px on width and height for some reason */
-        height: 28px;
-    }
-    td.buttons a, td.buttons a:visited, td.buttons input { /* Don't float left inside table*/
-        float:none;
-    }
-    .buttons a:active, .buttons input:active, .pagination a:active {
-        background: #fafafa;
-    }
-    div.pagination {
-        display: inline-block;
-    }
-    td.warning {
-        background-color: yellow !important;
-    }
-    td.alert {
-        background-color: red !important;
-    }
+    border: 1px solid #e2e2e2;
 
-    tr.highlight {
-        background-color: #ffffcc;
-    }
+    padding: 0 5px 0 5px;
+    margin: 5px 5px 5px 5px;
+
+    /*background-color: yellow;*/
+}
+.buttons a, .buttons a:visited {   /* <a ..> is treated differently than <input..> and gets +2px on width and height for some reason */
+    height: 28px;
+}
+td.buttons a, td.buttons a:visited, td.buttons input { /* Don't float left inside table*/
+    float:none;
+}
+.buttons a:active, .buttons input:active, .pagination a:active {
+    background: #fafafa;
+}
+div.pagination {
+    display: inline-block;
+}
+td.warning {
+    background-color: yellow !important;
+}
+td.alert {
+    background-color: red !important;
+}
+
+tr.highlight {
+    background-color: #ffffcc;
+}
 
 
 /* Flash messages */
@@ -693,7 +699,7 @@ table .actions {
 
 /* FIX for IE7: http://stackoverflow.com/questions/7157625/can-css-content-property-work-in-ie7 */
 th.sortable a {*zoom: expression( this.runtimeStyle.zoom="1", this.appendChild( document.createElement("i"), this.firstChild ).className="ie-after" );}
-th.sortable a .ie-after {*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&nbsp;');}​
+th.sortable a .ie-after {*zoom: expression(this.runtimeStyle['zoom'] = '1', this.innerHTML = '&nbsp;');}
 
 th.sortable a {
     white-space: nowrap;

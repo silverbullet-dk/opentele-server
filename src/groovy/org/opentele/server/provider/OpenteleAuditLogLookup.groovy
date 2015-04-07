@@ -160,7 +160,7 @@ class OpenteleAuditLogLookup implements AuditLogLookup {
                 'saveThresholdToPatient', 'showJson', 'editResponsability',
                 'updateDataResponsible', 'resetPassword', 'sendPassword',
                 'unlockAccount', 'chooseThreshold',
-                'noAlarmIfUnreadMessagesToPatient', 'consultation'
+                'noAlarmIfUnreadMessagesToPatient', 'consultation', 'patientSex'
         ]
 
         keywordMap['patientMobile'] = getStandardTexts()

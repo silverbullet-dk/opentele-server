@@ -1,6 +1,6 @@
 package org.opentele.server.provider.model
 import grails.plugin.springsecurity.annotation.Secured
-
+import org.opentele.server.core.command.CreateClinicianCommand
 import org.opentele.server.model.Clinician
 import org.opentele.server.model.Clinician2PatientGroup
 import org.opentele.server.core.command.ClinicianCommand
@@ -42,14 +42,14 @@ class ClinicianController {
         if (!params.cleartextPassword) {
             params.cleartextPassword = passwordService.generateTempPassword()
         }
-        def command = new ClinicianCommand()
+        def command = new CreateClinicianCommand()
         bindData(command, params, ["action", "controller"])
 
         [cmd: command]
     }
 
     @Secured(PermissionName.CLINICIAN_CREATE)
-    def save(ClinicianCommand command) {
+    def save(CreateClinicianCommand command) {
         if (!command.validate()) {
             render(view: "create", model: [cmd: command])
             return;

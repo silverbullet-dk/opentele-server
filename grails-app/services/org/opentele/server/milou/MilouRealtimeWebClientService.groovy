@@ -5,12 +5,12 @@ import org.apache.http.client.methods.HttpPost
 import org.apache.http.entity.StringEntity
 import org.apache.http.impl.client.BasicResponseHandler
 import org.apache.http.impl.client.DefaultHttpClient
-import org.opentele.server.model.RealTimectg
+import org.opentele.server.model.RealTimeCtg
 
 class MilouRealtimeWebClientService {
     def grailsApplication
 
-    boolean sendRealtimeCTGMeasurement(RealTimectg measurement) {
+    boolean sendRealtimeCTGMeasurement(RealTimeCtg measurement) {
 
         HttpEntity entity = null;
         try {

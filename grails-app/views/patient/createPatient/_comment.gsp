@@ -8,22 +8,13 @@ $(document).ready(function() {
 	
 	$('input#cpr').change(function() {
 		var input_cpr = $('input#cpr').val();
-
-		if (input_cpr.indexOf("-") > 0 && input_cpr.length == 11) {
-			try {
-				var temp
-				temp = input_cpr.substring(0, input_cpr.indexOf('-'))
-				input_cpr = temp + input_cpr.substring(input_cpr.indexOf('-')+1, input_cpr.length)
-			} catch (err) {
-			}
-		}
-		if (input_cpr.length == 10 && Number(input_cpr) != 'NaN') {
-			if (input_cpr%2==0) {
-				$('select#sex').attr('value', 'FEMALE')
-			} else {
-				$('select#sex').attr('value', 'MALE')
-			}			
-		}
+        $.ajax("${g.createLink(action: "patientSex", controller: "patient")}", {data: {identification: input_cpr}, cache: false}) // IE will cache the result unless we force cache-disabling
+                .done(function(data) {
+                    if (data.sex === 'UNKNOWN') {
+                        return;
+                    }
+                    $('select#sex').attr('value', data.sex);
+                });
 	});
 });
 </script>

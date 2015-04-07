@@ -50,7 +50,11 @@ class QuestionnaireController {
 			flash.message  = g.message(code: "completedquestionnaire.acknowledged", args: [questionnaire.patientQuestionnaire?.name, g.formatDate(date: questionnaire.acknowledgedDate)])
 		}
 
-		redirect(controller: session.lastController, action: session.lastAction, id: session.lastParams?.id, params: session.lastFilterParams, ignoreNavigation: true)
+        def lastReferer = session.getAttribute('lastReferer')
+        if (lastReferer) {
+            session.removeAttribute('lastReferer')
+            redirect(url: lastReferer)
+        }
 	}
 
     @Secured(PermissionName.QUESTIONNAIRE_CREATE)

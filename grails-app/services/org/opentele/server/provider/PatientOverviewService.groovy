@@ -1,132 +1,143 @@
 package org.opentele.server.provider
 
 import org.opentele.server.model.Clinician
-import org.opentele.server.model.Patient
 import org.opentele.server.model.PatientGroup
 import org.opentele.server.model.PatientNote
 import org.opentele.server.model.PatientOverview
 import org.opentele.server.core.model.types.PatientState
-import org.opentele.server.model.patientquestionnaire.CompletedQuestionnaire
 
 class PatientOverviewService {
     def questionnaireService
-    def grailsApplication
 
-    List<PatientOverview> getPatientsForClinicianOverview(Clinician activeClinician) {
+    def defaultOffset = 0
+    def defaultMax = 10
+    def maxCapacity = 100
 
-        long time = System.currentTimeMillis()
+    int count(Clinician activeClinician, PatientGroup activePatientGroup) {
 
-        def importantPatientOverviewIds = PatientOverview.executeQuery(
-                'select po.id ' +
-                        'from PatientOverview as po ' +
-                        'inner join po.patient as p ' +
-                        'inner join p.patient2PatientGroups as p2pg ' +
-                        'inner join p2pg.patientGroup as pg ' +
-                        'inner join pg.clinician2PatientGroups as c2pg ' +
-                        'where po.important = true ' +
-                        '  and c2pg.clinician.id = ?', [activeClinician.id])
+        PatientOverview.withSession { session ->
 
-        log.warn "So far 1: ${System.currentTimeMillis() - time}"
-        time = System.currentTimeMillis()
-
-        // Find all patients with reminders not seen by clinician. Since this depends on the current clinician,
-        // it cannot be embedded in the PatientOverview object for each patient.
-        def idsOfPatientOverviewsWithRemindersNotSeenByClinician = PatientOverview.executeQuery(
-                'select po.id ' +
-                        'from Patient as p ' +
-                        'inner join p.patientOverviews as po ' +
-                        'inner join p.patient2PatientGroups as p2pg ' +
-                        'inner join p2pg.patientGroup as pg ' +
-                        'inner join pg.clinician2PatientGroups as c2pg ' +
-                        'where c2pg.clinician.id = ? ' +
-                        '  and p.state = ? '+
-                        '  and exists (from p.notes note where note.reminderDate < ? and ? not in (select id from note.seenBy))',
-                [activeClinician.id, PatientState.ACTIVE, new Date(), activeClinician.id])
-
-        log.warn  "So far 2: ${System.currentTimeMillis() - time}"
-        time = System.currentTimeMillis()
-
-        importantPatientOverviewIds.addAll(idsOfPatientOverviewsWithRemindersNotSeenByClinician)
-
-
-        if(grailsApplication.config.patientoverview.use.simple.sort) {
-            def result = PatientOverview.findAllByIdInList(importantPatientOverviewIds).sort { a, b ->
-                b.questionnaireSeverity <=> a.questionnaireSeverity
+            def countQueryString = """
+                    SELECT DISTINCT count(po)
+                    FROM PatientOverview AS po
+                    INNER JOIN po.patient AS p
+                    INNER JOIN p.patient2PatientGroups AS p2pg
+                    INNER JOIN p2pg.patientGroup AS pg"""
+            if (activePatientGroup != null) {
+                countQueryString += """
+                        WHERE (p2pg.patientGroup.id = :activePatientGroupId
+                                  AND po.important = true)
+                              OR
+                              (pg.id = :activePatientGroupId AND
+                                  p.state = :patientState AND
+                                  EXISTS (FROM p.notes note
+                                             WHERE note.reminderDate < :date
+                                                   AND :activeClinicianId NOT IN (SELECT id FROM note.seenBy)))"""
+            } else {
+                countQueryString += """
+                        INNER JOIN pg.clinician2PatientGroups AS c2pg
+                        WHERE c2pg.clinician.id = :activeClinicianId
+                              AND
+                             (  (po.important = true)
+                                OR
+                                (p.state = :patientState
+                                    AND EXISTS (FROM p.notes note
+                                                WHERE note.reminderDate < :date
+                                                      AND
+                                                      :activeClinicianId NOT IN (SELECT id FROM note.seenBy))))"""
             }
-            log.warn  "So far 3: ${System.currentTimeMillis() - time}"
-            time = System.currentTimeMillis()
 
-            result
-        } else {
-            def criteria  = PatientOverview.createCriteria()
-            def result = criteria.list {
-                'in'('id', importantPatientOverviewIds)
-                order('questionnaireSeverityOrdinal', 'desc')
-                order('numberOfUnreadMessagesFromPatient', 'desc')
-                order('numberOfUnreadMessagesToPatient', 'desc')
-                order('name', 'asc')
-
+            def countPatientOverviewQuery = session.createQuery(countQueryString)
+            countPatientOverviewQuery = countPatientOverviewQuery
+                    .setParameter("activeClinicianId", activeClinician.id)
+                    .setParameter("patientState", PatientState.ACTIVE)
+                    .setParameter("date" , new Date())
+            if (activePatientGroup != null) {
+                countPatientOverviewQuery = countPatientOverviewQuery.setParameter("activePatientGroupId", activePatientGroup.id)
             }
-            log.warn  "So far 4: ${System.currentTimeMillis() - time}"
 
-            result
+            countPatientOverviewQuery.list().get(0)
         }
+    };
 
+    List<PatientOverview> getPatientsForClinicianOverview(Clinician activeClinician, Map params) {
+
+        def offset = params.offset ? params.int('offset') : defaultOffset
+        def max = Math.min(params.max ? params.int('max') : defaultMax, maxCapacity)
+
+        PatientOverview.withSession { session ->
+
+            def importantPatientOverviewQuery = session.createQuery("""
+                    SELECT DISTINCT po
+                    FROM PatientOverview AS po
+                    INNER JOIN po.patient AS p
+                    INNER JOIN p.patient2PatientGroups AS p2pg
+                    INNER JOIN p2pg.patientGroup AS pg
+                    INNER JOIN pg.clinician2PatientGroups AS c2pg
+                    WHERE c2pg.clinician.id = :activeClinicianId
+                          AND
+                          (   (po.important = true)
+                              OR
+                              (p.state = :patientState
+                                  AND EXISTS (FROM p.notes note
+                                              WHERE note.reminderDate < :date
+                                                    AND
+                                                    :activeClinicianId NOT IN (SELECT id FROM note.seenBy))))
+                    ORDER BY po.questionnaireSeverityOrdinal DESC, po.name ASC""")
+
+            def importantPatientOverviews = importantPatientOverviewQuery
+                    .setParameter("activeClinicianId", activeClinician.id)
+                    .setParameter("patientState", PatientState.ACTIVE)
+                    .setParameter("date" , new Date())
+                    .setFirstResult(offset)
+                    .setMaxResults(max)
+                    .list()
+
+            importantPatientOverviews
+        }
     }
 
     boolean isClinicianPartOfPatientGroup(Clinician activeClinician, PatientGroup activePatientGroup) {
         return activeClinician.clinician2PatientGroups.find { it.patientGroup == activePatientGroup }
     }
 
-    List<PatientOverview> getPatientsForClinicianOverviewInPatientGroup(Clinician activeClinician, PatientGroup activePatientGroup) {
+    List<PatientOverview> getPatientsForClinicianOverviewInPatientGroup(Clinician activeClinician, Map params, PatientGroup activePatientGroup) {
+
         if (!isClinicianPartOfPatientGroup(activeClinician, activePatientGroup)) {
             throw new IllegalArgumentException("Clinician ${activeClinician} is not part of given patient group (${activePatientGroup})")
         }
 
-        def importantPatientOverviewIds = PatientOverview.executeQuery(
-                'select po.id ' +
-                        'from PatientOverview as po ' +
-                        'inner join po.patient as p ' +
-                        'inner join p.patient2PatientGroups as p2pg ' +
-                        'where po.important = true ' +
-                        '  and p2pg.patientGroup.id = ?',
-                [activePatientGroup.id]
-        )
+        def offset = params.offset ? params.int('offset') : defaultOffset
+        def max = params.min = Math.min(params.max ? params.int('max') : defaultMax, maxCapacity)
 
-        // Find all patients with reminders not seen by clinician. Since this depends on the current clinician,
-        // it cannot be embedded in the PatientOverview object for each patient.
-        def idsOfPatientOverviewsWithRemindersNotSeenByClinician = PatientOverview.executeQuery(
-                'select po.id ' +
-                        'from Patient as p ' +
-                        'inner join p.patientOverviews as po ' +
-                        'inner join p.patient2PatientGroups as p2pg ' +
-                        'inner join p2pg.patientGroup as pg ' +
-                        'where pg.id = ? ' +
-                        '  and p.state = ? '+
-                        '  and exists (from p.notes note where note.reminderDate < ? and ? not in (select id from note.seenBy))',
-                [activePatientGroup.id, PatientState.ACTIVE, new Date(), activeClinician.id]
-        )
+        PatientOverview.withSession { session ->
 
-        importantPatientOverviewIds.addAll(idsOfPatientOverviewsWithRemindersNotSeenByClinician)
+            def importantPatientOverviewQuery = session.createQuery("""
+                    SELECT po
+                    FROM PatientOverview AS po
+                    INNER JOIN po.patient AS p
+                    INNER JOIN p.patient2PatientGroups AS p2pg
+                    INNER JOIN p2pg.patientGroup AS pg
+                    WHERE (p2pg.patientGroup.id = :activePatientGroupId
+                          AND po.important = true)
+                          OR
+                          (pg.id = :activePatientGroupId AND
+                          p.state = :patientState AND
+                          EXISTS (FROM p.notes note
+                                  WHERE note.reminderDate < :date
+                                  AND :activeClinicianId NOT IN (SELECT id FROM note.seenBy)))
+                    ORDER BY po.questionnaireSeverityOrdinal DESC, po.name ASC""")
 
-        if(grailsApplication.config.patientoverview.use.simple.sort) {
-            PatientOverview.findAllByIdInList(importantPatientOverviewIds).sort { a, b ->
-                b.questionnaireSeverity <=> a.questionnaireSeverity
-            }
-        } else {
-            if (importantPatientOverviewIds != null && importantPatientOverviewIds.size() > 0) {
+            def importantPatientOverviews = importantPatientOverviewQuery
+                    .setParameter("activePatientGroupId", activePatientGroup.id)
+                    .setParameter("activeClinicianId", activeClinician.id)
+                    .setParameter("patientState", PatientState.ACTIVE)
+                    .setParameter("date" , new Date())
+                    .setFirstResult(offset)
+                    .setMaxResults(max)
+                    .list()
 
-                def criteria  = PatientOverview.createCriteria()
-                criteria.list {
-                    'in'('id', importantPatientOverviewIds)
-                    order('questionnaireSeverityOrdinal', 'desc')
-                    order('numberOfUnreadMessagesFromPatient', 'desc')
-                    order('numberOfUnreadMessagesToPatient', 'desc')
-                    order('name', 'asc')
-                }
-            } else {
-                return Collections.EMPTY_LIST
-            }
+            importantPatientOverviews
         }
     }
 

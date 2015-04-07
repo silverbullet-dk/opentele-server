@@ -20,7 +20,11 @@ testDataConfig {
             internalDaysInMonth = ""
         }
         'org.opentele.server.model.User' {
-            password: "foobar1234"
+            password = "foobar1234"
+        }
+        'org.opentele.server.model.Patient' {
+            def i = 1000000000
+            cpr = {-> "${i++}"}
         }
     }
 }

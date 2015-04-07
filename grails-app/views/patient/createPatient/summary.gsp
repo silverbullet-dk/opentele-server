@@ -81,7 +81,7 @@
                         <g:message code="patient.cpr.label" />
                     </span>
                     <span class="property-value" aria-labelledby="cpr-label">
-                        <otformat:formatCPR cpr="${patientInstance.cpr.encodeAsHTML()}"/>
+                        <otformat:formatCPR cpr="${patientInstance.cpr}"/>
                     </span>
                 </li>
 			</g:if>

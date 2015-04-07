@@ -31,7 +31,10 @@ class QuestionnaireHeaderController {
 
     @Secured(PermissionName.QUESTIONNAIRE_CREATE)
     def save(String name) {
+
         def questionnaireHeaderInstance = new QuestionnaireHeader(name: name.trim())
+        questionnaireHeaderInstance.requiresManualInspection = (params.requiresManualInspection != null)
+
         if (!questionnaireHeaderInstance.save(flush: true)) {
             render(view: "create", model: [questionnaireHeaderInstance: questionnaireHeaderInstance])
             return
@@ -43,6 +46,7 @@ class QuestionnaireHeaderController {
     @Secured(PermissionName.QUESTIONNAIRE_CREATE)
     def saveAndEdit(String name) {
         def questionnaireHeaderInstance = new QuestionnaireHeader(name: name.trim())
+        questionnaireHeaderInstance.requiresManualInspection = (params.requiresManualInspection != null)
         if (!questionnaireHeaderInstance.save(flush: true)) {
             render(view: "create", model: [questionnaireHeaderInstance: questionnaireHeaderInstance])
             return
@@ -51,15 +55,12 @@ class QuestionnaireHeaderController {
         redirect(action: "doCreateDraft", id: questionnaireHeaderInstance.id)
     }
 
-
     @Secured(PermissionName.QUESTIONNAIRE_READ_ALL)
     def show(Long id) {
         withInstance(id) { QuestionnaireHeader questionnaireHeader ->
             [questionnaireHeaderInstance: questionnaireHeader, historicQuestionnaires: questionnaireHeaderService.findHistoricQuestionnaires(questionnaireHeader)]
         }
     }
-
-
 
     @Secured(PermissionName.QUESTIONNAIRE_WRITE)
     def edit(Long id) {

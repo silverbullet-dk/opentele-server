@@ -39,12 +39,6 @@
 			</fieldset>
 			<fieldset class="buttons">
 				<g:actionSubmit class="save" action="update" value="${message(code: 'default.update')}" />
-                <sec:ifAnyGranted roles="${org.opentele.server.core.model.types.PermissionName.CLINICIAN_DELETE}">
-                    <g:actionSubmit class="delete" action="delete"
-                        value="${message(code: 'default.button.delete.label', default: 'Delete')}"
-                        formnovalidate=""
-                        onclick="return confirm('${message(code: 'default.button.delete.confirm.message', default: 'Are you sure?')}');" />
-                </sec:ifAnyGranted>
 			</fieldset>
 		</g:form>
 	</div>

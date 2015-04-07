@@ -100,6 +100,7 @@ class NumericThresholdControllerIntegrationTests {
 
         controller.response.reset()
         controller.request.method = 'POST'
+        controller.session.setAttribute('lastReferer', 'http://localhost:8080/opentele-server/standardThresholdSet/list')
 
         //Pre-check
 
@@ -125,6 +126,7 @@ class NumericThresholdControllerIntegrationTests {
 
         controller.response.reset()
         controller.request.method = 'POST'
+        controller.session.setAttribute('lastReferer', 'http://localhost:8080/opentele-server/standardThresholdSet/list')
 
         //Pre-check
 
@@ -152,6 +154,7 @@ class NumericThresholdControllerIntegrationTests {
 
         controller.response.reset()
         controller.request.method = 'POST'
+        controller.session.setAttribute('lastReferer', 'http://localhost:8080/opentele-server/standardThresholdSet/list')
 
         //Pre-check
 
@@ -179,6 +182,7 @@ class NumericThresholdControllerIntegrationTests {
 
         controller.response.reset()
         controller.request.method = 'POST'
+        controller.session.setAttribute('lastReferer', 'http://localhost:8080/opentele-server/standardThresholdSet/list')
 
         //Pre-check
 
@@ -206,6 +210,7 @@ class NumericThresholdControllerIntegrationTests {
 
         controller.response.reset()
         controller.request.method = 'POST'
+        controller.session.setAttribute('lastReferer', 'http://localhost:8080/opentele-server/standardThresholdSet/list')
 
         //Pre-check
 

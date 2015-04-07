@@ -1,6 +1,7 @@
 package org.opentele.server.provider.model
 import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
+import org.opentele.server.core.model.types.Sex
 import org.opentele.server.model.BloodPressureThreshold
 import org.opentele.server.model.Clinician
 import org.opentele.server.model.Clinician2PatientGroup
@@ -21,6 +22,7 @@ import org.opentele.server.model.QuestionnaireSchedule
 import org.opentele.server.model.Threshold
 import org.opentele.server.model.UrineGlucoseThreshold
 import org.opentele.server.model.UrineThreshold
+import org.opentele.server.provider.PatientIdentificationService
 import org.opentele.server.provider.ThresholdService
 import org.opentele.server.core.util.TimeFilter
 
@@ -50,6 +52,7 @@ class PatientController {
     def cprLookupService
     def clinicianService
     def measurementTypeService
+    def patientIdentificationService
 
 	static allowedMethods = [index: "GET", save: "POST", update: "POST", delete: "POST", overview:["GET","POST"]]
     ThresholdService thresholdService
@@ -73,6 +76,7 @@ class PatientController {
         }
         basicPatientInformation {
             on("next") {
+                params.cpr = patientIdentificationService.formatForStorage(params.cpr)
                 flow.patientInstance.setBasicInformation(params)
                 !flow.patientInstance.validate(['firstName', 'lastName', 'cpr', 'sex', 'address', 'postalCode', 'city']) ? error() : success()
             }.to "setAuthentication"
@@ -440,6 +444,8 @@ class PatientController {
 	 */
     @Secured(PermissionName.COMPLETED_QUESTIONNAIRE_READ)
 	def questionnaire() {
+        def requestURL = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getForwardURI()
+        session.setAttribute('lastReferer', requestURL)
 		def user = springSecurityService.currentUser
 
 		def completedQuestionnaire = CompletedQuestionnaire.get(params.id)
@@ -476,8 +482,9 @@ class PatientController {
 	 */
     @Secured(PermissionName.COMPLETED_QUESTIONNAIRE_READ_ALL)
     def questionnaires(Long id) {
-
-		def user = springSecurityService.currentUser
+        def requestURL = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getForwardURI()
+        session.setAttribute('lastReferer', requestURL)
+        def user = springSecurityService.currentUser
 
 		def patient
 		if (user.isPatient()) {
@@ -864,6 +871,22 @@ class PatientController {
         flash.message = message(code: 'patient.unlock-account.done', args: [patientInstance.name])
         redirect(action: "show", id: id)
 
+    }
+
+    @Secured(PermissionName.PATIENT_CREATE)
+    def patientSex() {
+        def identification = params.identification
+
+        def sex
+        if (!identification) {
+            sex = Sex.UNKNOWN
+        } else {
+            sex = patientIdentificationService.calculateSex(identification)
+        }
+
+        render(contentType: 'text/json') {[
+            'sex': sex.toString()
+        ]}
     }
 
     private def questionPreferencesForClinician(Clinician clinician) {

@@ -97,6 +97,7 @@ class NumericThresholdControllerSpec extends Specification {
     void "when updating an existing threshold with a command without validation errors expect a redirect to last controller and action with an update message"() {
         when:
         request.method = 'POST'
+        controller.session.setAttribute('lastReferer', 'http://localhost:8080/opentele-server/standardThresholdSet/list')
         controller.update(command)
 
         then:
@@ -104,6 +105,6 @@ class NumericThresholdControllerSpec extends Specification {
         1 * command.hasErrors() >> false
         1 * command.getProperty('threshold') >> numericThreshold
         flash.message == "default.updated.message"
-        response.redirectedUrl == '/lastController/lastAction'
+        response.redirectedUrl == 'http://localhost:8080/opentele-server/standardThresholdSet/list'
     }
 }

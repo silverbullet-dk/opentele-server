@@ -1,14 +1,21 @@
 package org.opentele.server.provider.model.questionnaire
 
+import grails.buildtestdata.mixin.Build
 import grails.validation.ValidationErrors
 import org.codehaus.groovy.grails.web.json.JSONArray
 import org.codehaus.groovy.grails.web.json.JSONObject
 import org.opentele.server.core.QuestionnaireEditorService
+import org.opentele.server.core.command.QuestionnaireEditorCommand
+import org.opentele.server.core.model.Schedule
+import org.opentele.server.model.questionnaire.Questionnaire
+import org.opentele.server.model.questionnaire.QuestionnaireHeader
+import org.opentele.server.model.questionnaire.StandardSchedule
 import org.opentele.server.provider.ClinicianService
 import spock.lang.Specification
 import grails.test.mixin.*
 
 @TestFor(QuestionnaireEditorController)
+@Build([QuestionnaireHeader, Questionnaire])
 class QuestionnaireEditorControllerSpec extends Specification {
 
     def templateModel
@@ -54,6 +61,36 @@ class QuestionnaireEditorControllerSpec extends Specification {
 
         then:
         response.status == 200
+    }
+
+    def "when editing new questionnaire times of day is defaulted to 10"() {
+        given:
+        def header = QuestionnaireHeader.build(id: 1234)
+        header.save(failOnError: true)
+
+        when:
+        def properties = controller.edit(1234, new QuestionnaireEditorCommand())
+
+        then:
+        properties.timesOfDay.size() == 1
+        properties.timesOfDay[0].hour == 10
+        properties.timesOfDay[0].minute == 0
+    }
+
+    def "when editing questionnaire with times of day from standard schedule set-up, it will use the one from standard schedule"() {
+        given:
+        def header = QuestionnaireHeader.build(id: 1234)
+        def schedule = new StandardSchedule(internalTimesOfDay: "11:42")
+        header.draftQuestionnaire = Questionnaire.build(questionnaireHeader: header, standardSchedule: schedule)
+        header.save(failOnError: true)
+
+        when:
+        def properties = controller.edit(1234, new QuestionnaireEditorCommand())
+
+        then:
+        properties.timesOfDay.size() == 1
+        properties.timesOfDay[0].hour == 11
+        properties.timesOfDay[0].minute == 42
     }
 
     private def setupInvalidInput() {

@@ -24,7 +24,7 @@
         <g:message code="patientNoteInstance.reminderDate.label" />
     </label>
 <div class="ui-datepicker-opentele">
-        <jq:datePicker default="none" noSelection="['':'']" name="reminderDate" precision="minute" years="${2013..2050}" value="${patientNoteInstance?.reminderDate}"/>
+        <jq:datePicker default="none" noSelection="['':'']" name="datePicker" precision="minute" years="${2013..2050}" value="${patientNoteInstance?.reminderDate}"/>
 </div>
 </div>
 

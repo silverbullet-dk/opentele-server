@@ -13,10 +13,8 @@ class MetaController {
     def index() {}
     def currentServerVersion() {
         def version = grailsApplication.metadata['app.version']
-        def minClientVersion = grailsApplication.metadata['app.requiredClientVersion']
         render(contentType: 'text/json') {[
                 'version': version,
-                'minimumRequiredClientVersion': minClientVersion,
                 'serverEnvironment': Environment.getCurrent()?.getName()
         ]}
     }

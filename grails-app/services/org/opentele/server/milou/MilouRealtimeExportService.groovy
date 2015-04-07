@@ -1,6 +1,6 @@
 package org.opentele.server.milou
 
-import org.opentele.server.model.RealTimectg
+import org.opentele.server.model.RealTimeCtg
 
 class MilouRealtimeExportService {
     static transactional = false
@@ -8,25 +8,40 @@ class MilouRealtimeExportService {
     def milouRealtimeWebClientService
 
     def exportRealTimeCGTToMilou() {
-        def realTimectgs = RealTimectg.findAll([sort: 'createdDate', order: 'asc']) {
-            true
-        }
-        for(RealTimectg ctg in realTimectgs) {
-            def measurementExported
 
-            RealTimectg.withNewTransaction { status ->
-                measurementExported = milouRealtimeWebClientService.sendRealtimeCTGMeasurement(ctg)
+        def ctgsToExport = getRealTimeCtgMeasurementsToExport()
 
-                if(measurementExported) {
+        long currentPatientId = -1
+        def exportFailedForPatient = false
+        for (RealTimeCtg ctg in ctgsToExport) {
+            def delayExportForFailedPatient = exportFailedForPatient && currentPatientId == ctg.patient.id
+            if (delayExportForFailedPatient) {
+                // measurements will be re-tried on next job run
+                continue
+            }
+
+            currentPatientId = ctg.patient.id
+
+            RealTimeCtg.withNewTransaction { status ->
+                def exportSucceeded = milouRealtimeWebClientService.sendRealtimeCTGMeasurement(ctg)
+                exportFailedForPatient = !exportSucceeded
+
+                if(exportSucceeded) {
                    ctg.delete()
                 } else {
                     status.setRollbackOnly();
                 }
             }
+        }
+    }
 
-            if(!measurementExported) {
-                break
+    private def getRealTimeCtgMeasurementsToExport() {
+        def query = RealTimeCtg.createCriteria()
+        return query.list {
+            patient {
+                order('id', 'asc')
             }
+            order('createdDate', 'asc')
         }
     }
 }

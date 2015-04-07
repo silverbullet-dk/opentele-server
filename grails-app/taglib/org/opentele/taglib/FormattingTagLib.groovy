@@ -3,6 +3,7 @@ package org.opentele.taglib
 class FormattingTagLib {
 
     def transient clinicianMessageService
+    def transient patientIdentificationService
 
 	// OpenTele Graph Tag
 	static namespace = "otformat"
@@ -61,7 +62,7 @@ class FormattingTagLib {
 	
 	def formatCPR = {attrs, body ->
 		if (attrs.cpr) {
-			out << attrs.cpr[0..5].encodeAsHTML()+'-'+attrs.cpr[6..9].encodeAsHTML()
+            out << patientIdentificationService.formatForDisplay(attrs.cpr).encodeAsHTML()
 		}
 	}
 	

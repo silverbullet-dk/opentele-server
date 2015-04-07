@@ -28,6 +28,7 @@ class PatientServiceSpec extends Specification {
         service.i18nService = Mock(I18nService)
         service.mailSenderService = Mock(MailSenderService)
         service.patientOverviewMaintenanceService = Mock(PatientOverviewMaintenanceService)
+        service.patientIdentificationService = Mock(PatientIdentificationService)
 
         SpringSecurityUtils.metaClass.'static'.ifAnyGranted = { String roles ->
             return false

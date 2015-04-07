@@ -15,6 +15,8 @@ class BloodPressureThresholdController {
 
     @Secured(PermissionName.THRESHOLD_WRITE)
     def edit(Long id) {
+        session.setAttribute('lastReferer', request.getHeader('referer'))
+
         def command = thresholdService.getThresholdCommandForEdit(BloodPressureThreshold.get(id))
         def threshold = command?.threshold
         if (!threshold) {
@@ -22,7 +24,6 @@ class BloodPressureThresholdController {
         }
 
         def standardThresholdSet = standardThresholdSetService.findStandardThresholdSetForThreshold(threshold)
-
         render(view: '/threshold/edit', model: [
                 command: command,
                 patientGroup: standardThresholdSet?.patientGroup
@@ -44,7 +45,11 @@ class BloodPressureThresholdController {
             ])
         } else {
             flash.message = message(code: 'default.updated.message', args: [message(code: 'standardThreshold.label', default: 'StandardThreshold'), command.threshold.id])
-            redirect(action: session.lastAction, controller: session.lastController, params: session.lastParams)
+            def lastReferer = session.getAttribute('lastReferer')
+            if (lastReferer) {
+                session.removeAttribute('lastReferer')
+                redirect(url: lastReferer)
+            }
         }
     }
 

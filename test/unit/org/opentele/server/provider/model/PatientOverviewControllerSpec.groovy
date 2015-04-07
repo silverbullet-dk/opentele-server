@@ -116,7 +116,7 @@ class PatientOverviewControllerSpec extends Specification {
         def correctQuestionnaires = questionnaireTestList.findAll { it.severity == Severity.GREEN }
         def greenQuestionnaireIdsForPatientA = correctQuestionnaires.findAll { it.patient == patientA }*.id
         def greenQuestionnaireIdsForPatientB = correctQuestionnaires.findAll { it.patient == patientB }*.id
-        controller.patientOverviewService.getPatientsForClinicianOverview(clinicianA) >> [
+        controller.patientOverviewService.getPatientsForClinicianOverview(clinicianA, [:]) >> [
                 PatientOverview.build(patient: patientA, greenQuestionnaireIds: greenQuestionnaireIdsForPatientA.join(',')),
                 PatientOverview.build(patient: patientB, greenQuestionnaireIds: greenQuestionnaireIdsForPatientB.join(','))]
 
@@ -133,7 +133,7 @@ class PatientOverviewControllerSpec extends Specification {
         def correctQuestionnaires = questionnaireTestList.findAll { it.severity == Severity.GREEN }
         def greenQuestionnaireIdsForPatientA = correctQuestionnaires.findAll { it.patient == patientA }*.id
         def greenQuestionnaireIdsForPatientB = correctQuestionnaires.findAll { it.patient == patientB }*.id
-        controller.patientOverviewService.getPatientsForClinicianOverview(clinicianA) >> [
+        controller.patientOverviewService.getPatientsForClinicianOverview(clinicianA, [:]) >> [
                 PatientOverview.build(patient: patientA, greenQuestionnaireIds: greenQuestionnaireIdsForPatientA.join(',')),
                 PatientOverview.build(patient: patientB, greenQuestionnaireIds: greenQuestionnaireIdsForPatientB.join(','))]
 

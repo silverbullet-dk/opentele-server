@@ -16,6 +16,7 @@ class UrineGlucoseThresholdController {
 
     @Secured(PermissionName.THRESHOLD_WRITE)
     def edit(Long id) {
+        session.setAttribute('lastReferer', request.getHeader('referer'))
         def command = thresholdService.getThresholdCommandForEdit(UrineGlucoseThreshold.get(id))
         def threshold = command?.threshold
         if (!threshold) {
@@ -45,7 +46,11 @@ class UrineGlucoseThresholdController {
             ])
         } else {
             flash.message = message(code: 'default.updated.message', args: [message(code: 'standardThreshold.label', default: 'StandardThreshold'), command.threshold.id])
-            redirect(action: session.lastAction, controller: session.lastController, params: session.lastParams)
+            def lastReferer = session.getAttribute('lastReferer')
+            if (lastReferer) {
+                session.removeAttribute('lastReferer')
+                redirect(url: lastReferer)
+            }
         }
     }
 

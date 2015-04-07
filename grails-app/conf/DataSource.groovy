@@ -1,3 +1,6 @@
+import groovy.sql.Sql
+import org.opentele.server.core.model.BootStrapUtil
+
 dataSource {
     pooled = true
 //    driverClassName = "org.h2.Driver"
@@ -9,8 +12,9 @@ dataSource {
 hibernate {
     cache.use_second_level_cache = true
     cache.use_query_cache = true
+    cache.region.factory_class = 'org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory' // hibernate 4
     //cache.region.factory_class = 'org.hibernate.cache.ehcache.EhCacheRegionFactory' // hibernate 4
-    cache.region.factory_class = 'net.sf.ehcache.hibernate.SingletonEhCacheRegionFactory' // hibernate 3
+    //cache.region.factory_class = 'net.sf.ehcache.hibernate.SingletonEhCacheRegionFactory' // hibernate 3
 }
 // environment specific settings
 environments {
@@ -22,8 +26,13 @@ environments {
             driverClassName = "org.h2.Driver"
             dialect = "org.opentele.server.core.util.H2Dialect"
             // dbCreate = "create-drop" // one of 'create', 'create-drop', 'update', 'validate', ''
-            url = "jdbc:h2:devDb;MVCC=TRUE;IGNORECASE=TRUE"
-            // url = "jdbc:h2:mem:devDb;MVCC=TRUE;IGNORECASE=TRUE"
+
+            if(BootStrapUtil.isH2DatabaseServerRunning("jdbc:h2:tcp://localhost:8043/citizenDb", "sa", "")) {
+                url = "jdbc:h2:tcp://localhost:8043/citizenDb"
+            } else {
+                url = "jdbc:h2:clinicianDb;MVCC=TRUE;IGNORECASE=TRUE"
+            }
+            println "Using database url: ${url}"
         }
     }
     test {
@@ -36,7 +45,6 @@ environments {
             url = "jdbc:h2:mem:testDb;MVCC=TRUE;IGNORECASE=TRUE"
         }
     }
-
     performance {
         dataSource {
             pooled = true

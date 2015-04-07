@@ -1,11 +1,10 @@
 package org.opentele.server
 
-import org.opentele.server.model.RealTimectg
+import org.opentele.server.model.RealTimeCtg
 
 class RealTimeCTGService {
 
-
     def save(def params) {
-        new RealTimectg(params).save(failOnError: true)
+        new RealTimeCtg(params).save(failOnError: true)
     }
 }

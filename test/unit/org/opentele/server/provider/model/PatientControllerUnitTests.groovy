@@ -13,6 +13,7 @@ import org.opentele.server.core.PatientOverviewMaintenanceService
 import org.opentele.server.core.model.types.MeasurementTypeName
 import org.opentele.server.model.*
 import org.opentele.server.provider.ClinicianMessageService
+import org.opentele.server.provider.PatientIdentificationService
 import org.opentele.server.provider.PatientService
 import org.opentele.server.provider.SessionService
 import org.opentele.server.provider.ThresholdService
@@ -48,6 +49,12 @@ class PatientControllerUnitTests {
             null
         }
         controller.clinicianMessageService = mockMessageService
+
+        def mockIdentificationService = mockFor(PatientIdentificationService)
+        mockIdentificationService.metaClass.formatForDisplay = { identification ->
+            identification
+        }
+        controller.sessionService.patientIdentificationService = mockIdentificationService
     }
 
     @Test

@@ -3,7 +3,7 @@ package org.opentele.server
 import grails.test.spock.IntegrationSpec
 import grails.validation.ValidationException
 import org.opentele.server.model.Patient
-import org.opentele.server.model.RealTimectg
+import org.opentele.server.model.RealTimeCtg
 
 class RealTimeCTGServiceSpec extends IntegrationSpec {
 
@@ -14,18 +14,20 @@ class RealTimeCTGServiceSpec extends IntegrationSpec {
 
     def 'can create realtimeCTG from params and save it'() {
         setup:
+        def initialCount = RealTimeCtg.count()
         Patient patient = Patient.findById(1)
 
         def params = [:]
         params.xml = XML
         params.soapAction = soapAction
+        params.patient = patient
 
         when:
         realTimeCTGService.save(params)
 
         then:
-        RealTimectg.findAll().size() == 1
-        def ctg = RealTimectg.findByXml(XML)
+        RealTimeCtg.findAll().size() == initialCount + 1
+        def ctg = RealTimeCtg.findByXml(XML)
 
         ctg.xml == XML
         ctg.soapAction == soapAction
@@ -44,8 +46,5 @@ class RealTimeCTGServiceSpec extends IntegrationSpec {
         then:
 
         ValidationException ex = thrown()
-
     }
-
-
 }

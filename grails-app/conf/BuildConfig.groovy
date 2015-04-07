@@ -86,14 +86,15 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":hibernate:3.6.10.18"
+        runtime ":hibernate4:4.3.5.5"
         runtime ":jquery:1.11.0.2"
         runtime ":resources:1.2.8"
-        runtime ":kih-auditlog:1.0"
+        runtime ":kih-auditlog:1.1"
         compile ":webflow:2.1.0"
         compile ":quartz:1.0.2"
 
-        build ":tomcat:8.0.15"
+        build ":tomcat:7.0.54"
+        compile ":tomcat:7.0.54"
 
         runtime ":build-test-data:2.2.2"
 
@@ -113,8 +114,6 @@ grails.project.dependency.resolution = {
 
         test ":geb:$gebVersion"
         test ":code-coverage:2.0.3-3"
-
-        runtime ":cors:1.1.6"
     }
 }
 

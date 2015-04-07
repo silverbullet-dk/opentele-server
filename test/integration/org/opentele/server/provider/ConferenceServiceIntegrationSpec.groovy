@@ -1,5 +1,6 @@
 package org.opentele.server.provider
 
+import grails.buildtestdata.TestDataConfigurationHolder
 import grails.test.spock.IntegrationSpec
 import org.opentele.server.model.Clinician
 import org.opentele.server.model.Conference
@@ -12,7 +13,7 @@ class ConferenceServiceIntegrationSpec extends IntegrationSpec {
     Conference conference
 
     def setup() {
-        def patient = Patient.build().save(failOnError: true)
+        def patient = Patient.build(cpr: '1234567890').save(failOnError: true)
         def clinician = Clinician.build().save(failOnError: true)
         conference = Conference.build(patient: patient, clinician: clinician, measurements: [], measurementDrafts: []).save(failOnError: true)
     }

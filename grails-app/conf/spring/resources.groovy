@@ -1,10 +1,9 @@
 import grails.plugin.springsecurity.SpringSecurityUtils
+import grails.util.Environment
+import groovy.sql.Sql
 import org.opentele.server.core.UserDetailsService
-import org.opentele.server.core.util.CaseInsensitivePasswordAuthenticationProvider
-import org.opentele.server.core.util.CustomPropertyEditorRegistrar
-import org.opentele.server.core.util.OpenTeleSecurityBadCredentialsEventListener
-import org.opentele.server.core.util.OpenTeleSecurityGoodAttemptEventListener
-import org.opentele.server.core.util.OpenteleSecurityBasicAuthenticationFilter
+import org.opentele.server.core.model.BootStrapUtil
+import org.opentele.server.core.util.*
 import org.opentele.server.provider.OpenteleAuditLogLookup
 import org.springframework.security.core.session.SessionRegistryImpl
 import org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy
@@ -16,6 +15,10 @@ import wslite.soap.SOAPClient
 // Place your Spring DSL code here
 beans = {
     localeResolver(SessionLocaleResolver) {
+        if (grailsApplication.config.containsKey('languageTag')) {
+            grailsApplication.config.defaultLocale = Locale.forLanguageTag(grailsApplication.config.languageTag)
+        }
+
         defaultLocale = grailsApplication.config.defaultLocale
         Locale.setDefault(grailsApplication.config.defaultLocale)
 
@@ -64,5 +67,13 @@ beans = {
     concurrentSessionFilter(ConcurrentSessionFilter){
         sessionRegistry = sessionRegistry
         expiredUrl = '/login/concurrentSession'
+    }
+
+    if(Environment.current.name == 'development' && !BootStrapUtil.isH2DatabaseServerRunning("jdbc:h2:tcp://localhost:8043/citizenDb", "sa", "")) {
+        h2Server(org.h2.tools.Server, "-tcp,-tcpPort,8043") { bean ->
+            bean.factoryMethod = "createTcpServer"
+            bean.initMethod = "start"
+            bean.destroyMethod = "stop"
+        }
     }
 }

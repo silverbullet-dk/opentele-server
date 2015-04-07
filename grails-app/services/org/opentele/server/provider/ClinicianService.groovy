@@ -3,6 +3,7 @@ package org.opentele.server.provider
 import org.codehaus.groovy.grails.commons.metaclass.GroovyDynamicMethodsInterceptor
 import org.codehaus.groovy.grails.web.metaclass.BindDynamicMethod
 import org.opentele.server.core.command.ClinicianCommand
+import org.opentele.server.core.command.CreateClinicianCommand
 import org.opentele.server.core.exception.ClinicianException
 import org.opentele.server.model.*
 import org.springframework.transaction.annotation.Transactional
@@ -21,7 +22,7 @@ class ClinicianService {
     /**
      * Creates a patient and associated user. Throws a RuntimeException, which rolls the entire operation back in case of error.
      */
-    Clinician createClinician(ClinicianCommand command) {
+    Clinician createClinician(CreateClinicianCommand command) {
         def clinicianInstance = new Clinician(command.properties)
         clinicianInstance.user = new User(command.properties)
         clinicianInstance.user.enabled = true

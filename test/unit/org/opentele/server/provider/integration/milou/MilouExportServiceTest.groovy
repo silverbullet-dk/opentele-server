@@ -6,11 +6,11 @@ import grails.test.mixin.TestFor
 import grails.test.mixin.TestMixin
 import grails.test.mixin.support.GrailsUnitTestMixin
 import org.opentele.server.model.Measurement
-import org.opentele.server.model.RealTimectg
+import org.opentele.server.model.RealTimeCtg
 
 @TestMixin(GrailsUnitTestMixin)
 @TestFor(MilouExportService)
-@Build([RealTimectg])
+@Build([RealTimeCtg])
 class MilouExportServiceTest {
 
     void testExportsNewCtgMeasurementsAndMarksThemAsExported() {

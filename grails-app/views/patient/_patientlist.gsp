@@ -45,7 +45,7 @@
                 <td>
                     <g:link action="questionnaires" id="${patientInstance.id}"
                             data-tooltip="${message(code: 'patientOverview.goToPatient.tooltip')}">
-                        ${patientInstance.formattedCpr}
+                        <otformat:formatCPR cpr="${patientInstance.cpr}"/>
                     </g:link>
                 </td>
                 <td>${formatDate(date: patientInstance.latestQuestionnaireUploadDate)}</td>

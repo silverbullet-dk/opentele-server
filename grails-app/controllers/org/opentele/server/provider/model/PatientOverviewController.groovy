@@ -29,6 +29,9 @@ class PatientOverviewController {
 
     @Secured(PermissionName.PATIENT_READ_ALL)
     def index() {
+        def requestURL = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getForwardURI()
+        session.setAttribute('lastReferer', requestURL)
+
         Clinician clinician = clinicianService.currentClinician
         sessionService.setNoPatient(session)
 
@@ -38,13 +41,12 @@ class PatientOverviewController {
             params.setProperty('patientgroup.filter.id', clinicianService.getUserPreference(clinician, Constants.SESSION_PATIENT_GROUP_ID))
         }
         session[Constants.SESSION_PATIENT_GROUP_ID] = params.long('patientgroup.filter.id')
-        List<PatientOverview> patientOverviews = fetchPatientOverviews(clinician)
-
+        List<PatientOverview> patientOverviews = fetchPatientOverviews(clinician, params)
+        int patientOverviewTotal = countPatientOverviews(clinician)
 
         Set<Long> idsOfPatientsWithMessaging = patientOverviewService.getIdsOfPatientsWithMessagingEnabled(clinician, patientOverviews)
         Set<Long> idsOfPatientsWithAlarmIfUnreadMessagesDisabled = patientOverviewService.getIdsOfPatientsWithAlarmIfUnreadMessagesDisabled(clinician, patientOverviews)
         Map<Long, List<PatientNote>> patientNotes = patientOverviewService.fetchUnseenNotesForPatients(clinician, patientOverviews)
-
 
         [
                 patients                                      : patientOverviews,
@@ -52,7 +54,8 @@ class PatientOverviewController {
                 idsOfPatientsWithMessaging                    : idsOfPatientsWithMessaging,
                 idsOfPatientsWithAlarmIfUnreadMessagesDisabled: idsOfPatientsWithAlarmIfUnreadMessagesDisabled,
                 questionPreferences                           : questionPreferencesForClinician(clinician),
-                clinicianPatientGroups                        : clinicianService.patientGroupsForCurrentClinician
+                clinicianPatientGroups                        : clinicianService.patientGroupsForCurrentClinician,
+                patientOverviewTotal                          : patientOverviewTotal
         ]
     }
 
@@ -126,13 +129,18 @@ class PatientOverviewController {
                 flash.message = msg.join('<br/>')
             }
         }
-        redirect(controller: session.lastController, action: session.lastAction, params: session.lastParams)
+
+        def lastReferer = session.getAttribute('lastReferer')
+        if (lastReferer) {
+            session.removeAttribute('lastReferer')
+            redirect(url: lastReferer)
+        }
     }
 
     @Secured(PermissionName.QUESTIONNAIRE_ACKNOWLEDGE)
     def acknowledgeAllForAll(boolean withAutoMessage) {
         Clinician clinician = clinicianService.currentClinician
-        List<PatientOverview> patients = fetchPatientOverviews(clinician)
+        List<PatientOverview> patients = fetchPatientOverviews(clinician, [:])
 
         List<Long> unacknowledgedGreenQuestionnaireIds = []
         patients.findAll {
@@ -164,17 +172,25 @@ class PatientOverviewController {
         }
     }
 
-    private List<PatientOverview> fetchPatientOverviews(Clinician clinician) {
-        PatientGroup patientGroupFilter = session[Constants.SESSION_PATIENT_GROUP_ID] ? PatientGroup.get(session[Constants.SESSION_PATIENT_GROUP_ID]) : null
+    private int countPatientOverviews(Clinician clinician) {
+        patientOverviewService.count(clinician, getPatientGroupFilter(clinician))
+    }
 
+    private List<PatientOverview> fetchPatientOverviews(Clinician clinician, Map params) {
+        PatientGroup patientGroupFilter = getPatientGroupFilter(clinician)
+
+        (patientGroupFilter == null) ?
+                patientOverviewService.getPatientsForClinicianOverview(clinician, params) :
+                patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, params, patientGroupFilter)
+    }
+
+    private PatientGroup getPatientGroupFilter(Clinician clinician) {
+        PatientGroup patientGroupFilter = session[Constants.SESSION_PATIENT_GROUP_ID] ? PatientGroup.get(session[Constants.SESSION_PATIENT_GROUP_ID]) : null
         if (!patientOverviewService.isClinicianPartOfPatientGroup(clinician, patientGroupFilter)) {
             clinicianService.saveUserPreference(clinician, Constants.SESSION_PATIENT_GROUP_ID, null)
             patientGroupFilter = null
         }
-
-        (patientGroupFilter == null) ?
-                patientOverviewService.getPatientsForClinicianOverview(clinician) :
-                patientOverviewService.getPatientsForClinicianOverviewInPatientGroup(clinician, patientGroupFilter)
+        patientGroupFilter
     }
 }
 

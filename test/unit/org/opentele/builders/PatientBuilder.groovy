@@ -7,7 +7,7 @@ import org.opentele.server.core.model.types.PatientState
 import org.opentele.server.core.model.types.Sex
 
 class PatientBuilder {
-    def cpr = '1234567890'
+    def static cprCounter = 1000000000
     def firstName = 'Mette'
     def lastName ='Andersen'
     def sex =  Sex.FEMALE
@@ -26,7 +26,7 @@ class PatientBuilder {
 
     public Patient build() {
 
-        def result = Patient.build( cpr: cpr,
+        def result = Patient.build( cpr: "${cprCounter++}",
                                     firstName: firstName,
                                     lastName: lastName,
                                     sex: sex,

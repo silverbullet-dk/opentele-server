@@ -181,10 +181,6 @@
                         <g:actionSubmit class="resetPassword" action="unlockAccount" value="${message(code: 'clinician.unlock-account.label')}"/>
                     </sec:ifAnyGranted>
                 </g:if>
-                <sec:ifAnyGranted roles="${org.opentele.server.core.model.types.PermissionName.CLINICIAN_DELETE}">
-                    <g:actionSubmit class="delete" action="delete" value="${message(code: 'default.button.delete.label')}"
-	    				onclick="return confirm('${message(code: 'default.button.delete.confirm.message')}');" />
-                </sec:ifAnyGranted>
 			</fieldset>
 		</g:form>
 	</div>

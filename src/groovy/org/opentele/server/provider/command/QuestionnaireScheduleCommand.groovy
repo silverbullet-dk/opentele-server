@@ -18,7 +18,7 @@ class QuestionnaireScheduleCommand extends ScheduleCommand {
 
     QuestionnaireProviderService questionnaireProviderService
     Long version
-    Schedule questionnaireSchedule
+    QuestionnaireSchedule questionnaireSchedule
     MonitoringPlan monitoringPlan
 
     @SuppressWarnings("GroovyUnusedDeclaration") // Used in views

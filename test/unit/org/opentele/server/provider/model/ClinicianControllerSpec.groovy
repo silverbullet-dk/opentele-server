@@ -3,6 +3,7 @@ package org.opentele.server.provider.model
 import grails.buildtestdata.mixin.Build
 import grails.plugin.springsecurity.SpringSecurityService
 import grails.test.mixin.TestFor
+import org.opentele.server.core.command.CreateClinicianCommand
 import org.opentele.server.provider.ClinicianService
 import org.opentele.server.core.PasswordService
 import org.opentele.server.model.Clinician
@@ -48,11 +49,12 @@ class ClinicianControllerSpec extends Specification {
         def model = controller.create()
         then:
         model.cmd != null
+        model.cmd instanceof CreateClinicianCommand
     }
 
     def "test save action with sunshine scenario"() {
         setup:
-        def command = buildClinicianCommand()
+        def command = buildCreateClinicianCommand()
         def clinician = Clinician.build()
         controller.clinicianService.createClinician(command) >> clinician
         request.method = 'POST'
@@ -67,7 +69,7 @@ class ClinicianControllerSpec extends Specification {
 
     def "test save action with missing parameters in command"() {
         setup:
-        def command = buildClinicianCommand(firstName: "")
+        def command = buildCreateClinicianCommand(firstName: "")
         def clinician = Clinician.build()
         controller.clinicianService.createClinician(command) >> clinician
         request.method = 'POST'
@@ -82,7 +84,7 @@ class ClinicianControllerSpec extends Specification {
 
     def "test save action with errors saving in service"() {
         setup:
-        def command = buildClinicianCommand()
+        def command = buildCreateClinicianCommand()
         def clinician = Clinician.build()
         clinician.firstName = ""
         clinician.validate()
@@ -275,6 +277,14 @@ class ClinicianControllerSpec extends Specification {
 
     private buildClinicianCommand(Map defaults = [:]) {
         def cmd = new ClinicianCommand(firstName: "First", lastName: "Last", username: "user", cleartextPassword: "abcd1234", roleIds: Role.list()*.id, groupIds: PatientGroup.list()*.id)
+        defaults.each { key, value ->
+            cmd."$key" = value
+        }
+        return cmd
+    }
+
+    private buildCreateClinicianCommand(Map defaults = [:]) {
+        def cmd = new CreateClinicianCommand(firstName: "First", lastName: "Last", username: "user", cleartextPassword: "abcd1234", roleIds: Role.list()*.id, groupIds: PatientGroup.list()*.id)
         defaults.each { key, value ->
             cmd."$key" = value
         }

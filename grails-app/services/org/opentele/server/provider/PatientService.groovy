@@ -18,6 +18,7 @@ class PatientService {
     def i18nService
     def clinicianService
     def patientOverviewMaintenanceService
+    def patientIdentificationService
 
     @Transactional
     def buildAndSavePatient(CreatePatientCommand cmd) {
@@ -126,8 +127,7 @@ class PatientService {
         if (params.controller == "patient") {
             patientInstance.properties = params
 
-            patientInstance.cpr = patientInstance.cpr.replaceAll(" ", "")
-            patientInstance.cpr = patientInstance.cpr.replaceAll("-", "")
+            patientInstance.cpr = patientIdentificationService.formatForStorage(patientInstance.cpr)
         }
 
         def user = patientInstance.user

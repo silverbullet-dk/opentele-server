@@ -20,6 +20,10 @@ lib/jtds-1.2.6.jar
 /devDb.h2.db
 /devDb.lock.db
 /devDb.trace.db
+/clinicianDb*
+/db_backup.zip
 /web-app/applets
 /*.png
 helpimg-upload
+grails-app/conf/*.properties
+test/cli/SetConfiguration/Config.groovy

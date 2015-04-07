@@ -8,9 +8,11 @@ import org.opentele.server.model.Patient;
 import javax.servlet.http.HttpSession;
 
 class SessionService {
+    def patientIdentificationService
+
 	void setPatient(HttpSession session, Patient patient) {
         session[Constants.SESSION_NAME] = patient.toString()
-        session[Constants.SESSION_CPR] = patient.cpr[0..5]+"-"+patient.cpr[6..9]
+        session[Constants.SESSION_CPR] = patientIdentificationService.formatForDisplay(patient.cpr)
         session[Constants.SESSION_PATIENT_ID] = patient.id
         session[Constants.SESSION_GESTATIONAL_AGE] = patient.shouldShowGestationalAge ? patient.getGestationalAge(new Date()) : null
         session[Constants.SESSION_RUNNING_CTG_MESSAGING] = patient.shouldShowRunningCtgMessaging
