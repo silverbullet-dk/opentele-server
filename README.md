@@ -4,7 +4,7 @@ OpenTele Server
 
 How to build and run
 --------------------
-Make sure you have JDK 1.6 and Grails 2.1 installed and in your path.
+Make sure you have JDK 1.6 and Grails 2.4.4 installed and in your path.
 
 First, clone the KIH Auditlog project (a separate project) and install the plug-in in your local repository.
 

@@ -172,8 +172,6 @@ class BootStrap {
             development {
                 println "Initializing for DEVEL"
                 doBootstrapForTest()
-
-                setupRMTestUsers()
                 createPatientOverviewDataForPatients()
 
             }
@@ -183,7 +181,6 @@ class BootStrap {
 
                 createNancyAnnsClones(10)
                 createHelleClones(10)
-                setupRMTestUsers()
 
                 createNancyAnnsClones(500)
                 createHelleClones(100)
